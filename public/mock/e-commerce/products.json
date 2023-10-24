@@ -1,110 +1,137 @@
 [
   {
     "id": 1,
-    "name": "Laptop",
-    "image": "https://m.media-amazon.com/images/I/81KoSSAwH2L._SL1500_.jpg",
-    "description": "High-performance laptop for all your needs.",
-    "categories": [1, 2],
-    "variants": ["8GB RAM", "16GB RAM"],
-    "sizes": ["13-inch", "15-inch"]
+    "name": "Stars case",
+    "image": "https://ae01.alicdn.com/kf/S9b656750f86d487588a8b85eb5781b6dB/Personalise-Name-Multiple-Heart-Star-Luxury-Leather-Customise-Phone-Case-For-IPhone15-14-14ProMax-13-12.jpg_80x80.jpg_.web",
+    "description": "Stars phone case for IPhone.",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 2,
-    "name": "Smartphone",
-    "image": "https://m.media-amazon.com/images/I/81SigpJN1KL._SL1500_.jpg",
-    "description": "Latest smartphone with advanced features.",
-    "categories": [1, 3],
-    "variants": ["64GB", "128GB"],
-    "sizes": []
+    "name": "Amber case",
+    "image": "https://ae01.alicdn.com/kf/Sd38d3b63018e4a35bdaf32d2e492f78ee/Custom-Monogram-Initial-Name-Brick-Saffiano-Vegan-PU-Leather-Case-for-iphone-14-13-11-12.jpg_80x80.jpg_.webp",
+    "description": " Amber phone case for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 3,
-    "name": "Tablet",
-    "image": "https://m.media-amazon.com/images/I/81gC7frRJyL._SL1500_.jpg",
-    "description": "Compact and powerful tablet for work and entertainment.",
-    "categories": [1, 2],
-    "variants": ["32GB", "64GB"],
-    "sizes": ["10-inch", "12-inch"]
+    "name": "Keren blue case",
+    "image": "https://ae01.alicdn.com/kf/S0066aa723a304700b8253613782459eav/Custom-Monogram-Initial-Name-Brick-Saffiano-Vegan-PU-Leather-Case-for-iphone-14-13-11-12.jpg_80x80.jpg_.webp",
+    "description": "Keren blue phone case for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 4,
-    "name": "Gaming Console",
-    "image": "https://m.media-amazon.com/images/I/51wPWj--fAL._SL1000_.jpg",
-    "description": "Next-gen gaming console for immersive gameplay.",
-    "categories": [4],
-    "variants": ["500GB", "1TB"],
-    "sizes": []
+    "name": "Keren pink case",
+    "image": "https://ae01.alicdn.com/kf/S591d12afa5f64434b80db2acd5cc6574T/Custom-Monogram-Initial-Name-Brick-Saffiano-Vegan-PU-Leather-Case-for-iphone-14-13-11-12.jpg_80x80.jpg_.webp",
+    "description": "Keren pink phone case for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 5,
-    "name": "Camera",
-    "image": "https://m.media-amazon.com/images/I/41zG3lqcEvL._SL1000_.jpg",
-    "description": "High-resolution camera for capturing memories.",
-    "categories": [5],
-    "variants": ["24MP", "36MP"],
-    "sizes": []
+    "name": "N brown case",
+    "image": "https://ae01.alicdn.com/kf/H7b61d79add6246ecae16cc9154954e6aF/Custom-Name-logo-image-on-Leather-case-for-Iphone-12-11-13-pro-max-Case-Luxury.jpg_80x80.jpg_.webp",
+    "description": "Letter customise phone case for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 6,
-    "name": "Fitness Tracker",
-    "image": "https://m.media-amazon.com/images/I/61JL0ccPltL._SL1500_.jpg",
-    "description": "Track your health and fitness goals with this smart tracker.",
-    "categories": [6],
-    "variants": ["Small", "Large"],
-    "sizes": []
+    "name": "ESA pink case",
+    "image": "https://ae01.alicdn.com/kf/S1adfae46ddd54e8f9a7785e710548876N/Custom-Gold-Name-Number-Leather-Phone-Case-for-iPhone-13-Pro-Max-12-13-11-12.png_80x80.png_.webp",
+    "description": "ESA pink phone case for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 7,
-    "name": "Home Theater System",
-    "image": "https://m.media-amazon.com/images/I/615+VvllX6L._SL1500_.jpg",
-    "description": "Create a cinematic experience at home with this system.",
-    "categories": [7],
-    "variants": ["5.1 Surround Sound", "7.1 Surround Sound"],
-    "sizes": []
+    "name": "Customized black case",
+    "image": "https://ae01.alicdn.com/kf/He84a3ada845f452e8d90d2f25053c58ai/Personalized-Big-Letter-Name-Mirror-Phone-Case-For-iPhone-13-12-11-Pro-Max-X-XR.jpg_80x80.jpg_.webp",
+    "description": "Customized black case for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 8,
-    "name": "Coffee Maker",
-    "image": "https://m.media-amazon.com/images/I/51JKNxKS1dL._SL1200_.jpg",
-    "description": "Brew your favorite coffee at home with ease.",
-    "categories": [8],
-    "variants": ["Single Serve", "Drip Coffee Maker"],
-    "sizes": []
+    "name": "Yellow candy case",
+    "image": "https://ae01.alicdn.com/kf/S122fe5e792d141f98e47d52e269296d5a/Candy-Color-Silicone-Phone-Case-For-IPhone-11-12mini-13-14-Pro-Max-Soft-Matte-Shockproof.jpg_80x80.jpg_.webp",
+    "description": "Yellow candy case For iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 9,
-    "name": "Bluetooth Speaker",
-    "image": "https://m.media-amazon.com/images/I/61N2a48p9xL._SL1200_.jpg",
-    "description": "Portable speaker for music on the go.",
-    "categories": [9],
-    "variants": ["Black", "White"],
-    "sizes": []
+    "name": "Pink candy case",
+    "image": "https://ae01.alicdn.com/kf/Se05e33e82840423c834b6fe8e022fa6aA/Candy-Color-Silicone-Phone-Case-For-IPhone-11-12mini-13-14-Pro-Max-Soft-Matte-Shockproof.jpg_80x80.jpg_.webp",
+    "description": "Pink candy case For iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 10,
-    "name": "External Hard Drive",
-    "image": "https://m.media-amazon.com/images/I/81pAOJFcsFS._SL1500_.jpg",
-    "description": "Store and backup your data with high-capacity storage.",
-    "categories": [10],
-    "variants": ["1TB", "2TB"],
-    "sizes": []
+    "name": "Cartoon game case",
+    "image": "https://ae01.alicdn.com/kf/S88ed4f19cd5f4a6da3c6794843905fe8Y/Sleep-cat-cartoon-silicone-soft-cute-shell-For-iphone-x-xr-xsmax-12mini-13-11-14.jpg_80x80.jpg_.webp",
+    "description": "Cartoon game case For iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 11,
-    "name": "Headphones",
-    "image": "https://m.media-amazon.com/images/I/51j7l0QISqL._SL1000_.jpg",
-    "description": "Noise-cancelling headphones for immersive audio experience.",
-    "categories": [9],
-    "variants": ["Over-Ear", "In-Ear"],
-    "sizes": []
+    "name": "Rabbit bear cartoon case",
+    "image": "https://ae01.alicdn.com/kf/Hc4977bb9928746cd9856f7e08d90ab05e/3D-happy-rabbit-bear-silicone-cartoon-cover-for-iphone-11-12-14-15-pro-max-mini.jpg_80x80.jpg_.webp",
+    "description": "Rabbit bear cartoon case for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   },
   {
     "id": 12,
-    "name": "Smartwatch",
-    "image": "https://m.media-amazon.com/images/I/811GOkDSOaL._SL1500_.jpg",
-    "description": "Stay connected and track your activities with this smartwatch.",
-    "categories": [6],
-    "variants": ["Titanium"],
-    "sizes": []
+    "name": "Magnetic white case",
+    "image": "https://ae01.alicdn.com/kf/S8dc93f5cf88c466c969feb70e09de870K/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp",
+    "description": "Magnetic skin scrub white case MagSafe for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
+  },
+  {
+    "id": 13,
+    "name": "Magnetic black case",
+    "image": "https://ae01.alicdn.com/kf/S1cbb88f50cac4505a5e44df433f5421fR/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp",
+    "description": "Magnetic skin scrub black case MagSafe for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
+  },
+  {
+    "id": 14,
+    "name": "Magnetic case",
+    "image": "https://ae01.alicdn.com/kf/S1c603484c98c467faaa86a2f2b0dee4f2/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp",
+    "description": "Magnetic skin scrub black case MagSafe for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
+  },
+  {
+    "id": 15,
+    "name": "Magnetic purpule case",
+    "image": "https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp",
+    "description": "Magnetic skin scrub purpule case MagSafe for iPhone",
+    "categories": [1],
+    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["Pro", "Pro Max"]
   }
 ]

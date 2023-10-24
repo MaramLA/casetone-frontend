@@ -19,7 +19,7 @@ export function ProductsManager() {
     handleGetProducts()
   }, [])
 
-   /**
+  /**
    * If you want to keep things simple you can follow this approach on updating
    * redux state when using async requests instead of using createAsyncThunk
    */

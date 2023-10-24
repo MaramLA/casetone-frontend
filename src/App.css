@@ -1,42 +1,1120 @@
-#root {
-  max-width: 1880px;
-  margin: 0 auto;
-  padding: 2rem;
+@-webkit-keyframes h1-move {
+  50% {
+    margin-bottom: 4rem;
+  }
+}
+
+@keyframes h1-move {
+  50% {
+    margin-bottom: 4rem;
+  }
+}
+
+@-webkit-keyframes star-move {
+  50% {
+    margin-top: 4rem;
+  }
+}
+
+@keyframes star-move {
+  50% {
+    margin-top: 4rem;
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* Start of general styling */
+/* ---------------------------------------------------------- */
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #edefef;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+main {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  min-height: 23rem;
+}
+
+/* ---------------------------------------------------------- */
+/* End of general styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of header and navbar styling */
+/* ---------------------------------------------------------- */
+header {
+  position: relative;
+  height: 17vh;
+}
+
+header .nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #edefef;
+  z-index: 1;
+  background: transparent;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+  /* Navbar left section styling */
+  /* Navbar right section styling */
+}
+
+header .nav-bar .left-section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav-bar .left-section .logo {
+  width: 400px;
+  height: 140px;
+}
+
+header .nav-bar .left-section .logo img {
+  width: 400px;
+  height: 140px;
+  margin-left: 6rem;
+}
+
+header .nav-bar .left-section ul {
+  margin-left: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .nav-bar .left-section ul li {
+  margin: 1.5rem;
+  width: 13rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header .nav-bar .left-section ul li .navLinks {
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #696262;
+  background: transparent;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+header .nav-bar .left-section ul li .navLinks:hover {
+  font-size: 2.1rem;
+}
+
+header .nav-bar .right-section {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.5rem;
+}
+
+header .nav-bar .right-section .icon1 {
+  font-size: 2.5rem;
+  color: #696262;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+header .nav-bar .right-section .icon1:hover {
+  cursor: pointer;
+  padding-right: 0.4rem;
+}
+
+header .nav-bar .right-section .icon2 {
+  font-size: 3.5rem;
+  color: #696262;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  display: none;
+}
+
+header .nav-bar .right-section .icon2:hover {
+  cursor: pointer;
+  padding-bottom: 1rem;
+}
+
+header .nav-bar .right-section .nav-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2.5rem;
+  margin-right: 6rem;
+}
+
+header .nav-bar .right-section .nav-buttons .button-link {
+  text-decoration: none;
+}
+
+header .nav-bar .right-section .nav-buttons .button-link .btn-1 {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .nav-bar .right-section .nav-buttons .button-link .btn-1:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+header .nav-bar .right-section .nav-buttons .button-link .btn-2 {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .nav-bar .right-section .nav-buttons .button-link .btn-2:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of header and navbar styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of hero section styling */
+/* ---------------------------------------------------------- */
+.hero {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-top: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 7rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.hero img {
+  width: 140rem;
+  padding-bottom: 7em;
+}
+
+.hero .circle-background {
+  height: 50rem;
+  width: 50rem;
+  background: #edefef;
+  border: 6px solid #696262;
+  border-radius: 50%;
+  padding: 4rem;
+  display: none;
+}
+
+.hero .hero__content {
+  position: absolute;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero .hero__content .heading-title {
+  font-size: 6em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+  -webkit-animation: h1-move 2s infinite;
+          animation: h1-move 2s infinite;
+}
+
+.hero .hero__content p {
+  font-size: 2em;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+  margin-bottom: 3.8rem;
+}
+
+.hero .hero__content .hero__button {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero .hero__content .hero__button:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of hero section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of products section styling */
+/* ---------------------------------------------------------- */
+.products {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 13rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.products .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 10rem;
+  text-align: center;
+}
+
+.products .products-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 8rem;
+}
+
+.products .products-div .product {
+  background: #ffff;
+  border-radius: 50px;
+  width: 34rem;
+  height: 50rem;
+  margin: 2.2rem;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.products .products-div .product:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  cursor: pointer;
+}
+
+.products .products-div .product img {
+  width: 100%;
+  height: 34rem;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.products .products-div .product .product__details {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2.5rem;
+  color: #696262;
+}
+
+.products .products-div .product .product__details .icon {
+  position: absolute;
+  left: 400px;
+  top: 140px;
+  font-size: 2.5rem;
+  color: #696262;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.products .products-div .product .product__details .icon:hover {
+  cursor: pointer;
+  font-size: 2.8rem;
+}
+
+.products .products-div .product .product__details .product__title {
+  font-size: 2.1em;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+}
+
+.products .products-div .product .product__details .product__description {
+  font-size: 1.9em;
+  margin-bottom: 1.5rem;
+}
+
+.products .products-div .product .product__details .product__price {
+  font-size: 1.9em;
+  margin-bottom: 1.5rem;
+}
+
+.products .products-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.products .products-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of products section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of about us section styling */
+/* ---------------------------------------------------------- */
+.AboutUs {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 15rem;
+  padding-top: 4rem;
+  margin-bottom: 10rem;
+}
+
+.AboutUs .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.AboutUs .content {
+  font-size: 2.2em;
+  text-align: justify;
+  text-align-last: center;
+  width: 65vw;
+  margin-top: 3rem;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+}
+
+.AboutUs .content .innerTextLink {
+  text-decoration: none;
+  font-weight: bolder;
+  color: #696262;
+  text-transform: capitalize;
+}
+
+/* ---------------------------------------------------------- */
+/* End of about us section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of reviews section styling */
+/* ---------------------------------------------------------- */
+.reviews {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 15rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.reviews .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 10rem;
+  text-align: center;
+}
+
+.reviews .main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.reviews .main-section .rate-div {
+  width: 100%;
+  height: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reviews .main-section .rate-div .rate-icon {
+  position: relative;
+  color: #696262;
+  font-size: 40rem;
+  margin-right: 1rem;
+  -webkit-animation: star-move 1.5s infinite;
+          animation: star-move 1.5s infinite;
+}
+
+.reviews .main-section .rate-div .rating-value {
+  color: #696262;
+  font-size: 10rem;
+  margin-top: 5rem;
+  font-weight: bold;
+}
+
+.reviews .main-section .reviews-div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reviews .main-section .reviews-div .review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+  padding: 3rem;
+  background: #ffff;
+  min-height: 11rem;
+  width: 45rem;
+  border-radius: 50px;
+  color: #696262;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.reviews .main-section .reviews-div .review:hover {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+.reviews .main-section .reviews-div .review .review__rating {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 2.1em;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+}
+
+.reviews .main-section .reviews-div .review .review__username {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 2.1em;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+}
+
+.reviews .main-section .reviews-div .review .review__content {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 2.1em;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+  max-width: 40rem;
+}
+
+/* ---------------------------------------------------------- */
+/* End of reviews section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of newsletter subscription section styling */
+/* ---------------------------------------------------------- */
+.newsletter-subscription {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 15rem;
+  padding-top: 4rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.newsletter-subscription .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.newsletter-subscription .content {
+  font-size: 2.2em;
+  text-align: center;
+  margin-top: 3rem;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+}
+
+.newsletter-subscription .subscription-form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5rem;
+  gap: 1rem;
+}
+
+.newsletter-subscription .subscription-form .email-label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.newsletter-subscription .subscription-form .email-textbox {
+  width: 50vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.newsletter-subscription .subscription-form .form-submit-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.newsletter-subscription .subscription-form .form-submit-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of newsletter subscription section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of footer styling */
+/* ---------------------------------------------------------- */
+footer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+  background: #dddddd;
+}
+
+footer .top-sections {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+footer .top-sections .top-left-section {
+  margin: 5vh;
+  width: 33.33%;
+  height: 40vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  white-space: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+}
+
+footer .top-sections .top-left-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .top-sections .top-left-section ul li {
+  margin: 1.5rem;
+}
+
+footer .top-sections .top-left-section ul li a {
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+footer .top-sections .top-left-section ul li a:hover {
+  font-size: 2.1em;
+}
+
+footer .top-sections .top-mid-section {
+  margin: 5vh;
+  width: 33.33%;
+  height: 40vh;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #696262;
+}
+
+footer .top-sections .top-mid-section .contact-info {
+  white-space: nowrap;
+}
+
+footer .top-sections .top-mid-section .contact-info .section-title {
+  font-size: 2em;
+  margin: 1.5rem;
+  font-weight: bolder;
+}
+
+footer .top-sections .top-mid-section .contact-info a {
+  text-decoration: none;
+  font-size: 2em;
+  color: #696262;
+  line-height: 1.5em;
+  margin: 1.5rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+footer .top-sections .top-mid-section .contact-info a:hover {
+  font-size: 2.1em;
+}
+
+footer .top-sections .top-mid-section .contact-info p {
+  font-size: 2em;
+  color: #696262;
+  line-height: 1.5em;
+  margin: 1.5rem;
+}
+
+footer .top-sections .top-mid-section .social-media-icons {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+footer .top-sections .top-mid-section .social-media-icons .section-title {
+  font-size: 2em;
+  margin: 1.5rem;
+  font-weight: bolder;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+footer .top-sections .top-mid-section .social-media-icons .icons {
+  height: 7rem;
+  margin-bottom: 4rem;
+}
+
+footer .top-sections .top-mid-section .social-media-icons .icons .footer-social-links {
+  color: #696262;
+}
+
+footer .top-sections .top-mid-section .social-media-icons .icons .footer-social-links .icon {
+  border: 4px solid #696262;
+  border-radius: 50px;
+  padding: 1rem;
+  font-size: 2.5rem;
+  margin: 1rem;
+  font-weight: bolder;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: #edefef;
+}
+
+footer .top-sections .top-mid-section .social-media-icons .icons .footer-social-links .icon:hover {
+  cursor: pointer;
+  font-size: 2.8rem;
+}
+
+footer .top-sections .top-right-section {
+  margin: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33.33%;
+  height: 40vh;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .top-sections .top-right-section img {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .bottom-section {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #696262;
+}
+
+footer .bottom-section p {
+  font-size: 2em;
+  color: #696262;
+  margin: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* ---------------------------------------------------------- */
+/* End of footer styling */
+/* ---------------------------------------------------------- */
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 1000px) {
+  header .nav-bar .left-section .logo img {
+    width: 300px;
+    height: 113px;
+    margin-left: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 2200px) {
+  .hero img {
+    display: none;
+  }
+  .hero .circle-background {
+    display: block;
+  }
+  .hero .hero__content .heading-title {
+    font-size: 4.5em;
+    margin-top: 8rem;
+  }
+  .nav-bar .left-section ul {
+    display: none !important;
+  }
+  .nav-bar .right-section .icon2 {
+    display: block !important;
+  }
+  .nav-bar .right-section .icon1 {
+    display: none;
+  }
+  .nav-bar .right-section .nav-buttons {
+    display: none;
+  }
+  .nav-bar .right-section .nav-buttons button {
+    display: none !important;
+  }
+  .reviews .main-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 10rem;
+    gap: 25vh;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media screen and (max-width: 1400px) {
+  footer .top-sections {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .top-sections .top-left-section ul {
+    text-align: center;
+  }
+  footer .top-sections .top-mid-section {
+    text-align: center;
   }
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/*# sourceMappingURL=App.css.map */

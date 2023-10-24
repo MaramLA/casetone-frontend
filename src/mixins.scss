@@ -1,0 +1,49 @@
+// Mixins
+
+@mixin center() {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin navTransBackgournd() {
+  background: transparent;
+  backdrop-filter: blur(25px);
+}
+
+@mixin mainButton1-Styling {
+  font-size: $font-size3;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: $primary-color1;
+  background: $primary-color3;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+
+  border-radius: 50px;
+  border: 4px solid $primary-color1;
+  transition: all 0.2s ease-in;
+  &:hover {
+    cursor: pointer;
+    padding: 0.7em 1.7em;
+  }
+}
+
+@mixin mainButton2-Styling {
+  font-size: $font-size3;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: $primary-color0;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid $primary-color1;
+  background: $primary-color1;
+  transition: all 0.2s ease-in;
+  &:hover {
+    cursor: pointer;
+    padding: 0.7em 1.7em;
+  }
+}

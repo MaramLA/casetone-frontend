@@ -1,0 +1,744 @@
+// Variables
+
+@import 'variables';
+
+// Mixens
+@import 'mixins';
+
+// Keyframes
+
+@keyframes h1-move {
+  50% {
+    margin-bottom: 4rem;
+  }
+}
+
+@keyframes star-move {
+  50% {
+    margin-top: 4rem;
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* Start of general styling */
+/* ---------------------------------------------------------- */
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  // margin-left: 6rem;
+  // margin-right: 6rem;
+  background: $primary-color3;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+main {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  min-height: 23rem;
+
+  // background-color: lightblue;
+}
+
+/* ---------------------------------------------------------- */
+/* End of general styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* Start of header and navbar styling */
+/* ---------------------------------------------------------- */
+header {
+  position: relative;
+  height: 17vh;
+
+  .nav-bar {
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @include center();
+    background-color: $primary-color3;
+    z-index: 1;
+    @include navTransBackgournd();
+    box-shadow: $primary-color5 0px 10px 10px -10px;
+
+    /* Navbar left section styling */
+    .left-section {
+      position: relative;
+      display: flex;
+      width: 70%;
+      justify-content: flex-start;
+      align-items: center;
+      .logo {
+        width: 400px;
+        height: 140px;
+
+        img {
+          width: 400px;
+          height: 140px;
+          margin-left: 6rem;
+        }
+      }
+      ul {
+        margin-left: 3rem;
+        display: flex;
+        list-style: none;
+        @include center();
+        li {
+          margin: 1.5rem;
+          width: 13rem;
+          text-align: center;
+          .navLinks {
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: 2rem;
+            text-transform: capitalize;
+            color: $primary-color1;
+            @include navTransBackgournd();
+            transition: all 0.2s ease-in;
+            &:hover {
+              font-size: 2.1rem;
+            }
+          }
+        }
+      }
+    }
+    /* Navbar right section styling */
+    .right-section {
+      width: 30%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 2.5rem;
+
+      .icon1 {
+        font-size: 2.5rem;
+        color: $primary-color1;
+        margin: 1.4rem;
+        transition: all 0.2s ease-in;
+        &:hover {
+          cursor: pointer;
+          padding-right: 0.4rem;
+        }
+      }
+      .icon2 {
+        font-size: 3.5rem;
+        color: $primary-color1;
+        @include center();
+        transition: all 0.2s ease-in;
+        display: none;
+        &:hover {
+          cursor: pointer;
+          padding-bottom: 1rem;
+        }
+      }
+      .nav-buttons {
+        display: flex;
+        gap: 2.5rem;
+        margin-right: 6rem;
+        .button-link {
+          text-decoration: none;
+          .btn-1 {
+            @include mainButton1-Styling();
+            @include center();
+          }
+          .btn-2 {
+            @include mainButton2-Styling();
+            @include center();
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* End of header and navbar styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* Start of hero section styling */
+/* ---------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 2rem;
+  @include center();
+  padding-bottom: 7rem;
+  margin-bottom: 10rem;
+  box-shadow: $primary-color5 0px 10px 10px -10px;
+  img {
+    width: 140rem;
+    padding-bottom: 7em;
+  }
+  .circle-background {
+    height: 50rem;
+    width: 50rem;
+    background: $primary-color3;
+    border: 6px solid $primary-color1;
+    border-radius: 50%;
+    padding: 4rem;
+    display: none;
+  }
+  .hero__content {
+    position: absolute;
+    text-align: center;
+    @include center();
+    .heading-title {
+      font-size: $font-size8;
+      text-transform: capitalize;
+      color: $primary-color1;
+      font-weight: bolder;
+      margin-bottom: 3rem;
+      animation: h1-move 2s infinite;
+    }
+    p {
+      font-size: $font-size3;
+      text-transform: capitalize;
+      color: $primary-color1;
+      line-height: 1.5em;
+      margin-bottom: 3.8rem;
+    }
+    .hero__button {
+      @include mainButton2-Styling();
+      @include center();
+    }
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* End of hero section styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* Start of products section styling */
+/* ---------------------------------------------------------- */
+
+.products {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 13rem;
+  margin-bottom: 10rem;
+  box-shadow: $primary-color5 0px 10px 10px -10px;
+
+  .section-title {
+    font-size: $font-size6;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    margin-bottom: 10rem;
+    text-align: center;
+  }
+  .products-div {
+    display: flex;
+    flex-direction: row;
+    @include center();
+    flex-wrap: wrap;
+    margin-bottom: 8rem;
+
+    .product {
+      background: $primary-color0;
+      border-radius: 50px;
+      width: 34rem;
+      height: 50rem;
+      margin: 2.2rem;
+      box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+      transition: all 0.2s ease-in;
+      &:hover {
+        transform: translateY(-20px);
+        cursor: pointer;
+      }
+      img {
+        width: 100%;
+        height: 34rem;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+      }
+      // Product details styling
+      .product__details {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 2.5rem;
+        color: $primary-color1;
+        .icon {
+          position: absolute;
+          left: 400px;
+          top: 140px;
+          font-size: 2.5rem;
+          color: $primary-color1;
+          margin: 1.4rem;
+          transition: all 0.2s ease-in;
+          &:hover {
+            cursor: pointer;
+            font-size: 2.8rem;
+          }
+        }
+        .product__title {
+          font-size: $font-size4;
+          text-transform: capitalize;
+          font-weight: bolder;
+          margin-bottom: 1.5rem;
+        }
+        .product__description {
+          font-size: $font-size2;
+          margin-bottom: 1.5rem;
+        }
+        .product__price {
+          font-size: $font-size2;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+  .products-btn {
+    @include mainButton2-Styling();
+    @include center();
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* End of products section styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* Start of about us section styling */
+/* ---------------------------------------------------------- */
+
+.AboutUs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include center();
+  padding-bottom: 15rem;
+  padding-top: 4rem;
+  margin-bottom: 10rem;
+  .section-title {
+    font-size: $font-size6;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .content {
+    font-size: $font-size5;
+    text-align: justify;
+    text-align-last: center;
+    width: 65vw;
+    margin-top: 3rem;
+    text-transform: capitalize;
+    color: $primary-color1;
+    line-height: 1.5em;
+    .innerTextLink {
+      text-decoration: none;
+      font-weight: bolder;
+      color: $primary-color1;
+      text-transform: capitalize;
+    }
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* End of about us section styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* Start of reviews section styling */
+/* ---------------------------------------------------------- */
+
+.reviews {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15rem;
+  margin-bottom: 10rem;
+  box-shadow: $primary-color5 0px 10px 10px -10px;
+  .section-title {
+    font-size: $font-size6;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    margin-bottom: 10rem;
+    text-align: center;
+  }
+  // Divide the seciton to left and right
+  .main-section {
+    display: flex;
+    // flex-direction: row;
+    @include center();
+    width: 100%;
+    // Styling the rating icon div
+    .rate-div {
+      width: 100%;
+      height: 30rem;
+      display: flex;
+      flex-direction: column;
+      @include center();
+      .rate-icon {
+        position: relative;
+        color: $primary-color1;
+        font-size: 40rem;
+        margin-right: 1rem;
+        animation: star-move 1.5s infinite;
+      }
+      .rating-value {
+        color: $primary-color1;
+        font-size: 10rem;
+        margin-top: 5rem;
+        // margin-bottom: 20rem;
+        font-weight: bold;
+      }
+    }
+    // Styling the reviews div
+    .reviews-div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @include center();
+      .review {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+        padding: 3rem;
+        background: $primary-color0;
+        min-height: 11rem;
+        width: 45rem;
+
+        border-radius: 50px;
+        color: $primary-color1;
+        box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+        transition: all 0.2s ease-in;
+        &:hover {
+          transform: translateX(-50px);
+        }
+        .review__rating {
+          justify-content: flex-start;
+          font-size: $font-size4;
+          font-weight: bolder;
+          margin-bottom: 1.5rem;
+        }
+        .review__username {
+          justify-content: flex-start;
+          font-size: $font-size4;
+          text-transform: capitalize;
+          font-weight: bolder;
+          margin-bottom: 1.5rem;
+          margin-left: 3rem;
+        }
+        .review__content {
+          justify-content: flex-start;
+          font-size: $font-size4;
+          margin-bottom: 1.5rem;
+          margin-left: 3rem;
+          max-width: 40rem;
+        }
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* End of reviews section styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* Start of newsletter subscription section styling */
+/* ---------------------------------------------------------- */
+
+.newsletter-subscription {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include center();
+  padding-bottom: 15rem;
+  padding-top: 4rem;
+  margin-bottom: 10rem;
+
+  box-shadow: $primary-color5 0px 10px 10px -10px;
+  .section-title {
+    font-size: $font-size6;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .content {
+    font-size: $font-size5;
+    text-align: center;
+    margin-top: 3rem;
+    text-transform: capitalize;
+    color: $primary-color1;
+    line-height: 1.5em;
+  }
+  // Styling the form
+  .subscription-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    @include center();
+    margin-top: 5rem;
+    gap: 1rem;
+    .email-label {
+      font-size: $font-size4;
+      color: $primary-color1;
+      text-transform: capitalize;
+      font-weight: bolder;
+      margin-bottom: 2rem;
+    }
+    .email-textbox {
+      width: 50vw;
+      height: 5rem;
+      border-radius: 50px;
+      padding: 0 4rem;
+      font-size: $font-size4;
+      color: $primary-color1;
+      text-transform: lowercase;
+      border: 4px solid $primary-color1;
+      margin-bottom: 2rem;
+      outline: none;
+    }
+    .form-submit-btn {
+      @include mainButton2-Styling();
+      @include center();
+    }
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* End of newsletter subscription section styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* Start of footer styling */
+/* ---------------------------------------------------------- */
+
+footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include center();
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+  background: $primary-color5;
+
+  // Styling footer top sections
+  .top-sections {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    // Styling footer top left section
+    .top-left-section {
+      margin: 5vh;
+      // margin-top: 4rem;
+      width: 33.33%;
+      height: 40vh;
+      justify-content: center;
+      white-space: nowrap;
+      @include center();
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+          margin: 1.5rem;
+          a {
+            text-decoration: none;
+            font-size: $font-size3;
+            text-transform: capitalize;
+            color: $primary-color1;
+            line-height: 1.5em;
+            transition: all 0.2s ease-in;
+            &:hover {
+              font-size: $font-size4;
+            }
+          }
+        }
+      }
+    }
+    // Styling footer top mid seciton
+    .top-mid-section {
+      margin: 5vh;
+      // margin-top: 4rem;
+      width: 33.33%;
+      height: 40vh;
+      white-space: nowrap;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      @include center();
+      color: $primary-color1;
+      .contact-info {
+        white-space: nowrap;
+        .section-title {
+          font-size: $font-size3;
+          margin: 1.5rem;
+          font-weight: bolder;
+        }
+        a {
+          text-decoration: none;
+          font-size: $font-size3;
+          color: $primary-color1;
+          line-height: 1.5em;
+          margin: 1.5rem;
+          transition: all 0.2s ease-in;
+          &:hover {
+            font-size: $font-size4;
+          }
+        }
+        p {
+          font-size: $font-size3;
+          color: $primary-color1;
+          line-height: 1.5em;
+          margin: 1.5rem;
+        }
+      }
+      .social-media-icons {
+        width: fit-content;
+        .section-title {
+          font-size: $font-size3;
+          margin: 1.5rem;
+          font-weight: bolder;
+          margin-top: 3rem;
+          margin-bottom: 1.5rem;
+        }
+        .icons {
+          height: 7rem;
+          margin-bottom: 4rem;
+          .footer-social-links {
+            color: $primary-color1;
+
+            .icon {
+              border: 4px solid $primary-color1;
+              border-radius: 50px;
+              padding: 1rem;
+              font-size: 2.5rem;
+              margin: 1rem;
+              font-weight: bolder;
+              transition: all 0.2s ease-in;
+              background: $primary-color3;
+              &:hover {
+                cursor: pointer;
+                font-size: 2.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    // Styling footer top right seciton
+    .top-right-section {
+      margin: 5vh;
+      // margin-top: 4rem;
+      display: flex;
+      width: 33.33%;
+      height: 40vh;
+
+      text-align: center;
+      @include center();
+      img {
+        text-align: center;
+        @include center();
+      }
+    }
+  }
+  // Styling footer bottom seciton
+  .bottom-section {
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    @include center();
+    color: $primary-color1;
+    p {
+      font-size: $font-size3;
+      color: $primary-color1;
+      margin: 1.5rem;
+      @include center();
+    }
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* End of footer styling */
+/* ---------------------------------------------------------- */
+
+// Media queries for responsive design
+
+/* Extra small devices (phones, 600px and down) */
+
+@media screen and (max-width: 1000px) {
+  header .nav-bar .left-section .logo img {
+    width: 300px;
+    height: 113px;
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 2200px) {
+  .hero img {
+    display: none;
+  }
+  .hero .circle-background {
+    display: block;
+  }
+  .hero .hero__content .heading-title {
+    font-size: $font-size6;
+    margin-top: 8rem;
+  }
+  .nav-bar .left-section ul {
+    display: none !important;
+  }
+
+  .nav-bar .right-section .icon2 {
+    display: block !important;
+  }
+  .nav-bar .right-section .icon1 {
+    display: none;
+  }
+  .nav-bar .right-section .nav-buttons {
+    display: none;
+  }
+  .nav-bar .right-section .nav-buttons button {
+    display: none !important;
+  }
+
+  .reviews .main-section {
+    flex-direction: column;
+    margin-top: 10rem;
+    gap: 25vh;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  footer .top-sections {
+    flex-direction: column;
+  }
+
+  footer .top-sections .top-left-section ul {
+    text-align: center;
+  }
+  footer .top-sections .top-mid-section {
+    text-align: center;
+  }
+}
