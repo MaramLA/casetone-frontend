@@ -9,5 +9,6 @@ export const productDetailsPath = '/details'
 
 export const usersPath = './dashboard/admin/users'
 export const adminDashboardPath = '/admin-dashboard'
-export const productsPath = '/dashboard/admin/products'
 export const categoryPath = '/dashboard/admin/category'
+export const productsPath = '/dashboard/admin/products'
+export const addProductPath = '/dashboard/admin/add-product'

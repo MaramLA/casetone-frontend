@@ -55,7 +55,6 @@ const Footer = () => {
           <div className="contact-info">
             <h2 className="section-title">Contact Information</h2>
             <a href="mailto:support@casetone.com">support@casetone.com</a>
-            <p>0131234567</p>
           </div>
           {/* Social media section */}
           <div className="social-media-icons">

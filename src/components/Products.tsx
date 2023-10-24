@@ -2,14 +2,19 @@ import React from 'react'
 
 const Products = () => {
   return (
-    <section className="products">
-      <h2 className="section-title" id="productsSection">
+    <section className="products" id="productsSection">
+      <label htmlFor="search-product" className="section-title">
         Products
-      </h2>
+      </label>
+      <input type="text" className="search-product" id="search-product" placeholder="search" />
+
       {/* Products */}
       <div className="products-div">
         <div className="product">
-          <img src="./assets/images/products/pic1.webp" alt="Product" />
+          <img
+            src="https://ae01.alicdn.com/kf/S1c603484c98c467faaa86a2f2b0dee4f2/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
+            alt="Product"
+          />
           <div className="product__details">
             <p className="product__title">Hello Kitty</p>
             <p className="product__description">iPhone 13 Hello Kitty case</p>
@@ -18,7 +23,10 @@ const Products = () => {
           </div>
         </div>
         <div className="product">
-          <img src="./assets/images/products/pic2.webp" alt="Product" />
+          <img
+            src="https://ae01.alicdn.com/kf/S1c603484c98c467faaa86a2f2b0dee4f2/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
+            alt="Product"
+          />
           <div className="product__details">
             <p className="product__title">Trans Wallet</p>
             <p className="product__description">iPhone 13 Pro Trans Wallet case</p>
@@ -27,7 +35,10 @@ const Products = () => {
           </div>
         </div>
         <div className="product">
-          <img src="./assets/images/products/pic4.webp" alt="Product" />
+          <img
+            src="https://ae01.alicdn.com/kf/S1c603484c98c467faaa86a2f2b0dee4f2/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
+            alt="Product"
+          />
           <div className="product__details">
             <p className="product__title">Yellow Waves</p>
             <p className="product__description">iPhone 13 Pro Yellow Waves case</p>

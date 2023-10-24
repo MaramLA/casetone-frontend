@@ -26,7 +26,7 @@ const AdminNavbar = () => {
             </li>
             <li>
               <Link to="/dashboard/admin/category" className="navLinks">
-                Category
+                Categories
               </Link>
             </li>
             <li>

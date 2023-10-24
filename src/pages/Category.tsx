@@ -4,22 +4,26 @@ import { AiFillEdit } from 'react-icons/ai'
 
 const Category = () => {
   return (
-    <main className="category">
-      <form className="">
-        <input type="text" name="category" id="" />
-        <button>Add Category</button>
-      </form>
-      <div className="categories-list">
-        <h2>Categories</h2>
-        <div className="category-card">
-          <p>Name</p>
-          <button>Edit</button>
-          <div className="controlers">
-            <AiFillEdit />
-            <MdDelete />
+    <main>
+      <section className="category">
+        <form className="form">
+          <div className="entry">
+            <label htmlFor="category-input">Categories</label>
+            <input type="text" name="category-input" id="category-input" placeholder="Category" />
+          </div>
+          <button className="add-btn">Add</button>
+        </form>
+        <div className="category-container">
+          <h3 className="section-title">Categories List</h3>
+          <div className="single-category">
+            <p className="category-name">name</p>
+            <div className="controllers">
+              <AiFillEdit className="editIcon" />
+              <MdDelete className="deleteIcon" />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   )
 }

@@ -45,11 +45,18 @@ const GuestNavbar = () => {
                 About us
               </InnerLink>
             </li>
+            <li>
+              <InnerLink className="navLinks" smooth to="/user/cart/#orders">
+                Orders
+              </InnerLink>
+            </li>
           </ul>
         </div>
         <div className="right-section">
           {/* Cart icon  */}
-          <i className="fa fa-shopping-cart icon1" aria-hidden="true"></i>
+          <Link to={cartPath}>
+            <i className="fa fa-shopping-cart icon1" aria-hidden="true"></i>
+          </Link>
           {/* burger icon  */}
           <i className="fa-solid fa-bars icon2"></i>
           {/* Navigation buttons  */}

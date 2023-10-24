@@ -12,7 +12,8 @@ import {
   errorPath,
   homePath,
   signInPath,
-  signUpPath
+  signUpPath,
+  addProductPath
 } from './pathLinks'
 
 import Products from './components/Products'
@@ -21,7 +22,6 @@ import Users from './components/Users'
 import GuestNavbar from './layout/GuestNavbar'
 import AdminNavbar from './layout/AdminNavbar'
 import UserNavbar from './layout/UserNavbar'
-import Footer from './layout/Footer'
 
 import AdminDashboard from './pages/AdminDashboard'
 import ProductDetails from './pages/ProductDetails'
@@ -32,6 +32,7 @@ import Error from './pages/Error'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
+import AddProduct from './pages/AddProduct'
 
 const Index = () => {
   const [isAdmin, setIsAdmin] = useState(true)
@@ -54,8 +55,8 @@ const Index = () => {
         <Route path={categoryPath} element={<Category />} />
         <Route path={productsPath} element={<Products />} />
         <Route path={adminDashboardPath} element={<AdminDashboard />} />
+        <Route path={addProductPath} element={<AddProduct />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   )
 }

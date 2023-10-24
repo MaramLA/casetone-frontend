@@ -23,7 +23,7 @@
 }
 
 /* ---------------------------------------------------------- */
-/* Start of general styling */
+/* Start of layout styling */
 /* ---------------------------------------------------------- */
 * {
   margin: 0;
@@ -47,10 +47,7 @@ main {
 }
 
 /* ---------------------------------------------------------- */
-/* End of general styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of header and navbar styling */
+/* Start of navbar styling */
 /* ---------------------------------------------------------- */
 header {
   position: relative;
@@ -258,572 +255,7 @@ header .nav-bar .right-section .nav-buttons .button-link .btn-2:hover {
 }
 
 /* ---------------------------------------------------------- */
-/* End of header and navbar styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of hero section styling */
-/* ---------------------------------------------------------- */
-.hero {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  padding-top: 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-bottom: 7rem;
-  margin-bottom: 10rem;
-  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
-          box-shadow: #dddddd 0px 10px 10px -10px;
-}
-
-.hero img {
-  width: 140rem;
-  padding-bottom: 7em;
-}
-
-.hero .circle-background {
-  height: 50rem;
-  width: 50rem;
-  background: #edefef;
-  border: 6px solid #696262;
-  border-radius: 50%;
-  padding: 4rem;
-  display: none;
-}
-
-.hero .hero__content {
-  position: absolute;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.hero .hero__content .heading-title {
-  font-size: 6em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 3rem;
-  -webkit-animation: h1-move 2s infinite;
-          animation: h1-move 2s infinite;
-}
-
-.hero .hero__content p {
-  font-size: 2em;
-  text-transform: capitalize;
-  color: #696262;
-  line-height: 1.5em;
-  margin-bottom: 3.8rem;
-}
-
-.hero .hero__content .hero__button {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #ffff;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.hero .hero__content .hero__button:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of hero section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of products section styling */
-/* ---------------------------------------------------------- */
-.products {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-bottom: 13rem;
-  margin-bottom: 10rem;
-  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
-          box-shadow: #dddddd 0px 10px 10px -10px;
-}
-
-.products .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 10rem;
-  text-align: center;
-}
-
-.products .products-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-bottom: 8rem;
-}
-
-.products .products-div .product {
-  background: #ffff;
-  border-radius: 50px;
-  width: 34rem;
-  height: 50rem;
-  margin: 2.2rem;
-  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
-          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-.products .products-div .product:hover {
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
-  cursor: pointer;
-}
-
-.products .products-div .product img {
-  width: 100%;
-  height: 34rem;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-}
-
-.products .products-div .product .product__details {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 2.5rem;
-  color: #696262;
-}
-
-.products .products-div .product .product__details .icon {
-  position: absolute;
-  left: 400px;
-  top: 140px;
-  font-size: 2.5rem;
-  color: #696262;
-  margin: 1.4rem;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-.products .products-div .product .product__details .icon:hover {
-  cursor: pointer;
-  font-size: 2.8rem;
-}
-
-.products .products-div .product .product__details .product__title {
-  font-size: 2.1em;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 1.5rem;
-}
-
-.products .products-div .product .product__details .product__description {
-  font-size: 1.9em;
-  margin-bottom: 1.5rem;
-}
-
-.products .products-div .product .product__details .product__price {
-  font-size: 1.9em;
-  margin-bottom: 1.5rem;
-}
-
-.products .products-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #ffff;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.products .products-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of products section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of about us section styling */
-/* ---------------------------------------------------------- */
-.AboutUs {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-bottom: 15rem;
-  padding-top: 4rem;
-  margin-bottom: 10rem;
-}
-
-.AboutUs .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-}
-
-.AboutUs .content {
-  font-size: 2.2em;
-  text-align: justify;
-  text-align-last: center;
-  width: 65vw;
-  margin-top: 3rem;
-  text-transform: capitalize;
-  color: #696262;
-  line-height: 1.5em;
-}
-
-.AboutUs .content .innerTextLink {
-  text-decoration: none;
-  font-weight: bolder;
-  color: #696262;
-  text-transform: capitalize;
-}
-
-/* ---------------------------------------------------------- */
-/* End of about us section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of reviews section styling */
-/* ---------------------------------------------------------- */
-.reviews {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-bottom: 15rem;
-  margin-bottom: 10rem;
-  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
-          box-shadow: #dddddd 0px 10px 10px -10px;
-}
-
-.reviews .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 10rem;
-  text-align: center;
-}
-
-.reviews .main-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-}
-
-.reviews .main-section .rate-div {
-  width: 100%;
-  height: 30rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.reviews .main-section .rate-div .rate-icon {
-  position: relative;
-  color: #696262;
-  font-size: 40rem;
-  margin-right: 1rem;
-  -webkit-animation: star-move 1.5s infinite;
-          animation: star-move 1.5s infinite;
-}
-
-.reviews .main-section .rate-div .rating-value {
-  color: #696262;
-  font-size: 10rem;
-  margin-top: 5rem;
-  font-weight: bold;
-}
-
-.reviews .main-section .reviews-div {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.reviews .main-section .reviews-div .review {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 2rem;
-  padding: 3rem;
-  background: #ffff;
-  min-height: 11rem;
-  width: 45rem;
-  border-radius: 50px;
-  color: #696262;
-  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
-          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-.reviews .main-section .reviews-div .review:hover {
-  -webkit-transform: translateX(-50px);
-          transform: translateX(-50px);
-}
-
-.reviews .main-section .reviews-div .review .review__rating {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  font-size: 2.1em;
-  font-weight: bolder;
-  margin-bottom: 1.5rem;
-}
-
-.reviews .main-section .reviews-div .review .review__username {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  font-size: 2.1em;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 1.5rem;
-  margin-left: 3rem;
-}
-
-.reviews .main-section .reviews-div .review .review__content {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  font-size: 2.1em;
-  margin-bottom: 1.5rem;
-  margin-left: 3rem;
-  max-width: 40rem;
-}
-
-/* ---------------------------------------------------------- */
-/* End of reviews section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of newsletter subscription section styling */
-/* ---------------------------------------------------------- */
-.newsletter-subscription {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-bottom: 15rem;
-  padding-top: 4rem;
-  margin-bottom: 10rem;
-  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
-          box-shadow: #dddddd 0px 10px 10px -10px;
-}
-
-.newsletter-subscription .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-}
-
-.newsletter-subscription .content {
-  font-size: 2.2em;
-  text-align: center;
-  margin-top: 3rem;
-  text-transform: capitalize;
-  color: #696262;
-  line-height: 1.5em;
-}
-
-.newsletter-subscription .subscription-form {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 5rem;
-  gap: 1rem;
-}
-
-.newsletter-subscription .subscription-form .email-label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-
-.newsletter-subscription .subscription-form .email-textbox {
-  width: 50vw;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-
-.newsletter-subscription .subscription-form .form-submit-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #ffff;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.newsletter-subscription .subscription-form .form-submit-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of newsletter subscription section styling */
+/* End of navbar styling */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* Start of footer styling */
@@ -1058,6 +490,1932 @@ footer .bottom-section p {
 /* ---------------------------------------------------------- */
 /* End of footer styling */
 /* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* End of layout styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of hero section styling */
+/* ---------------------------------------------------------- */
+.hero {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-top: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 7rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.hero img {
+  width: 140rem;
+  padding-bottom: 7em;
+}
+
+.hero .circle-background {
+  height: 50rem;
+  width: 50rem;
+  background: #edefef;
+  border: 6px solid #696262;
+  border-radius: 50%;
+  padding: 4rem;
+  display: none;
+}
+
+.hero .hero__content {
+  position: absolute;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero .hero__content .heading-title {
+  font-size: 6em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+  -webkit-animation: h1-move 2s infinite;
+          animation: h1-move 2s infinite;
+}
+
+.hero .hero__content p {
+  font-size: 2em;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+  margin-bottom: 3.8rem;
+}
+
+.hero .hero__content .hero__button {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero .hero__content .hero__button:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of hero section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of products section styling */
+/* ---------------------------------------------------------- */
+.products {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 13rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.products .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 7rem;
+  text-align: center;
+}
+
+.products .search-product {
+  width: 40vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 8rem;
+  outline: none;
+  background: #edefef;
+}
+
+.products .products-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 8rem;
+}
+
+.products .products-div .product {
+  background: #ffff;
+  border-radius: 50px;
+  width: 34rem;
+  height: 50rem;
+  margin: 2.2rem;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.products .products-div .product:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  cursor: pointer;
+}
+
+.products .products-div .product img {
+  width: 100%;
+  height: 34rem;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.products .products-div .product .product__details {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2.5rem;
+  color: #696262;
+}
+
+.products .products-div .product .product__details .icon {
+  position: absolute;
+  left: 400px;
+  top: 140px;
+  font-size: 2.5rem;
+  color: #696262;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.products .products-div .product .product__details .icon:hover {
+  cursor: pointer;
+  font-size: 2.8rem;
+}
+
+.products .products-div .product .product__details .product__title {
+  font-size: 2.1em;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+}
+
+.products .products-div .product .product__details .product__description {
+  font-size: 1.9em;
+  margin-bottom: 1.5rem;
+}
+
+.products .products-div .product .product__details .product__price {
+  font-size: 1.9em;
+  margin-bottom: 1.5rem;
+}
+
+.products .products-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.products .products-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of products section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of about us section styling */
+/* ---------------------------------------------------------- */
+.AboutUs {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 15rem;
+  padding-top: 4rem;
+  margin-bottom: 10rem;
+}
+
+.AboutUs .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.AboutUs .content {
+  font-size: 2.2em;
+  text-align: justify;
+  text-align-last: center;
+  margin-bottom: 3rem;
+  width: 55vw;
+  margin-top: 3rem;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+}
+
+.AboutUs .content .innerTextLink {
+  text-decoration: none;
+  font-weight: bolder;
+  color: #696262;
+  text-transform: capitalize;
+}
+
+/* ---------------------------------------------------------- */
+/* End of about us section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of reviews section styling */
+/* ---------------------------------------------------------- */
+.reviews {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 15rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.reviews .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 10rem;
+  text-align: center;
+}
+
+.reviews .main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.reviews .main-section .rate-div {
+  width: 100%;
+  height: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reviews .main-section .rate-div .rate-icon {
+  position: relative;
+  color: #696262;
+  font-size: 40rem;
+  margin-right: 1rem;
+  -webkit-animation: star-move 1.5s infinite;
+          animation: star-move 1.5s infinite;
+}
+
+.reviews .main-section .rate-div .rating-value {
+  color: #696262;
+  font-size: 10rem;
+  margin-top: 5rem;
+  font-weight: bold;
+}
+
+.reviews .main-section .reviews-div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reviews .main-section .reviews-div .review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+  padding: 3rem;
+  background: #ffff;
+  min-height: 11rem;
+  width: 45rem;
+  border-radius: 50px;
+  color: #696262;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.reviews .main-section .reviews-div .review:hover {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+.reviews .main-section .reviews-div .review .review__rating {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 2.1em;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+}
+
+.reviews .main-section .reviews-div .review .review__username {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 2.1em;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+}
+
+.reviews .main-section .reviews-div .review .review__content {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 2.1em;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+  max-width: 40rem;
+}
+
+/* ---------------------------------------------------------- */
+/* End of reviews section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of newsletter subscription section styling */
+/* ---------------------------------------------------------- */
+.newsletter-subscription {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 15rem;
+  padding-top: 4rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.newsletter-subscription .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.newsletter-subscription .content {
+  font-size: 2.2em;
+  text-align: center;
+  margin-top: 3rem;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+}
+
+.newsletter-subscription .subscription-form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5rem;
+  gap: 1.5rem;
+}
+
+.newsletter-subscription .subscription-form .email-label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.newsletter-subscription .subscription-form .email-textbox {
+  width: 50vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  background: #edefef;
+  outline: none;
+}
+
+.newsletter-subscription .subscription-form .form-submit-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.newsletter-subscription .subscription-form .form-submit-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of newsletter subscription section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of purchases styling */
+/* ---------------------------------------------------------- */
+.forPurchase {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 15rem;
+  padding-top: 2rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.forPurchase .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.forPurchase .items {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  gap: 4rem;
+  border-radius: 50px;
+  padding: 6rem 0;
+  background: white;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+}
+
+.forPurchase .items .section-title {
+  font-size: 3em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.forPurchase .items .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10vw;
+  width: 60vw;
+  height: 5rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.forPurchase .items .item p {
+  font-size: 2.2em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 20rem;
+}
+
+.forPurchase .items .item .deleteIcon {
+  font-size: 18pt;
+  color: #a33636;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.forPurchase .items .item .deleteIcon:hover {
+  cursor: pointer;
+  font-size: 20pt;
+}
+
+.forPurchase .items .purchase-summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60vw;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.forPurchase .items .purchase-summary p {
+  font-size: 2.2em;
+  color: #696262;
+  width: 20rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.forPurchase .items .purchase-summary .checkout-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.forPurchase .items .purchase-summary .checkout-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of purchases styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of orders styling */
+/* ---------------------------------------------------------- */
+.orders {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 15rem;
+  padding-top: 2rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.orders .orders-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  gap: 4rem;
+  border-radius: 50px;
+  padding: 6rem 0;
+  background: white;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+}
+
+.orders .orders-container .section-title {
+  font-size: 3em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.orders .orders-container .order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6.7vw;
+  width: 60vw;
+  height: 5rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.orders .orders-container .order .oreder-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+  width: 20rem;
+}
+
+.orders .orders-container .order p {
+  font-size: 2.2em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 20rem;
+}
+
+.orders .orders-container .order .deleteIcon {
+  font-size: 18pt;
+  color: #a33636;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.orders .orders-container .order .deleteIcon:hover {
+  cursor: pointer;
+  font-size: 20pt;
+}
+
+.orders .orders-container .purchase-summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60vw;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.orders .orders-container .purchase-summary p {
+  font-size: 2.2em;
+  color: #696262;
+  width: 20rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.orders .orders-container .purchase-summary .checkout-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.orders .orders-container .purchase-summary .checkout-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of orders styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of sign in styling */
+/* ---------------------------------------------------------- */
+.signIn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signIn .signIn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+  background: #ffff;
+  min-height: 11rem;
+  width: 46rem;
+  padding: 6rem 3rem;
+  text-align: center;
+  border-radius: 50px;
+  color: #696262;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+}
+
+.signIn .signIn-container .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.signIn .signIn-container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+}
+
+.signIn .signIn-container .form .entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signIn .signIn-container .form .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.signIn .signIn-container .form .entry input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.signIn .signIn-container .form .signIn-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.signIn .signIn-container .form .signIn-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+.signIn .signIn-container .formSignUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signIn .signIn-container .formSignUp p {
+  font-size: 1.8em;
+  color: #696262;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signIn .signIn-container .formSignUp a {
+  font-size: 1.8em;
+  text-decoration: none;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.signIn .signIn-container .formSignUp a:hover {
+  cursor: pointer;
+  font-size: 1.9em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of sign in styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of sign up styling */
+/* ---------------------------------------------------------- */
+.signUp {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signUp .signUp-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+  background: #ffff;
+  min-height: 11rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6rem 8rem;
+  text-align: center;
+  border-radius: 50px;
+  color: #696262;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+}
+
+.signUp .signUp-container .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.signUp .signUp-container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.signUp .signUp-container .form .top-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8rem;
+}
+
+.signUp .signUp-container .form .top-side .left-side .entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signUp .signUp-container .form .top-side .left-side .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.signUp .signUp-container .form .top-side .left-side .entry input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.signUp .signUp-container .form .top-side .right-side .entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signUp .signUp-container .form .top-side .right-side .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.signUp .signUp-container .form .top-side .right-side .entry input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.signUp .signUp-container .form .bottom-side {
+  display: inline;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.signUp .signUp-container .form .bottom-side .signUp-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.signUp .signUp-container .form .bottom-side .signUp-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+.signUp .formSignUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signUp .formSignUp p {
+  font-size: 1.8em;
+  color: #696262;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signUp .formSignUp a {
+  font-size: 1.8em;
+  text-decoration: none;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.signUp .formSignUp a:hover {
+  cursor: pointer;
+  font-size: 1.9em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of sign up styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of profile styling */
+/* ---------------------------------------------------------- */
+.profile {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile .profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+  background: #ffff;
+  min-height: 11rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6rem 8rem;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50px;
+  color: #696262;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+}
+
+.profile .profile-container img {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 5rem;
+  border: 3px solid #dddddd;
+  border-radius: 50%;
+}
+
+.profile .profile-container .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.profile .profile-container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile .profile-container .form .top-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8rem;
+}
+
+.profile .profile-container .form .top-side .left-side .entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile .profile-container .form .top-side .left-side .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.profile .profile-container .form .top-side .left-side .entry input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.profile .profile-container .form .top-side .right-side .entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile .profile-container .form .top-side .right-side .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.profile .profile-container .form .top-side .right-side .entry input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.profile .profile-container .form .bottom-side {
+  display: inline;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile .profile-container .form .bottom-side .save-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile .profile-container .form .bottom-side .save-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+.profile .formSignUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile .formSignUp p {
+  font-size: 1.8em;
+  color: #696262;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile .formSignUp a {
+  font-size: 1.8em;
+  text-decoration: none;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.profile .formSignUp a:hover {
+  cursor: pointer;
+  font-size: 1.9em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of profile page styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of category page styling */
+/* ---------------------------------------------------------- */
+.category {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.category .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.category .form .entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.category .form .entry label {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.category .form .entry input {
+  width: 50vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  background: #edefef;
+  outline: none;
+}
+
+.category .form .add-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.category .form .add-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+.category .category-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  gap: 4rem;
+  border-radius: 50px;
+  padding: 6rem 0;
+  background: white;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+}
+
+.category .category-container .section-title {
+  font-size: 3em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.category .category-container .single-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6.7vw;
+  width: 45vw;
+  height: 5rem;
+}
+
+.category .category-container .single-category p {
+  font-size: 2.2em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 50rem;
+}
+
+.category .category-container .single-category .controllers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+}
+
+.category .category-container .single-category .controllers .deleteIcon {
+  font-size: 18pt;
+  color: #a33636;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.category .category-container .single-category .controllers .deleteIcon:hover {
+  cursor: pointer;
+  font-size: 20pt;
+}
+
+.category .category-container .single-category .controllers .editIcon {
+  font-size: 18pt;
+  color: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.category .category-container .single-category .controllers .editIcon:hover {
+  cursor: pointer;
+  font-size: 20pt;
+}
+
+/* ---------------------------------------------------------- */
+/* End of category page styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of error styling */
+/* ---------------------------------------------------------- */
+.error-container {
+  margin-top: 17vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.error-container h2 {
+  font-size: 5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.error-container p {
+  font-size: 2.8em;
+  text-align: justify;
+  text-align-last: center;
+  margin-top: 3rem;
+  width: 50vw;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+  margin-bottom: 5rem;
+}
+
+.error-container button {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-bottom: 10rem;
+}
+
+.error-container button:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of error styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of product details styling */
+/* ---------------------------------------------------------- */
+.productDetails {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.productDetails .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 10rem;
+  gap: 14rem;
+  margin-bottom: 5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.productDetails .container .left-side img {
+  height: 60vh;
+  border-radius: 50%;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+}
+
+.productDetails .container .right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productDetails .container .right-side .product-category {
+  font-size: 2.1em;
+  color: #909090;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.productDetails .container .right-side h2 {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  color: #696262;
+  font-weight: bolder;
+  text-align: left;
+}
+
+.productDetails .container .right-side .discription {
+  margin-bottom: 5rem;
+}
+
+.productDetails .container .right-side h3 {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.productDetails .container .right-side p {
+  font-size: 2.2em;
+  text-align: justify;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+  width: 45rem;
+}
+
+.productDetails .container .right-side .buttons {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  text-align: left;
+}
+
+.productDetails .container .right-side .buttons .buy-btn {
+  margin-top: 5rem;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.productDetails .container .right-side .buttons .buy-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of product details styling */
+/* ---------------------------------------------------------- */
 /* Extra small devices (phones, 600px and down) */
 @media screen and (max-width: 1000px) {
   header .nav-bar .left-section .logo img {
@@ -1100,6 +2458,36 @@ footer .bottom-section p {
             flex-direction: column;
     margin-top: 10rem;
     gap: 25vh;
+  }
+  .signUp .signUp-container .form .top-side {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile .profile-container .form .top-side {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .productDetails .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .productDetails .container .right-side .buttons {
+    text-align: center;
   }
 }
 
