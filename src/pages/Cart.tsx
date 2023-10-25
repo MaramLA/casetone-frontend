@@ -1,5 +1,5 @@
 import React from 'react'
-import ForPurchase from '../components/ForPurchase'
+import PurchasesList from '../components/PurchasesList'
 import Oreders from '../components/Oreders'
 import Footer from '../layout/Footer'
 
@@ -7,7 +7,7 @@ const Cart = () => {
   return (
     <div>
       <main>
-        <ForPurchase />
+        <PurchasesList />
         <Oreders />
       </main>
       <Footer />

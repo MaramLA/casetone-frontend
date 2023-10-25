@@ -814,14 +814,17 @@ footer {
     padding: 6rem 4rem;
     background: white;
     box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-
-    .section-title {
-      font-size: 3em;
-      text-transform: capitalize;
-      color: $primary-color1;
-      font-weight: bolder;
-      text-align: center;
-      margin-bottom: 3rem;
+    .info {
+      .section-title {
+        font-size: 3em;
+        text-transform: capitalize;
+        color: $primary-color1;
+        font-weight: bolder;
+        text-align: center;
+      }
+      .email {
+        margin-bottom: 3rem;
+      }
     }
     .order {
       display: flex;
@@ -867,6 +870,18 @@ footer {
         text-align: center;
         text-transform: capitalize;
         font-weight: bold;
+      }
+    }
+    .buttons {
+      display: flex;
+      gap: 2rem;
+      .block-btn {
+        @include center();
+        @include mainButton1-Styling();
+      }
+      .remove-btn {
+        @include center();
+        @include mainButton1-Styling();
       }
     }
   }
@@ -1125,6 +1140,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5rem;
   .profile-container {
     display: flex;
     flex-direction: column;
@@ -1290,6 +1306,7 @@ footer {
     display: flex;
     @include center();
     flex-direction: column;
+    margin-bottom: 10rem;
     width: 60%;
     gap: 4rem;
     border-radius: 50px;
@@ -1462,6 +1479,42 @@ footer {
 }
 /* ---------------------------------------------------------- */
 /* End of product details styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* Start of users styling */
+/* ---------------------------------------------------------- */
+.users {
+  .section-title {
+    font-size: $font-size6;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    @include center();
+    .username {
+      font-size: $font-size4;
+      color: $primary-color1;
+      text-transform: capitalize;
+      font-weight: bolder;
+      margin-bottom: 2rem;
+    }
+    .email {
+      font-size: $font-size4;
+      color: $primary-color1;
+      text-transform: lowercase;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+  }
+}
+/* ---------------------------------------------------------- */
+/* End of users styling */
 /* ---------------------------------------------------------- */
 
 // Media queries for responsive design

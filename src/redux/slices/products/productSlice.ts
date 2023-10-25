@@ -8,6 +8,7 @@ export type Product = {
   categories: number[]
   variants: string[]
   sizes: string[]
+  price: string[]
 }
 
 export type ProductState = {

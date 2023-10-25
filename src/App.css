@@ -1253,12 +1253,15 @@ footer .bottom-section p {
           box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
 }
 
-.orders .orders-container .section-title {
+.orders .orders-container .info .section-title {
   font-size: 3em;
   text-transform: capitalize;
   color: #696262;
   font-weight: bolder;
   text-align: center;
+}
+
+.orders .orders-container .info .email {
   margin-bottom: 3rem;
 }
 
@@ -1332,6 +1335,71 @@ footer .bottom-section p {
   text-align: center;
   text-transform: capitalize;
   font-weight: bold;
+}
+
+.orders .orders-container .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.orders .orders-container .buttons .block-btn {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.orders .orders-container .buttons .block-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+.orders .orders-container .buttons .remove-btn {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.orders .orders-container .buttons .remove-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
 }
 
 /* ---------------------------------------------------------- */
@@ -1764,6 +1832,7 @@ footer .bottom-section p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 5rem;
 }
 
 .profile .profile-container {
@@ -2075,6 +2144,7 @@ footer .bottom-section p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 10rem;
   width: 60%;
   gap: 4rem;
   border-radius: 50px;
@@ -2341,6 +2411,53 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of product details styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of users styling */
+/* ---------------------------------------------------------- */
+.users .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.users .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.users .info .username {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.users .info .email {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* ---------------------------------------------------------- */
+/* End of users styling */
 /* ---------------------------------------------------------- */
 /* Extra small devices (phones, 600px and down) */
 @media screen and (max-width: 1000px) {

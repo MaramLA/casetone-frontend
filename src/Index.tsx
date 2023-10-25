@@ -17,7 +17,7 @@ import {
 } from './pathLinks'
 
 import Products from './components/Products'
-import Users from './components/Users'
+import Users from './pages/Users'
 
 import GuestNavbar from './layout/GuestNavbar'
 import AdminNavbar from './layout/AdminNavbar'

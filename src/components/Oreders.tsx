@@ -5,7 +5,9 @@ const Oreders = () => {
   return (
     <section className="orders" id="orders">
       <div className="orders-container">
-        <h3 className="section-title">Orders List</h3>
+        <div className="info">
+          <h3 className="section-title">Orders List</h3>
+        </div>
         <div className="order">
           <p className="order-id">Order# 1</p>
           <div className="oreder-images">
