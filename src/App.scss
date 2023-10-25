@@ -431,7 +431,8 @@ footer {
       box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
       transition: all 0.2s ease-in;
       &:hover {
-        transform: translateY(-20px);
+        // transform: translateY(-20px);
+        border: 1px solid rgb(105, 98, 98);
         cursor: pointer;
       }
       img {
@@ -477,10 +478,10 @@ footer {
       }
     }
   }
-  .products-btn {
-    @include mainButton2-Styling();
-    @include center();
-  }
+  // .products-btn {
+  //   @include mainButton2-Styling();
+  //   @include center();
+  // }
 }
 
 /* ---------------------------------------------------------- */

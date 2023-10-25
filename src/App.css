@@ -669,8 +669,7 @@ footer .bottom-section p {
 }
 
 .products .products-div .product:hover {
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
+  border: 1px solid #696262;
   cursor: pointer;
 }
 
@@ -725,32 +724,6 @@ footer .bottom-section p {
 .products .products-div .product .product__details .product__price {
   font-size: 1.9em;
   margin-bottom: 1.5rem;
-}
-
-.products .products-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #ffff;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.products .products-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
 }
 
 /* ---------------------------------------------------------- */

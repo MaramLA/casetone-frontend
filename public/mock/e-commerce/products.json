@@ -6,7 +6,8 @@
     "description": "Stars phone case for IPhone.",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "description": " Amber phone case for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 5
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "description": "Keren blue phone case for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "description": "Keren pink phone case for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "description": "Letter customise phone case for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 5
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "description": "ESA pink phone case for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 5
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "description": "Customized black case for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "description": "Yellow candy case For iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "description": "Pink candy case For iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 5
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "description": "Cartoon game case For iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "description": "Rabbit bear cartoon case for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "description": "Magnetic skin scrub white case MagSafe for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 5
   },
   {
     "id": 13,
@@ -114,7 +126,8 @@
     "description": "Magnetic skin scrub black case MagSafe for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "description": "Magnetic skin scrub black case MagSafe for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 5
   },
   {
     "id": 15,
@@ -132,6 +146,7 @@
     "description": "Magnetic skin scrub purpule case MagSafe for iPhone",
     "categories": [1],
     "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"]
+    "sizes": ["Pro", "Pro Max"],
+    "price": 10
   }
 ]
