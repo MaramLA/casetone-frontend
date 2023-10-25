@@ -19,18 +19,31 @@ export type UsersState = {
   usersList: User[]
   isLoading: boolean
   error: null | string
+  isSignedIn: boolean
+  userData: null | User
 }
 
 const initialState: UsersState = {
   usersList: [],
   isLoading: false,
-  error: null
+  error: null,
+  isSignedIn: false,
+  userData: null
 }
 
 const usersSlice = createSlice({
   name: 'users',
   initialState,
-  reducers: {},
+  reducers: {
+    signIn: (state, action) => {
+      state.isSignedIn = true
+      state.userData = action.payload
+    },
+    signOut: (state) => {
+      state.isSignedIn = false
+      state.userData = null
+    }
+  },
   extraReducers(builder) {
     builder.addCase(fetchUsers.pending, (state) => {
       state.isLoading = true
@@ -47,4 +60,5 @@ const usersSlice = createSlice({
   }
 })
 
+export const { signIn, signOut } = usersSlice.actions
 export default usersSlice.reducer

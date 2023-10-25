@@ -1,7 +1,10 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 
-import { signUpPath } from '../pathLinks'
+import { homePath, signUpPath } from '../pathLinks'
+import { fetchUsers, signIn } from '../redux/slices/Users/userSlice'
+import { AppDispatch, RootState } from '../redux/store'
 
 type LogInUserType = {
   email: string
@@ -9,6 +12,16 @@ type LogInUserType = {
 }
 
 const SignIn = () => {
+  const { usersList, isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
+
+  const dispatch: AppDispatch = useDispatch()
+  const navigate = useNavigate()
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [])
+
+  console.log(usersList)
+
   const [logInUser, setLogInUser] = useState<LogInUserType>({
     email: '',
     password: ''
@@ -23,7 +36,16 @@ const SignIn = () => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
     try {
-      console.log(logInUser)
+      usersList.find((user) => {
+        const UserExist = user.email === logInUser.email
+        console.log(UserExist)
+        if (UserExist && user.password === logInUser.password) {
+          dispatch(signIn(UserExist))
+          navigate(homePath)
+        } else {
+          console.log('Invalid email or password')
+        }
+      })
     } catch (error) {
       console.log(error)
     }

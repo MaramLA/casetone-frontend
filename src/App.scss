@@ -146,7 +146,7 @@ header {
         display: flex;
         gap: 2.5rem;
         margin-right: 6rem;
-        .button-link {
+        .link-btn {
           text-decoration: none;
           .btn-1 {
             @include mainButton1-Styling();
@@ -156,6 +156,10 @@ header {
             @include mainButton2-Styling();
             @include center();
           }
+        }
+        .btn-1 {
+          @include mainButton1-Styling();
+          @include center();
         }
       }
     }
