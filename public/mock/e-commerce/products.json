@@ -1,152 +1,122 @@
 [
   {
     "id": 1,
-    "name": "Stars case",
-    "image": "https://ae01.alicdn.com/kf/S9b656750f86d487588a8b85eb5781b6dB/Personalise-Name-Multiple-Heart-Star-Luxury-Leather-Customise-Phone-Case-For-IPhone15-14-14ProMax-13-12.jpg_80x80.jpg_.web",
-    "description": "Stars phone case for IPhone.",
+    "name": "Nature case",
+    "image": "https://i.etsystatic.com/40931496/r/il/fb9f16/5478978417/il_1588xN.5478978417_m8sk.jpg",
+    "description": "Nature phone case for IPhone.",
     "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
+    "variants": ["iPhone 11", "iPhone 12"],
+    "sizes": ["6.1-inch"],
+    "price": 18.88
   },
   {
     "id": 2,
-    "name": "Amber case",
-    "image": "https://ae01.alicdn.com/kf/Sd38d3b63018e4a35bdaf32d2e492f78ee/Custom-Monogram-Initial-Name-Brick-Saffiano-Vegan-PU-Leather-Case-for-iphone-14-13-11-12.jpg_80x80.jpg_.webp",
-    "description": " Amber phone case for iPhone",
+    "name": "Black Snake case",
+    "image": "https://i.etsystatic.com/43451363/r/il/f5c118/5242103947/il_600x600.5242103947_eekp.jpg",
+    "description": "Black Snake phone case for iPhone",
     "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 5
+    "variants": ["iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["6.1-inch"],
+    "price": 16.99
   },
   {
     "id": 3,
-    "name": "Keren blue case",
-    "image": "https://ae01.alicdn.com/kf/S0066aa723a304700b8253613782459eav/Custom-Monogram-Initial-Name-Brick-Saffiano-Vegan-PU-Leather-Case-for-iphone-14-13-11-12.jpg_80x80.jpg_.webp",
-    "description": "Keren blue phone case for iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
+    "name": "Boho Polka Dots case",
+    "image": "https://i.etsystatic.com/15852775/r/il/dae558/2909730129/il_1588xN.2909730129_cj0j.jpg",
+    "description": "Boho Polka Dots phone case for iPhone",
+    "categories": [2],
+    "variants": ["iPhone 11", "iPhone 12"],
+    "sizes": ["6.7-inch"],
+    "price": 14.95
   },
   {
     "id": 4,
-    "name": "Keren pink case",
-    "image": "https://ae01.alicdn.com/kf/S591d12afa5f64434b80db2acd5cc6574T/Custom-Monogram-Initial-Name-Brick-Saffiano-Vegan-PU-Leather-Case-for-iphone-14-13-11-12.jpg_80x80.jpg_.webp",
-    "description": "Keren pink phone case for iPhone",
+    "name": "Wheat Cream case",
+    "image": "https://i.etsystatic.com/36526306/r/il/8ba6b5/4748472571/il_600x600.4748472571_nwor.jpg",
+    "description": "Wheat Cream phone case for iPhone",
     "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
+    "variants": ["iPhone 11", "iPhone 12"],
+    "sizes": ["6.1-inch"],
+    "price": 10.4
   },
   {
     "id": 5,
-    "name": "N brown case",
-    "image": "https://ae01.alicdn.com/kf/H7b61d79add6246ecae16cc9154954e6aF/Custom-Name-logo-image-on-Leather-case-for-Iphone-12-11-13-pro-max-Case-Luxury.jpg_80x80.jpg_.webp",
-    "description": "Letter customise phone case for iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 5
+    "name": "Art Flower Vintage case",
+    "image": "https://i.etsystatic.com/39392026/r/il/69bf27/5034145142/il_1588xN.5034145142_c1fv.jpg",
+    "description": "Art Flower Vintage case phone case for iPhone",
+    "categories": [2],
+    "variants": ["iPhone 11", "iPhone 12"],
+    "sizes": ["6.7-inch"],
+    "price": 12.11
   },
   {
     "id": 6,
-    "name": "ESA pink case",
-    "image": "https://ae01.alicdn.com/kf/S1adfae46ddd54e8f9a7785e710548876N/Custom-Gold-Name-Number-Leather-Phone-Case-for-iPhone-13-Pro-Max-12-13-11-12.png_80x80.png_.webp",
-    "description": "ESA pink phone case for iPhone",
+    "name": "Coffee Line Aesthetics case",
+    "image": "https://i.etsystatic.com/24683472/r/il/8aaa5b/3998707365/il_600x600.3998707365_tun7.jpg",
+    "description": "Coffee Line Aesthetics phone case for iPhone",
     "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 5
+    "variants": ["iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["6.1-inch"],
+    "price": 10.27
   },
   {
     "id": 7,
-    "name": "Customized black case",
-    "image": "https://ae01.alicdn.com/kf/He84a3ada845f452e8d90d2f25053c58ai/Personalized-Big-Letter-Name-Mirror-Phone-Case-For-iPhone-13-12-11-Pro-Max-X-XR.jpg_80x80.jpg_.webp",
-    "description": "Customized black case for iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
+    "name": "Velaris City ACOTAR case",
+    "image": "https://i.etsystatic.com/45344926/r/il/491a6a/5402502493/il_1588xN.5402502493_6k0i.jpg",
+    "description": "Velaris City ACOTAR case for iPhone",
+    "categories": [2],
+    "variants": ["iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["6.7-inch"],
+    "price": 17.99
   },
   {
     "id": 8,
-    "name": "Yellow candy case",
-    "image": "https://ae01.alicdn.com/kf/S122fe5e792d141f98e47d52e269296d5a/Candy-Color-Silicone-Phone-Case-For-IPhone-11-12mini-13-14-Pro-Max-Soft-Matte-Shockproof.jpg_80x80.jpg_.webp",
-    "description": "Yellow candy case For iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
+    "name": "Flower and Herbs case",
+    "image": "https://i.etsystatic.com/31964184/r/il/888b3c/5033985648/il_1588xN.5033985648_ryje.jpg",
+    "description": "Flower and Herbs case For iPhone",
+    "categories": [2],
+    "variants": ["iPhone 11", "iPhone 12"],
+    "sizes": ["6.7-inch"],
+    "price": 21.59
   },
   {
     "id": 9,
-    "name": "Pink candy case",
-    "image": "https://ae01.alicdn.com/kf/Se05e33e82840423c834b6fe8e022fa6aA/Candy-Color-Silicone-Phone-Case-For-IPhone-11-12mini-13-14-Pro-Max-Soft-Matte-Shockproof.jpg_80x80.jpg_.webp",
-    "description": "Pink candy case For iPhone",
+    "name": "Glitter Drip Glue case",
+    "image": "https://i.etsystatic.com/43290225/r/il/dd3e8b/5234728592/il_1588xN.5234728592_c3of.jpg",
+    "description": "Glitter Drip Glue case For iPhone",
     "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 5
+    "variants": ["iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["6.1-inch"],
+    "price": 10.99
   },
   {
     "id": 10,
-    "name": "Cartoon game case",
-    "image": "https://ae01.alicdn.com/kf/S88ed4f19cd5f4a6da3c6794843905fe8Y/Sleep-cat-cartoon-silicone-soft-cute-shell-For-iphone-x-xr-xsmax-12mini-13-11-14.jpg_80x80.jpg_.webp",
-    "description": "Cartoon game case For iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
+    "name": "Inflated Peach case",
+    "image": "https://i.etsystatic.com/45660673/r/il/2e1b7a/5334553635/il_600x600.5334553635_toj0.jpg",
+    "description": "Inflated Peach case For iPhone",
+    "categories": [2],
+    "variants": ["iPhone 13", "iPhone 14", "iPhone 15"],
+    "sizes": ["6.7-inch"],
+    "price": 11.2
   },
   {
     "id": 11,
-    "name": "Rabbit bear cartoon case",
-    "image": "https://ae01.alicdn.com/kf/Hc4977bb9928746cd9856f7e08d90ab05e/3D-happy-rabbit-bear-silicone-cartoon-cover-for-iphone-11-12-14-15-pro-max-mini.jpg_80x80.jpg_.webp",
-    "description": "Rabbit bear cartoon case for iPhone",
+    "name": "Starry Sky Space case",
+    "image": "https://i.etsystatic.com/37720431/r/il/b04220/4378879776/il_1588xN.4378879776_pkrl.jpg",
+    "description": "Starry Sky Space case for iPhone",
     "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
+    "variants": ["iPhone 11", "iPhone 12"],
+    "sizes": ["6.1-inch"],
+    "price": 12.15
   },
   {
     "id": 12,
-    "name": "Magnetic white case",
-    "image": "https://ae01.alicdn.com/kf/S8dc93f5cf88c466c969feb70e09de870K/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp",
-    "description": "Magnetic skin scrub white case MagSafe for iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 5
-  },
-  {
-    "id": 13,
-    "name": "Magnetic black case",
-    "image": "https://ae01.alicdn.com/kf/S1cbb88f50cac4505a5e44df433f5421fR/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp",
-    "description": "Magnetic skin scrub black case MagSafe for iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
-  },
-  {
-    "id": 14,
-    "name": "Magnetic case",
-    "image": "https://ae01.alicdn.com/kf/S1c603484c98c467faaa86a2f2b0dee4f2/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp",
-    "description": "Magnetic skin scrub black case MagSafe for iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 5
-  },
-  {
-    "id": 15,
-    "name": "Magnetic purpule case",
-    "image": "https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp",
-    "description": "Magnetic skin scrub purpule case MagSafe for iPhone",
-    "categories": [1],
-    "variants": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
-    "sizes": ["Pro", "Pro Max"],
-    "price": 10
+    "name": "White Love Bracelet case",
+    "image": "https://i.etsystatic.com/36976814/r/il/fbc3bd/4118883324/il_1588xN.4118883324_py57.jpg",
+    "description": "White Love Bracelet case for iPhone",
+    "categories": [2],
+    "variants": ["iPhone 11", "iPhone 12"],
+    "sizes": ["6.7-inch"],
+    "price": 12.34
   }
 ]

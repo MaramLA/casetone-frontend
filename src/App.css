@@ -22,6 +22,18 @@
   }
 }
 
+@-webkit-keyframes button-move {
+  50% {
+    margin-top: 1rem;
+  }
+}
+
+@keyframes button-move {
+  50% {
+    margin-top: 1rem;
+  }
+}
+
 /* ---------------------------------------------------------- */
 /* Start of layout styling */
 /* ---------------------------------------------------------- */
@@ -669,7 +681,8 @@ footer .bottom-section p {
 }
 
 .products .products-div .product:hover {
-  border: 1px solid #696262;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
   cursor: pointer;
 }
 
@@ -693,20 +706,60 @@ footer .bottom-section p {
   color: #696262;
 }
 
-.products .products-div .product .product__details .icon {
+.products .products-div .product .product__details .controllers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: lightblue;
+  width: 10rem;
+}
+
+.products .products-div .product .product__details .controllers .icon1 {
   position: absolute;
-  left: 400px;
-  top: 140px;
-  font-size: 2.5rem;
+  left: 380px;
+  top: 125px;
+  font-size: 2.5em;
   color: #696262;
   margin: 1.4rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
-.products .products-div .product .product__details .icon:hover {
+.products .products-div .product .product__details .controllers .icon1:hover {
   cursor: pointer;
-  font-size: 2.8rem;
+  font-size: 2.7em;
+}
+
+.products .products-div .product .product__details .controllers .icon2 {
+  position: absolute;
+  left: 330px;
+  top: 125px;
+  font-size: 2.5em;
+  color: #696262;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.products .products-div .product .product__details .controllers .icon2:hover {
+  cursor: pointer;
+  font-size: 2.7em;
+}
+
+.products .products-div .product .product__details .controllers .icon3 {
+  position: absolute;
+  left: 400px;
+  top: 125px;
+  font-size: 2.5em;
+  color: #a33636;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.products .products-div .product .product__details .controllers .icon3:hover {
+  cursor: pointer;
+  font-size: 2.7em;
 }
 
 .products .products-div .product .product__details .product__title {
@@ -724,6 +777,32 @@ footer .bottom-section p {
 .products .products-div .product .product__details .product__price {
   font-size: 1.9em;
   margin-bottom: 1.5rem;
+}
+
+.products .products-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.products .products-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
 }
 
 /* ---------------------------------------------------------- */
@@ -1116,6 +1195,7 @@ footer .bottom-section p {
 }
 
 .cart .items .item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1128,6 +1208,7 @@ footer .bottom-section p {
   gap: 10vw;
   width: 60vw;
   height: 5rem;
+  padding-bottom: 1.2rem;
   -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
           box-shadow: #dddddd 0px 10px 10px -10px;
 }
@@ -1140,7 +1221,9 @@ footer .bottom-section p {
 }
 
 .cart .items .item .deleteIcon {
-  font-size: 18pt;
+  position: absolute;
+  right: 0;
+  font-size: 3.5em;
   color: #a33636;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -1148,7 +1231,7 @@ footer .bottom-section p {
 
 .cart .items .item .deleteIcon:hover {
   cursor: pointer;
-  font-size: 20pt;
+  padding-top: 0.4rem;
 }
 
 .cart .items .purchase-summary {
@@ -1266,6 +1349,7 @@ footer .bottom-section p {
 }
 
 .orders .orders-container .order {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1278,6 +1362,7 @@ footer .bottom-section p {
   gap: 6.7vw;
   width: 60vw;
   height: 5rem;
+  padding-bottom: 1.3rem;
   -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
           box-shadow: #dddddd 0px 10px 10px -10px;
 }
@@ -1297,11 +1382,13 @@ footer .bottom-section p {
   font-size: 2.2em;
   color: #696262;
   text-transform: capitalize;
-  width: 20rem;
+  width: 30rem;
 }
 
 .orders .orders-container .order .deleteIcon {
-  font-size: 18pt;
+  position: absolute;
+  right: 0;
+  font-size: 3.5em;
   color: #a33636;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -1309,7 +1396,7 @@ footer .bottom-section p {
 
 .orders .orders-container .order .deleteIcon:hover {
   cursor: pointer;
-  font-size: 20pt;
+  padding-top: 0.4rem;
 }
 
 .orders .orders-container .purchase-summary {
@@ -2164,6 +2251,7 @@ footer .bottom-section p {
 }
 
 .category .category-container .single-category {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2175,7 +2263,9 @@ footer .bottom-section p {
           align-items: center;
   gap: 6.7vw;
   width: 45vw;
-  height: 5rem;
+  height: 6rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
 }
 
 .category .category-container .single-category p {
@@ -2186,14 +2276,16 @@ footer .bottom-section p {
 }
 
 .category .category-container .single-category .controllers {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: relative;
+  height: 3rem;
+  right: 6rem;
   gap: 3rem;
 }
 
 .category .category-container .single-category .controllers .deleteIcon {
-  font-size: 18pt;
+  position: absolute;
+  left: 0;
+  font-size: 3.5em;
   color: #a33636;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -2201,11 +2293,13 @@ footer .bottom-section p {
 
 .category .category-container .single-category .controllers .deleteIcon:hover {
   cursor: pointer;
-  font-size: 20pt;
+  padding-top: 0.4rem;
 }
 
 .category .category-container .single-category .controllers .editIcon {
-  font-size: 18pt;
+  position: absolute;
+  right: 2rem;
+  font-size: 3.5em;
   color: #696262;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -2213,7 +2307,7 @@ footer .bottom-section p {
 
 .category .category-container .single-category .controllers .editIcon:hover {
   cursor: pointer;
-  font-size: 20pt;
+  padding-top: 0.4rem;
 }
 
 /* ---------------------------------------------------------- */
@@ -2238,8 +2332,6 @@ footer .bottom-section p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
-          box-shadow: #dddddd 0px 10px 10px -10px;
 }
 
 .error-container h2 {
@@ -2277,6 +2369,8 @@ footer .bottom-section p {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   margin-bottom: 10rem;
+  -webkit-animation: button-move 2s infinite;
+          animation: button-move 2s infinite;
 }
 
 .error-container button:hover {

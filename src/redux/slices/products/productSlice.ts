@@ -1,4 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import api from '../../../api'
+
+export const fetchProducts = createAsyncThunk('product/fetchProducts', async () => {
+  const response = await api.get('public/mock/e-commerce/products.json')
+  return response.data
+})
 
 export type Product = {
   id: number
@@ -12,46 +18,35 @@ export type Product = {
 }
 
 export type ProductState = {
-  items: Product[]
+  productsList: Product[]
   error: null | string
   isLoading: boolean
 }
 
 const initialState: ProductState = {
-  items: [],
+  productsList: [],
   error: null,
   isLoading: false
 }
 
-const ProductsSlice = createSlice({
-  name: 'products',
+const productSlice = createSlice({
+  name: 'product',
   initialState,
-  reducers: {}
+  reducers: {},
+  extraReducers(builder) {
+    builder.addCase(fetchProducts.pending, (state) => {
+      state.isLoading = true
+      state.error = null
+    })
+    builder.addCase(fetchProducts.fulfilled, (state, action) => {
+      state.productsList = action.payload
+      state.isLoading = false
+    })
+    builder.addCase(fetchProducts.rejected, (state, action) => {
+      state.error = action.error.message || 'Fetching products data ended unsuccessfully'
+      state.isLoading = false
+    })
+  }
 })
 
-export default ProductsSlice.reducer
-
-// export const userSlice = createSlice({
-//   name: 'user',
-//   initialState,
-//   reducers: {
-//     productsRequest: (state) => {
-//       state.isLoading = true
-//     },
-//     productsSuccess: (state, action) => {
-//       state.isLoading = false
-//       state.items = action.payload
-//     },
-//     addProduct: (state, action: { payload: { product: Product } }) => {
-//       // let's append the new product to the beginning of the array
-//       state.items = [action.payload.product, ...state.items]
-//     },
-//     removeProduct: (state, action: { payload: { productId: number } }) => {
-//       const filteredItems = state.items.filter((product) => product.id !== action.payload.productId)
-//       state.items = filteredItems
-//     }
-//   }
-// })
-// export const { removeProduct, addProduct, productsRequest, productsSuccess } = userSlice.actions
-
-// export default userSlice.reducer
+export default productSlice.reducer

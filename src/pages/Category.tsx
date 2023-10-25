@@ -1,9 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
 import Footer from '../layout/Footer'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch, RootState } from '../redux/store'
+import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
 
 const Category = () => {
+  const { categoriesList, isLoading, error } = useSelector(
+    (state: RootState) => state.categoriesReducer
+  )
+
+  const dispatch: AppDispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchCategories())
+  }, [])
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
+  if (error) {
+    return <p>{error}</p>
+  }
+
   return (
     <div>
       <main>
@@ -17,13 +36,18 @@ const Category = () => {
           </form>
           <div className="category-container">
             <h3 className="section-title">Categories List</h3>
-            <div className="single-category">
-              <p className="category-name">name</p>
-              <div className="controllers">
-                <AiFillEdit className="editIcon" />
-                <MdDelete className="deleteIcon" />
-              </div>
-            </div>
+            {categoriesList.length > 0 &&
+              categoriesList.map((category) => {
+                return (
+                  <div key={category.id} className="single-category">
+                    <p className="category-name">{category.name}</p>
+                    <div className="controllers">
+                      <AiFillEdit className="editIcon" />
+                      <MdDelete className="deleteIcon" />
+                    </div>
+                  </div>
+                )
+              })}
           </div>
         </section>
       </main>

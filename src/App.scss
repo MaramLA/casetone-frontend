@@ -19,6 +19,12 @@
   }
 }
 
+@keyframes button-move {
+  50% {
+    margin-top: 1rem;
+  }
+}
+
 /* ---------------------------------------------------------- */
 /* Start of layout styling */
 /* ---------------------------------------------------------- */
@@ -431,8 +437,8 @@ footer {
       box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
       transition: all 0.2s ease-in;
       &:hover {
-        // transform: translateY(-20px);
-        border: 1px solid rgb(105, 98, 98);
+        transform: translateY(-20px);
+        // border: 1px solid rgb(105, 98, 98);
         cursor: pointer;
       }
       img {
@@ -448,17 +454,48 @@ footer {
         flex-direction: column;
         margin: 2.5rem;
         color: $primary-color1;
-        .icon {
-          position: absolute;
-          left: 400px;
-          top: 140px;
-          font-size: 2.5rem;
-          color: $primary-color1;
-          margin: 1.4rem;
-          transition: all 0.2s ease-in;
-          &:hover {
-            cursor: pointer;
-            font-size: 2.8rem;
+        .controllers {
+          display: flex;
+          background: lightblue;
+          width: 10rem;
+          .icon1 {
+            position: absolute;
+            left: 380px;
+            top: 125px;
+            font-size: 2.5em;
+            color: $primary-color1;
+            margin: 1.4rem;
+            transition: all 0.2s ease-in;
+            &:hover {
+              cursor: pointer;
+              font-size: 2.7em;
+            }
+          }
+          .icon2 {
+            position: absolute;
+            left: 330px;
+            top: 125px;
+            font-size: 2.5em;
+            color: $primary-color1;
+            margin: 1.4rem;
+            transition: all 0.2s ease-in;
+            &:hover {
+              cursor: pointer;
+              font-size: 2.7em;
+            }
+          }
+          .icon3 {
+            position: absolute;
+            left: 400px;
+            top: 125px;
+            font-size: 2.5em;
+            color: rgb(163, 54, 54);
+            margin: 1.4rem;
+            transition: all 0.2s ease-in;
+            &:hover {
+              cursor: pointer;
+              font-size: 2.7em;
+            }
           }
         }
         .product__title {
@@ -478,10 +515,10 @@ footer {
       }
     }
   }
-  // .products-btn {
-  //   @include mainButton2-Styling();
-  //   @include center();
-  // }
+  .products-btn {
+    @include mainButton2-Styling();
+    @include center();
+  }
 }
 
 /* ---------------------------------------------------------- */
@@ -741,12 +778,14 @@ footer {
       margin-bottom: 3rem;
     }
     .item {
+      position: relative;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       gap: 10vw;
       width: 60vw;
       height: 5rem;
+      padding-bottom: 1.2rem;
       box-shadow: $primary-color5 0px 10px 10px -10px;
       p {
         font-size: $font-size5;
@@ -755,12 +794,15 @@ footer {
         width: 20rem;
       }
       .deleteIcon {
-        font-size: 18pt;
+        position: absolute;
+        right: 0;
+        font-size: 3.5em;
         color: rgb(163, 54, 54);
         transition: all 0.2s ease-in;
+
         &:hover {
           cursor: pointer;
-          font-size: 20pt;
+          padding-top: 0.4rem;
         }
       }
     }
@@ -827,12 +869,14 @@ footer {
       }
     }
     .order {
+      position: relative;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       gap: 6.7vw;
       width: 60vw;
       height: 5rem;
+      padding-bottom: 1.3rem;
       box-shadow: $primary-color5 0px 10px 10px -10px;
       .order-images {
         display: flex;
@@ -844,15 +888,18 @@ footer {
         font-size: $font-size5;
         color: $primary-color1;
         text-transform: capitalize;
-        width: 20rem;
+        width: 30rem;
       }
       .deleteIcon {
-        font-size: 18pt;
+        position: absolute;
+        right: 0;
+        font-size: 3.5em;
         color: rgb(163, 54, 54);
         transition: all 0.2s ease-in;
+
         &:hover {
           cursor: pointer;
-          font-size: 20pt;
+          padding-top: 0.4rem;
         }
       }
     }
@@ -1323,12 +1370,15 @@ footer {
       margin-bottom: 3rem;
     }
     .single-category {
+      position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 6.7vw;
       width: 45vw;
-      height: 5rem;
+      height: 6rem;
+      box-shadow: $primary-color5 0px 10px 10px -10px;
+
       p {
         font-size: $font-size5;
         color: $primary-color1;
@@ -1336,24 +1386,32 @@ footer {
         width: 50rem;
       }
       .controllers {
-        display: flex;
+        position: relative;
+        height: 3rem;
+        right: 6rem;
         gap: 3rem;
         .deleteIcon {
-          font-size: 18pt;
+          position: absolute;
+          left: 0;
+          font-size: 3.5em;
           color: rgb(163, 54, 54);
           transition: all 0.2s ease-in;
+
           &:hover {
             cursor: pointer;
-            font-size: 20pt;
+            padding-top: 0.4rem;
           }
         }
         .editIcon {
-          font-size: 18pt;
+          position: absolute;
+          right: 2rem;
+          font-size: 3.5em;
           color: $primary-color1;
           transition: all 0.2s ease-in;
+
           &:hover {
             cursor: pointer;
-            font-size: 20pt;
+            padding-top: 0.4rem;
           }
         }
       }
@@ -1374,7 +1432,6 @@ footer {
   display: flex;
   flex-direction: column;
   @include center();
-  box-shadow: $primary-color5 0px 10px 10px -10px;
 
   h2 {
     font-size: $font-size7;
@@ -1398,6 +1455,7 @@ footer {
   button {
     @include mainButton2-Styling();
     margin-bottom: 10rem;
+    animation: button-move 2s infinite;
   }
 }
 /* ---------------------------------------------------------- */

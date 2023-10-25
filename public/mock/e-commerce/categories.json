@@ -1,14 +1,10 @@
 [
   {
     "id": 1,
-    "name": "iPhone Case"
+    "name": "pro"
   },
   {
     "id": 2,
-    "name": "iPad Case"
-  },
-  {
-    "id": 3,
-    "name": "Airpods Case"
+    "name": "pro max"
   }
 ]
