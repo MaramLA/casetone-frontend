@@ -1,22 +1,52 @@
-import React from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { signUpPath } from '../pathLinks'
+
+type LogInUserType = {
+  email: string
+  password: string
+}
+
 const SignIn = () => {
+  const [logInUser, setLogInUser] = useState<LogInUserType>({
+    email: '',
+    password: ''
+  })
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setLogInUser((previousState) => {
+      return { ...previousState, [event.target.name]: event.target.value }
+    })
+  }
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault()
+    try {
+      console.log(logInUser)
+    } catch (error) {
+      console.log(error)
+    }
+
+    setLogInUser({ email: '', password: '' })
+  }
+
   return (
     <main>
       <section className="signIn" id="signIn">
         <div className="signIn-container">
           <h2 className="section-title">Sign In</h2>
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="entry">
               <label htmlFor="formEmail">Email</label>
               <input
                 type="text"
                 id="formEmail"
                 className="formEmail"
-                name="formEmail"
+                name="email"
                 placeholder="Email"
+                value={logInUser.email}
+                onChange={handleInputChange}
               />
             </div>
             <div className="entry">
@@ -25,11 +55,15 @@ const SignIn = () => {
                 type="password"
                 id="formPassword"
                 className="formPassword"
-                name="formPassword"
+                name="password"
                 placeholder="********"
+                value={logInUser.password}
+                onChange={handleInputChange}
               />
             </div>
-            <button className="signIn-btn">Sign In</button>
+            <button type="submit" className="signIn-btn">
+              Sign In
+            </button>
           </form>
           <div className="formSignUp">
             <p>Do not have an account?</p>

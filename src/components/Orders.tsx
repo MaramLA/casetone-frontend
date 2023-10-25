@@ -51,9 +51,7 @@ const Orders = () => {
                     })}
                 </div>
                 <p className="order-date">{order.purchasedAt}</p>
-                <div className="controllers">
-                  <MdDelete className="deleteIcon" />
-                </div>
+                <div className="controllers">{/* <MdDelete className="deleteIcon" /> */}</div>
               </div>
             )
           })}
