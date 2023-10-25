@@ -4,7 +4,7 @@ import { HashLink as InnerLink } from 'react-router-hash-link'
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="homeTop">
       <img src={bannerImage} alt="Banner Image" />
       <div className="circle-background"></div>
       <div className="hero__content">

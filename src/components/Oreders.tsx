@@ -51,7 +51,6 @@ const Oreders = () => {
 
         <div className="purchase-summary">
           <p className="total-price">Total Orders: 3</p>
-          <button className="checkout-btn">Reset</button>
         </div>
       </div>
     </section>

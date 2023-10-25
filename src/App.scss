@@ -64,6 +64,7 @@ header {
     z-index: 1;
     @include navTransBackgournd();
     box-shadow: $primary-color5 0px 10px 10px -10px;
+    gap: 7rem;
 
     /* Navbar left section styling */
     .left-section {
@@ -726,7 +727,7 @@ footer {
     width: 80%;
     gap: 4rem;
     border-radius: 50px;
-    padding: 6rem 0;
+    padding: 6rem 4rem;
     background: white;
     box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
 
@@ -777,7 +778,9 @@ footer {
         text-transform: capitalize;
         font-weight: bold;
       }
+
       .checkout-btn {
+        @include center();
         @include mainButton2-Styling();
       }
     }
@@ -807,7 +810,7 @@ footer {
     width: 80%;
     gap: 4rem;
     border-radius: 50px;
-    padding: 6rem 0;
+    padding: 6rem 4rem;
     background: white;
     box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
 
@@ -863,9 +866,6 @@ footer {
         text-align: center;
         text-transform: capitalize;
         font-weight: bold;
-      }
-      .checkout-btn {
-        @include mainButton2-Styling();
       }
     }
   }
@@ -1141,7 +1141,7 @@ footer {
     img {
       height: 200px;
       width: 200px;
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
       border: 3px solid $primary-color5;
       border-radius: 50%;
     }
@@ -1158,61 +1158,33 @@ footer {
       flex-direction: column;
       .top-side {
         display: flex;
-        gap: 8rem;
-        .left-side {
-          .entry {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
 
-            @include center();
-            label {
-              font-size: $font-size4;
-              color: $primary-color1;
-              text-transform: capitalize;
-              font-weight: bolder;
-              margin-bottom: 2rem;
-            }
-            input {
-              width: 30rem;
-              height: 5rem;
-              border-radius: 50px;
-              padding: 0 4rem;
-              font-size: $font-size4;
-              color: $primary-color1;
-              text-transform: lowercase;
-              border: 4px solid $primary-color1;
-              margin-bottom: 2rem;
-              outline: none;
-            }
+        .entry {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          @include center();
+          label {
+            font-size: $font-size4;
+            color: $primary-color1;
+            text-transform: capitalize;
+            font-weight: bolder;
+            margin-bottom: 2rem;
           }
-        }
-        .right-side {
-          .entry {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-
-            @include center();
-            label {
-              font-size: $font-size4;
-              color: $primary-color1;
-              text-transform: capitalize;
-              font-weight: bolder;
-              margin-bottom: 2rem;
-            }
-            input {
-              width: 30rem;
-              height: 5rem;
-              border-radius: 50px;
-              padding: 0 4rem;
-              font-size: $font-size4;
-              color: $primary-color1;
-              text-transform: lowercase;
-              border: 4px solid $primary-color1;
-              margin-bottom: 2rem;
-              outline: none;
-            }
+          input {
+            width: 30rem;
+            height: 5rem;
+            border-radius: 50px;
+            padding: 0 4rem;
+            font-size: $font-size4;
+            color: $primary-color1;
+            text-transform: lowercase;
+            border: 4px solid $primary-color1;
+            margin-bottom: 2rem;
+            outline: none;
           }
         }
       }
@@ -1540,11 +1512,13 @@ footer {
   .signUp .signUp-container .form .top-side {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
   .profile .profile-container .form .top-side {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
   .productDetails .container {

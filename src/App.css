@@ -75,6 +75,7 @@ header .nav-bar {
           backdrop-filter: blur(25px);
   -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
           box-shadow: #dddddd 0px 10px 10px -10px;
+  gap: 7rem;
   /* Navbar left section styling */
   /* Navbar right section styling */
 }
@@ -1126,7 +1127,7 @@ footer .bottom-section p {
   width: 80%;
   gap: 4rem;
   border-radius: 50px;
-  padding: 6rem 0;
+  padding: 6rem 4rem;
   background: white;
   -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
           box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
@@ -1203,6 +1204,12 @@ footer .bottom-section p {
 }
 
 .forPurchase .items .purchase-summary .checkout-btn {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 2em;
   font-weight: bolder;
   text-transform: capitalize;
@@ -1267,7 +1274,7 @@ footer .bottom-section p {
   width: 80%;
   gap: 4rem;
   border-radius: 50px;
-  padding: 6rem 0;
+  padding: 6rem 4rem;
   background: white;
   -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
           box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
@@ -1352,26 +1359,6 @@ footer .bottom-section p {
   text-align: center;
   text-transform: capitalize;
   font-weight: bold;
-}
-
-.orders .orders-container .purchase-summary .checkout-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #ffff;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-.orders .orders-container .purchase-summary .checkout-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
 }
 
 /* ---------------------------------------------------------- */
@@ -1837,7 +1824,7 @@ footer .bottom-section p {
 .profile .profile-container img {
   height: 200px;
   width: 200px;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   border: 3px solid #dddddd;
   border-radius: 50%;
 }
@@ -1865,10 +1852,14 @@ footer .bottom-section p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 8rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
 }
 
-.profile .profile-container .form .top-side .left-side .entry {
+.profile .profile-container .form .top-side .entry {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1885,7 +1876,7 @@ footer .bottom-section p {
           justify-content: center;
 }
 
-.profile .profile-container .form .top-side .left-side .entry label {
+.profile .profile-container .form .top-side .entry label {
   font-size: 2.1em;
   color: #696262;
   text-transform: capitalize;
@@ -1893,45 +1884,7 @@ footer .bottom-section p {
   margin-bottom: 2rem;
 }
 
-.profile .profile-container .form .top-side .left-side .entry input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-
-.profile .profile-container .form .top-side .right-side .entry {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.profile .profile-container .form .top-side .right-side .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-
-.profile .profile-container .form .top-side .right-side .entry input {
+.profile .profile-container .form .top-side .entry input {
   width: 30rem;
   height: 5rem;
   border-radius: 50px;
@@ -2467,6 +2420,7 @@ footer .bottom-section p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 0;
   }
   .profile .profile-container .form .top-side {
     display: -webkit-box;
@@ -2476,6 +2430,7 @@ footer .bottom-section p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 0;
   }
   .productDetails .container {
     display: -webkit-box;
