@@ -3,7 +3,7 @@ export const errorPath = '/*'
 export const signInPath = '/sign-in'
 export const signUpPath = '/sign-up'
 
-export const cartPath = '/user/cart'
+export const purchasesPath = '/user/purchases'
 export const userProfilePath = '/profile'
 export const productDetailsPath = '/details'
 

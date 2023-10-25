@@ -7,7 +7,7 @@ import {
   adminDashboardPath,
   productDetailsPath,
   userProfilePath,
-  cartPath,
+  purchasesPath,
   categoryPath,
   errorPath,
   homePath,
@@ -26,7 +26,7 @@ import UserNavbar from './layout/UserNavbar'
 import AdminDashboard from './pages/AdminDashboard'
 import ProductDetails from './pages/ProductDetails'
 import UserProfile from './pages/UserProfile'
-import Cart from './pages/Cart'
+import Purchases from './pages/Purchases'
 import Category from './pages/Category'
 import Error from './pages/Error'
 import Home from './pages/Home'
@@ -48,7 +48,7 @@ const Index = () => {
         <Route path={signUpPath} element={<SignUp />} />
         <Route path={productDetailsPath} element={<ProductDetails />} />
 
-        <Route path={cartPath} element={<Cart />} />
+        <Route path={purchasesPath} element={<Purchases />} />
         <Route path={userProfilePath} element={<UserProfile />} />
 
         <Route path={usersPath} element={<Users />} />

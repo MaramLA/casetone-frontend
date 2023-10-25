@@ -339,7 +339,7 @@ footer {
   margin-bottom: 10rem;
   box-shadow: $primary-color5 0px 10px 10px -10px;
   img {
-    width: 140rem;
+    width: 130rem;
     padding-bottom: 7em;
   }
   .circle-background {
@@ -704,7 +704,7 @@ footer {
 /* ---------------------------------------------------------- */
 /* Start of purchases styling */
 /* ---------------------------------------------------------- */
-.forPurchase {
+.cart {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -834,7 +834,7 @@ footer {
       width: 60vw;
       height: 5rem;
       box-shadow: $primary-color5 0px 10px 10px -10px;
-      .oreder-images {
+      .order-images {
         display: flex;
         justify-content: center;
         gap: 0.5rem;

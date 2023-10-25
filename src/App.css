@@ -521,7 +521,7 @@ footer .bottom-section p {
 }
 
 .hero img {
-  width: 140rem;
+  width: 130rem;
   padding-bottom: 7em;
 }
 
@@ -1052,7 +1052,7 @@ footer .bottom-section p {
 /* ---------------------------------------------------------- */
 /* Start of purchases styling */
 /* ---------------------------------------------------------- */
-.forPurchase {
+.cart {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1073,7 +1073,7 @@ footer .bottom-section p {
           box-shadow: #dddddd 0px 10px 10px -10px;
 }
 
-.forPurchase .section-title {
+.cart .section-title {
   font-size: 4.5em;
   text-transform: capitalize;
   color: #696262;
@@ -1082,7 +1082,7 @@ footer .bottom-section p {
   margin-bottom: 4rem;
 }
 
-.forPurchase .items {
+.cart .items {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1106,7 +1106,7 @@ footer .bottom-section p {
           box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
 }
 
-.forPurchase .items .section-title {
+.cart .items .section-title {
   font-size: 3em;
   text-transform: capitalize;
   color: #696262;
@@ -1115,7 +1115,7 @@ footer .bottom-section p {
   margin-bottom: 3rem;
 }
 
-.forPurchase .items .item {
+.cart .items .item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1132,26 +1132,26 @@ footer .bottom-section p {
           box-shadow: #dddddd 0px 10px 10px -10px;
 }
 
-.forPurchase .items .item p {
+.cart .items .item p {
   font-size: 2.2em;
   color: #696262;
   text-transform: capitalize;
   width: 20rem;
 }
 
-.forPurchase .items .item .deleteIcon {
+.cart .items .item .deleteIcon {
   font-size: 18pt;
   color: #a33636;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
-.forPurchase .items .item .deleteIcon:hover {
+.cart .items .item .deleteIcon:hover {
   cursor: pointer;
   font-size: 20pt;
 }
 
-.forPurchase .items .purchase-summary {
+.cart .items .purchase-summary {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1167,7 +1167,7 @@ footer .bottom-section p {
   margin-top: 3rem;
 }
 
-.forPurchase .items .purchase-summary p {
+.cart .items .purchase-summary p {
   font-size: 2.2em;
   color: #696262;
   width: 20rem;
@@ -1176,7 +1176,7 @@ footer .bottom-section p {
   font-weight: bold;
 }
 
-.forPurchase .items .purchase-summary .checkout-btn {
+.cart .items .purchase-summary .checkout-btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1197,7 +1197,7 @@ footer .bottom-section p {
   transition: all 0.2s ease-in;
 }
 
-.forPurchase .items .purchase-summary .checkout-btn:hover {
+.cart .items .purchase-summary .checkout-btn:hover {
   cursor: pointer;
   padding: 0.7em 1.7em;
 }
@@ -1282,7 +1282,7 @@ footer .bottom-section p {
           box-shadow: #dddddd 0px 10px 10px -10px;
 }
 
-.orders .orders-container .order .oreder-images {
+.orders .orders-container .order .order-images {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

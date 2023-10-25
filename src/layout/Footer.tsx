@@ -8,7 +8,7 @@ import {
   adminDashboardPath,
   productDetailsPath,
   userProfilePath,
-  cartPath,
+  purchasesPath,
   categoryPath,
   errorPath,
   homePath,
@@ -33,7 +33,7 @@ const Footer = () => {
               </InnerLink>
             </li>
             <li>
-              <Link className="footerPagesLinks" to={cartPath}>
+              <Link className="footerPagesLinks" to={purchasesPath}>
                 Shopping Cart
               </Link>
             </li>

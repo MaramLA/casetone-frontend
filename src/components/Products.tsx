@@ -47,7 +47,7 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <button className="products-btn">Show More</button>
+      {/* <button className="products-btn">Show More</button> */}
     </section>
   )
 }

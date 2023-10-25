@@ -16,7 +16,7 @@ const Users = () => {
               </div>
               <div className="order">
                 <p className="order-id">Order# 1</p>
-                <div className="oreder-images">
+                <div className="order-images">
                   <img
                     src="https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
                     alt=""
@@ -30,7 +30,7 @@ const Users = () => {
               </div>
               <div className="order">
                 <p className="order-id">Order# 1</p>
-                <div className="oreder-images">
+                <div className="order-images">
                   <img
                     src="https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
                     alt=""
@@ -44,7 +44,7 @@ const Users = () => {
               </div>
               <div className="order">
                 <p className="order-id">Order# 1</p>
-                <div className="oreder-images">
+                <div className="order-images">
                   <img
                     src="https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
                     alt=""

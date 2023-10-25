@@ -1,9 +1,9 @@
 import React from 'react'
 import { MdDelete } from 'react-icons/md'
 
-const ForPurchase = () => {
+const Cart = () => {
   return (
-    <section className="forPurchase">
+    <section className="cart">
       <h2 className="section-title">Purchases</h2>
       <div className="items">
         <h3 className="section-title">Cart</h3>
@@ -52,4 +52,4 @@ const ForPurchase = () => {
   )
 }
 
-export default ForPurchase
+export default Cart

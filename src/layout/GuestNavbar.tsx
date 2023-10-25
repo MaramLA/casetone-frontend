@@ -7,7 +7,7 @@ import {
   homePath,
   signInPath,
   signUpPath,
-  cartPath,
+  purchasesPath,
   usersPath,
   categoryPath,
   productsPath,
@@ -46,7 +46,7 @@ const GuestNavbar = () => {
               </InnerLink>
             </li>
             <li>
-              <InnerLink className="navLinks" smooth to="/user/cart/#orders">
+              <InnerLink className="navLinks" smooth to="/user/purchases/#orders">
                 Orders
               </InnerLink>
             </li>
@@ -54,7 +54,7 @@ const GuestNavbar = () => {
         </div>
         <div className="right-section">
           {/* Cart icon  */}
-          <Link to={cartPath}>
+          <Link to={purchasesPath}>
             <i className="fa fa-shopping-cart icon1" aria-hidden="true"></i>
           </Link>
           {/* burger icon  */}

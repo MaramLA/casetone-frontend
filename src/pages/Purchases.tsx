@@ -1,18 +1,18 @@
 import React from 'react'
-import PurchasesList from '../components/PurchasesList'
-import Oreders from '../components/Oreders'
+import PurchasesList from '../components/Cart'
+import Orders from '../components/Orders'
 import Footer from '../layout/Footer'
 
-const Cart = () => {
+const Purchases = () => {
   return (
     <div>
       <main>
         <PurchasesList />
-        <Oreders />
+        <Orders />
       </main>
       <Footer />
     </div>
   )
 }
 
-export default Cart
+export default Purchases
