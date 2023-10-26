@@ -1,26 +1,25 @@
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import logo from '../assets/logo.png'
+
+import { RootState } from '../redux/store'
+
 import {
-  productsPath,
-  usersPath,
-  adminDashboardPath,
-  productDetailsPath,
-  userProfilePath,
-  purchasesPath,
-  categoryPath,
-  errorPath,
-  homePath,
-  signInPath,
-  signUpPath,
-  instagram,
   twitter,
   linkedin,
-  aboutPath
+  aboutPath,
+  homePath,
+  instagram,
+  usersPath,
+  signInPath,
+  signUpPath,
+  productsPath,
+  categoryPath,
+  purchasesPath,
+  userProfilePath
 } from '../pathLinks'
-import { RootState } from '../redux/store'
 const Footer = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
 

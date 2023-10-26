@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
-import { MdDelete } from 'react-icons/md'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
+import { MdDelete } from 'react-icons/md'
+
+import { AppDispatch, RootState } from '../redux/store'
 import { fetchOrders } from '../redux/slices/Orders/ordersSlice'
 import { fetchProducts } from '../redux/slices/products/productSlice'
-import { AppDispatch, RootState } from '../redux/store'
 
 const Orders = () => {
   const orders = useSelector((state: RootState) => state.ordersReducer)

@@ -6,11 +6,11 @@ import logo from '../assets/logo.png'
 
 import {
   homePath,
-  signInPath,
   usersPath,
+  signInPath,
   categoryPath,
-  userProfilePath,
-  productsPath
+  productsPath,
+  userProfilePath
 } from '../pathLinks'
 
 import { signOut } from '../redux/slices/Users/userSlice'

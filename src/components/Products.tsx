@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts } from '../redux/slices/products/productSlice'
-import { AppDispatch, RootState } from '../redux/store'
-import { BsCartPlusFill } from 'react-icons/bs'
-import { AiFillEdit } from 'react-icons/ai'
+
 import { MdDelete } from 'react-icons/md'
+import { AiFillEdit } from 'react-icons/ai'
+import { BsCartPlusFill } from 'react-icons/bs'
+
+import { AppDispatch, RootState } from '../redux/store'
+import { fetchProducts } from '../redux/slices/products/productSlice'
 
 const Products = () => {
   const { productsList, isLoading, error } = useSelector(

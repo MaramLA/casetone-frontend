@@ -5,12 +5,12 @@ import { HashLink as InnerLink } from 'react-router-hash-link'
 import logo from '../assets/logo.png'
 import {
   homePath,
+  aboutPath,
   signInPath,
   signUpPath,
+  productsPath,
   purchasesPath,
-  userProfilePath,
-  aboutPath,
-  productsPath
+  userProfilePath
 } from '../pathLinks'
 
 import { RootState } from '../redux/store'
