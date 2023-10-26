@@ -1,5 +1,6 @@
-import userProfile from '../assets/userProfile.png'
 import Footer from '../layout/Footer'
+import userProfile from '../assets/userProfile.png'
+
 const UserProfile = () => {
   return (
     <div>

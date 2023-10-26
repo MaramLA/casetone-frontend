@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
+
 import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
-import Footer from '../layout/Footer'
+
 import { useDispatch, useSelector } from 'react-redux'
+
+import Footer from '../layout/Footer'
+
 import { AppDispatch, RootState } from '../redux/store'
 import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
 

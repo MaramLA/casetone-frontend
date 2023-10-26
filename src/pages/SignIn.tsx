@@ -1,10 +1,11 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 import { homePath, signUpPath } from '../pathLinks'
-import { fetchUsers, signIn } from '../redux/slices/Users/userSlice'
+
 import { AppDispatch, RootState } from '../redux/store'
+import { fetchUsers, signIn } from '../redux/slices/Users/userSlice'
 
 type LogInUserType = {
   email: string
@@ -12,7 +13,7 @@ type LogInUserType = {
 }
 
 const SignIn = () => {
-  const { usersList, isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
+  const { usersList } = useSelector((state: RootState) => state.usersReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
@@ -40,7 +41,7 @@ const SignIn = () => {
         const UserExist = user.email === logInUser.email
         console.log(UserExist)
         if (UserExist && user.password === logInUser.password) {
-          dispatch(signIn(UserExist))
+          dispatch(signIn(user))
           navigate(homePath)
         } else {
           console.log('Invalid email or password')

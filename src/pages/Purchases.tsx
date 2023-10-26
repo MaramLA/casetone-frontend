@@ -1,7 +1,7 @@
-import React from 'react'
-import PurchasesList from '../components/Cart'
-import Orders from '../components/Orders'
 import Footer from '../layout/Footer'
+
+import Orders from '../components/Orders'
+import PurchasesList from '../components/Cart'
 
 const Purchases = () => {
   return (

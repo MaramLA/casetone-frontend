@@ -344,14 +344,13 @@ footer .top-sections .top-left-section {
   margin: 5vh;
   width: 33.33%;
   height: 40vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   white-space: nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 footer .top-sections .top-left-section ul {

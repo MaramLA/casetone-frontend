@@ -30,5 +30,13 @@
     "email": "maram@gmail.com",
     "password": "123",
     "role": "admin"
+  },
+  {
+    "id": 5,
+    "firstName": "Arwa",
+    "lastName": "Eiad",
+    "email": "arwa@gmail.com",
+    "password": "123",
+    "role": "visitor"
   }
 ]

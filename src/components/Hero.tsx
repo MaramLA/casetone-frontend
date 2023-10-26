@@ -1,6 +1,7 @@
 import React from 'react'
 import bannerImage from '../assets/banner.png'
 import { HashLink as InnerLink } from 'react-router-hash-link'
+import { productsPath } from '../pathLinks'
 
 const Hero = () => {
   return (
@@ -13,7 +14,7 @@ const Hero = () => {
           Your place to stand out with elegant <br />
           iPhone cases
         </p>
-        <InnerLink smooth to="/#productsSection">
+        <InnerLink smooth to={productsPath}>
           <button className="hero__button">Get Started</button>
         </InnerLink>
       </div>

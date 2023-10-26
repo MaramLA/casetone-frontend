@@ -10,6 +10,8 @@ const Products = () => {
   const { productsList, isLoading, error } = useSelector(
     (state: RootState) => state.productsReducer
   )
+  const { userData, isSignedIn } = useSelector((state: RootState) => state.usersReducer)
+
   const dispatch: AppDispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchProducts())
@@ -20,7 +22,6 @@ const Products = () => {
   if (error) {
     return <p>{error}</p>
   }
-  // console.log(products)
 
   return (
     <section className="products" id="productsSection">
@@ -41,9 +42,14 @@ const Products = () => {
                   <p className="product__description">{product.description}</p>
                   <p className="product__price">{product.price}$</p>
                   <div className="controllers">
-                    <BsCartPlusFill className="icon1" />
-                    {/* <AiFillEdit className="icon2" />
-                    <MdDelete className="icon3" /> */}
+                    {isSignedIn && userData?.role.toLowerCase() === 'admin' ? (
+                      <>
+                        <AiFillEdit className="icon2" />
+                        <MdDelete className="icon3" />{' '}
+                      </>
+                    ) : (
+                      <BsCartPlusFill className="icon1" />
+                    )}
                   </div>
                 </div>
               </div>
@@ -63,7 +69,9 @@ const Products = () => {
           </div>
         </div> */}
       </div>
-      <button className="products-btn">Add Product</button>
+      {isSignedIn && userData?.role.toLowerCase() === 'admin' && (
+        <button className="products-btn">Add Product</button>
+      )}
     </section>
   )
 }
