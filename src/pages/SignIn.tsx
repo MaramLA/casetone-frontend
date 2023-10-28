@@ -5,7 +5,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { homePath, signUpPath } from '../pathLinks'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { fetchUsers, signIn } from '../redux/slices/Users/userSlice'
+import { fetchUsers, signIn, UserType } from '../redux/slices/Users/userSlice'
 
 type LogInUserType = {
   email: string
@@ -37,7 +37,7 @@ const SignIn = () => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
     try {
-      usersList.find((user) => {
+      usersList.find((user: UserType) => {
         const UserExist = user.email === logInUser.email
         console.log(UserExist)
         if (UserExist && user.password === logInUser.password) {

@@ -7,7 +7,7 @@ export const fetchOrders = createAsyncThunk('orders/fetchOrders', async () => {
   return response.data
 })
 
-export type Order = {
+export type OrderType = {
   id: number
   productId: number
   userId: number
@@ -15,7 +15,7 @@ export type Order = {
 }
 
 export type OrdersState = {
-  ordersList: Order[]
+  ordersList: OrderType[]
   isLoading: boolean
   error: null | string
 }

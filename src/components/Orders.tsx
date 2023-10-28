@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { MdDelete } from 'react-icons/md'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { fetchOrders } from '../redux/slices/Orders/ordersSlice'
-import { fetchProducts } from '../redux/slices/products/productSlice'
+import { fetchOrders, OrderType } from '../redux/slices/Orders/ordersSlice'
+import { fetchProducts, ProductType } from '../redux/slices/products/productSlice'
 
 const Orders = () => {
   const orders = useSelector((state: RootState) => state.ordersReducer)
@@ -32,13 +32,13 @@ const Orders = () => {
           <h3 className="section-title">Orders List</h3>
         </div>
         {orders.ordersList.length > 0 &&
-          orders.ordersList.map((order) => {
+          orders.ordersList.map((order: OrderType) => {
             return (
               <div key={order.id} className="order">
                 <p className="order-id">Order# {order.id}</p>
                 <div className="order-images">
                   {products.productsList.length > 0 &&
-                    products.productsList.map((product) => {
+                    products.productsList.map((product: ProductType) => {
                       if (order.productId === product.id) {
                         return (
                           <img

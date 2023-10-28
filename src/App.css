@@ -694,6 +694,11 @@ footer .bottom-section p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-bottom: 8rem;
+  max-width: 80vw;
+}
+
+.products .products-div .product-details-link {
+  text-decoration: none;
 }
 
 .products .products-div .product {
@@ -786,6 +791,22 @@ footer .bottom-section p {
 }
 
 .products .products-div .product .product__details .controllers .icon3:hover {
+  cursor: pointer;
+  font-size: 2.7em;
+}
+
+.products .products-div .product .product__details .controllers .icon4 {
+  position: absolute;
+  left: 330px;
+  top: 125px;
+  font-size: 2.7em;
+  color: #696262;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.products .products-div .product .product__details .controllers .icon4:hover {
   cursor: pointer;
   font-size: 2.7em;
 }
@@ -2500,14 +2521,12 @@ footer .bottom-section p {
 }
 
 .productDetails .container .right-side .buttons {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   text-align: left;
+  gap: 3rem;
 }
 
 .productDetails .container .right-side .buttons .buy-btn {
@@ -2527,6 +2546,30 @@ footer .bottom-section p {
 }
 
 .productDetails .container .right-side .buttons .buy-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+.productDetails .container .right-side .buttons .back-btn {
+  margin-top: 5rem;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.productDetails .container .right-side .buttons .back-btn:hover {
   cursor: pointer;
   padding: 0.7em 1.7em;
 }

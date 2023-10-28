@@ -5,10 +5,10 @@ import { AiFillEdit } from 'react-icons/ai'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import Footer from '../layout/Footer'
+import Footer from '../../layout/Footer'
 
-import { AppDispatch, RootState } from '../redux/store'
-import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
+import { AppDispatch, RootState } from '../../redux/store'
+import { CategoryType, fetchCategories } from '../../redux/slices/Categories/categoriesSlice'
 
 const Category = () => {
   const { categoriesList, isLoading, error } = useSelector(
@@ -41,7 +41,7 @@ const Category = () => {
           <div className="category-container">
             <h3 className="section-title">Categories List</h3>
             {categoriesList.length > 0 &&
-              categoriesList.map((category) => {
+              categoriesList.map((category: CategoryType) => {
                 return (
                   <div key={category.id} className="single-category">
                     <p className="category-name">{category.name}</p>

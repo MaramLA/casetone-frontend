@@ -2,12 +2,12 @@ import { useEffect } from 'react'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 
-import Footer from '../layout/Footer'
+import Footer from '../../layout/Footer'
 
-import { AppDispatch, RootState } from '../redux/store'
-import { fetchUsers } from '../redux/slices/Users/userSlice'
-import { fetchOrders } from '../redux/slices/Orders/ordersSlice'
-import { fetchProducts } from '../redux/slices/products/productSlice'
+import { AppDispatch, RootState } from '../../redux/store'
+import { fetchUsers, UserType } from '../../redux/slices/Users/userSlice'
+import { fetchOrders, OrderType } from '../../redux/slices/Orders/ordersSlice'
+import { fetchProducts, ProductType } from '../../redux/slices/products/productSlice'
 
 const Users = () => {
   const users = useSelector((state: RootState) => state.usersReducer)
@@ -37,7 +37,7 @@ const Users = () => {
         <section className="users">
           <h2 className="section-title">Users</h2>
           {users.usersList.length > 0 &&
-            users.usersList.map((user) => {
+            users.usersList.map((user: UserType) => {
               if (users.userData?.id !== user.id) {
                 return (
                   <div key={user.id} className="orders" id="orders">
@@ -47,14 +47,14 @@ const Users = () => {
                         <p className="email">{user.email}</p>
                       </div>
                       {orders.ordersList.length > 0 &&
-                        orders.ordersList.map((order) => {
+                        orders.ordersList.map((order: OrderType) => {
                           if (order.userId === user.id) {
                             return (
                               <div key={order.id} className="order">
                                 <p className="order-id">Order# {order.id}</p>
                                 <div className="order-images">
                                   {products.productsList.length > 0 &&
-                                    products.productsList.map((product) => {
+                                    products.productsList.map((product: ProductType) => {
                                       if (order.productId === product.id) {
                                         return (
                                           <img

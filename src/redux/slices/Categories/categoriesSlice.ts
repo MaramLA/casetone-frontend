@@ -7,13 +7,13 @@ export const fetchCategories = createAsyncThunk('categories/fetchCategories', as
   return response.data
 })
 
-type Category = {
+export type CategoryType = {
   id: number
   name: string
 }
 
 export type CategoryState = {
-  categoriesList: Category[]
+  categoriesList: CategoryType[]
   error: null | string
   isLoading: boolean
 }

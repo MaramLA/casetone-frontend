@@ -7,7 +7,7 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
   return response.data
 })
 
-export type User = {
+export type UserType = {
   id: number
   firstName: string
   lastName: string
@@ -17,19 +17,24 @@ export type User = {
 }
 
 export type UsersState = {
-  usersList: User[]
+  usersList: UserType[]
   isLoading: boolean
   error: null | string
   isSignedIn: boolean
-  userData: null | User
+  userData: null | UserType
 }
+
+const signInData =
+  localStorage.getItem('signInData') !== null
+    ? JSON.parse(String(localStorage.getItem('signInData')))
+    : []
 
 const initialState: UsersState = {
   usersList: [],
   isLoading: false,
   error: null,
-  isSignedIn: false,
-  userData: null
+  isSignedIn: signInData.isSignedIn,
+  userData: signInData.userData
 }
 
 const usersSlice = createSlice({
@@ -39,10 +44,18 @@ const usersSlice = createSlice({
     signIn: (state, action) => {
       state.isSignedIn = true
       state.userData = action.payload
+      localStorage.setItem(
+        'signInData',
+        JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
+      )
     },
     signOut: (state) => {
       state.isSignedIn = false
       state.userData = null
+      localStorage.setItem(
+        'signInData',
+        JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
+      )
     }
   },
   extraReducers(builder) {

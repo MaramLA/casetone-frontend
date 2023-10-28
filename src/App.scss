@@ -430,7 +430,10 @@ footer {
     @include center();
     flex-wrap: wrap;
     margin-bottom: 8rem;
-
+    max-width: 80vw;
+    .product-details-link {
+      text-decoration: none;
+    }
     .product {
       background: $primary-color0;
       border-radius: 50px;
@@ -493,6 +496,19 @@ footer {
             top: 125px;
             font-size: 2.5em;
             color: rgb(163, 54, 54);
+            margin: 1.4rem;
+            transition: all 0.2s ease-in;
+            &:hover {
+              cursor: pointer;
+              font-size: 2.7em;
+            }
+          }
+          .icon4 {
+            position: absolute;
+            left: 330px;
+            top: 125px;
+            font-size: 2.7em;
+            color: $primary-color1;
             margin: 1.4rem;
             transition: all 0.2s ease-in;
             &:hover {
@@ -1527,12 +1543,18 @@ footer {
         width: 45rem;
       }
       .buttons {
-        @include center();
+        display: flex;
+        // @include center();
         width: 100%;
         text-align: left;
+        gap: 3rem;
         .buy-btn {
           margin-top: 5rem;
           @include mainButton2-Styling();
+        }
+        .back-btn {
+          margin-top: 5rem;
+          @include mainButton1-Styling();
         }
       }
     }

@@ -7,7 +7,7 @@ export const fetchProducts = createAsyncThunk('product/fetchProducts', async () 
   return response.data
 })
 
-export type Product = {
+export type ProductType = {
   id: number
   name: string
   image: string
@@ -19,21 +19,32 @@ export type Product = {
 }
 
 export type ProductState = {
-  productsList: Product[]
+  productsList: ProductType[]
   error: null | string
   isLoading: boolean
+  singleProduct: ProductType
 }
 
 const initialState: ProductState = {
   productsList: [],
   error: null,
-  isLoading: false
+  isLoading: false,
+  singleProduct: {} as ProductType
 }
 
-const productSlice = createSlice({
+export const productSlice = createSlice({
   name: 'product',
   initialState,
-  reducers: {},
+  reducers: {
+    findProductById: (state, action) => {
+      const id: number = action.payload
+      state.productsList.find((product: ProductType) => {
+        if (product.id === id) {
+          state.singleProduct = product
+        }
+      })
+    }
+  },
   extraReducers(builder) {
     builder.addCase(fetchProducts.pending, (state) => {
       state.isLoading = true
@@ -50,4 +61,5 @@ const productSlice = createSlice({
   }
 })
 
+export const { findProductById } = productSlice.actions
 export default productSlice.reducer

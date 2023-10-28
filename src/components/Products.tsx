@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
 import { BsCartPlusFill } from 'react-icons/bs'
+import { GrFormView } from 'react-icons/gr'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { fetchProducts } from '../redux/slices/products/productSlice'
+import { fetchProducts, ProductType } from '../redux/slices/products/productSlice'
+import { Link } from 'react-router-dom'
 
 const Products = () => {
   const { productsList, isLoading, error } = useSelector(
@@ -35,7 +37,7 @@ const Products = () => {
       {/* Products */}
       <div className="products-div">
         {productsList.length > 0 &&
-          productsList.map((product) => {
+          productsList.map((product: ProductType) => {
             return (
               <div key={product.id} className="product">
                 <img src={product.image} alt={product.name} />
@@ -47,29 +49,22 @@ const Products = () => {
                     {isSignedIn && userData?.role.toLowerCase() === 'admin' ? (
                       <>
                         <AiFillEdit className="icon2" />
-                        <MdDelete className="icon3" />{' '}
+                        <MdDelete className="icon3" />
                       </>
                     ) : (
-                      <BsCartPlusFill className="icon1" />
+                      <>
+                        <Link to={`/products/${product.id}`}>
+                          <GrFormView className="icon4" />
+                        </Link>
+
+                        <BsCartPlusFill className="icon1" />
+                      </>
                     )}
                   </div>
                 </div>
               </div>
             )
           })}
-
-        {/* <div className="product">
-          <img
-            src="https://ae01.alicdn.com/kf/S1c603484c98c467faaa86a2f2b0dee4f2/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
-            alt="Product"
-          />
-          <div className="product__details">
-            <p className="product__title">Yellow Waves</p>
-            <p className="product__description">iPhone 13 Pro Yellow Waves case</p>
-            <p className="product__price">7.99$</p>
-            <i className="fa-solid fa-cart-plus fa-sm icon"></i>
-          </div>
-        </div> */}
       </div>
       {isSignedIn && userData?.role.toLowerCase() === 'admin' && (
         <button className="products-btn">Add Product</button>
