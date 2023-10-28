@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { ChangeEvent, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { MdDelete } from 'react-icons/md'
@@ -7,12 +7,12 @@ import { BsCartPlusFill } from 'react-icons/bs'
 import { GrFormView } from 'react-icons/gr'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { fetchProducts, ProductType } from '../redux/slices/products/productSlice'
+import { fetchProducts, ProductType, searchProducts } from '../redux/slices/products/productSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import { purchasesPath, signInPath } from '../pathLinks'
 
 const Products = () => {
-  const { productsList, isLoading, error } = useSelector(
+  const { productsList, isLoading, error, searchTerm } = useSelector(
     (state: RootState) => state.productsReducer
   )
   const { userData, isSignedIn } = useSelector((state: RootState) => state.usersReducer)
@@ -35,17 +35,35 @@ const Products = () => {
     } else navigate(signInPath)
   }
 
+  const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(searchProducts(event.target.value))
+  }
+
+  const searchedProducts = searchTerm
+    ? productsList.filter((product: ProductType) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : productsList
+
   return (
     <section className="products" id="productsSection">
       <label htmlFor="search-product" className="section-title">
         Products
       </label>
-      <input type="text" className="search-product" id="search-product" placeholder="search" />
+      <input
+        type="text"
+        className="search-product"
+        name="searchTerm"
+        id="search-product"
+        placeholder="search"
+        value={searchTerm?.toString().toLowerCase()}
+        onChange={handleSearchInput}
+      />
 
       {/* Products */}
       <div className="products-div">
-        {productsList.length > 0 &&
-          productsList.map((product: ProductType) => {
+        {searchedProducts.length > 0 &&
+          searchedProducts.map((product: ProductType) => {
             return (
               <div key={product.id} className="product">
                 <img src={product.image} alt={product.name} />
@@ -67,7 +85,6 @@ const Products = () => {
                         <Link to={`/products/${product.id}`}>
                           <GrFormView className="icon4" />
                         </Link>
-
                         <BsCartPlusFill onClick={handleCartBtn} className="icon1" />
                       </>
                     )}

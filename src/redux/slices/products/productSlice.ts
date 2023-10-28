@@ -23,13 +23,15 @@ export type ProductState = {
   error: null | string
   isLoading: boolean
   singleProduct: ProductType
+  searchTerm: string | null
 }
 
 const initialState: ProductState = {
   productsList: [],
   error: null,
   isLoading: false,
-  singleProduct: {} as ProductType
+  singleProduct: {} as ProductType,
+  searchTerm: ''
 }
 
 export const productSlice = createSlice({
@@ -43,6 +45,9 @@ export const productSlice = createSlice({
           state.singleProduct = product
         }
       })
+    },
+    searchProducts: (state, action) => {
+      state.searchTerm = action.payload
     }
   },
   extraReducers(builder) {
@@ -61,5 +66,5 @@ export const productSlice = createSlice({
   }
 })
 
-export const { findProductById } = productSlice.actions
+export const { findProductById, searchProducts } = productSlice.actions
 export default productSlice.reducer
