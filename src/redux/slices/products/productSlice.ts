@@ -48,6 +48,19 @@ export const productSlice = createSlice({
     },
     searchProducts: (state, action) => {
       state.searchTerm = action.payload
+    },
+    sortProducts: (state, action) => {
+      const sortingCriteria = action.payload
+      if (sortingCriteria === 'name') {
+        state.productsList.sort((currentProduct: ProductType, nextProduct: ProductType) =>
+          currentProduct.name.toLowerCase().localeCompare(nextProduct.name.toLowerCase())
+        )
+      } else if (sortingCriteria === 'price') {
+        state.productsList.sort(
+          (currentProduct: ProductType, nextProduct: ProductType) =>
+            Number(currentProduct.price) - Number(nextProduct.price)
+        )
+      }
     }
   },
   extraReducers(builder) {
@@ -66,5 +79,5 @@ export const productSlice = createSlice({
   }
 })
 
-export const { findProductById, searchProducts } = productSlice.actions
+export const { findProductById, searchProducts, sortProducts } = productSlice.actions
 export default productSlice.reducer

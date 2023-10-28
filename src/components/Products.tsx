@@ -10,6 +10,7 @@ import { AppDispatch, RootState } from '../redux/store'
 import { fetchProducts, ProductType, searchProducts } from '../redux/slices/products/productSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import { purchasesPath, signInPath } from '../pathLinks'
+import SortProducts from './sortProducts'
 
 const Products = () => {
   const { productsList, isLoading, error, searchTerm } = useSelector(
@@ -59,7 +60,7 @@ const Products = () => {
         value={searchTerm?.toString().toLowerCase()}
         onChange={handleSearchInput}
       />
-
+      <SortProducts />
       {/* Products */}
       <div className="products-div">
         {searchedProducts.length > 0 &&
