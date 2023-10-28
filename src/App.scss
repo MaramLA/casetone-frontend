@@ -444,8 +444,6 @@ footer {
       transition: all 0.2s ease-in;
       &:hover {
         transform: translateY(-20px);
-        // border: 1px solid rgb(105, 98, 98);
-        cursor: pointer;
       }
       img {
         width: 100%;
@@ -507,7 +505,20 @@ footer {
             position: absolute;
             left: 330px;
             top: 125px;
-            font-size: 2.7em;
+            font-size: 2.5em;
+            color: $primary-color1;
+            margin: 1.4rem;
+            transition: all 0.2s ease-in;
+            &:hover {
+              cursor: pointer;
+              font-size: 2.7em;
+            }
+          }
+          .icon5 {
+            position: absolute;
+            left: 260px;
+            top: 125px;
+            font-size: 2.5em;
             color: $primary-color1;
             margin: 1.4rem;
             transition: all 0.2s ease-in;

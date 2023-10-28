@@ -8,7 +8,8 @@ import { GrFormView } from 'react-icons/gr'
 
 import { AppDispatch, RootState } from '../redux/store'
 import { fetchProducts, ProductType } from '../redux/slices/products/productSlice'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { purchasesPath, signInPath } from '../pathLinks'
 
 const Products = () => {
   const { productsList, isLoading, error } = useSelector(
@@ -17,6 +18,7 @@ const Products = () => {
   const { userData, isSignedIn } = useSelector((state: RootState) => state.usersReducer)
 
   const dispatch: AppDispatch = useDispatch()
+  const navigate = useNavigate()
   useEffect(() => {
     dispatch(fetchProducts())
   }, [])
@@ -25,6 +27,12 @@ const Products = () => {
   }
   if (error) {
     return <p>{error}</p>
+  }
+
+  const handleCartBtn = () => {
+    if (isSignedIn) {
+      navigate(purchasesPath)
+    } else navigate(signInPath)
   }
 
   return (
@@ -48,6 +56,9 @@ const Products = () => {
                   <div className="controllers">
                     {isSignedIn && userData?.role.toLowerCase() === 'admin' ? (
                       <>
+                        <Link to={`/products/${product.id}`}>
+                          <GrFormView className="icon5" />
+                        </Link>
                         <AiFillEdit className="icon2" />
                         <MdDelete className="icon3" />
                       </>
@@ -57,7 +68,7 @@ const Products = () => {
                           <GrFormView className="icon4" />
                         </Link>
 
-                        <BsCartPlusFill className="icon1" />
+                        <BsCartPlusFill onClick={handleCartBtn} className="icon1" />
                       </>
                     )}
                   </div>

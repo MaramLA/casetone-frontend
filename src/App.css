@@ -716,7 +716,6 @@ footer .bottom-section p {
 .products .products-div .product:hover {
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
-  cursor: pointer;
 }
 
 .products .products-div .product img {
@@ -799,7 +798,7 @@ footer .bottom-section p {
   position: absolute;
   left: 330px;
   top: 125px;
-  font-size: 2.7em;
+  font-size: 2.5em;
   color: #696262;
   margin: 1.4rem;
   -webkit-transition: all 0.2s ease-in;
@@ -807,6 +806,22 @@ footer .bottom-section p {
 }
 
 .products .products-div .product .product__details .controllers .icon4:hover {
+  cursor: pointer;
+  font-size: 2.7em;
+}
+
+.products .products-div .product .product__details .controllers .icon5 {
+  position: absolute;
+  left: 260px;
+  top: 125px;
+  font-size: 2.5em;
+  color: #696262;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.products .products-div .product .product__details .controllers .icon5:hover {
   cursor: pointer;
   font-size: 2.7em;
 }
