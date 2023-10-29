@@ -42,6 +42,15 @@
     "email": "arwa@gmail.com",
     "password": "123",
     "role": "visitor",
+    "ban": false
+  },
+  {
+    "id": 6,
+    "firstName": "Tama",
+    "lastName": "Murad",
+    "email": "tama@gmail.com",
+    "password": "123",
+    "role": "visitor",
     "ban": true
   }
 ]

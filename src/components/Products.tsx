@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
 import { BsCartPlusFill } from 'react-icons/bs'
-import { GrFormView } from 'react-icons/gr'
+import { AiFillEye } from 'react-icons/ai'
 
 import { AppDispatch, RootState } from '../redux/store'
 import {
@@ -76,7 +76,9 @@ const Products = () => {
           searchedProducts.map((product: ProductType) => {
             return (
               <div key={product.id} className="product">
-                <img src={product.image} alt={product.name} />
+                <Link className="product-details-link" to={`/products/${product.id}`}>
+                  <img src={product.image} alt={product.name} />
+                </Link>
                 <div className="product__details">
                   <p className="product__title">{product.name}</p>
                   <p className="product__description">{product.description}</p>
@@ -85,7 +87,7 @@ const Products = () => {
                     {isSignedIn && userData?.role.toLowerCase() === 'admin' ? (
                       <>
                         <Link to={`/products/${product.id}`}>
-                          <GrFormView className="icon5" />
+                          <AiFillEye className="icon5" />
                         </Link>
                         <AiFillEdit className="icon2" />
                         <MdDelete
@@ -96,7 +98,7 @@ const Products = () => {
                     ) : (
                       <>
                         <Link to={`/products/${product.id}`}>
-                          <GrFormView className="icon4" />
+                          <AiFillEye className="icon4" />
                         </Link>
                         <BsCartPlusFill onClick={handleCartBtn} className="icon1" />
                       </>

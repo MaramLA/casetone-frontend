@@ -21,7 +21,7 @@ const AdminNavbar = () => {
 
   const handleLogout = () => {
     dispatch(signOut())
-    navigate(signInPath)
+    navigate(homePath)
   }
 
   return (

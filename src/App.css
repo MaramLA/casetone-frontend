@@ -672,9 +672,35 @@ footer .bottom-section p {
   color: #696262;
   text-transform: lowercase;
   border: 4px solid #696262;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
   outline: none;
   background: #edefef;
+}
+
+.products .sort-section .sort-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  outline: none;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.products .sort-section .sort-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
 }
 
 .products .products-div {
@@ -697,10 +723,6 @@ footer .bottom-section p {
   max-width: 80vw;
 }
 
-.products .products-div .product-details-link {
-  text-decoration: none;
-}
-
 .products .products-div .product {
   background: #ffff;
   border-radius: 50px;
@@ -718,7 +740,13 @@ footer .bottom-section p {
           transform: translateY(-20px);
 }
 
-.products .products-div .product img {
+.products .products-div .product .product-details-link {
+  text-decoration: none;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.products .products-div .product .product-details-link img {
   width: 100%;
   height: 34rem;
   border-top-left-radius: inherit;
@@ -751,7 +779,7 @@ footer .bottom-section p {
   left: 380px;
   top: 125px;
   font-size: 2.5em;
-  color: #696262;
+  color: #909090;
   margin: 1.4rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -767,7 +795,7 @@ footer .bottom-section p {
   left: 330px;
   top: 125px;
   font-size: 2.5em;
-  color: #696262;
+  color: #909090;
   margin: 1.4rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -796,10 +824,10 @@ footer .bottom-section p {
 
 .products .products-div .product .product__details .controllers .icon4 {
   position: absolute;
-  left: 330px;
+  left: 310px;
   top: 125px;
   font-size: 2.5em;
-  color: #696262;
+  color: #909090;
   margin: 1.4rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -815,7 +843,7 @@ footer .bottom-section p {
   left: 260px;
   top: 125px;
   font-size: 2.5em;
-  color: #696262;
+  color: #909090;
   margin: 1.4rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -834,7 +862,7 @@ footer .bottom-section p {
 }
 
 .products .products-div .product .product__details .product__description {
-  font-size: 1.9em;
+  font-size: 1.7em;
   margin-bottom: 1.5rem;
 }
 
@@ -2296,7 +2324,7 @@ footer .bottom-section p {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 10rem;
-  width: 60%;
+  width: 60vw;
   gap: 4rem;
   border-radius: 50px;
   padding: 6rem 0;
@@ -2364,7 +2392,7 @@ footer .bottom-section p {
   position: absolute;
   right: 2rem;
   font-size: 3.5em;
-  color: #696262;
+  color: #909090;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }

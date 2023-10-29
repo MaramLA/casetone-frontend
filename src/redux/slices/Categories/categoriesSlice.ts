@@ -27,7 +27,14 @@ const initialState: CategoryState = {
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
-  reducers: {},
+  reducers: {
+    deleteCategory: (state, action) => {
+      return {
+        ...state,
+        categoriesList: state.categoriesList.filter((category) => category.id !== action.payload)
+      }
+    }
+  },
   extraReducers(builder) {
     builder.addCase(fetchCategories.pending, (state) => {
       state.isLoading = true
@@ -44,4 +51,5 @@ const categoriesSlice = createSlice({
   }
 })
 
+export const { deleteCategory } = categoriesSlice.actions
 export default categoriesSlice.reducer

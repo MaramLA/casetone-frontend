@@ -8,12 +8,13 @@ const SortProducts = () => {
     dispatch(sortProducts(event.target.value))
   }
   return (
-    <div>
-      <label>Sort by:</label>
-      <select onChange={handleSortChange}>
-        <option value="price" defaultValue="price">
-          Price
+    <div className="sort-section">
+      {/* <label>Sort by:</label> */}
+      <select className="sort-btn" onChange={handleSortChange}>
+        <option value="sort" defaultValue="sort">
+          Sort
         </option>
+        <option value="price">Price</option>
         <option value="name">Name</option>
       </select>
     </div>

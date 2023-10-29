@@ -8,7 +8,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import Footer from '../../layout/Footer'
 
 import { AppDispatch, RootState } from '../../redux/store'
-import { CategoryType, fetchCategories } from '../../redux/slices/Categories/categoriesSlice'
+import {
+  CategoryType,
+  deleteCategory,
+  fetchCategories
+} from '../../redux/slices/Categories/categoriesSlice'
 
 const Category = () => {
   const { categoriesList, isLoading, error } = useSelector(
@@ -25,6 +29,10 @@ const Category = () => {
   }
   if (error) {
     return <p>{error}</p>
+  }
+
+  const handleDeleteCategory = (categoryId: number) => {
+    dispatch(deleteCategory(categoryId))
   }
 
   return (
@@ -47,7 +55,12 @@ const Category = () => {
                     <p className="category-name">{category.name}</p>
                     <div className="controllers">
                       <AiFillEdit className="editIcon" />
-                      <MdDelete className="deleteIcon" />
+                      <MdDelete
+                        className="deleteIcon"
+                        onClick={() => {
+                          handleDeleteCategory(category.id)
+                        }}
+                      />
                     </div>
                   </div>
                 )

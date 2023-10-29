@@ -63,9 +63,9 @@ const Users = () => {
     dispatch(banUser(userId))
   }
 
-  const handleDeleteOrder = (orderId: number) => {
-    deleteSingleUserOrder(orderId)
-  }
+  // const handleDeleteOrder = (orderId: number) => {
+  //   deleteSingleUserOrder(orderId)
+  // }
 
   return (
     <div>
@@ -92,6 +92,7 @@ const Users = () => {
                         <p className="email">{user.email}</p>
                       </div>
                       {orders.ordersList.length > 0 &&
+                        user.ban === false &&
                         orders.ordersList.map((order: OrderType) => {
                           if (order.userId === user.id) {
                             return (
@@ -117,7 +118,7 @@ const Users = () => {
                                 <div className="controllers">
                                   <MdDelete
                                     className="deleteIcon"
-                                    onClick={() => handleDeleteOrder(order.id)}
+                                    onClick={() => deleteSingleUserOrder(order.id)}
                                   />
                                 </div>
                               </div>
