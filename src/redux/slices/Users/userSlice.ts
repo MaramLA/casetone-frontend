@@ -69,10 +69,6 @@ const usersSlice = createSlice({
         ...state,
         usersList: state.usersList.filter((user) => user.id !== action.payload)
       }
-      // const filtersUsers = state.usersList.filter((user: UserType) => {
-      //   user.id !== action.payload
-      // })
-      // state.usersList = filtersUsers
     },
     banUser: (state, action) => {
       const id = action.payload
@@ -81,6 +77,9 @@ const usersSlice = createSlice({
           user.ban = !user.ban
         }
       })
+    },
+    addUser: (state, action) => {
+      state.usersList.push(action.payload)
     }
   },
   extraReducers(builder) {
@@ -99,5 +98,5 @@ const usersSlice = createSlice({
   }
 })
 
-export const { signIn, signOut, searchUser, deleteUser, banUser } = usersSlice.actions
+export const { signIn, signOut, searchUser, deleteUser, banUser, addUser } = usersSlice.actions
 export default usersSlice.reducer
