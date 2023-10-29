@@ -39,13 +39,20 @@ const SignIn = () => {
     try {
       usersList.find((user: UserType) => {
         const UserExist = user.email === logInUser.email
-        console.log(UserExist)
-        if (UserExist && user.password === logInUser.password) {
-          dispatch(signIn(user))
-          navigate(homePath)
-        } else {
-          console.log('Invalid email or password')
+
+        if (!UserExist) {
+          console.log('User not found')
+          return
         }
+        if (user.password !== logInUser.password) {
+          console.log('Password do not match')
+        }
+        if (user.ban) {
+          console.log('Sorry you account was banned')
+          return
+        }
+        dispatch(signIn(user))
+        navigate(homePath)
       })
     } catch (error) {
       console.log(error)

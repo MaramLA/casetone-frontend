@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Footer from '../layout/Footer'
 import { AppDispatch, RootState } from '../redux/store'
-import { findProductById } from '../redux/slices/products/productSlice'
+import { fetchProducts, findProductById } from '../redux/slices/products/productSlice'
 import { homePath, purchasesPath, signInPath } from '../pathLinks'
 
 const ProductDetails = () => {
@@ -12,7 +12,6 @@ const ProductDetails = () => {
   const { singleProduct, isLoading, error } = useSelector(
     (state: RootState) => state.productsReducer
   )
-  const categories = useSelector((state: RootState) => state.categoriesReducer)
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
 
   // useSelector((state: RootState) => console.log(state.productsReducer))
@@ -21,7 +20,7 @@ const ProductDetails = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    dispatch(findProductById(Number(id)))
+    dispatch(fetchProducts()).then(() => dispatch(findProductById(Number(id))))
   }, [])
 
   if (isLoading) {

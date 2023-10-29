@@ -1309,7 +1309,7 @@ footer .bottom-section p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 60vw;
+  width: 75vw;
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -1391,7 +1391,7 @@ footer .bottom-section p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80%;
+  width: 75vw;
   gap: 4rem;
   border-radius: 50px;
   padding: 6rem 4rem;
@@ -2595,6 +2595,22 @@ footer .bottom-section p {
 /* ---------------------------------------------------------- */
 /* Start of users styling */
 /* ---------------------------------------------------------- */
+.users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .users .section-title {
   font-size: 4.5em;
   text-transform: capitalize;
@@ -2602,6 +2618,29 @@ footer .bottom-section p {
   font-weight: bolder;
   margin-bottom: 5rem;
   text-align: center;
+}
+
+.users .search-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 8rem;
+  outline: none;
+  background: #edefef;
 }
 
 .users .info {

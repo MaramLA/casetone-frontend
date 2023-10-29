@@ -14,6 +14,7 @@ export type UserType = {
   email: string
   password: string
   role: string
+  ban: boolean
 }
 
 export type UsersState = {
@@ -22,6 +23,7 @@ export type UsersState = {
   error: null | string
   isSignedIn: boolean
   userData: null | UserType
+  searchTerm: string
 }
 
 const signInData =
@@ -34,7 +36,8 @@ const initialState: UsersState = {
   isLoading: false,
   error: null,
   isSignedIn: signInData.isSignedIn,
-  userData: signInData.userData
+  userData: signInData.userData,
+  searchTerm: ''
 }
 
 const usersSlice = createSlice({
@@ -56,6 +59,28 @@ const usersSlice = createSlice({
         'signInData',
         JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
       )
+    },
+    searchUser: (state, action) => {
+      state.searchTerm = action.payload
+    },
+
+    deleteUser: (state, action) => {
+      return {
+        ...state,
+        usersList: state.usersList.filter((user) => user.id !== action.payload)
+      }
+      // const filtersUsers = state.usersList.filter((user: UserType) => {
+      //   user.id !== action.payload
+      // })
+      // state.usersList = filtersUsers
+    },
+    banUser: (state, action) => {
+      const id = action.payload
+      state.usersList.map((user) => {
+        if (user.id === id) {
+          user.ban = !user.ban
+        }
+      })
     }
   },
   extraReducers(builder) {
@@ -74,5 +99,5 @@ const usersSlice = createSlice({
   }
 })
 
-export const { signIn, signOut } = usersSlice.actions
+export const { signIn, signOut, searchUser, deleteUser, banUser } = usersSlice.actions
 export default usersSlice.reducer

@@ -61,6 +61,12 @@ export const productSlice = createSlice({
             Number(currentProduct.price) - Number(nextProduct.price)
         )
       }
+    },
+    deleteProduct: (state, action) => {
+      return {
+        ...state,
+        productsList: state.productsList.filter((product) => product.id !== action.payload)
+      }
     }
   },
   extraReducers(builder) {
@@ -79,5 +85,5 @@ export const productSlice = createSlice({
   }
 })
 
-export const { findProductById, searchProducts, sortProducts } = productSlice.actions
+export const { findProductById, searchProducts, sortProducts, deleteProduct } = productSlice.actions
 export default productSlice.reducer

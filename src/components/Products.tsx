@@ -7,10 +7,15 @@ import { BsCartPlusFill } from 'react-icons/bs'
 import { GrFormView } from 'react-icons/gr'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { fetchProducts, ProductType, searchProducts } from '../redux/slices/products/productSlice'
+import {
+  deleteProduct,
+  fetchProducts,
+  ProductType,
+  searchProducts
+} from '../redux/slices/products/productSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import { purchasesPath, signInPath } from '../pathLinks'
-import SortProducts from './sortProducts'
+import SortProducts from './SortProducts'
 
 const Products = () => {
   const { productsList, isLoading, error, searchTerm } = useSelector(
@@ -34,6 +39,10 @@ const Products = () => {
     if (isSignedIn) {
       navigate(purchasesPath)
     } else navigate(signInPath)
+  }
+
+  const handleDeleteProduct = (id: number) => {
+    dispatch(deleteProduct(id))
   }
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
@@ -79,7 +88,10 @@ const Products = () => {
                           <GrFormView className="icon5" />
                         </Link>
                         <AiFillEdit className="icon2" />
-                        <MdDelete className="icon3" />
+                        <MdDelete
+                          className="icon3"
+                          onClick={() => handleDeleteProduct(product.id)}
+                        />
                       </>
                     ) : (
                       <>

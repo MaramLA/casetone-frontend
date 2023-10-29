@@ -29,7 +29,20 @@ const initialState: OrdersState = {
 const ordersSlice = createSlice({
   name: 'orders',
   initialState,
-  reducers: {},
+  reducers: {
+    deleteAllUserOrders: (state, action) => {
+      return {
+        ...state,
+        ordersList: state.ordersList.filter((order) => order.userId !== action.payload)
+      }
+    },
+    deleteSingleUserOrder: (state, action) => {
+      return {
+        ...state,
+        ordersList: state.ordersList.filter((order) => order.id !== action.payload)
+      }
+    }
+  },
   extraReducers(builder) {
     builder.addCase(fetchOrders.pending, (state) => {
       state.isLoading = true
@@ -46,4 +59,5 @@ const ordersSlice = createSlice({
   }
 })
 
+export const { deleteAllUserOrders, deleteSingleUserOrder } = ordersSlice.actions
 export default ordersSlice.reducer

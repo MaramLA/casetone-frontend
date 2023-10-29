@@ -1,12 +1,23 @@
-import { useEffect } from 'react'
+import { ChangeEvent, useEffect } from 'react'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Footer from '../../layout/Footer'
 
 import { AppDispatch, RootState } from '../../redux/store'
-import { fetchUsers, UserType } from '../../redux/slices/Users/userSlice'
-import { fetchOrders, OrderType } from '../../redux/slices/Orders/ordersSlice'
+import {
+  banUser,
+  deleteUser,
+  fetchUsers,
+  searchUser,
+  UserType
+} from '../../redux/slices/Users/userSlice'
+import {
+  deleteAllUserOrders,
+  deleteSingleUserOrder,
+  fetchOrders,
+  OrderType
+} from '../../redux/slices/Orders/ordersSlice'
 import { fetchProducts, ProductType } from '../../redux/slices/products/productSlice'
 
 const Users = () => {
@@ -16,9 +27,11 @@ const Users = () => {
 
   const dispatch: AppDispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchUsers()), dispatch(fetchOrders()), dispatch(fetchProducts())
+    dispatch(fetchUsers())
+      .then(() => dispatch(fetchOrders()))
+      .then(() => dispatch(fetchProducts()))
   }, [])
-  if (users.isLoading || orders.isLoading || users.isLoading) {
+  if (users.isLoading || orders.isLoading || products.isLoading) {
     return <p>Loading...</p>
   }
   if (users.error) {
@@ -31,14 +44,46 @@ const Users = () => {
     return <p>{products.error}</p>
   }
 
+  const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(searchUser(event.target.value))
+  }
+
+  const searchedUsers = users.searchTerm
+    ? users.usersList.filter((user) =>
+        user.firstName.toLowerCase().includes(users.searchTerm?.toLowerCase())
+      )
+    : users.usersList
+
+  const handleRemoveUser = (userId: number) => {
+    dispatch(deleteAllUserOrders(userId))
+    dispatch(deleteUser(userId))
+  }
+
+  const handleBanUser = (userId: number) => {
+    dispatch(banUser(userId))
+  }
+
+  const handleDeleteOrder = (orderId: number) => {
+    deleteSingleUserOrder(orderId)
+  }
+
   return (
     <div>
       <main>
         <section className="users">
           <h2 className="section-title">Users</h2>
-          {users.usersList.length > 0 &&
-            users.usersList.map((user: UserType) => {
-              if (users.userData?.id !== user.id) {
+          <input
+            type="text"
+            className="search-product"
+            name="searchTerm"
+            id="search-product"
+            placeholder="search"
+            value={users.searchTerm?.toString().toLowerCase()}
+            onChange={handleSearchInput}
+          />
+          {searchedUsers.length > 0 &&
+            searchedUsers.map((user: UserType) => {
+              if (user.role !== 'admin') {
                 return (
                   <div key={user.id} className="orders" id="orders">
                     <div className="orders-container">
@@ -70,30 +115,22 @@ const Users = () => {
                                 </div>
                                 <p className="order-date">{order.purchasedAt}</p>
                                 <div className="controllers">
-                                  <MdDelete className="deleteIcon" />
+                                  <MdDelete
+                                    className="deleteIcon"
+                                    onClick={() => handleDeleteOrder(order.id)}
+                                  />
                                 </div>
                               </div>
                             )
                           }
                         })}
-
-                      {/* <div className="order">
-                      <p className="order-id">Order# 1</p>
-                      <div className="order-images">
-                        <img
-                          src="https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
-                          alt=""
-                          className="order-image"
-                        />
-                      </div>
-                      <p className="order-date">2023-09-18T10:00:00</p>
-                      <div className="controllers">
-                        <MdDelete className="deleteIcon" />
-                      </div>
-                    </div> */}
                       <div className="buttons">
-                        <button className="remove-btn">Remove</button>
-                        <button className="block-btn">Block</button>
+                        <button className="remove-btn" onClick={() => handleRemoveUser(user.id)}>
+                          Remove
+                        </button>
+                        <button className="block-btn" onClick={() => handleBanUser(user.id)}>
+                          {user.ban ? 'Unban' : 'Ban'}
+                        </button>
                       </div>
                     </div>
                   </div>
