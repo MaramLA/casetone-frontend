@@ -10,7 +10,7 @@ import {
   signInPath,
   categoryPath,
   productsPath,
-  userProfilePath
+  profilePath
 } from '../pathLinks'
 
 import { signOut } from '../redux/slices/Users/userSlice'
@@ -58,7 +58,7 @@ const AdminNavbar = () => {
       </div>
       <div className="right-section">
         {/* Profile icon */}
-        <Link to={userProfilePath}>
+        <Link to={profilePath}>
           <i className="fa-solid fa-user icon1" aria-hidden="true"></i>
         </Link>
         {/* burger icon  */}

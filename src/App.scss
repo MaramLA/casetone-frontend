@@ -1284,7 +1284,19 @@ footer {
             font-weight: bolder;
             margin-bottom: 2rem;
           }
-          input {
+          .name {
+            width: 30rem;
+            height: 5rem;
+            border-radius: 50px;
+            padding: 0 4rem;
+            font-size: $font-size4;
+            color: $primary-color1;
+            text-transform: capitalize;
+            border: 4px solid $primary-color1;
+            margin-bottom: 2rem;
+            outline: none;
+          }
+          .formEmail {
             width: 30rem;
             height: 5rem;
             border-radius: 50px;
@@ -1379,7 +1391,6 @@ footer {
         padding: 0 4rem;
         font-size: $font-size4;
         color: $primary-color1;
-        text-transform: lowercase;
         border: 4px solid $primary-color1;
         margin-bottom: 2rem;
         background: $primary-color3;
@@ -1537,7 +1548,7 @@ footer {
       flex-direction: column;
 
       .product-category {
-        font-size: $font-size4;
+        font-size: $font-size2;
         color: $primary-color6;
         text-transform: capitalize;
         font-weight: bolder;

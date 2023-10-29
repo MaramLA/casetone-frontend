@@ -3,9 +3,8 @@ export const homePath = '/'
 export const errorPath = '/*'
 export const signInPath = '/sign-in'
 export const signUpPath = '/sign-up'
-// export const productDetailsPath = '/products/:id'
 
-export const userProfilePath = '/registerd/profile'
+export const profilePath = '/registerd/profile'
 export const purchasesPath = '/registerd/user/purchases'
 
 export const usersPath = '/registerd/admin/users'

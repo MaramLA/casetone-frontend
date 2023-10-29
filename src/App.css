@@ -2105,7 +2105,20 @@ footer .bottom-section p {
   margin-bottom: 2rem;
 }
 
-.profile .profile-container .form .top-side .entry input {
+.profile .profile-container .form .top-side .entry .name {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.profile .profile-container .form .top-side .entry .formEmail {
   width: 30rem;
   height: 5rem;
   border-radius: 50px;
@@ -2276,7 +2289,6 @@ footer .bottom-section p {
   padding: 0 4rem;
   font-size: 2.1em;
   color: #696262;
-  text-transform: lowercase;
   border: 4px solid #696262;
   margin-bottom: 2rem;
   background: #edefef;
@@ -2526,7 +2538,7 @@ footer .bottom-section p {
 }
 
 .productDetails .container .right-side .product-category {
-  font-size: 2.1em;
+  font-size: 1.9em;
   color: #909090;
   text-transform: capitalize;
   font-weight: bolder;

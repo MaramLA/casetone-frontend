@@ -10,7 +10,7 @@ import {
   signUpPath,
   productsPath,
   purchasesPath,
-  userProfilePath
+  profilePath
 } from '../pathLinks'
 
 import { RootState } from '../redux/store'
@@ -61,7 +61,7 @@ const UserNavbar = () => {
         {/* Profile icon */}
         {isSignedIn ? (
           <>
-            <Link to={userProfilePath}>
+            <Link to={profilePath}>
               <i className="fa-solid fa-user icon1" aria-hidden="true"></i>
             </Link>
             {/* burger icon  */}

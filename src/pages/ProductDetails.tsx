@@ -14,7 +14,7 @@ const ProductDetails = () => {
   )
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
 
-  // useSelector((state: RootState) => console.log(state.productsReducer))
+  const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
@@ -40,6 +40,11 @@ const ProductDetails = () => {
     } else navigate(signInPath)
   }
 
+  const getCategoryNameById = (categoryId: number) => {
+    const category = categoriesList.find((category) => category.id === categoryId)
+    return category ? category.name + ' ' : 'Category not found'
+  }
+
   return (
     <div>
       <main>
@@ -50,7 +55,10 @@ const ProductDetails = () => {
             </div>
             <div className="right-side">
               <p className="product-category">
-                {singleProduct.categories && singleProduct.categories.join(', ')}
+                {singleProduct.categories &&
+                  singleProduct.categories.map((categoryId: number) =>
+                    getCategoryNameById(categoryId)
+                  )}
               </p>
               <h2>{singleProduct.name}</h2>
               <p className="discription">

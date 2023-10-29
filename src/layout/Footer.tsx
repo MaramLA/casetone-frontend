@@ -18,7 +18,7 @@ import {
   productsPath,
   categoryPath,
   purchasesPath,
-  userProfilePath
+  profilePath
 } from '../pathLinks'
 const Footer = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
@@ -69,7 +69,7 @@ const Footer = () => {
             )}
             {isSignedIn && (
               <li>
-                <Link className="footerPagesLinks" to={userProfilePath}>
+                <Link className="footerPagesLinks" to={profilePath}>
                   Profile
                 </Link>
               </li>

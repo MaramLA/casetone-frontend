@@ -33,6 +33,16 @@ const categoriesSlice = createSlice({
         ...state,
         categoriesList: state.categoriesList.filter((category) => category.id !== action.payload)
       }
+    },
+    addCategory: (state, action) => {
+      state.categoriesList.push(action.payload)
+    },
+    editCategory: (state, action) => {
+      const { id, name } = action.payload
+      const foundCategoy = state.categoriesList.find((user) => user.id === id)
+      if (foundCategoy) {
+        foundCategoy.name = name
+      }
     }
   },
   extraReducers(builder) {
@@ -51,5 +61,5 @@ const categoriesSlice = createSlice({
   }
 })
 
-export const { deleteCategory } = categoriesSlice.actions
+export const { deleteCategory, addCategory, editCategory } = categoriesSlice.actions
 export default categoriesSlice.reducer

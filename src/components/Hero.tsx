@@ -4,6 +4,7 @@ import { HashLink as InnerLink } from 'react-router-hash-link'
 import bannerImage from '../assets/banner.png'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
+import { GrUserAdmin } from 'react-icons/gr'
 
 const Hero = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
@@ -14,8 +15,8 @@ const Hero = () => {
       <div className="hero__content">
         {isSignedIn && userData?.role.toLowerCase() === 'admin' ? (
           <>
-            <h1 className="heading-title">Admin Dashboard</h1>
-            <p>Welcome {userData.firstName + ' ' + userData.lastName}</p>
+            <h1 className="heading-title">Welcome to Casetone</h1>
+            <p>Admin Dashboard</p>
           </>
         ) : (
           <>

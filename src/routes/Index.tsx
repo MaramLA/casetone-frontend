@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import {
   usersPath,
-  userProfilePath,
+  profilePath,
   purchasesPath,
   categoryPath,
   errorPath,
@@ -20,7 +20,7 @@ import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
 import Users from '../pages/admin/Users'
 import Category from '../pages/admin/Category'
-import UserProfile from '../pages/UserProfile'
+import Profile from '../pages/Profile'
 import Purchases from '../pages/user/Purchases'
 import AddProduct from '../pages/admin/AddProduct'
 import ProductDetails from '../pages/ProductDetails'
@@ -46,7 +46,7 @@ const Index = () => {
 
         <Route path="/registerd" element={<UserProtectedRoutes />}>
           <Route path={purchasesPath} element={<Purchases />} />
-          <Route path={userProfilePath} element={<UserProfile />} />
+          <Route path={profilePath} element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>
