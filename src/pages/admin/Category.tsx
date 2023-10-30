@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
@@ -12,8 +12,7 @@ import {
   addCategory,
   CategoryType,
   deleteCategory,
-  editCategory,
-  fetchCategories
+  editCategory
 } from '../../redux/slices/Categories/categoriesSlice'
 
 const Category = () => {
@@ -26,9 +25,6 @@ const Category = () => {
 
   const dispatch: AppDispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(fetchCategories())
-  }, [])
   if (isLoading) {
     return <p>Loading...</p>
   }

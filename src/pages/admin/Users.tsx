@@ -1,19 +1,13 @@
 import { MdDelete } from 'react-icons/md'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { ChangeEvent, useEffect } from 'react'
+import { ChangeEvent } from 'react'
 
 import Footer from '../../layout/Footer'
 
 import { AppDispatch, RootState } from '../../redux/store'
 
-import {
-  banUser,
-  deleteUser,
-  fetchUsers,
-  searchUser,
-  UserType
-} from '../../redux/slices/Users/userSlice'
+import { banUser, deleteUser, searchUser, UserType } from '../../redux/slices/Users/userSlice'
 import {
   deleteAllUserOrders,
   deleteSingleUserOrder,
@@ -28,11 +22,7 @@ const Users = () => {
   const products = useSelector((state: RootState) => state.productsReducer)
 
   const dispatch: AppDispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchUsers())
-      .then(() => dispatch(fetchOrders()))
-      .then(() => dispatch(fetchProducts()))
-  }, [])
+
   if (users.isLoading || orders.isLoading || products.isLoading) {
     return <p>Loading...</p>
   }

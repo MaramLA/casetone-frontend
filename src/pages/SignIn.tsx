@@ -1,11 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 import { homePath, signUpPath } from '../pathLinks'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { fetchUsers, signIn, UserType } from '../redux/slices/Users/userSlice'
+import { signIn, UserType } from '../redux/slices/Users/userSlice'
 
 type LogInUserType = {
   email: string
@@ -17,11 +17,6 @@ const SignIn = () => {
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
-  useEffect(() => {
-    dispatch(fetchUsers())
-  }, [])
-
-  console.log(usersList)
 
   const [logInUser, setLogInUser] = useState<LogInUserType>({
     email: '',

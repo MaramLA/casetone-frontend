@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react'
+import { ChangeEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -13,12 +13,7 @@ import { purchasesPath, signInPath } from '../pathLinks'
 
 import { AppDispatch, RootState } from '../redux/store'
 
-import {
-  deleteProduct,
-  fetchProducts,
-  ProductType,
-  searchProducts
-} from '../redux/slices/products/productSlice'
+import { deleteProduct, ProductType, searchProducts } from '../redux/slices/products/productSlice'
 
 const Products = () => {
   const { productsList, isLoading, error, searchTerm } = useSelector(
@@ -28,9 +23,7 @@ const Products = () => {
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
-  useEffect(() => {
-    dispatch(fetchProducts())
-  }, [])
+
   if (isLoading) {
     return <p>Loading...</p>
   }

@@ -9,7 +9,7 @@ import { AppDispatch, RootState } from '../redux/store'
 import { updateUser } from '../redux/slices/Users/userSlice'
 
 const Profile = () => {
-  const { userData, usersList } = useSelector((state: RootState) => state.usersReducer)
+  const { userData } = useSelector((state: RootState) => state.usersReducer)
   const [profileUpdate, setProfileUpdate] = useState({
     id: userData?.id,
     firstName: userData?.firstName.toString(),
@@ -34,7 +34,6 @@ const Profile = () => {
   const handleProfileUpdate = (event: FormEvent) => {
     event.preventDefault()
     dispatch(updateUser(profileUpdate))
-    console.log(usersList)
   }
 
   return (
