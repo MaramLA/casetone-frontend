@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 import { useDispatch } from 'react-redux'
 import { sortProducts } from '../redux/slices/products/productSlice'
 
@@ -9,7 +9,6 @@ const SortProducts = () => {
   }
   return (
     <div className="sort-section">
-      {/* <label>Sort by:</label> */}
       <select className="sort-btn" onChange={handleSortChange}>
         <option value="sort" defaultValue="sort">
           Sort

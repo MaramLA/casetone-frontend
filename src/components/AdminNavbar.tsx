@@ -4,14 +4,7 @@ import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import logo from '../assets/logo.png'
 
-import {
-  homePath,
-  usersPath,
-  signInPath,
-  categoryPath,
-  productsPath,
-  profilePath
-} from '../pathLinks'
+import { homePath, usersPath, categoryPath, productsPath, profilePath } from '../pathLinks'
 
 import { signOut } from '../redux/slices/Users/userSlice'
 

@@ -1,11 +1,14 @@
 import { useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import Footer from '../layout/Footer'
+
 import { AppDispatch, RootState } from '../redux/store'
-import { fetchProducts, findProductById } from '../redux/slices/products/productSlice'
+
 import { homePath, purchasesPath, signInPath } from '../pathLinks'
+
+import { fetchProducts, findProductById } from '../redux/slices/products/productSlice'
 
 const ProductDetails = () => {
   const { id } = useParams()

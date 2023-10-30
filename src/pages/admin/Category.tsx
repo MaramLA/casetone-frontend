@@ -1,13 +1,13 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
 
-import { useDispatch, useSelector } from 'react-redux'
-
 import Footer from '../../layout/Footer'
 
 import { AppDispatch, RootState } from '../../redux/store'
+
 import {
   addCategory,
   CategoryType,

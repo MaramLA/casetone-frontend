@@ -1,8 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { MdDelete } from 'react-icons/md'
-
 import { AppDispatch, RootState } from '../redux/store'
 import { fetchOrders, OrderType } from '../redux/slices/Orders/ordersSlice'
 import { fetchProducts, ProductType } from '../redux/slices/products/productSlice'
@@ -57,21 +55,6 @@ const Orders = () => {
               </div>
             )
           })}
-
-        {/* <div className="order">
-          <p className="order-id">Order# 1</p>
-          <div className="order-images">
-            <img
-              src="https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
-              alt=""
-              className="order-image"
-            />
-          </div>
-          <p className="order-date">2023-09-18T10:00:00</p>
-          <div className="controllers">
-            <MdDelete className="deleteIcon" />
-          </div>
-        </div> */}
 
         <div className="purchase-summary">
           <p className="total-price">Total Orders: {orders.ordersList.length}</p>

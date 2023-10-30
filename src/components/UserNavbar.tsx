@@ -8,9 +8,9 @@ import {
   aboutPath,
   signInPath,
   signUpPath,
+  profilePath,
   productsPath,
-  purchasesPath,
-  profilePath
+  purchasesPath
 } from '../pathLinks'
 
 import { RootState } from '../redux/store'
@@ -28,12 +28,10 @@ const UserNavbar = () => {
 
   return (
     <nav aria-label="navigation-bar" className="nav-bar">
-      {/* Logo  */}
       <div className="left-section">
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        {/* Navigation links  */}
         <ul className="nav-links">
           <li>
             <Link className="navLinks" to={homePath}>
@@ -58,7 +56,6 @@ const UserNavbar = () => {
           <i className="fa fa-shopping-cart icon1" aria-hidden="true"></i>
         </Link>
 
-        {/* Profile icon */}
         {isSignedIn ? (
           <>
             <Link to={profilePath}>
@@ -66,7 +63,6 @@ const UserNavbar = () => {
             </Link>
             {/* burger icon  */}
             <i className="fa-solid fa-bars icon2"></i>
-            {/* Navigation buttons  */}
             <div className="nav-buttons">
               <button className="btn-1" onClick={handleLogout}>
                 Sign Out
@@ -75,7 +71,6 @@ const UserNavbar = () => {
           </>
         ) : (
           <>
-            {/* burger icon  */}
             <i className="fa-solid fa-bars icon2"></i>
             <div className="nav-buttons">
               <Link className="link-btn" to={signInPath}>

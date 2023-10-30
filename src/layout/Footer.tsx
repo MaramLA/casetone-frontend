@@ -9,17 +9,18 @@ import { RootState } from '../redux/store'
 import {
   twitter,
   linkedin,
-  aboutPath,
   homePath,
-  instagram,
   usersPath,
+  aboutPath,
+  instagram,
   signInPath,
   signUpPath,
+  profilePath,
   productsPath,
   categoryPath,
-  purchasesPath,
-  profilePath
+  purchasesPath
 } from '../pathLinks'
+
 const Footer = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
 

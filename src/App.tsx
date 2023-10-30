@@ -1,11 +1,14 @@
 // import './App.css'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchCategories } from './redux/slices/Categories/categoriesSlice'
+
+import { fetchUsers } from './redux/slices/Users/userSlice'
 import { fetchOrders } from './redux/slices/Orders/ordersSlice'
 import { fetchProducts } from './redux/slices/products/productSlice'
-import { fetchUsers } from './redux/slices/Users/userSlice'
+import { fetchCategories } from './redux/slices/Categories/categoriesSlice'
+
 import { AppDispatch } from './redux/store'
+
 import Index from './routes/Index'
 
 function App() {

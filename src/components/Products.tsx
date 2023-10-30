@@ -1,21 +1,24 @@
 import { ChangeEvent, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { MdDelete } from 'react-icons/md'
+import { AiFillEye } from 'react-icons/ai'
 import { AiFillEdit } from 'react-icons/ai'
 import { BsCartPlusFill } from 'react-icons/bs'
-import { AiFillEye } from 'react-icons/ai'
+
+import SortProducts from './SortProducts'
+
+import { purchasesPath, signInPath } from '../pathLinks'
 
 import { AppDispatch, RootState } from '../redux/store'
+
 import {
   deleteProduct,
   fetchProducts,
   ProductType,
   searchProducts
 } from '../redux/slices/products/productSlice'
-import { Link, useNavigate } from 'react-router-dom'
-import { purchasesPath, signInPath } from '../pathLinks'
-import SortProducts from './SortProducts'
 
 const Products = () => {
   const { productsList, isLoading, error, searchTerm } = useSelector(
@@ -70,7 +73,6 @@ const Products = () => {
         onChange={handleSearchInput}
       />
       <SortProducts />
-      {/* Products */}
       <div className="products-div">
         {searchedProducts.length > 0 &&
           searchedProducts.map((product: ProductType) => {

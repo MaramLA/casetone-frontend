@@ -2,9 +2,9 @@ import { productsPath } from '../pathLinks'
 import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import bannerImage from '../assets/banner.png'
+
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
-import { GrUserAdmin } from 'react-icons/gr'
 
 const Hero = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)

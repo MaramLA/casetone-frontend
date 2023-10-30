@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import {
-  usersPath,
-  profilePath,
-  purchasesPath,
-  categoryPath,
-  errorPath,
   homePath,
+  errorPath,
+  usersPath,
   signInPath,
   signUpPath,
+  profilePath,
+  categoryPath,
+  purchasesPath,
   addProductPath
 } from '../pathLinks'
 
@@ -16,11 +16,11 @@ import Header from '../layout/Header'
 
 import Home from '../pages/Home'
 import Error from '../pages/Error'
-import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
+import SignIn from '../pages/SignIn'
+import Profile from '../pages/Profile'
 import Users from '../pages/admin/Users'
 import Category from '../pages/admin/Category'
-import Profile from '../pages/Profile'
 import Purchases from '../pages/user/Purchases'
 import AddProduct from '../pages/admin/AddProduct'
 import ProductDetails from '../pages/ProductDetails'
@@ -45,8 +45,8 @@ const Index = () => {
         </Route>
 
         <Route path="/registerd" element={<UserProtectedRoutes />}>
-          <Route path={purchasesPath} element={<Purchases />} />
           <Route path={profilePath} element={<Profile />} />
+          <Route path={purchasesPath} element={<Purchases />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,7 +1,6 @@
 const AddProduct = () => {
   return (
     <main>
-      {' '}
       <section className="signUp" id="signUp">
         <div className="signUp-container">
           <h2 className="section-title">Add Product</h2>

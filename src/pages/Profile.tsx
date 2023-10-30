@@ -1,9 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux'
+import { ChangeEvent, FormEvent, useState } from 'react'
+
 import Footer from '../layout/Footer'
 import userProfile from '../assets/userProfile.png'
-import { useDispatch, useSelector } from 'react-redux'
+
 import { AppDispatch, RootState } from '../redux/store'
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import { fetchUsers, updateUser } from '../redux/slices/Users/userSlice'
+
+import { updateUser } from '../redux/slices/Users/userSlice'
 
 const Profile = () => {
   const { userData, usersList } = useSelector((state: RootState) => state.usersReducer)

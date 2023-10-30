@@ -6,7 +6,6 @@ import { RootState } from '../redux/store'
 
 const AdminProtectedRoutes = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
-
   return isSignedIn && userData?.role === 'admin' ? <Outlet /> : <SignIn />
 }
 

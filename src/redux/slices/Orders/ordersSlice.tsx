@@ -14,7 +14,7 @@ export type OrderType = {
   purchasedAt: string
 }
 
-export type OrdersState = {
+type OrdersState = {
   ordersList: OrderType[]
   isLoading: boolean
   error: null | string
@@ -37,7 +37,6 @@ const ordersSlice = createSlice({
       }
     },
     deleteSingleUserOrder: (state, action) => {
-      //not working
       return {
         ...state,
         ordersList: state.ordersList.filter((order) => order.id !== action.payload)

@@ -1,10 +1,12 @@
-import { ChangeEvent, useEffect } from 'react'
 import { MdDelete } from 'react-icons/md'
+
 import { useDispatch, useSelector } from 'react-redux'
+import { ChangeEvent, useEffect } from 'react'
 
 import Footer from '../../layout/Footer'
 
 import { AppDispatch, RootState } from '../../redux/store'
+
 import {
   banUser,
   deleteUser,
@@ -63,9 +65,9 @@ const Users = () => {
     dispatch(banUser(userId))
   }
 
-  // const handleDeleteOrder = (orderId: number) => {
-  //   deleteSingleUserOrder(orderId)
-  // }
+  const handleDeleteOrder = (orderId: number) => {
+    dispatch(deleteSingleUserOrder(orderId))
+  }
 
   return (
     <div>
@@ -118,7 +120,7 @@ const Users = () => {
                                 <div className="controllers">
                                   <MdDelete
                                     className="deleteIcon"
-                                    onClick={() => deleteSingleUserOrder(order.id)}
+                                    onClick={() => handleDeleteOrder(order.id)}
                                   />
                                 </div>
                               </div>

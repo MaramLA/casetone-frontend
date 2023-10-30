@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { signInPath } from '../pathLinks'
 import { addUser, fetchUsers } from '../redux/slices/Users/userSlice'
 import { AppDispatch } from '../redux/store'
-// import { v4 as uuidv4 } from 'uuid'
 
 const SignUp = () => {
   const dispatch: AppDispatch = useDispatch()
