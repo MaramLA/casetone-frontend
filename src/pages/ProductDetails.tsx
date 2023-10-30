@@ -24,7 +24,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     dispatch(fetchProducts()).then(() => dispatch(findProductById(Number(id))))
-  }, [])
+  }, [id])
 
   if (isLoading) {
     return <p>Loading...</p>

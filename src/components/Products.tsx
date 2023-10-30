@@ -49,7 +49,8 @@ const Products = () => {
   }
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(searchProducts(event.target.value))
+    const searchValue = event.target.value
+    dispatch(searchProducts(searchValue))
   }
 
   const searchedProducts = searchTerm

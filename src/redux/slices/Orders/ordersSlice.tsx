@@ -31,16 +31,12 @@ const ordersSlice = createSlice({
   initialState,
   reducers: {
     deleteAllUserOrders: (state, action) => {
-      return {
-        ...state,
-        ordersList: state.ordersList.filter((order) => order.userId !== action.payload)
-      }
+      const newOrdersList = state.ordersList.filter((order) => order.userId !== action.payload)
+      state.ordersList = newOrdersList
     },
     deleteSingleUserOrder: (state, action) => {
-      return {
-        ...state,
-        ordersList: state.ordersList.filter((order) => order.id !== action.payload)
-      }
+      const newOrdersList = state.ordersList.filter((order) => order.id !== action.payload)
+      state.ordersList = newOrdersList
     }
   },
   extraReducers(builder) {

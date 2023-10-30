@@ -25,7 +25,8 @@ const Profile = () => {
 
   const handleProfileChange = (event: ChangeEvent<HTMLInputElement>) => {
     setProfileUpdate((previousProfile) => {
-      return { ...previousProfile, [event.target.name]: event.target.value }
+      const { value, name } = event.target
+      return { ...previousProfile, [name]: value }
     })
     setIsInfoEdited(true)
   }

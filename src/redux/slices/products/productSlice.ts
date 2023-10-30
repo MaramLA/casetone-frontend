@@ -52,7 +52,7 @@ export const productSlice = createSlice({
     sortProducts: (state, action) => {
       const sortingCriteria = action.payload
       if (sortingCriteria === 'name') {
-        state.productsList.sort((currentProduct: ProductType, nextProduct: ProductType) =>
+        state.productsList.sort((currentProduct, nextProduct) =>
           currentProduct.name.toLowerCase().localeCompare(nextProduct.name.toLowerCase())
         )
       } else if (sortingCriteria === 'price') {
@@ -63,10 +63,8 @@ export const productSlice = createSlice({
       }
     },
     deleteProduct: (state, action) => {
-      return {
-        ...state,
-        productsList: state.productsList.filter((product) => product.id !== action.payload)
-      }
+      const newProductsList = state.productsList.filter((product) => product.id !== action.payload)
+      state.productsList = newProductsList
     }
   },
   extraReducers(builder) {

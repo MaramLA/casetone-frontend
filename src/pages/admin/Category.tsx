@@ -47,7 +47,8 @@ const Category = () => {
   }
 
   const handlChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setNewCategoryName(event.target.value)
+    const categoryNameValue = event.target.value
+    setNewCategoryName(categoryNameValue)
   }
 
   const handleSubmitCategory = (event: FormEvent) => {

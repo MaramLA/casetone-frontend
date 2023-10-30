@@ -63,12 +63,9 @@ const usersSlice = createSlice({
     searchUser: (state, action) => {
       state.searchTerm = action.payload
     },
-
     deleteUser: (state, action) => {
-      return {
-        ...state,
-        usersList: state.usersList.filter((user) => user.id !== action.payload)
-      }
+      const newUsersList = state.usersList.filter((user) => user.id !== action.payload)
+      state.usersList = newUsersList
     },
     banUser: (state, action) => {
       const id = action.payload

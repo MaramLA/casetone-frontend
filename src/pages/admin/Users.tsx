@@ -47,7 +47,8 @@ const Users = () => {
   }
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(searchUser(event.target.value))
+    const searchValue = event.target.value
+    dispatch(searchUser(searchValue))
   }
 
   const searchedUsers = users.searchTerm

@@ -20,12 +20,14 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>('')
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNewUser((prevUser) => {
-      return { ...prevUser, [event.target.name]: event.target.value }
+      const { value, name } = event.target
+      return { ...prevUser, [name]: value }
     })
   }
 
   const handleConfirmPassChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setConfirmPassword(event.target.value)
+    const confirmPasswordValue = event.target.value
+    setConfirmPassword(confirmPasswordValue)
   }
   const handleSubmitUser = (event: FormEvent) => {
     event.preventDefault()
