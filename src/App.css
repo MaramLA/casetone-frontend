@@ -302,6 +302,150 @@ header .nav-bar .right-section .nav-buttons .btn-1:hover {
   padding: 0.7em 1.7em;
 }
 
+header .mini-nav {
+  position: fixed;
+  height: auto;
+  z-index: 1;
+  top: 12.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: transparent;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  padding: 5rem 0;
+  -webkit-box-shadow: #909090 0px 10px 10px -10px;
+          box-shadow: #909090 0px 10px 10px -10px;
+  -webkit-animation: mini-navbar 1.5s infinite;
+          animation: mini-navbar 1.5s infinite;
+}
+
+header .mini-nav .top-section {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 7rem;
+}
+
+header .mini-nav .top-section .mini-nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4rem;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .mini-nav .top-section .mini-nav-links li {
+  margin: 1.5rem;
+  width: 13rem;
+  text-align: center;
+}
+
+header .mini-nav .top-section .mini-nav-links li .mini-navLinks {
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #696262;
+  background: transparent;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+header .mini-nav .top-section .mini-nav-links li .mini-navLinks:hover {
+  font-size: 2.1rem;
+}
+
+header .mini-nav .bottom-section {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+header .mini-nav .bottom-section .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .mini-nav .bottom-section .nav-links li {
+  width: 6rem;
+  text-align: center;
+}
+
+header .mini-nav .bottom-section .nav-links li .mini-navLinks {
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #696262;
+  background: transparent;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+header .mini-nav .bottom-section .nav-links li .mini-navLinks:hover {
+  font-size: 2.1rem;
+}
+
 /* ---------------------------------------------------------- */
 /* End of navbar styling */
 /* ---------------------------------------------------------- */

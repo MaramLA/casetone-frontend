@@ -25,6 +25,7 @@
   }
 }
 
+
 /* ---------------------------------------------------------- */
 /* Start of layout styling */
 /* ---------------------------------------------------------- */
@@ -162,6 +163,84 @@ header {
         .btn-1 {
           @include mainButton1-Styling();
           @include center();
+        }
+      }
+    }
+  }
+  .mini-nav {
+    position: fixed;
+    height: auto;
+    z-index: 1;
+    top: 12.8rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include center();
+    @include navTransBackgournd();
+    padding: 5rem 0;
+    box-shadow: $primary-color6 0px 10px 10px -10px;
+
+    .top-section {
+      position: relative;
+      @include center();
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 7rem;
+      .mini-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        list-style: none;
+        @include center();
+        li {
+          margin: 1.5rem;
+          width: 13rem;
+          text-align: center;
+          .mini-navLinks {
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: 2rem;
+            text-transform: capitalize;
+            color: $primary-color1;
+            @include navTransBackgournd();
+            transition: all 0.2s ease-in;
+            &:hover {
+              font-size: 2.1rem;
+            }
+          }
+        }
+      }
+    }
+    .bottom-section {
+      position: relative;
+      @include center();
+      display: flex;
+      width: 70%;
+      align-items: center;
+      margin-bottom: 3rem;
+      .nav-links {
+        display: flex;
+        list-style: none;
+        @include center();
+        li {
+          // margin: 1.5rem;
+          width: 6rem;
+          text-align: center;
+          .mini-navLinks {
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: 2rem;
+            text-transform: capitalize;
+            color: $primary-color1;
+            @include navTransBackgournd();
+            transition: all 0.2s ease-in;
+            &:hover {
+              font-size: 2.1rem;
+            }
+          }
         }
       }
     }
