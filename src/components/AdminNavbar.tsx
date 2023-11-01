@@ -54,14 +54,13 @@ const AdminNavbar = () => {
         <Link to={profilePath}>
           <i className="fa-solid fa-user icon1" aria-hidden="true"></i>
         </Link>
-        {/* burger icon  */}
-        <i className="fa-solid fa-bars icon2"></i>
         {/* Navigation buttons  */}
         <div className="nav-buttons">
           <button className="btn-1" onClick={handleLogout}>
             Sign Out
           </button>
         </div>
+        <i className="fa-solid fa-bars icon2"></i>
       </div>
     </nav>
   )

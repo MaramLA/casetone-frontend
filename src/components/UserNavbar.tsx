@@ -61,17 +61,17 @@ const UserNavbar = () => {
             <Link to={profilePath}>
               <i className="fa-solid fa-user icon1" aria-hidden="true"></i>
             </Link>
-            {/* burger icon  */}
-            <i className="fa-solid fa-bars icon2"></i>
+
             <div className="nav-buttons">
               <button className="btn-1" onClick={handleLogout}>
                 Sign Out
               </button>
             </div>
+            {/* burger icon  */}
+            <i className="fa-solid fa-bars icon2"></i>
           </>
         ) : (
           <>
-            <i className="fa-solid fa-bars icon2"></i>
             <div className="nav-buttons">
               <Link className="link-btn" to={signInPath}>
                 <button className="btn-1">Sign In</button>
@@ -80,6 +80,7 @@ const UserNavbar = () => {
                 <button className="btn-2">Sign Up</button>
               </Link>
             </div>
+            <i className="fa-solid fa-bars icon2"></i>
           </>
         )}
       </div>

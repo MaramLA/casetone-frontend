@@ -87,6 +87,7 @@ header {
           width: 400px;
           height: 140px;
           margin-left: 6rem;
+          @include center();
         }
       }
       ul {
@@ -137,6 +138,7 @@ header {
         @include center();
         transition: all 0.2s ease-in;
         display: none;
+        margin-right: 3rem;
         &:hover {
           cursor: pointer;
           padding-bottom: 1rem;
@@ -145,7 +147,7 @@ header {
       .nav-buttons {
         display: flex;
         gap: 2.5rem;
-        margin-right: 6rem;
+        // margin-right: 6rem;
         .link-btn {
           text-decoration: none;
           .btn-1 {
@@ -1660,11 +1662,37 @@ footer {
 
 /* Extra small devices (phones, 600px and down) */
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1000px) {
+  .nav-bar .right-section .nav-buttons {
+    margin-right: 6rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
   header .nav-bar .left-section .logo img {
-    width: 300px;
-    height: 113px;
+    width: 280px;
+    height: 100px;
     margin-left: 3rem;
+    margin-top: 1.5rem;
+    @include center();
+  }
+
+  .nav-bar .right-section .nav-buttons {
+    position: relative;
+    display: flex;
+    margin-right: 6rem;
+    justify-content: flex-end;
+    gap: 0;
+  }
+
+  .header .nav-bar .right-section .nav-buttons .link-btn .btn-1 {
+    font-size: $font-size1;
+  }
+  .header .nav-bar .right-section .nav-buttons .link-btn .btn-2 {
+    font-size: $font-size1;
+  }
+  .header .nav-bar .right-section .nav-buttons .btn-1 {
+    font-size: $font-size1;
   }
 }
 
@@ -1690,11 +1718,12 @@ footer {
     display: none;
   }
   .nav-bar .right-section .nav-buttons {
-    display: none;
+    // display: none;
+    margin-right: 1rem;
   }
-  .nav-bar .right-section .nav-buttons button {
-    display: none !important;
-  }
+  // .nav-bar .right-section .nav-buttons button {
+  //   display: none !important;
+  // }
 
   .reviews .main-section {
     flex-direction: column;

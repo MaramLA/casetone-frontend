@@ -115,6 +115,12 @@ header .nav-bar .left-section .logo img {
   width: 400px;
   height: 140px;
   margin-left: 6rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 header .nav-bar .left-section ul {
@@ -193,6 +199,7 @@ header .nav-bar .right-section .icon2 {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   display: none;
+  margin-right: 3rem;
 }
 
 header .nav-bar .right-section .icon2:hover {
@@ -205,7 +212,6 @@ header .nav-bar .right-section .nav-buttons {
   display: -ms-flexbox;
   display: flex;
   gap: 2.5rem;
-  margin-right: 6rem;
 }
 
 header .nav-bar .right-section .nav-buttons .link-btn {
@@ -2719,11 +2725,44 @@ footer .bottom-section p {
 /* End of users styling */
 /* ---------------------------------------------------------- */
 /* Extra small devices (phones, 600px and down) */
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1000px) {
+  .nav-bar .right-section .nav-buttons {
+    margin-right: 6rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
   header .nav-bar .left-section .logo img {
-    width: 300px;
-    height: 113px;
+    width: 280px;
+    height: 100px;
     margin-left: 3rem;
+    margin-top: 1.5rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .nav-bar .right-section .nav-buttons {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 6rem;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    gap: 0;
+  }
+  .header .nav-bar .right-section .nav-buttons .link-btn .btn-1 {
+    font-size: 1.8em;
+  }
+  .header .nav-bar .right-section .nav-buttons .link-btn .btn-2 {
+    font-size: 1.8em;
+  }
+  .header .nav-bar .right-section .nav-buttons .btn-1 {
+    font-size: 1.8em;
   }
 }
 
@@ -2748,10 +2787,7 @@ footer .bottom-section p {
     display: none;
   }
   .nav-bar .right-section .nav-buttons {
-    display: none;
-  }
-  .nav-bar .right-section .nav-buttons button {
-    display: none !important;
+    margin-right: 1rem;
   }
   .reviews .main-section {
     -webkit-box-orient: vertical;
