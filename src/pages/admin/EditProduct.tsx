@@ -18,12 +18,6 @@ const EditProduct = () => {
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
-  useEffect(() => {
-    dispatch(fetchProducts()).then(() => {
-      dispatch(findProductById(Number(id)))
-    })
-  }, [id])
-
   const [newProduct, setNewProduct] = useState({
     id: singleProduct.id,
     name: singleProduct.name,
@@ -34,6 +28,16 @@ const EditProduct = () => {
     sizes: singleProduct.sizes,
     price: Number(singleProduct.price)
   })
+
+  useEffect(() => {
+    dispatch(fetchProducts()).then(() => {
+      dispatch(findProductById(Number(id)))
+    })
+    if (singleProduct) {
+      console.log('singlProduct:', singleProduct)
+      setNewProduct(singleProduct)
+    }
+  }, [id, singleProduct])
 
   const handelInputChange = (
     event:
@@ -80,120 +84,121 @@ const EditProduct = () => {
     <main>
       <section className="add-edit-product" id="addEditProduct">
         <h2 className="section-title">Add Product</h2>
-        <form className="form" onSubmit={handleProductSubmit}>
-          <div className="entry">
-            <label htmlFor="productName">Product Name</label>
-            <div className="input-btn">
-              <input
-                type="text"
-                id="productName"
-                className="formEmail"
-                placeholder="name"
-                name="name"
-                value={newProduct.name}
-                onChange={handelInputChange}
-                required
-              />
+        {newProduct.id && (
+          <form className="form" onSubmit={handleProductSubmit}>
+            <div className="entry">
+              <label htmlFor="productName">Product Name</label>
+              <div className="input-btn">
+                <input
+                  type="text"
+                  id="productName"
+                  className="formEmail"
+                  placeholder="name"
+                  name="name"
+                  value={newProduct.name}
+                  onChange={handelInputChange}
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div className="entry">
-            <label htmlFor="productDescription">Description</label>
-            <textarea
-              id="productDescription"
-              className="formPassword"
-              name="description"
-              value={newProduct.description}
-              onChange={handelInputChange}
-              placeholder="Descirption"></textarea>
-            required
-          </div>
-          <div className="entry">
-            <label htmlFor="productVariants">Variants</label>
-            <div className="input-btn">
-              <input
-                type="text"
-                id="productVariants"
+            <div className="entry">
+              <label htmlFor="productDescription">Description</label>
+              <textarea
+                id="productDescription"
                 className="formPassword"
-                name="variants"
-                value={newProduct.variants}
-                placeholder="product Variants"
+                name="description"
+                value={newProduct.description}
                 onChange={handelInputChange}
-                required
-              />
+                placeholder="Descirption"></textarea>
             </div>
-          </div>
-          <div className="entry">
-            <label htmlFor="productSizes">Sizes</label>
-            <div className="input-btn">
-              <input
-                type="text"
-                id="productSizes"
-                className="formPassword"
-                name="sizes"
-                placeholder="product Sizes"
-                onChange={handelInputChange}
-                value={newProduct.sizes}
-                required
-              />
+            <div className="entry">
+              <label htmlFor="productVariants">Variants</label>
+              <div className="input-btn">
+                <input
+                  type="text"
+                  id="productVariants"
+                  className="formPassword"
+                  name="variants"
+                  value={newProduct.variants}
+                  placeholder="product Variants"
+                  onChange={handelInputChange}
+                  required
+                />
+              </div>
             </div>
-          </div>
+            <div className="entry">
+              <label htmlFor="productSizes">Sizes</label>
+              <div className="input-btn">
+                <input
+                  type="text"
+                  id="productSizes"
+                  className="formPassword"
+                  name="sizes"
+                  placeholder="product Sizes"
+                  onChange={handelInputChange}
+                  value={newProduct.sizes}
+                  required
+                />
+              </div>
+            </div>
 
-          <div className="entry">
-            <label htmlFor="formCategory">Category</label>
-            <div className="input-btn">
-              <select
-                id="formCategory"
-                name="categories"
-                onChange={handelInputChange}
-                className="selectCategory">
-                <option value="default">Product Category</option>
-                {categoriesList.length > 0 &&
-                  categoriesList.map((category) => {
-                    return (
-                      <option key={category.id} value={category.name}>
-                        {category.name}
-                      </option>
-                    )
-                  })}
-              </select>
+            <div className="entry">
+              <label htmlFor="formCategory">Category</label>
+              <div className="input-btn">
+                <select
+                  id="formCategory"
+                  name="categories"
+                  onChange={handelInputChange}
+                  className="selectCategory">
+                  <option value="default">Product Category</option>
+                  {categoriesList.length > 0 &&
+                    categoriesList.map((category) => {
+                      return (
+                        <option key={category.id} value={category.name}>
+                          {category.name}
+                        </option>
+                      )
+                    })}
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div className="entry">
-            <label htmlFor="productImage">Product Image</label>
-            <div className="input-btn">
-              <input
-                type="text"
-                id="productImage"
-                className="formPassword"
-                name="image"
-                value={newProduct.image}
-                onChange={handelInputChange}
-                placeholder="product image"
-                required
-              />
+            <div className="entry">
+              <label htmlFor="productImage">Product Image</label>
+              <div className="input-btn">
+                <input
+                  type="text"
+                  id="productImage"
+                  className="formPassword"
+                  name="image"
+                  value={newProduct.image}
+                  onChange={handelInputChange}
+                  placeholder="product image"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div className="entry">
-            <label htmlFor="productSizes">Price</label>
-            <div className="input-btn">
-              <input
-                type="text"
-                id="productSizes"
-                className="formPassword"
-                name="price"
-                placeholder="product price"
-                onChange={handelInputChange}
-                value={newProduct.price}
-                required
-              />
-              <p className="currency">$</p>
+            <div className="entry">
+              <label htmlFor="productSizes">Price</label>
+              <div className="input-btn">
+                <input
+                  type="text"
+                  id="productSizes"
+                  className="formPassword"
+                  name="price"
+                  placeholder="product price"
+                  onChange={handelInputChange}
+                  value={newProduct.price.toString()}
+                  required
+                />
+                <p className="currency">$</p>
+              </div>
             </div>
-          </div>
-          <button type="submit" className="add-btn">
-            Edit
-          </button>
-        </form>
+            <button type="submit" className="add-btn">
+              Edit
+            </button>
+          </form>
+        )}
       </section>
     </main>
   )

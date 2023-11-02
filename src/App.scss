@@ -652,6 +652,212 @@ footer {
 /* ---------------------------------------------------------- */
 
 /* ---------------------------------------------------------- */
+/* Start of products pagenation section styling */
+/* ---------------------------------------------------------- */
+.pagination-div {
+  display: flex;
+  flex-direction: column;
+  @include center();
+
+  .top-section {
+    display: flex;
+    .page-controller {
+      display: flex;
+      @include center();
+      // background: lightblue;
+      width: 10rem;
+      .arrow-icon {
+        display: flex;
+        @include center();
+        color: $primary-color1;
+        font-size: 10rem;
+        transition: all 0.2s ease-in;
+        &:hover {
+          cursor: pointer;
+          font-size: 11rem;
+        }
+      }
+    }
+    .products {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 13rem;
+      margin-bottom: 10rem;
+      box-shadow: $primary-color5 0px 10px 10px -10px;
+
+      .section-title {
+        font-size: $font-size6;
+        text-transform: capitalize;
+        color: $primary-color1;
+        font-weight: bolder;
+        margin-bottom: 7rem;
+        text-align: center;
+      }
+      .search-product {
+        width: 40vw;
+        height: 5rem;
+        border-radius: 50px;
+        padding: 0 4rem;
+        font-size: $font-size4;
+        color: $primary-color1;
+        text-transform: lowercase;
+        border: 4px solid $primary-color1;
+        margin-bottom: 4rem;
+        outline: none;
+        background: $primary-color3;
+      }
+      .sort-section {
+        .sort-btn {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          @include mainButton2-Styling();
+          outline: none;
+          text-align: center;
+          margin-bottom: 5rem;
+        }
+      }
+      .products-div {
+        display: flex;
+        flex-direction: row;
+        @include center();
+        flex-wrap: wrap;
+        margin-bottom: 8rem;
+        max-width: 80vw;
+
+        .product {
+          background: $primary-color0;
+          border-radius: 50px;
+          width: 34rem;
+          height: 50rem;
+          margin: 2.2rem;
+          box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+          transition: all 0.2s ease-in;
+          &:hover {
+            transform: translateY(-20px);
+          }
+          .product-details-link {
+            text-decoration: none;
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+
+            img {
+              width: 100%;
+              height: 34rem;
+              border-top-left-radius: inherit;
+              border-top-right-radius: inherit;
+            }
+          }
+          // Product details styling
+          .product__details {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 2.5rem;
+            color: $primary-color1;
+            .controllers {
+              display: flex;
+              background: lightblue;
+              width: 10rem;
+              .icon1 {
+                position: absolute;
+                left: 380px;
+                top: 125px;
+                font-size: 2.5em;
+                color: $primary-color6;
+                margin: 1.4rem;
+                transition: all 0.2s ease-in;
+                &:hover {
+                  cursor: pointer;
+                  font-size: 2.7em;
+                }
+              }
+              .icon2 {
+                position: absolute;
+                left: 330px;
+                top: 125px;
+                font-size: 2.5em;
+                color: $primary-color6;
+                margin: 1.4rem;
+                transition: all 0.2s ease-in;
+                &:hover {
+                  cursor: pointer;
+                  font-size: 2.7em;
+                }
+              }
+              .icon3 {
+                position: absolute;
+                left: 400px;
+                top: 125px;
+                font-size: 2.5em;
+                color: rgb(163, 54, 54);
+                margin: 1.4rem;
+                transition: all 0.2s ease-in;
+                &:hover {
+                  cursor: pointer;
+                  font-size: 2.7em;
+                }
+              }
+              .icon4 {
+                position: absolute;
+                left: 310px;
+                top: 125px;
+                font-size: 2.5em;
+                color: $primary-color6;
+                margin: 1.4rem;
+                transition: all 0.2s ease-in;
+
+                &:hover {
+                  cursor: pointer;
+                  font-size: 2.7em;
+                }
+              }
+              .icon5 {
+                position: absolute;
+                left: 260px;
+                top: 125px;
+                font-size: 2.5em;
+                color: $primary-color6;
+                margin: 1.4rem;
+                transition: all 0.2s ease-in;
+                &:hover {
+                  cursor: pointer;
+                  font-size: 2.7em;
+                }
+              }
+            }
+            .product__title {
+              font-size: $font-size4;
+              text-transform: capitalize;
+              font-weight: bolder;
+              margin-bottom: 1.5rem;
+            }
+            .product__description {
+              font-size: 1.7em;
+              margin-bottom: 1.5rem;
+            }
+            .product__price {
+              font-size: $font-size2;
+              margin-bottom: 1.5rem;
+            }
+          }
+        }
+      }
+      .products-btn {
+        @include mainButton2-Styling();
+        @include center();
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* End of products pagenation section styling */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
 /* Start of about us section styling */
 /* ---------------------------------------------------------- */
 

@@ -1046,6 +1046,329 @@ footer .bottom-section p {
 /* End of products section styling */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
+/* Start of products pagenation section styling */
+/* ---------------------------------------------------------- */
+.pagination-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination-div .top-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pagination-div .top-section .page-controller {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 10rem;
+}
+
+.pagination-div .top-section .page-controller .arrow-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #696262;
+  font-size: 10rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.pagination-div .top-section .page-controller .arrow-icon:hover {
+  cursor: pointer;
+  font-size: 11rem;
+}
+
+.pagination-div .top-section .products {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 13rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.pagination-div .top-section .products .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 7rem;
+  text-align: center;
+}
+
+.pagination-div .top-section .products .search-product {
+  width: 40vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 4rem;
+  outline: none;
+  background: #edefef;
+}
+
+.pagination-div .top-section .products .sort-section .sort-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  outline: none;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.pagination-div .top-section .products .sort-section .sort-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+.pagination-div .top-section .products .products-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 8rem;
+  max-width: 80vw;
+}
+
+.pagination-div .top-section .products .products-div .product {
+  background: #ffff;
+  border-radius: 50px;
+  width: 34rem;
+  height: 50rem;
+  margin: 2.2rem;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.pagination-div .top-section .products .products-div .product:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.pagination-div .top-section .products .products-div .product .product-details-link {
+  text-decoration: none;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.pagination-div .top-section .products .products-div .product .product-details-link img {
+  width: 100%;
+  height: 34rem;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2.5rem;
+  color: #696262;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: lightblue;
+  width: 10rem;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon1 {
+  position: absolute;
+  left: 380px;
+  top: 125px;
+  font-size: 2.5em;
+  color: #909090;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon1:hover {
+  cursor: pointer;
+  font-size: 2.7em;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon2 {
+  position: absolute;
+  left: 330px;
+  top: 125px;
+  font-size: 2.5em;
+  color: #909090;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon2:hover {
+  cursor: pointer;
+  font-size: 2.7em;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon3 {
+  position: absolute;
+  left: 400px;
+  top: 125px;
+  font-size: 2.5em;
+  color: #a33636;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon3:hover {
+  cursor: pointer;
+  font-size: 2.7em;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon4 {
+  position: absolute;
+  left: 310px;
+  top: 125px;
+  font-size: 2.5em;
+  color: #909090;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon4:hover {
+  cursor: pointer;
+  font-size: 2.7em;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon5 {
+  position: absolute;
+  left: 260px;
+  top: 125px;
+  font-size: 2.5em;
+  color: #909090;
+  margin: 1.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .controllers .icon5:hover {
+  cursor: pointer;
+  font-size: 2.7em;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .product__title {
+  font-size: 2.1em;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .product__description {
+  font-size: 1.7em;
+  margin-bottom: 1.5rem;
+}
+
+.pagination-div .top-section .products .products-div .product .product__details .product__price {
+  font-size: 1.9em;
+  margin-bottom: 1.5rem;
+}
+
+.pagination-div .top-section .products .products-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination-div .top-section .products .products-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of products pagenation section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
 /* Start of about us section styling */
 /* ---------------------------------------------------------- */
 .AboutUs {

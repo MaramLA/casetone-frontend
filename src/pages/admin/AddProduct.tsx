@@ -92,7 +92,6 @@ const AddProduct = () => {
               value={newProduct.description}
               onChange={handelInputChange}
               placeholder="Descirption"></textarea>
-            required
           </div>
           <div className="entry">
             <label htmlFor="productVariants">Variants</label>

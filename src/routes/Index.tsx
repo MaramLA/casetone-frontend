@@ -27,9 +27,9 @@ import Category from '../pages/admin/Category'
 import Purchases from '../pages/user/Purchases'
 import AddProduct from '../pages/admin/AddProduct'
 import ProductDetails from '../pages/ProductDetails'
+import EditProduct from '../pages/admin/EditProduct'
 import UserProtectedRoutes from './UserProtectedRoutes'
 import AdminProtectedRoutes from './AdminProtectedRoutes'
-import EditProduct from '../pages/admin/EditProduct'
 
 const Index = () => {
   return (
