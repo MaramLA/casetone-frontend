@@ -1,12 +1,32 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { signInPath } from '../pathLinks'
 import { addUser, fetchUsers } from '../redux/slices/Users/userSlice'
-import { AppDispatch } from '../redux/store'
+import { AppDispatch, RootState } from '../redux/store'
+
+type StrengthChecks = {
+  length: boolean
+  hasUpperCase: boolean
+  hasLowerCase: boolean
+  hasDigit: boolean
+  hasSpecialChar: boolean
+}
 
 const SignUp = () => {
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
+  // const [lasttName, setLasttName] = useState('')
+  // const [firstName, setFirstName] = useState('')
+  // const [cofPassword, setCofPassword] = useState('')
+
+  const passwordValidation = new RegExp(
+    '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})'
+  )
+
+  const { usersList } = useSelector((state: RootState) => state.usersReducer)
+
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -34,6 +54,120 @@ const SignUp = () => {
     event.preventDefault()
     try {
       const newUserData = { id: new Date().getTime(), ...newUser }
+      if (
+        newUserData.firstName.length < 2 ||
+        newUserData.lastName.length < 2 ||
+        newUserData.email.length < 2 ||
+        newUserData.password.length < 2 ||
+        confirmPassword.length < 2
+      ) {
+        toast.warning('Provide valid data please', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+        return
+      } else {
+        const foundEmail = usersList.find((user) => user.email === newUserData.email)
+        if (foundEmail) {
+          toast.warning('This email already exists', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          return
+        }
+        if (newUserData.password !== confirmPassword) {
+          toast.warning('Passwords do not match', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          return
+        }
+        // if (newUserData.password.length < 8) {
+        //   toast.warning('Passwords should be greater then or equal 8 characters', {
+        //     position: 'top-right',
+        //     autoClose: 5000,
+        //     hideProgressBar: false,
+        //     closeOnClick: true,
+        //     pauseOnHover: true,
+        //     draggable: true,
+        //     progress: undefined,
+        //     theme: 'colored'
+        //   })
+        //   return
+        // }
+        if (!passwordValidation.test(newUserData.password)) {
+          toast.warning('Password should contain at least 1 lowercase character', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          toast.warning('Password should contain at least 1 uppercase character ', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          toast.warning('Password should contain at least 1 numeric character ', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          toast.warning('Password should contain at least 1 special character ', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          toast.warning('Password should contain at least 8 characters ', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+
+          return
+        }
+      }
       dispatch(fetchUsers()).then(() => dispatch(addUser(newUserData)))
       toast.success('Account created successfully', {
         position: 'top-right',

@@ -506,9 +506,9 @@ footer {
   }
   .sort-section {
     .sort-btn {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+      // -webkit-appearance: none;
+      // -moz-appearance: none;
+      // appearance: none;
       @include mainButton2-Styling();
       outline: none;
       text-align: center;

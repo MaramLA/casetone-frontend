@@ -826,9 +826,6 @@ footer .bottom-section p {
 }
 
 .products .sort-section .sort-btn {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   font-size: 2em;
   font-weight: bolder;
   text-transform: capitalize;
