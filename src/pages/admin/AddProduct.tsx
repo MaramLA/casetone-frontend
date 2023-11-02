@@ -79,6 +79,7 @@ const AddProduct = () => {
                 name="name"
                 value={newProduct.name}
                 onChange={handelInputChange}
+                required
               />
             </div>
           </div>
@@ -91,6 +92,7 @@ const AddProduct = () => {
               value={newProduct.description}
               onChange={handelInputChange}
               placeholder="Descirption"></textarea>
+            required
           </div>
           <div className="entry">
             <label htmlFor="productVariants">Variants</label>
@@ -102,6 +104,7 @@ const AddProduct = () => {
                 name="variants"
                 placeholder="product Variants"
                 onChange={handelInputChange}
+                required
               />
             </div>
           </div>
@@ -115,6 +118,7 @@ const AddProduct = () => {
                 name="sizes"
                 placeholder="product Sizes"
                 onChange={handelInputChange}
+                required
               />
             </div>
           </div>
@@ -153,6 +157,7 @@ const AddProduct = () => {
                 value={newProduct.image}
                 onChange={handelInputChange}
                 placeholder="product image"
+                required
               />
             </div>
           </div>
@@ -166,6 +171,7 @@ const AddProduct = () => {
                 name="price"
                 placeholder="product price"
                 onChange={handelInputChange}
+                required
               />
               <p className="currency">$</p>
             </div>

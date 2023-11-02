@@ -70,13 +70,14 @@ const SignUp = () => {
                 <div className="entry">
                   <label htmlFor="formEmail">Email</label>
                   <input
-                    type="text"
+                    type="email"
                     id="formEmail"
                     className="formEmail"
                     name="email"
                     placeholder="Email"
                     onChange={handleChange}
                     value={newUser.email}
+                    required
                   />
                 </div>
                 <div className="entry">
@@ -89,6 +90,7 @@ const SignUp = () => {
                     placeholder="********"
                     onChange={handleChange}
                     value={newUser.password}
+                    required
                   />
                 </div>
                 <div className="entry">
@@ -101,6 +103,7 @@ const SignUp = () => {
                     placeholder="********"
                     onChange={handleConfirmPassChange}
                     value={confirmPassword}
+                    required
                   />
                 </div>
               </div>
@@ -115,6 +118,7 @@ const SignUp = () => {
                     placeholder="First Name"
                     onChange={handleChange}
                     value={newUser.firstName}
+                    required
                   />
                 </div>
                 <div className="entry">
@@ -127,6 +131,7 @@ const SignUp = () => {
                     placeholder="Last Name"
                     onChange={handleChange}
                     value={newUser.lastName}
+                    required
                   />
                 </div>
               </div>

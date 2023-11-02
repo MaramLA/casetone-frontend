@@ -145,6 +145,7 @@ const Category = () => {
                 placeholder="Category"
                 value={newCategory}
                 onChange={handlChange}
+                required
               />
             </div>
             <button type="submit" className="add-btn">

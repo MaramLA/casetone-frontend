@@ -92,6 +92,7 @@ const EditProduct = () => {
                 name="name"
                 value={newProduct.name}
                 onChange={handelInputChange}
+                required
               />
             </div>
           </div>
@@ -104,6 +105,7 @@ const EditProduct = () => {
               value={newProduct.description}
               onChange={handelInputChange}
               placeholder="Descirption"></textarea>
+            required
           </div>
           <div className="entry">
             <label htmlFor="productVariants">Variants</label>
@@ -116,6 +118,7 @@ const EditProduct = () => {
                 value={newProduct.variants}
                 placeholder="product Variants"
                 onChange={handelInputChange}
+                required
               />
             </div>
           </div>
@@ -130,6 +133,7 @@ const EditProduct = () => {
                 placeholder="product Sizes"
                 onChange={handelInputChange}
                 value={newProduct.sizes}
+                required
               />
             </div>
           </div>
@@ -166,6 +170,7 @@ const EditProduct = () => {
                 value={newProduct.image}
                 onChange={handelInputChange}
                 placeholder="product image"
+                required
               />
             </div>
           </div>
@@ -180,6 +185,7 @@ const EditProduct = () => {
                 placeholder="product price"
                 onChange={handelInputChange}
                 value={newProduct.price}
+                required
               />
               <p className="currency">$</p>
             </div>
