@@ -913,6 +913,12 @@ footer {
       height: 5rem;
       padding-bottom: 1.2rem;
       box-shadow: $primary-color5 0px 10px 10px -10px;
+      img {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 6rem;
+      }
       p {
         font-size: $font-size5;
         color: $primary-color1;
@@ -939,7 +945,14 @@ footer {
       width: 75vw;
       gap: 2rem;
       margin-top: 3rem;
-      p {
+      .total-items {
+        font-size: $font-size5;
+        color: $primary-color1;
+        width: 20rem;
+        text-align: center;
+        text-transform: capitalize;
+      }
+      .total-price {
         font-size: $font-size5;
         color: $primary-color1;
         width: 20rem;
@@ -947,10 +960,18 @@ footer {
         text-transform: capitalize;
         font-weight: bold;
       }
-
-      .checkout-btn {
-        @include center();
-        @include mainButton2-Styling();
+      .btns {
+        display: flex;
+        gap: 2rem;
+        margin-top: 3rem;
+        .checkout-btn {
+          @include center();
+          @include mainButton2-Styling();
+        }
+        .reset-btn {
+          @include center();
+          @include mainButton1-Styling();
+        }
       }
     }
   }

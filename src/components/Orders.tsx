@@ -8,6 +8,8 @@ import { fetchProducts, ProductType } from '../redux/slices/products/productSlic
 const Orders = () => {
   const orders = useSelector((state: RootState) => state.ordersReducer)
   const products = useSelector((state: RootState) => state.productsReducer)
+  const { userData } = useSelector((state: RootState) => state.usersReducer)
+
   const dispatch: AppDispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchOrders()), dispatch(fetchProducts())
@@ -22,6 +24,9 @@ const Orders = () => {
   if (products.error) {
     return <p>{orders.error}</p>
   }
+  const filteredOrders = orders.ordersList.filter(
+    (order: OrderType) => order.userId === userData?.id
+  )
 
   return (
     <section className="orders" id="orders">
@@ -29,8 +34,8 @@ const Orders = () => {
         <div className="info">
           <h3 className="section-title">Orders List</h3>
         </div>
-        {orders.ordersList.length > 0 &&
-          orders.ordersList.map((order: OrderType) => {
+        {filteredOrders.length > 0 &&
+          filteredOrders.map((order: OrderType) => {
             return (
               <div key={order.id} className="order">
                 <p className="order-id">Order# {order.id}</p>
@@ -57,7 +62,7 @@ const Orders = () => {
           })}
 
         <div className="purchase-summary">
-          <p className="total-price">Total Orders: {orders.ordersList.length}</p>
+          <p className="total-price">Total Orders: {filteredOrders.length}</p>
         </div>
       </div>
     </section>

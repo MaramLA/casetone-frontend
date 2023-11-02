@@ -12,8 +12,7 @@ import {
   profilePath,
   categoryPath,
   purchasesPath,
-  addProductPath,
-  editProductPath
+  addProductPath
 } from '../pathLinks'
 
 import Header from '../layout/Header'

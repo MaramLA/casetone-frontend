@@ -15,6 +15,7 @@ import { AppDispatch, RootState } from '../redux/store'
 
 import { deleteProduct, ProductType, searchProducts } from '../redux/slices/products/productSlice'
 import { toast } from 'react-toastify'
+import { addToCart } from '../redux/slices/Orders/cartSlice'
 
 const Products = () => {
   const { productsList, isLoading, error, searchTerm } = useSelector(
@@ -32,13 +33,34 @@ const Products = () => {
     return <p>{error}</p>
   }
 
-  const handleCartBtn = () => {
+  const handleCartBtn = (product: ProductType) => {
     if (isSignedIn) {
-      navigate(purchasesPath)
+      try {
+        dispatch(addToCart(product))
+        toast.success('Product added to cart successfully', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      } catch (error) {
+        toast.error('Something went worng', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      }
     } else navigate(signInPath)
   }
-
-  console.log(productsList)
 
   const handleDeleteProduct = (id: number) => {
     try {
@@ -124,7 +146,7 @@ const Products = () => {
                         <Link to={`/products/${product.id}`}>
                           <AiFillEye className="icon4" />
                         </Link>
-                        <BsCartPlusFill onClick={handleCartBtn} className="icon1" />
+                        <BsCartPlusFill onClick={() => handleCartBtn(product)} className="icon1" />
                       </>
                     )}
                   </div>

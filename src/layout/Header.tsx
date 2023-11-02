@@ -8,7 +8,11 @@ import AdminNavbar from '../components/AdminNavbar'
 const Header = () => {
   const { userData } = useSelector((state: RootState) => state.usersReducer)
 
-  return <header className="header">{userData?.role ? <AdminNavbar /> : <UserNavbar />}</header>
+  return (
+    <header className="header">
+      {userData?.role === 'admin' ? <AdminNavbar /> : <UserNavbar />}
+    </header>
+  )
 }
 
 export default Header

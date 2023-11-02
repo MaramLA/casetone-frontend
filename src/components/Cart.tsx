@@ -1,50 +1,79 @@
 import { MdDelete } from 'react-icons/md'
+import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
+import { deleteForomCart, resetCart } from '../redux/slices/Orders/cartSlice'
+import { AppDispatch, RootState } from '../redux/store'
 
 const Cart = () => {
+  const { cartItems } = useSelector((state: RootState) => state.cartReducer)
+
+  const dispatch: AppDispatch = useDispatch()
+
+  const handleDeleteCartItem = (id: number) => {
+    try {
+      dispatch(deleteForomCart(id))
+      toast.success('Product deleted from cart successfully', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    } catch (error) {
+      toast.error('Something went wrong', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
+  }
+  const handleResetCart = () => {
+    dispatch(resetCart())
+  }
+  const cartTotalAmount = () => {
+    let totalAmount = 0
+    cartItems.length > 0 &&
+      cartItems.map((item) => {
+        totalAmount += item.price
+      })
+    return totalAmount
+  }
   return (
     <section className="cart">
       <h2 className="section-title">Purchases</h2>
       <div className="items">
         <h3 className="section-title">Cart</h3>
-        <div className="item">
-          <img
-            src="https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
-            alt=""
-            className="item-image"
-          />
-          <p className="item-name">item1</p>
-          <p className="item-price">8.99$</p>
-          <div className="controllers">
-            <MdDelete className="deleteIcon" />
-          </div>
-        </div>
-        <div className="item">
-          <img
-            src="https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
-            alt=""
-            className="item-image"
-          />
-          <p className="item-name">item1</p>
-          <p className="item-price">8.99$</p>
-          <div className="controllers">
-            <MdDelete className="deleteIcon" />
-          </div>
-        </div>
-        <div className="item">
-          <img
-            src="https://ae01.alicdn.com/kf/S46e739ce47d64943a44caeaa91678a806/Simple-Stripe-Magnetic-Skin-Scrub-Phone-Case-For-iPhone-15-14plus-Pro-Max-Stripe-Case-For.jpg_80x80.jpg_.webp"
-            alt=""
-            className="item-image"
-          />
-          <p className="item-name">item1</p>
-          <p className="item-price">8.99$</p>
-          <div className="controllers">
-            <MdDelete className="deleteIcon" />
-          </div>
-        </div>
+        {cartItems.length > 0 &&
+          cartItems.map((item) => {
+            return (
+              <div key={item.id} className="item">
+                <img src={item.image} alt={item.name} className="item-image" />
+                <p className="item-name">{item.name}</p>
+                <p className="item-price">{item.price}</p>
+                <div className="controllers">
+                  <MdDelete className="deleteIcon" onClick={() => handleDeleteCartItem(item.id)} />
+                </div>
+              </div>
+            )
+          })}
+
         <div className="purchase-summary">
-          <p className="total-price">Total Price: 8.99$</p>
-          <button className="checkout-btn">Checkout</button>
+          <p className="total-items">Total Items: {cartItems.length}</p>
+          <p className="total-price">Total Price: {cartTotalAmount().toFixed(2)}$</p>
+          <div className="btns">
+            <button className="reset-btn" onClick={handleResetCart}>
+              Reset
+            </button>
+            <button className="checkout-btn">Checkout</button>
+          </div>
         </div>
       </div>
     </section>

@@ -1453,6 +1453,17 @@ footer .bottom-section p {
           box-shadow: #dddddd 0px 10px 10px -10px;
 }
 
+.cart .items .item img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+  width: 6rem;
+}
+
 .cart .items .item p {
   font-size: 2.2em;
   color: #696262;
@@ -1490,7 +1501,15 @@ footer .bottom-section p {
   margin-top: 3rem;
 }
 
-.cart .items .purchase-summary p {
+.cart .items .purchase-summary .total-items {
+  font-size: 2.2em;
+  color: #696262;
+  width: 20rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.cart .items .purchase-summary .total-price {
   font-size: 2.2em;
   color: #696262;
   width: 20rem;
@@ -1499,7 +1518,15 @@ footer .bottom-section p {
   font-weight: bold;
 }
 
-.cart .items .purchase-summary .checkout-btn {
+.cart .items .purchase-summary .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.cart .items .purchase-summary .btns .checkout-btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1520,7 +1547,36 @@ footer .bottom-section p {
   transition: all 0.2s ease-in;
 }
 
-.cart .items .purchase-summary .checkout-btn:hover {
+.cart .items .purchase-summary .btns .checkout-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+.cart .items .purchase-summary .btns .reset-btn {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.cart .items .purchase-summary .btns .reset-btn:hover {
   cursor: pointer;
   padding: 0.7em 1.7em;
 }
