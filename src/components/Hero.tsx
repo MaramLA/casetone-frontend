@@ -13,7 +13,7 @@ const Hero = () => {
       <img src={bannerImage} alt="Banner Image" />
       <div className="circle-background"></div>
       <div className="hero__content">
-        {isSignedIn && userData?.role.toLowerCase() === 'admin' ? (
+        {isSignedIn && userData?.role === 'admin' ? (
           <>
             <h1 className="heading-title">Welcome to Casetone</h1>
             <p>Admin Dashboard</p>

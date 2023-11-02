@@ -327,8 +327,6 @@ header .mini-nav {
   padding: 5rem 0;
   -webkit-box-shadow: #909090 0px 10px 10px -10px;
           box-shadow: #909090 0px 10px 10px -10px;
-  -webkit-animation: mini-navbar 1.5s infinite;
-          animation: mini-navbar 1.5s infinite;
 }
 
 header .mini-nav .top-section {
@@ -2868,6 +2866,205 @@ footer .bottom-section p {
 /* ---------------------------------------------------------- */
 /* End of users styling */
 /* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of add edit product page styling */
+/* ---------------------------------------------------------- */
+.add-edit-product {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: #dddddd 0px 10px 10px -10px;
+          box-shadow: #dddddd 0px 10px 10px -10px;
+}
+
+.add-edit-product .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.add-edit-product .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+  background: #ffff;
+  min-height: 11rem;
+  width: 50vw;
+  padding: 12rem 8rem;
+  text-align: center;
+  border-radius: 50px;
+  color: #696262;
+  -webkit-box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+          box-shadow: #696262 0px 10px 36px 0px, #696262 0px 0px 0px 1px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5rem;
+}
+
+.add-edit-product .form .entry {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80vh;
+  margin-bottom: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.add-edit-product .form .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.add-edit-product .form .entry .input-btn {
+  position: relative;
+}
+
+.add-edit-product .form .entry .input-btn input {
+  width: 40vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.add-edit-product .form .entry .input-btn .currency {
+  position: absolute;
+  font-size: 2em;
+  right: 3rem;
+  top: 1.5rem;
+}
+
+.add-edit-product .form .entry .input-btn .add-detail {
+  position: absolute;
+  right: 0rem;
+  bottom: 2.1rem;
+  font-size: 25pt;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.6em 1.5em;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: 4px solid #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.add-edit-product .form .entry .input-btn .add-detail:hover {
+  cursor: pointer;
+  padding-left: 1.8em;
+}
+
+.add-edit-product .form .entry .input-btn .selectCategory {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 45vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  background: #edefef;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.add-edit-product .form .entry .input-btn .selectCategory:hover {
+  cursor: pointer;
+}
+
+.add-edit-product .form .entry textarea {
+  width: 40vw;
+  min-height: 10rem;
+  border-radius: 50px;
+  padding: 2rem 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+  resize: none;
+}
+
+.add-edit-product .add-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #ffff;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.add-edit-product .add-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of add edit product page styling */
+/* ----------------------------------------------------------
+
+
+// Media queries for responsive design
+
 /* Extra small devices (phones, 600px and down) */
 @media screen and (min-width: 1000px) {
   .nav-bar .right-section .nav-buttons {

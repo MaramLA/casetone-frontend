@@ -41,6 +41,7 @@ const SignIn = () => {
         }
         if (user.password !== logInUser.password) {
           console.log('Password do not match')
+          return
         }
         if (user.ban) {
           console.log('Sorry you account was banned')
@@ -72,6 +73,7 @@ const SignIn = () => {
                 placeholder="Email"
                 value={logInUser.email}
                 onChange={handleInputChange}
+                required
               />
             </div>
             <div className="entry">
@@ -84,6 +86,7 @@ const SignIn = () => {
                 placeholder="********"
                 value={logInUser.password}
                 onChange={handleInputChange}
+                required
               />
             </div>
             <button type="submit" className="signIn-btn">

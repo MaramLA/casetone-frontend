@@ -74,7 +74,7 @@ const ProductDetails = () => {
               <h3>Price: {singleProduct.price}$</h3>
 
               <div className="buttons">
-                {userData?.role.toLowerCase() !== 'admin' && (
+                {userData?.role !== 'admin' && (
                   <button onClick={handleCartBtn} className="buy-btn">
                     Add to Cart
                   </button>

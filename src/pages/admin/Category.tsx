@@ -14,6 +14,7 @@ import {
   deleteCategory,
   editCategory
 } from '../../redux/slices/Categories/categoriesSlice'
+import { toast } from 'react-toastify'
 
 const Category = () => {
   const { categoriesList, isLoading, error } = useSelector(
@@ -33,7 +34,30 @@ const Category = () => {
   }
 
   const handleDeleteCategory = (categoryId: number) => {
-    dispatch(deleteCategory(categoryId))
+    try {
+      dispatch(deleteCategory(categoryId))
+      toast.success('Category deleted successfully', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    } catch (error) {
+      toast.error('Something went worng', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
 
   const handleEditCategory = (id: number, name: string) => {
@@ -51,13 +75,59 @@ const Category = () => {
     event.preventDefault()
     if (!isEditCategory) {
       const temCategory = { id: new Date().getTime(), name: newCategory }
-      dispatch(addCategory(temCategory))
-      setNewCategoryName('')
+      try {
+        dispatch(addCategory(temCategory))
+        setNewCategoryName('')
+        toast.success('Category added successfully', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      } catch (error) {
+        toast.error('Something went worng', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      }
     } else {
       const updateCategory = { id: categoryId, name: newCategory }
-      dispatch(editCategory(updateCategory))
-      setNewCategoryName('')
-      setIsEditCategory(false)
+      try {
+        dispatch(editCategory(updateCategory))
+        setNewCategoryName('')
+        setIsEditCategory(false)
+        toast.success('Category updated successfully', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      } catch (error) {
+        toast.error('Something went worng', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      }
     }
   }
 

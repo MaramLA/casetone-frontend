@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { signInPath } from '../pathLinks'
 import { addUser, fetchUsers } from '../redux/slices/Users/userSlice'
 import { AppDispatch } from '../redux/store'
@@ -31,10 +32,32 @@ const SignUp = () => {
   }
   const handleSubmitUser = (event: FormEvent) => {
     event.preventDefault()
-    const newUserData = { id: new Date().getTime(), ...newUser }
-
-    dispatch(fetchUsers()).then(() => dispatch(addUser(newUserData)))
-    navigate(signInPath)
+    try {
+      const newUserData = { id: new Date().getTime(), ...newUser }
+      dispatch(fetchUsers()).then(() => dispatch(addUser(newUserData)))
+      toast.success('Account created successfully', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+      navigate(signInPath)
+    } catch (error) {
+      toast.error('Something went wrong', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
   return (
     <main>

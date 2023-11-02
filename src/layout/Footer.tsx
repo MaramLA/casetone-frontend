@@ -40,7 +40,7 @@ const Footer = () => {
                 Products
               </InnerLink>
             </li>
-            {userData?.role.toLowerCase() !== 'admin' && (
+            {userData?.role !== 'admin' && (
               <li>
                 <InnerLink smooth className="footerPagesLinks" to={aboutPath}>
                   About us
@@ -61,7 +61,7 @@ const Footer = () => {
                 </li>
               </>
             )}
-            {isSignedIn && userData?.role.toLowerCase() === 'visitor' && (
+            {isSignedIn && userData?.role === 'visitor' && (
               <li>
                 <Link className="footerPagesLinks" to={purchasesPath}>
                   Purchases
@@ -75,7 +75,7 @@ const Footer = () => {
                 </Link>
               </li>
             )}
-            {userData?.role.toLowerCase() === 'admin' && (
+            {userData?.role === 'admin' && (
               <>
                 <li>
                   <Link className="footerPagesLinks" to={categoryPath}>

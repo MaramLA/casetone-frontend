@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 import {
   homePath,
   errorPath,
@@ -9,7 +12,8 @@ import {
   profilePath,
   categoryPath,
   purchasesPath,
-  addProductPath
+  addProductPath,
+  editProductPath
 } from '../pathLinks'
 
 import Header from '../layout/Header'
@@ -26,11 +30,30 @@ import AddProduct from '../pages/admin/AddProduct'
 import ProductDetails from '../pages/ProductDetails'
 import UserProtectedRoutes from './UserProtectedRoutes'
 import AdminProtectedRoutes from './AdminProtectedRoutes'
+import EditProduct from '../pages/admin/EditProduct'
 
 const Index = () => {
   return (
     <BrowserRouter>
       <Header />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        style={{
+          marginTop: '12rem',
+          fontSize: '2em',
+          width: '30rem',
+          padding: '3rem, 6rem'
+        }}
+      />
       <Routes>
         <Route path={homePath} element={<Home />} />
         <Route path={errorPath} element={<Error />} />
@@ -42,6 +65,7 @@ const Index = () => {
           <Route path={usersPath} element={<Users />} />
           <Route path={categoryPath} element={<Category />} />
           <Route path={addProductPath} element={<AddProduct />} />
+          <Route path={'/registerd/admin/edit-product/:id'} element={<EditProduct />} />
         </Route>
 
         <Route path="/registerd" element={<UserProtectedRoutes />}>

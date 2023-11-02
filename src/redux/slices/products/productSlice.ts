@@ -15,7 +15,7 @@ export type ProductType = {
   categories: number[]
   variants: string[]
   sizes: string[]
-  price: string[]
+  price: number
 }
 
 export type ProductState = {
@@ -65,6 +65,22 @@ export const productSlice = createSlice({
     deleteProduct: (state, action) => {
       const newProductsList = state.productsList.filter((product) => product.id !== action.payload)
       state.productsList = newProductsList
+    },
+    addProduct: (state, action) => {
+      state.productsList.push(action.payload)
+    },
+    editProduct: (state, action) => {
+      const updatedProduct = action.payload
+      const foundProduct = state.productsList.find((product) => product.id === updatedProduct.id)
+      if (foundProduct) {
+        foundProduct.name = updatedProduct.name
+        foundProduct.image = updatedProduct.image
+        foundProduct.description = updatedProduct.description
+        foundProduct.categories = updatedProduct.categories
+        foundProduct.variants = updatedProduct.variants
+        foundProduct.sizes = updatedProduct.sizes
+        foundProduct.price = updatedProduct.price
+      }
     }
   },
   extraReducers(builder) {
@@ -83,5 +99,12 @@ export const productSlice = createSlice({
   }
 })
 
-export const { findProductById, searchProducts, sortProducts, deleteProduct } = productSlice.actions
+export const {
+  findProductById,
+  searchProducts,
+  sortProducts,
+  deleteProduct,
+  addProduct,
+  editProduct
+} = productSlice.actions
 export default productSlice.reducer

@@ -11,10 +11,12 @@ import { banUser, deleteUser, searchUser, UserType } from '../../redux/slices/Us
 import {
   deleteAllUserOrders,
   deleteSingleUserOrder,
-  fetchOrders,
   OrderType
 } from '../../redux/slices/Orders/ordersSlice'
-import { fetchProducts, ProductType } from '../../redux/slices/products/productSlice'
+import { ProductType } from '../../redux/slices/products/productSlice'
+import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
+import { homePath } from '../../pathLinks'
 
 const Users = () => {
   const users = useSelector((state: RootState) => state.usersReducer)
@@ -47,17 +49,98 @@ const Users = () => {
       )
     : users.usersList
 
-  const handleRemoveUser = (userId: number) => {
-    dispatch(deleteAllUserOrders(userId))
-    dispatch(deleteUser(userId))
+  const handleRemoveUser = (userId: number, firstName: string, lastName: string) => {
+    try {
+      dispatch(deleteAllUserOrders(userId))
+      dispatch(deleteUser(userId))
+      toast.success(`${firstName + ' ' + lastName + ' '} deleted successfully`, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    } catch (error) {
+      toast.error('Something went wrong', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
 
-  const handleBanUser = (userId: number) => {
-    dispatch(banUser(userId))
+  const handleBanUser = (userId: number, ban: boolean, firstName: string, lastName: string) => {
+    try {
+      dispatch(banUser(userId))
+      if (!ban) {
+        toast.success(`${firstName + ' ' + lastName + ' '}banned successfully`, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      } else
+        toast.success(`${firstName + ' ' + lastName + ' '}unbanned successfully`, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+    } catch (error) {
+      toast.error('Something went wrong', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
 
   const handleDeleteOrder = (orderId: number) => {
-    dispatch(deleteSingleUserOrder(orderId))
+    try {
+      dispatch(deleteSingleUserOrder(orderId))
+      toast.success(`Order with id# ${orderId} deleted successfully`, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    } catch (error) {
+      toast.error('Something went wrong', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
 
   return (
@@ -71,7 +154,7 @@ const Users = () => {
             name="searchTerm"
             id="search-product"
             placeholder="search"
-            value={users.searchTerm?.toString().toLowerCase()}
+            value={users.searchTerm?.toString()}
             onChange={handleSearchInput}
           />
           {searchedUsers.length > 0 &&
@@ -119,10 +202,16 @@ const Users = () => {
                           }
                         })}
                       <div className="buttons">
-                        <button className="remove-btn" onClick={() => handleRemoveUser(user.id)}>
+                        <button
+                          className="remove-btn"
+                          onClick={() => handleRemoveUser(user.id, user.firstName, user.lastName)}>
                           Remove
                         </button>
-                        <button className="block-btn" onClick={() => handleBanUser(user.id)}>
+                        <button
+                          className="block-btn"
+                          onClick={() =>
+                            handleBanUser(user.id, user.ban, user.firstName, user.lastName)
+                          }>
                           {user.ban ? 'Unban' : 'Ban'}
                         </button>
                       </div>

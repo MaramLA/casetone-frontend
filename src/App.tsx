@@ -14,10 +14,10 @@ import Index from './routes/Index'
 function App() {
   const dispatch: AppDispatch = useDispatch()
   useEffect(() => {
+    dispatch(fetchCategories())
+    dispatch(fetchProducts())
     dispatch(fetchUsers())
     dispatch(fetchOrders())
-    dispatch(fetchProducts())
-    dispatch(fetchCategories())
   }, [])
   return <Index />
 }

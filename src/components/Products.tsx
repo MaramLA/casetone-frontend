@@ -9,11 +9,12 @@ import { BsCartPlusFill } from 'react-icons/bs'
 
 import SortProducts from './SortProducts'
 
-import { purchasesPath, signInPath } from '../pathLinks'
+import { addProductPath, purchasesPath, signInPath } from '../pathLinks'
 
 import { AppDispatch, RootState } from '../redux/store'
 
 import { deleteProduct, ProductType, searchProducts } from '../redux/slices/products/productSlice'
+import { toast } from 'react-toastify'
 
 const Products = () => {
   const { productsList, isLoading, error, searchTerm } = useSelector(
@@ -37,8 +38,33 @@ const Products = () => {
     } else navigate(signInPath)
   }
 
+  console.log(productsList)
+
   const handleDeleteProduct = (id: number) => {
-    dispatch(deleteProduct(id))
+    try {
+      dispatch(deleteProduct(id))
+      toast.success('Product deleted successfully', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    } catch (error) {
+      toast.error('Something went worng', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
@@ -63,7 +89,7 @@ const Products = () => {
         name="searchTerm"
         id="search-product"
         placeholder="search"
-        value={searchTerm?.toString().toLowerCase()}
+        value={searchTerm?.toString()}
         onChange={handleSearchInput}
       />
       <SortProducts />
@@ -80,12 +106,14 @@ const Products = () => {
                   <p className="product__description">{product.description}</p>
                   <p className="product__price">{product.price}$</p>
                   <div className="controllers">
-                    {isSignedIn && userData?.role.toLowerCase() === 'admin' ? (
+                    {isSignedIn && userData?.role === 'admin' ? (
                       <>
                         <Link to={`/products/${product.id}`}>
                           <AiFillEye className="icon5" />
                         </Link>
-                        <AiFillEdit className="icon2" />
+                        <Link to={`/registerd/admin/edit-product/${product.id}`}>
+                          <AiFillEdit className="icon2" />
+                        </Link>
                         <MdDelete
                           className="icon3"
                           onClick={() => handleDeleteProduct(product.id)}
@@ -105,8 +133,10 @@ const Products = () => {
             )
           })}
       </div>
-      {isSignedIn && userData?.role.toLowerCase() === 'admin' && (
-        <button className="products-btn">Add Product</button>
+      {isSignedIn && userData?.role === 'admin' && (
+        <Link to={addProductPath}>
+          <button className="products-btn">Add Product</button>
+        </Link>
       )}
     </section>
   )

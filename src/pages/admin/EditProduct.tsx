@@ -1,25 +1,38 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { homePath } from '../../pathLinks'
-import { addProduct, fetchProducts } from '../../redux/slices/products/productSlice'
+import {
+  editProduct,
+  fetchProducts,
+  findProductById
+} from '../../redux/slices/products/productSlice'
 import { AppDispatch, RootState } from '../../redux/store'
 
-const AddProduct = () => {
+const EditProduct = () => {
+  const { id } = useParams()
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
+  const { singleProduct } = useSelector((state: RootState) => state.productsReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
+  useEffect(() => {
+    dispatch(fetchProducts()).then(() => {
+      dispatch(findProductById(Number(id)))
+    })
+  }, [id])
+
   const [newProduct, setNewProduct] = useState({
-    name: '',
-    image: '',
-    description: '',
-    categories: [],
-    variants: [],
-    sizes: [],
-    price: 0
+    id: singleProduct.id,
+    name: singleProduct.name,
+    image: singleProduct.image,
+    description: singleProduct.description,
+    categories: singleProduct.categories,
+    variants: singleProduct.variants,
+    sizes: singleProduct.sizes,
+    price: Number(singleProduct.price)
   })
 
   const handelInputChange = (
@@ -36,11 +49,11 @@ const AddProduct = () => {
 
   const handleProductSubmit = (event: FormEvent) => {
     event.preventDefault()
+
     try {
-      const newProductData = { id: new Date().getMilliseconds(), ...newProduct }
-      dispatch(fetchProducts()).then(() => dispatch(addProduct(newProductData)))
+      dispatch(fetchProducts()).then(() => dispatch(editProduct(newProduct)))
       navigate(homePath)
-      toast.success('Product added successffully', {
+      toast.success('Product Edited successfully', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -100,6 +113,7 @@ const AddProduct = () => {
                 id="productVariants"
                 className="formPassword"
                 name="variants"
+                value={newProduct.variants}
                 placeholder="product Variants"
                 onChange={handelInputChange}
               />
@@ -115,6 +129,7 @@ const AddProduct = () => {
                 name="sizes"
                 placeholder="product Sizes"
                 onChange={handelInputChange}
+                value={newProduct.sizes}
               />
             </div>
           </div>
@@ -127,9 +142,7 @@ const AddProduct = () => {
                 name="categories"
                 onChange={handelInputChange}
                 className="selectCategory">
-                <option value="default" defaultChecked defaultValue="Product Category">
-                  Product Category
-                </option>
+                <option value="default">Product Category</option>
                 {categoriesList.length > 0 &&
                   categoriesList.map((category) => {
                     return (
@@ -166,12 +179,13 @@ const AddProduct = () => {
                 name="price"
                 placeholder="product price"
                 onChange={handelInputChange}
+                value={newProduct.price}
               />
               <p className="currency">$</p>
             </div>
           </div>
           <button type="submit" className="add-btn">
-            Add
+            Edit
           </button>
         </form>
       </section>
@@ -179,4 +193,4 @@ const AddProduct = () => {
   )
 }
 
-export default AddProduct
+export default EditProduct

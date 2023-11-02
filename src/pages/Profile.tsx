@@ -7,6 +7,7 @@ import userProfile from '../assets/userProfile.png'
 import { AppDispatch, RootState } from '../redux/store'
 
 import { updateUser } from '../redux/slices/Users/userSlice'
+import { toast, ToastContainer } from 'react-toastify'
 
 const Profile = () => {
   const { userData } = useSelector((state: RootState) => state.usersReducer)
@@ -33,7 +34,31 @@ const Profile = () => {
 
   const handleProfileUpdate = (event: FormEvent) => {
     event.preventDefault()
-    dispatch(updateUser(profileUpdate))
+    try {
+      dispatch(updateUser(profileUpdate))
+
+      toast.success('Profile updated successfully', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    } catch (error) {
+      toast.error('Something went wrong', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
 
   return (
