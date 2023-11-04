@@ -77,7 +77,6 @@ const AddProduct = () => {
       newProductData.variants.push(newProduct.variants)
       newProductData.sizes.push(newProduct.sizes)
       dispatch(fetchProducts()).then(() => dispatch(addProduct(newProductData)))
-      console.log(productsList)
       navigate(homePath)
       toast.success('Product added successffully', {
         position: 'top-right',
@@ -173,7 +172,6 @@ const AddProduct = () => {
                 onChange={handelInputChange}
                 className="selectCategory"
                 required>
-                <option value={newProduct.categories}>Product Category</option>
                 {categoriesList.length > 0 &&
                   categoriesList.map((category) => {
                     return (

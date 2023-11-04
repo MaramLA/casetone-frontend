@@ -6,19 +6,20 @@ import { homePath } from '../../pathLinks'
 import {
   editProduct,
   fetchProducts,
-  findProductById
+  findProductById,
+  ProductType
 } from '../../redux/slices/products/productSlice'
 import { AppDispatch, RootState } from '../../redux/store'
 
 const EditProduct = () => {
   const { id } = useParams()
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
-  const { singleProduct } = useSelector((state: RootState) => state.productsReducer)
+  const { singleProduct, productsList } = useSelector((state: RootState) => state.productsReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
-  const [newProduct, setNewProduct] = useState({
+  const [newProduct, setNewProduct] = useState<ProductType>({
     id: singleProduct.id,
     name: singleProduct.name,
     image: singleProduct.image,
@@ -30,12 +31,18 @@ const EditProduct = () => {
   })
 
   useEffect(() => {
-    dispatch(fetchProducts()).then(() => {
-      dispatch(findProductById(Number(id)))
-    })
+    dispatch(findProductById(Number(id)))
     if (singleProduct) {
-      console.log('singlProduct:', singleProduct)
-      setNewProduct(singleProduct)
+      setNewProduct({
+        id: singleProduct.id,
+        name: singleProduct.name,
+        image: singleProduct.image,
+        description: singleProduct.description,
+        categories: singleProduct.categories,
+        variants: singleProduct.variants,
+        sizes: singleProduct.sizes,
+        price: Number(singleProduct.price)
+      })
     }
   }, [id, singleProduct])
 
@@ -53,11 +60,39 @@ const EditProduct = () => {
 
   const handleProductSubmit = (event: FormEvent) => {
     event.preventDefault()
+    const newProductData: ProductType = {
+      id: newProduct.id,
+      name: newProduct.name,
+      image: newProduct.image,
+      description: newProduct.description,
+      categories: [],
+      variants: [],
+      sizes: [],
+      price: Number(newProduct.price)
+    }
+    newProductData.categories.push(Number(newProduct.categories))
+    newProductData.variants.push(newProduct.variants.toString())
+    newProductData.sizes.push(newProduct.sizes.toString())
+
+    if (newProduct.price <= 0) {
+      toast.warning('Price should be more then 0', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+      return
+    }
 
     try {
-      dispatch(fetchProducts()).then(() => dispatch(editProduct(newProduct)))
+      dispatch(fetchProducts()).then(() => dispatch(editProduct(newProductData)))
+
       navigate(homePath)
-      toast.success('Product Edited successfully', {
+      toast.success('Product Saved successfully', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -109,7 +144,8 @@ const EditProduct = () => {
                 name="description"
                 value={newProduct.description}
                 onChange={handelInputChange}
-                placeholder="Descirption"></textarea>
+                placeholder="Descirption"
+                required></textarea>
             </div>
             <div className="entry">
               <label htmlFor="productVariants">Variants</label>
@@ -149,12 +185,13 @@ const EditProduct = () => {
                   id="formCategory"
                   name="categories"
                   onChange={handelInputChange}
-                  className="selectCategory">
+                  className="selectCategory"
+                  required>
                   <option value="default">Product Category</option>
                   {categoriesList.length > 0 &&
                     categoriesList.map((category) => {
                       return (
-                        <option key={category.id} value={category.name}>
+                        <option key={category.id} value={category.id}>
                           {category.name}
                         </option>
                       )
@@ -195,7 +232,7 @@ const EditProduct = () => {
               </div>
             </div>
             <button type="submit" className="add-btn">
-              Edit
+              Save
             </button>
           </form>
         )}
