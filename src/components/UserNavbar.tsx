@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import logo from '../assets/logo.png'
+
 import {
   homePath,
   aboutPath,
@@ -15,11 +17,12 @@ import {
 
 import { RootState } from '../redux/store'
 import { signOut } from '../redux/slices/Users/userSlice'
-import { useState } from 'react'
 
 const UserNavbar = () => {
   const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
+
   const [isMenueClicked, setIsMenueClicked] = useState(false)
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -55,7 +58,6 @@ const UserNavbar = () => {
           </ul>
         </div>
         <div className="right-section">
-          {/* Cart icon  */}
           <Link to={purchasesPath}>
             <i className="fa fa-shopping-cart icon1" aria-hidden="true"></i>
           </Link>
@@ -71,7 +73,6 @@ const UserNavbar = () => {
                   Sign Out
                 </button>
               </div>
-              {/* burger icon  */}
               <i
                 className="fa-solid fa-bars icon2"
                 onClick={() => setIsMenueClicked(!isMenueClicked)}></i>

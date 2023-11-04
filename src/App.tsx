@@ -15,8 +15,8 @@ function App() {
   const dispatch: AppDispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchCategories())
-    dispatch(fetchProducts())
     dispatch(fetchUsers())
+    dispatch(fetchProducts())
     dispatch(fetchOrders())
   }, [])
   return <Index />

@@ -1,22 +1,19 @@
-import { MdDelete } from 'react-icons/md'
-
-import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent } from 'react'
+import { toast } from 'react-toastify'
+import { MdDelete } from 'react-icons/md'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { AppDispatch, RootState } from '../../redux/store'
+import { ProductType } from '../../redux/slices/products/productSlice'
+import { banUser, deleteUser, searchUser, UserType } from '../../redux/slices/Users/userSlice'
 
 import Footer from '../../layout/Footer'
 
-import { AppDispatch, RootState } from '../../redux/store'
-
-import { banUser, deleteUser, searchUser, UserType } from '../../redux/slices/Users/userSlice'
 import {
   deleteAllUserOrders,
   deleteSingleUserOrder,
   OrderType
 } from '../../redux/slices/Orders/ordersSlice'
-import { ProductType } from '../../redux/slices/products/productSlice'
-import { toast } from 'react-toastify'
-import { Link } from 'react-router-dom'
-import { homePath } from '../../pathLinks'
 
 const Users = () => {
   const users = useSelector((state: RootState) => state.usersReducer)

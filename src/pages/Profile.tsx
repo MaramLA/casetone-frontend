@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
@@ -5,12 +6,11 @@ import Footer from '../layout/Footer'
 import userProfile from '../assets/userProfile.png'
 
 import { AppDispatch, RootState } from '../redux/store'
-
 import { updateUser } from '../redux/slices/Users/userSlice'
-import { toast, ToastContainer } from 'react-toastify'
 
 const Profile = () => {
   const { userData, isLoading, error } = useSelector((state: RootState) => state.usersReducer)
+
   const [profileUpdate, setProfileUpdate] = useState({
     id: userData?.id,
     firstName: userData?.firstName.toString(),

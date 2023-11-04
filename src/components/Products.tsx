@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify'
 import { ChangeEvent, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,15 +8,13 @@ import { AiFillEye } from 'react-icons/ai'
 import { AiFillEdit } from 'react-icons/ai'
 import { BsCartPlusFill } from 'react-icons/bs'
 
+import { AppDispatch, RootState } from '../redux/store'
+import { addToCart } from '../redux/slices/Orders/cartSlice'
+import { deleteProduct, ProductType, searchProducts } from '../redux/slices/products/productSlice'
+
 import SortProducts from './SortProducts'
 
 import { addProductPath, signInPath } from '../pathLinks'
-
-import { AppDispatch, RootState } from '../redux/store'
-
-import { deleteProduct, ProductType, searchProducts } from '../redux/slices/products/productSlice'
-import { toast } from 'react-toastify'
-import { addToCart } from '../redux/slices/Orders/cartSlice'
 
 const Products = () => {
   const { productsList, isLoading, error, searchTerm } = useSelector(
@@ -196,9 +195,7 @@ const Products = () => {
           <div className="pagination-div">
             <div className="top-section">
               <div className="page-controller">
-                {/* {currentPage !== 1 && ( */}
                 <i className="fa-solid fa-chevron-left arrow-icon" onClick={handlePreviousPage}></i>
-                {/* )} */}
               </div>
               <div className="products-div">
                 {currentItems.length > 0 &&
@@ -244,9 +241,7 @@ const Products = () => {
                   })}
               </div>
               <div className="page-controller">
-                {/* {currentPage !== totalPages && ( */}
                 <i className="fa-solid fa-chevron-right arrow-icon" onClick={handleNextPage}></i>
-                {/* )} */}
               </div>
             </div>
             <div className="bottm-section">

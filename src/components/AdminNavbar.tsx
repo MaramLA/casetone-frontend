@@ -1,21 +1,22 @@
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import logo from '../assets/logo.png'
 
 import { homePath, usersPath, categoryPath, productsPath, profilePath } from '../pathLinks'
 
-import { signOut } from '../redux/slices/Users/userSlice'
 import { RootState } from '../redux/store'
+import { signOut } from '../redux/slices/Users/userSlice'
 
 const AdminNavbar = () => {
+  const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
+
+  const [isMenueClicked, setIsMenueClicked] = useState(false)
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
-  const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
-  const [isMenueClicked, setIsMenueClicked] = useState(false)
 
   const handleLogout = () => {
     setIsMenueClicked(false)

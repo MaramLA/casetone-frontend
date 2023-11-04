@@ -1,13 +1,15 @@
-import { productsPath } from '../pathLinks'
+import { useSelector } from 'react-redux'
 import { HashLink as InnerLink } from 'react-router-hash-link'
+
+import { productsPath } from '../pathLinks'
 
 import bannerImage from '../assets/banner.png'
 
-import { useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
 
 const Hero = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
+
   return (
     <section className="hero" id="home">
       <img src={bannerImage} alt="Banner Image" />

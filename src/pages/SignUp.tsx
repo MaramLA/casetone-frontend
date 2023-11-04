@@ -1,10 +1,12 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { signInPath } from '../pathLinks'
-import { addUser, fetchUsers } from '../redux/slices/Users/userSlice'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { ChangeEvent, FormEvent, useState } from 'react'
+
 import { AppDispatch, RootState } from '../redux/store'
+import { addUser, fetchUsers } from '../redux/slices/Users/userSlice'
+
+import { signInPath } from '../pathLinks'
 
 const SignUp = () => {
   const passwordValidation = new RegExp(
@@ -12,9 +14,6 @@ const SignUp = () => {
   )
 
   const { usersList } = useSelector((state: RootState) => state.usersReducer)
-
-  const dispatch: AppDispatch = useDispatch()
-  const navigate = useNavigate()
 
   const [newUser, setNewUser] = useState({
     firstName: '',
@@ -25,6 +24,10 @@ const SignUp = () => {
     ban: false
   })
   const [confirmPassword, setConfirmPassword] = useState<string>('')
+
+  const dispatch: AppDispatch = useDispatch()
+  const navigate = useNavigate()
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNewUser((prevUser) => {
       const { value, name } = event.target
@@ -86,19 +89,7 @@ const SignUp = () => {
           })
           return
         }
-        // if (newUserData.password.length < 8) {
-        //   toast.warning('Passwords should be greater then or equal 8 characters', {
-        //     position: 'top-right',
-        //     autoClose: 5000,
-        //     hideProgressBar: false,
-        //     closeOnClick: true,
-        //     pauseOnHover: true,
-        //     draggable: true,
-        //     progress: undefined,
-        //     theme: 'colored'
-        //   })
-        //   return
-        // }
+
         if (!passwordValidation.test(newUserData.password)) {
           toast.warning('Password should contain at least 1 lowercase character', {
             position: 'top-right',

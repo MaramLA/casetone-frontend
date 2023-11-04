@@ -1,12 +1,12 @@
+import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
-import { homePath, signUpPath } from '../pathLinks'
-
 import { AppDispatch, RootState } from '../redux/store'
-import { signIn, UserType } from '../redux/slices/Users/userSlice'
-import { toast } from 'react-toastify'
+import { signIn } from '../redux/slices/Users/userSlice'
+
+import { homePath, signUpPath } from '../pathLinks'
 
 type LogInUserType = {
   email: string
@@ -16,13 +16,13 @@ type LogInUserType = {
 const SignIn = () => {
   const { usersList } = useSelector((state: RootState) => state.usersReducer)
 
-  const dispatch: AppDispatch = useDispatch()
-  const navigate = useNavigate()
-
   const [logInUser, setLogInUser] = useState<LogInUserType>({
     email: '',
     password: ''
   })
+
+  const dispatch: AppDispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setLogInUser((previousState) => {
@@ -33,24 +33,6 @@ const SignIn = () => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
     try {
-      // usersList.find((user: UserType) => {
-      //   const UserExist = user.email === logInUser.email
-
-      //   if (!UserExist) {
-      //     console.log('User not found')
-      //     return
-      //   }
-      //   if (user.password !== logInUser.password) {
-      //     console.log('Password do not match')
-      //     return
-      //   }
-      //   if (user.ban) {
-      //     console.log('Sorry you account was banned')
-      //     return
-      //   }
-      //   dispatch(signIn(user))
-      //   navigate(homePath)
-      // })
       const foundUser = usersList.find((user) => user.email === logInUser.email)
       if (foundUser && foundUser.ban === false && foundUser.password === logInUser.password) {
         dispatch(signIn(foundUser))
@@ -97,7 +79,17 @@ const SignIn = () => {
         }
       }
     } catch (error) {
-      console.log(error)
+      toast.error('Something went wrong', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+      return
     }
 
     setLogInUser({ email: '', password: '' })

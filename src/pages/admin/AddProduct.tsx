@@ -1,10 +1,12 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { ChangeEvent, FormEvent, useState } from 'react'
+
 import { homePath } from '../../pathLinks'
-import { addProduct, fetchProducts, ProductType } from '../../redux/slices/products/productSlice'
+
 import { AppDispatch, RootState } from '../../redux/store'
+import { addProduct, fetchProducts, ProductType } from '../../redux/slices/products/productSlice'
 
 type NewProductType = {
   id: number
@@ -19,7 +21,6 @@ type NewProductType = {
 
 const AddProduct = () => {
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
-  const { productsList } = useSelector((state: RootState) => state.productsReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()

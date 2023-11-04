@@ -1,31 +1,29 @@
 import { useEffect } from 'react'
+import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
-import Footer from '../layout/Footer'
-
 import { AppDispatch, RootState } from '../redux/store'
+import { addToCart } from '../redux/slices/Orders/cartSlice'
+import { findProductById, ProductType } from '../redux/slices/products/productSlice'
+
+import Footer from '../layout/Footer'
 
 import { homePath, signInPath } from '../pathLinks'
 
-import { findProductById, ProductType } from '../redux/slices/products/productSlice'
-import { toast } from 'react-toastify'
-import { addToCart } from '../redux/slices/Orders/cartSlice'
-
 const ProductDetails = () => {
   const { id } = useParams()
+
   const { singleProduct, isLoading, error } = useSelector(
     (state: RootState) => state.productsReducer
   )
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
-
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
   useEffect(() => {
-    // dispatch(fetchProducts()).then(() => dispatch(findProductById(Number(id))))
     dispatch(findProductById(Number(id)))
   }, [id])
 

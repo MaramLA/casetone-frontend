@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+
 import { ProductType } from '../products/productSlice'
 
 const cartData =
@@ -9,7 +10,7 @@ type CartState = {
 }
 
 const initialState: CartState = {
-  cartItems: []
+  cartItems: cartData
 }
 
 const cartSlice = createSlice({

@@ -24,8 +24,10 @@ import { signOut } from '../redux/slices/Users/userSlice'
 
 const Footer = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
+
   const navigate = useNavigate()
   const dispatch: AppDispatch = useDispatch()
+
   const handleLogout = () => {
     dispatch(signOut())
     navigate(homePath)

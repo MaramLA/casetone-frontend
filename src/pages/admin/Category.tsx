@@ -1,12 +1,13 @@
+import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
 import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
 
-import Footer from '../../layout/Footer'
-
 import { AppDispatch, RootState } from '../../redux/store'
+
+import Footer from '../../layout/Footer'
 
 import {
   addCategory,
@@ -14,7 +15,6 @@ import {
   deleteCategory,
   editCategory
 } from '../../redux/slices/Categories/categoriesSlice'
-import { toast } from 'react-toastify'
 
 const Category = () => {
   const { categoriesList, isLoading, error } = useSelector(

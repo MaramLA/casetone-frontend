@@ -1,20 +1,24 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+
 import { homePath } from '../../pathLinks'
+
+import { AppDispatch, RootState } from '../../redux/store'
+
 import {
   editProduct,
   fetchProducts,
   findProductById,
   ProductType
 } from '../../redux/slices/products/productSlice'
-import { AppDispatch, RootState } from '../../redux/store'
 
 const EditProduct = () => {
   const { id } = useParams()
+
+  const { singleProduct } = useSelector((state: RootState) => state.productsReducer)
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
-  const { singleProduct, productsList } = useSelector((state: RootState) => state.productsReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()

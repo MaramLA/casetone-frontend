@@ -1,8 +1,10 @@
-import { MdDelete } from 'react-icons/md'
-import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
-import { deleteForomCart, resetCart } from '../redux/slices/Orders/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { MdDelete } from 'react-icons/md'
+
 import { AppDispatch, RootState } from '../redux/store'
+import { deleteForomCart, resetCart } from '../redux/slices/Orders/cartSlice'
 
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cartReducer)

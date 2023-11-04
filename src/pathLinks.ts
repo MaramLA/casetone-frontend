@@ -10,7 +10,6 @@ export const purchasesPath = '/registerd/user/purchases'
 export const usersPath = '/registerd/admin/users'
 export const categoryPath = '/registerd/admin/category'
 export const addProductPath = '/registerd/admin/add-product'
-export const editProductPath = '/registerd/admin/edit-product' //page isn't created yet
 
 //Inner Links
 export const aboutPath = '/#aboutUsSection'
