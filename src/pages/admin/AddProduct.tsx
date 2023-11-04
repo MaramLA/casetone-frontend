@@ -3,22 +3,35 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { homePath } from '../../pathLinks'
-import { addProduct, fetchProducts } from '../../redux/slices/products/productSlice'
+import { addProduct, fetchProducts, ProductType } from '../../redux/slices/products/productSlice'
 import { AppDispatch, RootState } from '../../redux/store'
+
+type NewProductType = {
+  id: number
+  name: string
+  image: string
+  description: string
+  categories: number
+  variants: string
+  sizes: string
+  price: number
+}
 
 const AddProduct = () => {
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
+  const { productsList } = useSelector((state: RootState) => state.productsReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
-  const [newProduct, setNewProduct] = useState({
+  const [newProduct, setNewProduct] = useState<NewProductType>({
+    id: 0,
     name: '',
     image: '',
     description: '',
-    categories: [],
-    variants: [],
-    sizes: [],
+    categories: 0,
+    variants: '',
+    sizes: '',
     price: 0
   })
 
@@ -36,9 +49,35 @@ const AddProduct = () => {
 
   const handleProductSubmit = (event: FormEvent) => {
     event.preventDefault()
+    if (newProduct.price <= 0) {
+      toast.warning('Price should be more then 0', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+      return
+    }
     try {
-      const newProductData = { id: new Date().getMilliseconds(), ...newProduct }
+      const newProductData: ProductType = {
+        id: new Date().getMilliseconds(),
+        name: newProduct.name,
+        image: newProduct.image,
+        description: newProduct.description,
+        categories: [],
+        variants: [],
+        sizes: [],
+        price: Number(newProduct.price)
+      }
+      newProductData.categories.push(Number(newProduct.categories))
+      newProductData.variants.push(newProduct.variants)
+      newProductData.sizes.push(newProduct.sizes)
       dispatch(fetchProducts()).then(() => dispatch(addProduct(newProductData)))
+      console.log(productsList)
       navigate(homePath)
       toast.success('Product added successffully', {
         position: 'top-right',
@@ -91,7 +130,8 @@ const AddProduct = () => {
               name="description"
               value={newProduct.description}
               onChange={handelInputChange}
-              placeholder="Descirption"></textarea>
+              placeholder="Descirption"
+              required></textarea>
           </div>
           <div className="entry">
             <label htmlFor="productVariants">Variants</label>
@@ -102,6 +142,7 @@ const AddProduct = () => {
                 className="formPassword"
                 name="variants"
                 placeholder="product Variants"
+                value={newProduct.variants}
                 onChange={handelInputChange}
                 required
               />
@@ -116,6 +157,7 @@ const AddProduct = () => {
                 className="formPassword"
                 name="sizes"
                 placeholder="product Sizes"
+                value={newProduct.sizes}
                 onChange={handelInputChange}
                 required
               />
@@ -129,14 +171,13 @@ const AddProduct = () => {
                 id="formCategory"
                 name="categories"
                 onChange={handelInputChange}
-                className="selectCategory">
-                <option value="default" defaultChecked defaultValue="Product Category">
-                  Product Category
-                </option>
+                className="selectCategory"
+                required>
+                <option value={newProduct.categories}>Product Category</option>
                 {categoriesList.length > 0 &&
                   categoriesList.map((category) => {
                     return (
-                      <option key={category.id} value={category.name}>
+                      <option key={category.id} value={category.id}>
                         {category.name}
                       </option>
                     )

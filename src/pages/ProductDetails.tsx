@@ -8,7 +8,7 @@ import { AppDispatch, RootState } from '../redux/store'
 
 import { homePath, purchasesPath, signInPath } from '../pathLinks'
 
-import { fetchProducts, findProductById } from '../redux/slices/products/productSlice'
+import { findProductById } from '../redux/slices/products/productSlice'
 
 const ProductDetails = () => {
   const { id } = useParams()
@@ -23,7 +23,8 @@ const ProductDetails = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    dispatch(fetchProducts()).then(() => dispatch(findProductById(Number(id))))
+    // dispatch(fetchProducts()).then(() => dispatch(findProductById(Number(id))))
+    dispatch(findProductById(Number(id)))
   }, [id])
 
   if (isLoading) {

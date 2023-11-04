@@ -6,21 +6,7 @@ import { signInPath } from '../pathLinks'
 import { addUser, fetchUsers } from '../redux/slices/Users/userSlice'
 import { AppDispatch, RootState } from '../redux/store'
 
-type StrengthChecks = {
-  length: boolean
-  hasUpperCase: boolean
-  hasLowerCase: boolean
-  hasDigit: boolean
-  hasSpecialChar: boolean
-}
-
 const SignUp = () => {
-  // const [email, setEmail] = useState('')
-  // const [password, setPassword] = useState('')
-  // const [lasttName, setLasttName] = useState('')
-  // const [firstName, setFirstName] = useState('')
-  // const [cofPassword, setCofPassword] = useState('')
-
   const passwordValidation = new RegExp(
     '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})'
   )

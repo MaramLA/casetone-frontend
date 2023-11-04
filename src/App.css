@@ -1068,6 +1068,12 @@ footer .bottom-section p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .pagination-div .top-section .page-controller {
@@ -1080,7 +1086,9 @@ footer .bottom-section p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 40rem;
   width: 10rem;
+  margin: 5rem;
 }
 
 .pagination-div .top-section .page-controller .arrow-icon {
@@ -1093,7 +1101,7 @@ footer .bottom-section p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #696262;
+  color: #909090;
   font-size: 10rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;

@@ -24,6 +24,7 @@ const UserNavbar = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
+    setIsMenueClicked(false)
     dispatch(signOut())
     navigate(homePath)
   }

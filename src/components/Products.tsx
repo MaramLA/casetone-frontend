@@ -9,7 +9,7 @@ import { BsCartPlusFill } from 'react-icons/bs'
 
 import SortProducts from './SortProducts'
 
-import { addProductPath, purchasesPath, signInPath } from '../pathLinks'
+import { addProductPath, signInPath } from '../pathLinks'
 
 import { AppDispatch, RootState } from '../redux/store'
 
@@ -136,7 +136,7 @@ const Products = () => {
         onChange={handleSearchInput}
       />
       <SortProducts />
-      {isShowMore ? (
+      {isShowMore || userData?.role === 'admin' ? (
         <>
           <div className="products-div">
             {searchedProducts.length > 0 &&

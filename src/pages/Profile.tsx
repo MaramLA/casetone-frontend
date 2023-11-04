@@ -10,7 +10,7 @@ import { updateUser } from '../redux/slices/Users/userSlice'
 import { toast, ToastContainer } from 'react-toastify'
 
 const Profile = () => {
-  const { userData } = useSelector((state: RootState) => state.usersReducer)
+  const { userData, isLoading, error } = useSelector((state: RootState) => state.usersReducer)
   const [profileUpdate, setProfileUpdate] = useState({
     id: userData?.id,
     firstName: userData?.firstName.toString(),
@@ -23,6 +23,13 @@ const Profile = () => {
   const [isInfoEdited, setIsInfoEdited] = useState(false)
 
   const dispatch: AppDispatch = useDispatch()
+
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
+  if (error) {
+    return <p>{error}</p>
+  }
 
   const handleProfileChange = (event: ChangeEvent<HTMLInputElement>) => {
     setProfileUpdate((previousProfile) => {

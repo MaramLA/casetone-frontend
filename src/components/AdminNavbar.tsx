@@ -18,6 +18,7 @@ const AdminNavbar = () => {
   const [isMenueClicked, setIsMenueClicked] = useState(false)
 
   const handleLogout = () => {
+    setIsMenueClicked(false)
     dispatch(signOut())
     navigate(homePath)
   }

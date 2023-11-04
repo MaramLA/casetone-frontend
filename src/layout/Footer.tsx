@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import logo from '../assets/logo.png'
 
-import { RootState } from '../redux/store'
+import { AppDispatch, RootState } from '../redux/store'
 
 import {
   twitter,
@@ -20,10 +20,16 @@ import {
   categoryPath,
   purchasesPath
 } from '../pathLinks'
+import { signOut } from '../redux/slices/Users/userSlice'
 
 const Footer = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
-
+  const navigate = useNavigate()
+  const dispatch: AppDispatch = useDispatch()
+  const handleLogout = () => {
+    dispatch(signOut())
+    navigate(homePath)
+  }
   return (
     <footer>
       {/* Pages section */}
@@ -47,7 +53,15 @@ const Footer = () => {
                 </InnerLink>
               </li>
             )}
-            {!isSignedIn && (
+            {isSignedIn ? (
+              <>
+                <li>
+                  <button className="btn-1" onClick={handleLogout}>
+                    Sign Out
+                  </button>
+                </li>
+              </>
+            ) : (
               <>
                 <li>
                   <Link className="footerPagesLinks" to={signInPath}>
