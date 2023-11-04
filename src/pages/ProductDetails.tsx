@@ -6,9 +6,11 @@ import Footer from '../layout/Footer'
 
 import { AppDispatch, RootState } from '../redux/store'
 
-import { homePath, purchasesPath, signInPath } from '../pathLinks'
+import { homePath, signInPath } from '../pathLinks'
 
-import { findProductById } from '../redux/slices/products/productSlice'
+import { findProductById, ProductType } from '../redux/slices/products/productSlice'
+import { toast } from 'react-toastify'
+import { addToCart } from '../redux/slices/Orders/cartSlice'
 
 const ProductDetails = () => {
   const { id } = useParams()
@@ -38,9 +40,32 @@ const ProductDetails = () => {
   const goBack = () => {
     navigate(homePath)
   }
-  const handleCartBtn = () => {
+  const handleCartBtn = (product: ProductType) => {
     if (isSignedIn) {
-      navigate(purchasesPath)
+      try {
+        dispatch(addToCart(product))
+        toast.success('Product added to cart successfully', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      } catch (error) {
+        toast.error('Something went worng', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      }
     } else navigate(signInPath)
   }
 
@@ -76,7 +101,7 @@ const ProductDetails = () => {
 
               <div className="buttons">
                 {userData?.role !== 'admin' && (
-                  <button onClick={handleCartBtn} className="buy-btn">
+                  <button onClick={() => handleCartBtn(singleProduct)} className="buy-btn">
                     Add to Cart
                   </button>
                 )}

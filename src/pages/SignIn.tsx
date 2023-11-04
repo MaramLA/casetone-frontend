@@ -6,6 +6,7 @@ import { homePath, signUpPath } from '../pathLinks'
 
 import { AppDispatch, RootState } from '../redux/store'
 import { signIn, UserType } from '../redux/slices/Users/userSlice'
+import { toast } from 'react-toastify'
 
 type LogInUserType = {
   email: string
@@ -32,24 +33,69 @@ const SignIn = () => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
     try {
-      usersList.find((user: UserType) => {
-        const UserExist = user.email === logInUser.email
+      // usersList.find((user: UserType) => {
+      //   const UserExist = user.email === logInUser.email
 
-        if (!UserExist) {
-          console.log('User not found')
-          return
-        }
-        if (user.password !== logInUser.password) {
-          console.log('Password do not match')
-          return
-        }
-        if (user.ban) {
-          console.log('Sorry you account was banned')
-          return
-        }
-        dispatch(signIn(user))
+      //   if (!UserExist) {
+      //     console.log('User not found')
+      //     return
+      //   }
+      //   if (user.password !== logInUser.password) {
+      //     console.log('Password do not match')
+      //     return
+      //   }
+      //   if (user.ban) {
+      //     console.log('Sorry you account was banned')
+      //     return
+      //   }
+      //   dispatch(signIn(user))
+      //   navigate(homePath)
+      // })
+      const foundUser = usersList.find((user) => user.email === logInUser.email)
+      if (foundUser && foundUser.ban === false && foundUser.password === logInUser.password) {
+        dispatch(signIn(foundUser))
         navigate(homePath)
-      })
+      } else {
+        if (!foundUser) {
+          toast.error('This account does not exist', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          return
+        }
+        if (foundUser.ban === true) {
+          toast.error('This account is banned', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          return
+        }
+        if (foundUser.password !== logInUser.password) {
+          toast.error('Incorrect email or password', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+          return
+        }
+      }
     } catch (error) {
       console.log(error)
     }
@@ -66,7 +112,7 @@ const SignIn = () => {
             <div className="entry">
               <label htmlFor="formEmail">Email</label>
               <input
-                type="text"
+                type="email"
                 id="formEmail"
                 className="formEmail"
                 name="email"
