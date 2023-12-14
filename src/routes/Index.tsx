@@ -30,6 +30,7 @@ import EditProduct from '../pages/admin/EditProduct'
 import ProductDetails from '../pages/ProductDetails'
 import UserProtectedRoutes from './UserProtectedRoutes'
 import AdminProtectedRoutes from './AdminProtectedRoutes'
+import ActivateNewUser from '../pages/ActivateNewUser'
 
 const Index = () => {
   return (
@@ -53,12 +54,13 @@ const Index = () => {
           padding: '3rem, 6rem'
         }}
       />
-      <Routes>
+      {/* <Routes>
         <Route path={homePath} element={<Home />} />
         <Route path={errorPath} element={<Error />} />
         <Route path={signInPath} element={<SignIn />} />
         <Route path={signUpPath} element={<SignUp />} />
         <Route path={'/products/:id'} element={<ProductDetails />} />
+        <Route path={'/activate/:token'} element={<ActivateNewUser />} />
 
         <Route path="/registerd" element={<AdminProtectedRoutes />}>
           <Route path={usersPath} element={<Users />} />
@@ -71,6 +73,22 @@ const Index = () => {
           <Route path={profilePath} element={<Profile />} />
           <Route path={purchasesPath} element={<Purchases />} />
         </Route>
+      </Routes> */}
+      <Routes>
+        <Route path={homePath} element={<Home />} />
+        <Route path={errorPath} element={<Error />} />
+        <Route path={signInPath} element={<SignIn />} />
+        <Route path={signUpPath} element={<SignUp />} />
+        <Route path={'/products/:id'} element={<ProductDetails />} />
+        <Route path={'/activate/:token'} element={<ActivateNewUser />} />
+
+        <Route path={usersPath} element={<Users />} />
+        <Route path={categoryPath} element={<Category />} />
+        <Route path={addProductPath} element={<AddProduct />} />
+        <Route path={'/registerd/admin/edit-product/:id'} element={<EditProduct />} />
+
+        <Route path={profilePath} element={<Profile />} />
+        <Route path={purchasesPath} element={<Purchases />} />
       </Routes>
     </BrowserRouter>
   )

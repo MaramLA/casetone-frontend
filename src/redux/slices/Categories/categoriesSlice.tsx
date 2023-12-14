@@ -1,15 +1,20 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import api from '../../../api'
+import axios from 'axios'
 
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
-  const response = await api.get('/mock/e-commerce/categories.json')
-  return response.data
+  const response = await api.get('http://localhost:5050/categories')
+  console.log('response: ' + response.data.payload.data)
+  return response.data.payload.data
 })
 
 export type CategoryType = {
-  id: number
+  _id: string
   name: string
+  createAt?: string
+  updateAt?: string
+  __v: number
 }
 
 export type CategoryState = {
@@ -29,17 +34,16 @@ const categoriesSlice = createSlice({
   initialState,
   reducers: {
     deleteCategory: (state, action) => {
-      const newcategoriesList = state.categoriesList.filter(
-        (category) => category.id !== action.payload
-      )
-      state.categoriesList = newcategoriesList
+      api.delete(`http://localhost:5050/categories/${action.payload}`)
+      window.location.reload()
+      fetchCategories()
     },
     addCategory: (state, action) => {
       state.categoriesList.push(action.payload)
     },
     editCategory: (state, action) => {
       const { id, name } = action.payload
-      const foundCategoy = state.categoriesList.find((user) => user.id === id)
+      const foundCategoy = state.categoriesList.find((category) => category._id === id)
       if (foundCategoy) {
         foundCategoy.name = name
       }

@@ -1,11 +1,11 @@
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { AppDispatch, RootState } from '../../redux/store'
 import { ProductType } from '../../redux/slices/products/productSlice'
-import { banUser, deleteUser, searchUser, UserType } from '../../redux/slices/Users/userSlice'
+import { fetchUsers, searchUser, UserType } from '../../redux/slices/Users/userSlice'
 
 import Footer from '../../layout/Footer'
 
@@ -14,6 +14,7 @@ import {
   deleteSingleUserOrder,
   OrderType
 } from '../../redux/slices/Orders/ordersSlice'
+import { banUser, deleteUser, unbanUser } from '../../services/usersServices'
 
 const Users = () => {
   const users = useSelector((state: RootState) => state.usersReducer)
@@ -21,6 +22,10 @@ const Users = () => {
   const products = useSelector((state: RootState) => state.productsReducer)
 
   const dispatch: AppDispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [])
 
   if (users.isLoading || orders.isLoading || products.isLoading) {
     return <p>Loading...</p>
@@ -46,10 +51,11 @@ const Users = () => {
       )
     : users.usersList
 
-  const handleRemoveUser = (userId: number, firstName: string, lastName: string) => {
+  const handleRemoveUser = async (userId: string, firstName: string, lastName: string) => {
     try {
       dispatch(deleteAllUserOrders(userId))
-      dispatch(deleteUser(userId))
+      const response = await deleteUser(userId)
+      dispatch(fetchUsers())
       toast.success(`${firstName + ' ' + lastName + ' '} deleted successfully`, {
         position: 'top-right',
         autoClose: 5000,
@@ -74,10 +80,16 @@ const Users = () => {
     }
   }
 
-  const handleBanUser = (userId: number, ban: boolean, firstName: string, lastName: string) => {
+  const handleBanUnbanUser = async (
+    userId: string,
+    isBanned: boolean,
+    firstName: string,
+    lastName: string
+  ) => {
     try {
-      dispatch(banUser(userId))
-      if (!ban) {
+      if (!isBanned) {
+        const response = await banUser(userId)
+        dispatch(fetchUsers())
         toast.success(`${firstName + ' ' + lastName + ' '}banned successfully`, {
           position: 'top-right',
           autoClose: 5000,
@@ -88,7 +100,9 @@ const Users = () => {
           progress: undefined,
           theme: 'colored'
         })
-      } else
+      } else {
+        const response = await unbanUser(userId)
+        dispatch(fetchUsers())
         toast.success(`${firstName + ' ' + lastName + ' '}unbanned successfully`, {
           position: 'top-right',
           autoClose: 5000,
@@ -99,6 +113,7 @@ const Users = () => {
           progress: undefined,
           theme: 'colored'
         })
+      }
     } catch (error) {
       toast.error('Something went wrong', {
         position: 'top-right',
@@ -156,18 +171,19 @@ const Users = () => {
           />
           {searchedUsers.length > 0 &&
             searchedUsers.map((user: UserType) => {
-              if (user.role !== 'admin') {
+              if (!user.isAdmin) {
                 return (
-                  <div key={user.id} className="orders" id="orders">
+                  <div key={user._id} className="orders" id="orders">
                     <div className="orders-container">
                       <div className="info">
                         <h3 className="username">{user.firstName + ' ' + user.lastName}</h3>
                         <p className="email">{user.email}</p>
                       </div>
-                      {orders.ordersList.length > 0 &&
-                        user.ban === false &&
+                      {/* the below code will display the orders for each user but currently it has problem with the datatype of the id and will be fixed soon */}
+                      {/* {orders.ordersList.length > 0 &&
+                        user.isBanned === false &&
                         orders.ordersList.map((order: OrderType) => {
-                          if (order.userId === user.id) {
+                          if (order.userId === user._id) {
                             return (
                               <div key={order.id} className="order">
                                 <p className="order-id">Order# {order.id}</p>
@@ -197,19 +213,24 @@ const Users = () => {
                               </div>
                             )
                           }
-                        })}
+                        })} */}
                       <div className="buttons">
                         <button
                           className="remove-btn"
-                          onClick={() => handleRemoveUser(user.id, user.firstName, user.lastName)}>
+                          onClick={() => handleRemoveUser(user._id, user.firstName, user.lastName)}>
                           Remove
                         </button>
                         <button
                           className="block-btn"
                           onClick={() =>
-                            handleBanUser(user.id, user.ban, user.firstName, user.lastName)
+                            handleBanUnbanUser(
+                              user._id,
+                              user.isBanned,
+                              user.firstName,
+                              user.lastName
+                            )
                           }>
-                          {user.ban ? 'Unban' : 'Ban'}
+                          {user.isBanned ? 'Unban' : 'Ban'}
                         </button>
                       </div>
                     </div>

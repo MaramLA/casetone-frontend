@@ -34,7 +34,7 @@ const SignIn = () => {
     event.preventDefault()
     try {
       const foundUser = usersList.find((user) => user.email === logInUser.email)
-      if (foundUser && foundUser.ban === false && foundUser.password === logInUser.password) {
+      if (foundUser && foundUser.isBanned === false && foundUser.password === logInUser.password) {
         dispatch(signIn(foundUser))
         navigate(homePath)
       } else {
@@ -51,7 +51,7 @@ const SignIn = () => {
           })
           return
         }
-        if (foundUser.ban === true) {
+        if (foundUser.isBanned === true) {
           toast.error('This account is banned', {
             position: 'top-right',
             autoClose: 5000,

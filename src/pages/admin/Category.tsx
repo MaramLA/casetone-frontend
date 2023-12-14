@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
@@ -13,7 +13,8 @@ import {
   addCategory,
   CategoryType,
   deleteCategory,
-  editCategory
+  editCategory,
+  fetchCategories
 } from '../../redux/slices/Categories/categoriesSlice'
 
 const Category = () => {
@@ -22,9 +23,13 @@ const Category = () => {
   )
   const [newCategory, setNewCategoryName] = useState<string>('')
   const [isEditCategory, setIsEditCategory] = useState(false)
-  const [categoryId, setCategoryId] = useState<number>(0)
+  const [categoryId, setCategoryId] = useState<string>('')
 
   const dispatch: AppDispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchCategories())
+  }, [])
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -33,7 +38,7 @@ const Category = () => {
     return <p>{error}</p>
   }
 
-  const handleDeleteCategory = (categoryId: number) => {
+  const handleDeleteCategory = (categoryId: string) => {
     try {
       dispatch(deleteCategory(categoryId))
       toast.success('Category deleted successfully', {
@@ -60,7 +65,7 @@ const Category = () => {
     }
   }
 
-  const handleEditCategory = (id: number, name: string) => {
+  const handleEditCategory = (id: string, name: string) => {
     setNewCategoryName(name)
     setCategoryId(id)
     setIsEditCategory(true)
@@ -157,17 +162,17 @@ const Category = () => {
             {categoriesList.length > 0 &&
               categoriesList.map((category: CategoryType) => {
                 return (
-                  <div key={category.id} className="single-category">
+                  <div key={category._id} className="single-category">
                     <p className="category-name">{category.name}</p>
                     <div className="controllers">
                       <AiFillEdit
                         className="editIcon"
-                        onClick={() => handleEditCategory(category.id, category.name)}
+                        onClick={() => handleEditCategory(category._id, category.name)}
                       />
                       <MdDelete
                         className="deleteIcon"
                         onClick={() => {
-                          handleDeleteCategory(category.id)
+                          handleDeleteCategory(category._id)
                         }}
                       />
                     </div>

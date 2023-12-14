@@ -1,20 +1,22 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-
-import api from '../../../api'
+import axios from 'axios'
+import { userApiBaseURL } from '../../../services/usersServices'
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-  const response = await api.get('/mock/e-commerce/users.json')
-  return response.data
+  const response = await axios.get(userApiBaseURL)
+  console.log(response.data.allUsers)
+  return response.data.allUsers
 })
 
 export type UserType = {
-  id: number
+  _id: string
   firstName: string
   lastName: string
   email: string
   password: string
-  role: string
-  ban: boolean
+  isAdmin: boolean
+  isBanned: boolean
+  address: string
 }
 
 export type UsersState = {
@@ -63,25 +65,9 @@ const usersSlice = createSlice({
     searchUser: (state, action) => {
       state.searchTerm = action.payload
     },
-
-    deleteUser: (state, action) => {
-      const newUsersList = state.usersList.filter((user) => user.id !== action.payload)
-      state.usersList = newUsersList
-    },
-    banUser: (state, action) => {
-      const id = action.payload
-      state.usersList.map((user) => {
-        if (user.id === id) {
-          user.ban = !user.ban
-        }
-      })
-    },
-    addUser: (state, action) => {
-      state.usersList.push(action.payload)
-    },
     updateUser: (state, action) => {
       const { id, firstName, lastName, email } = action.payload
-      const foundUser = state.usersList.find((user) => user.id === id)
+      const foundUser = state.usersList.find((user) => user._id === id)
 
       if (foundUser) {
         foundUser.firstName = firstName
@@ -111,6 +97,5 @@ const usersSlice = createSlice({
   }
 })
 
-export const { signIn, signOut, searchUser, deleteUser, banUser, addUser, updateUser } =
-  usersSlice.actions
+export const { signIn, signOut, searchUser, updateUser } = usersSlice.actions
 export default usersSlice.reducer

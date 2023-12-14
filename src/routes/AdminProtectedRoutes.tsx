@@ -7,7 +7,7 @@ import SignIn from '../pages/SignIn'
 
 const AdminProtectedRoutes = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
-  return isSignedIn && userData?.role === 'admin' ? <Outlet /> : <SignIn />
+  return isSignedIn && userData?.isAdmin === true ? <Outlet /> : <SignIn />
 }
 
 export default AdminProtectedRoutes
