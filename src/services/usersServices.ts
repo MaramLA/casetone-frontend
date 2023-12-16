@@ -26,3 +26,8 @@ export const activateUserAccount = async (token: string) => {
   const response = await axios.post(`${userApiBaseURL}/activate`, { token })
   return response.data
 }
+
+export const updateUserData = async (userData: any) => {
+  const response = await axios.put(`${userApiBaseURL}/profile`, userData)
+  return response.data
+}

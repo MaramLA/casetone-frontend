@@ -7,6 +7,8 @@ import userProfile from '../assets/userProfile.png'
 
 import { AppDispatch, RootState } from '../redux/store'
 import { updateUser } from '../redux/slices/Users/userSlice'
+import { updateUserData } from '../services/usersServices'
+import { AxiosError } from 'axios'
 
 const Profile = () => {
   const { userData, isLoading, error } = useSelector((state: RootState) => state.usersReducer)
@@ -41,10 +43,12 @@ const Profile = () => {
     setIsInfoEdited(true)
   }
 
-  const handleProfileUpdate = (event: FormEvent) => {
+  const handleProfileUpdate = async (event: FormEvent) => {
     event.preventDefault()
     try {
-      dispatch(updateUser(profileUpdate))
+      // dispatch(updateUser(profileUpdate))
+      const response = await updateUserData(profileUpdate)
+      console.log('response after update: ' + response)
       setIsInfoEdited(false)
       toast.success('Profile updated successfully', {
         position: 'top-right',
@@ -56,17 +60,18 @@ const Profile = () => {
         progress: undefined,
         theme: 'colored'
       })
-    } catch (error) {
-      toast.error('Something went wrong', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+    } catch (error: AxiosError | any) {
+      console.log(error.response.data)
+      // toast.error('Something went wrong', {
+      //   position: 'top-right',
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: 'colored'
+      // })
     }
   }
 
@@ -136,6 +141,7 @@ const Profile = () => {
                     name="balance"
                     placeholder="Balance"
                     value={profileUpdate?.balance}
+                    readOnly
                   />
                 </div>
               </div>
