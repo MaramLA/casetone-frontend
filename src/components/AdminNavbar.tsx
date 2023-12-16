@@ -8,7 +8,10 @@ import logo from '../assets/logo.png'
 import { homePath, usersPath, categoryPath, productsPath, profilePath } from '../pathLinks'
 
 import { RootState } from '../redux/store'
-import { signOut } from '../redux/slices/Users/userSlice'
+import { signOut } from '../services/authenticationServices'
+import { AxiosError } from 'axios'
+import { toast } from 'react-toastify'
+import { resetLoginCookie } from '../redux/slices/Users/userSlice'
 
 const AdminNavbar = () => {
   const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
@@ -18,11 +21,38 @@ const AdminNavbar = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setIsMenueClicked(false)
-    dispatch(signOut())
-    navigate(homePath)
+    try {
+      const response = await signOut()
+      if (response.status === 200) {
+        dispatch(resetLoginCookie())
+        toast.success(response.data.message, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+        navigate(homePath)
+      }
+    } catch (error: AxiosError | any) {
+      toast.error(error.response.data.msg, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
+
 
   return (
     <>

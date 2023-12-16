@@ -295,6 +295,7 @@ footer {
             transition: all 0.2s ease-in;
             &:hover {
               font-size: $font-size4;
+              cursor: pointer;
             }
           }
         }

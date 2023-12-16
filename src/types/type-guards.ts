@@ -5,7 +5,7 @@ export function isDecodedUser(obj: unknown): obj is DecodedUser {
     typeof obj === 'object' &&
     obj !== null &&
     'username' in obj &&
-    'role' in obj &&
+    'isAdmin' in obj &&
     'user_id' in obj
   )
 }

@@ -135,7 +135,7 @@ const Products = () => {
         onChange={handleSearchInput}
       />
       <SortProducts />
-      {isShowMore || userData?.role === 'admin' ? (
+      {isShowMore || userData?.isAdmin === true ? (
         <>
           <div className="products-div">
             {searchedProducts.length > 0 &&
@@ -150,7 +150,7 @@ const Products = () => {
                       <p className="product__description">{product.description}</p>
                       <p className="product__price">{product.price}$</p>
                       <div className="controllers">
-                        {isSignedIn && userData?.role === 'admin' ? (
+                        {isSignedIn && userData?.isAdmin === true ? (
                           <>
                             <Link to={`/products/${product.id}`}>
                               <AiFillEye className="icon5" />
@@ -180,7 +180,7 @@ const Products = () => {
                 )
               })}
           </div>
-          {isSignedIn && userData?.role === 'admin' ? (
+          {isSignedIn && userData?.isAdmin === true ? (
             <Link to={addProductPath}>
               <button className="products-btn">Add Product</button>
             </Link>
@@ -210,7 +210,7 @@ const Products = () => {
                           <p className="product__description">{product.description}</p>
                           <p className="product__price">{product.price}$</p>
                           <div className="controllers">
-                            {isSignedIn && userData?.role === 'admin' ? (
+                            {isSignedIn && userData?.isAdmin === true ? (
                               <>
                                 <Link to={`/products/${product.id}`}>
                                   <AiFillEye className="icon5" />

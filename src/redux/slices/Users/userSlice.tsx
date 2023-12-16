@@ -16,6 +16,7 @@ export type UserType = {
   password: string
   isAdmin: boolean
   isBanned: boolean
+  balance: number
   address: string
 }
 
@@ -46,7 +47,7 @@ const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    signIn: (state, action) => {
+    setLoginCookie: (state, action) => {
       state.isSignedIn = true
       state.userData = action.payload
       localStorage.setItem(
@@ -54,7 +55,7 @@ const usersSlice = createSlice({
         JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
       )
     },
-    signOut: (state) => {
+    resetLoginCookie: (state) => {
       state.isSignedIn = false
       state.userData = null
       localStorage.setItem(
@@ -62,6 +63,22 @@ const usersSlice = createSlice({
         JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
       )
     },
+    // signIn: (state, action) => {
+    //   state.isSignedIn = true
+    //   state.userData = action.payload
+    //   localStorage.setItem(
+    //     'signInData',
+    //     JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
+    //   )
+    // },
+    // signOut: (state) => {
+    //   state.isSignedIn = false
+    //   state.userData = null
+    //   localStorage.setItem(
+    //     'signInData',
+    //     JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
+    //   )
+    // },
     searchUser: (state, action) => {
       state.searchTerm = action.payload
     },
@@ -97,5 +114,5 @@ const usersSlice = createSlice({
   }
 })
 
-export const { signIn, signOut, searchUser, updateUser } = usersSlice.actions
+export const { searchUser, updateUser, setLoginCookie, resetLoginCookie } = usersSlice.actions
 export default usersSlice.reducer

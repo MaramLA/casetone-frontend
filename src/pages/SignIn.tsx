@@ -1,12 +1,14 @@
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { signIn } from '../redux/slices/Users/userSlice'
+import { fetchUsers, setLoginCookie } from '../redux/slices/Users/userSlice'
 
 import { homePath, signUpPath } from '../pathLinks'
+import { signIn } from '../services/authenticationServices'
+import { AxiosError } from 'axios'
 
 type LogInUserType = {
   email: string
@@ -24,6 +26,10 @@ const SignIn = () => {
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [])
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setLogInUser((previousState) => {
       return { ...previousState, [event.target.name]: event.target.value }
@@ -33,53 +39,82 @@ const SignIn = () => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
     try {
-      const foundUser = usersList.find((user) => user.email === logInUser.email)
-      if (foundUser && foundUser.isBanned === false && foundUser.password === logInUser.password) {
-        dispatch(signIn(foundUser))
+      const response = await signIn(logInUser)
+      // console.log(response.status)
+      // console.log(response.data.message)
+      if (response.status === 200) {
+        const foundUser = usersList.find((user) => user.email === logInUser.email)
+        dispatch(setLoginCookie(foundUser))
+        toast.success(response.data.message, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
         navigate(homePath)
-      } else {
-        if (!foundUser) {
-          toast.error('This account does not exist', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored'
-          })
-          return
-        }
-        if (foundUser.isBanned === true) {
-          toast.error('This account is banned', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored'
-          })
-          return
-        }
-        if (foundUser.password !== logInUser.password) {
-          toast.error('Incorrect email or password', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored'
-          })
-          return
-        }
       }
-    } catch (error) {
-      toast.error('Something went wrong', {
+      setLogInUser({ email: '', password: '' })
+      // const foundUser = usersList.find((user) => user.email === logInUser.email)
+      // if (foundUser && foundUser.isBanned === false && foundUser.password === logInUser.password) {
+      //   const response = await signIn(logInUser)
+      //   toast.error('logged in succssfully', {
+      //     position: 'top-right',
+      //     autoClose: 5000,
+      //     hideProgressBar: false,
+      //     closeOnClick: true,
+      //     pauseOnHover: true,
+      //     draggable: true,
+      //     progress: undefined,
+      //     theme: 'colored'
+      //   })
+      //   navigate(homePath)
+      // } else {
+      //   if (!foundUser) {
+      //     toast.error('This account does not exist', {
+      //       position: 'top-right',
+      //       autoClose: 5000,
+      //       hideProgressBar: false,
+      //       closeOnClick: true,
+      //       pauseOnHover: true,
+      //       draggable: true,
+      //       progress: undefined,
+      //       theme: 'colored'
+      //     })
+      //     return
+      //   }
+      //   if (foundUser.isBanned === true) {
+      //     toast.error('This account is banned', {
+      //       position: 'top-right',
+      //       autoClose: 5000,
+      //       hideProgressBar: false,
+      //       closeOnClick: true,
+      //       pauseOnHover: true,
+      //       draggable: true,
+      //       progress: undefined,
+      //       theme: 'colored'
+      //     })
+      //     return
+      //   }
+      //   if (foundUser.password !== logInUser.password) {
+      //     toast.error('Incorrect email or password', {
+      //       position: 'top-right',
+      //       autoClose: 5000,
+      //       hideProgressBar: false,
+      //       closeOnClick: true,
+      //       pauseOnHover: true,
+      //       draggable: true,
+      //       progress: undefined,
+      //       theme: 'colored'
+      //     })
+      //     return
+      //   }
+      // }
+    } catch (error: AxiosError | any) {
+      toast.error(error.response.data.msg, {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -92,7 +127,7 @@ const SignIn = () => {
       return
     }
 
-    setLogInUser({ email: '', password: '' })
+    // setLogInUser({ email: '', password: '' })
   }
 
   return (

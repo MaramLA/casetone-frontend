@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      {userData?.role === 'admin' ? <AdminNavbar /> : <UserNavbar />}
+      {userData?.isAdmin === true ? <AdminNavbar /> : <UserNavbar />}
     </header>
   )
 }

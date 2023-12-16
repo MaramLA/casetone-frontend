@@ -98,7 +98,7 @@ const ProductDetails = () => {
               <h3>Price: {singleProduct.price}$</h3>
 
               <div className="buttons">
-                {userData?.role !== 'admin' && (
+                {userData?.isAdmin === false && (
                   <button onClick={() => handleCartBtn(singleProduct)} className="buy-btn">
                     Add to Cart
                   </button>

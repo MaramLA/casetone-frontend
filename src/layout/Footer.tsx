@@ -20,7 +20,11 @@ import {
   categoryPath,
   purchasesPath
 } from '../pathLinks'
-import { signOut } from '../redux/slices/Users/userSlice'
+
+import { toast } from 'react-toastify'
+import { signOut } from '../services/authenticationServices'
+import { AxiosError } from 'axios'
+import { resetLoginCookie } from '../redux/slices/Users/userSlice'
 
 const Footer = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
@@ -28,10 +32,37 @@ const Footer = () => {
   const navigate = useNavigate()
   const dispatch: AppDispatch = useDispatch()
 
-  const handleLogout = () => {
-    dispatch(signOut())
-    navigate(homePath)
+  const handleLogout = async () => {
+    try {
+      const response = await signOut()
+      if (response.status === 200) {
+        dispatch(resetLoginCookie())
+        toast.success(response.data.message, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+        navigate(homePath)
+      }
+    } catch (error: AxiosError | any) {
+      toast.error(error.response.data.msg, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+    }
   }
+
   return (
     <footer>
       {/* Pages section */}
@@ -48,7 +79,7 @@ const Footer = () => {
                 Products
               </InnerLink>
             </li>
-            {userData?.role !== 'admin' && (
+            {userData?.isAdmin === false && (
               <li>
                 <InnerLink smooth className="footerPagesLinks" to={aboutPath}>
                   About us
@@ -58,9 +89,9 @@ const Footer = () => {
             {isSignedIn ? (
               <>
                 <li>
-                  <button className="btn-1" onClick={handleLogout}>
+                  <a className="footerPagesLinks" onClick={handleLogout}>
                     Sign Out
-                  </button>
+                  </a>
                 </li>
               </>
             ) : (
@@ -77,7 +108,7 @@ const Footer = () => {
                 </li>
               </>
             )}
-            {isSignedIn && userData?.role === 'visitor' && (
+            {isSignedIn && userData?.isAdmin === false && (
               <li>
                 <Link className="footerPagesLinks" to={purchasesPath}>
                   Purchases
@@ -91,7 +122,7 @@ const Footer = () => {
                 </Link>
               </li>
             )}
-            {userData?.role === 'admin' && (
+            {userData?.isAdmin === true && (
               <>
                 <li>
                   <Link className="footerPagesLinks" to={categoryPath}>

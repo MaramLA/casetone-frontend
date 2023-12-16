@@ -14,7 +14,7 @@ export function getDecodedTokenFromStorage() {
     const user: User = {
       username: decodedUser.username,
       id: decodedUser.user_id,
-      role: decodedUser.role
+      isAdmin: decodedUser.isAdmin
     }
 
     return user
