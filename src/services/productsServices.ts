@@ -8,7 +8,6 @@ export const deleteProduct = async (id: string) => {
 }
 
 export const createProduct = async (fromData: FormData) => {
-  console.log('from createUser: ' + fromData)
-  const response = await axios.post(`${productApiBaseURL}/register`)
+  const response = await axios.post(`${productApiBaseURL}`)
   return response.data
 }

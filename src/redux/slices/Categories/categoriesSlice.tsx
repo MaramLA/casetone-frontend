@@ -1,20 +1,16 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import api from '../../../api'
 import axios from 'axios'
+import { categoryApiBaseURL } from '../../../services/categoriesServices'
 
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
-  const response = await api.get('http://localhost:5050/categories')
-  console.log('response: ' + response.data.payload.data)
-  return response.data.payload.data
+  const response = await axios.get(categoryApiBaseURL)
+  return response.data.payload.allCategoriesOnPage
 })
 
 export type CategoryType = {
   _id: string
   name: string
-  createAt?: string
-  updateAt?: string
-  __v: number
 }
 
 export type CategoryState = {
@@ -33,21 +29,12 @@ const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    deleteCategory: (state, action) => {
-      api.delete(`http://localhost:5050/categories/${action.payload}`)
-      window.location.reload()
-      fetchCategories()
-    },
-    addCategory: (state, action) => {
-      state.categoriesList.push(action.payload)
-    },
-    editCategory: (state, action) => {
-      const { id, name } = action.payload
-      const foundCategoy = state.categoriesList.find((category) => category._id === id)
-      if (foundCategoy) {
-        foundCategoy.name = name
-      }
-    }
+    //   deleteCategory: (state, action) => {
+    //     const newcategoriesList = state.categoriesList.filter(
+    //       (category) => category._id !== action.payload
+    //     )
+    //     state.categoriesList = newcategoriesList
+    //   }
   },
   extraReducers(builder) {
     builder.addCase(fetchCategories.pending, (state) => {
@@ -65,5 +52,5 @@ const categoriesSlice = createSlice({
   }
 })
 
-export const { deleteCategory, addCategory, editCategory } = categoriesSlice.actions
+// export const { deleteCategory } = categoriesSlice.actions
 export default categoriesSlice.reducer

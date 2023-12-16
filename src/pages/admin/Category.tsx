@@ -9,19 +9,14 @@ import { AppDispatch, RootState } from '../../redux/store'
 
 import Footer from '../../layout/Footer'
 
-import {
-  addCategory,
-  CategoryType,
-  deleteCategory,
-  editCategory,
-  fetchCategories
-} from '../../redux/slices/Categories/categoriesSlice'
+import { CategoryType, fetchCategories } from '../../redux/slices/Categories/categoriesSlice'
+import { createCategory, deleteCategory, editCategory } from '../../services/categoriesServices'
 
 const Category = () => {
   const { categoriesList, isLoading, error } = useSelector(
     (state: RootState) => state.categoriesReducer
   )
-  const [newCategory, setNewCategoryName] = useState<string>('')
+  const [newCategory, setNewCategory] = useState('')
   const [isEditCategory, setIsEditCategory] = useState(false)
   const [categoryId, setCategoryId] = useState<string>('')
 
@@ -38,10 +33,11 @@ const Category = () => {
     return <p>{error}</p>
   }
 
-  const handleDeleteCategory = (categoryId: string) => {
+  const handleDeleteCategory = async (categoryId: string) => {
     try {
-      dispatch(deleteCategory(categoryId))
-      toast.success('Category deleted successfully', {
+      const response = await deleteCategory(categoryId)
+      dispatch(fetchCategories())
+      toast.success(response.message, {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -66,24 +62,26 @@ const Category = () => {
   }
 
   const handleEditCategory = (id: string, name: string) => {
-    setNewCategoryName(name)
+    setNewCategory(name)
     setCategoryId(id)
     setIsEditCategory(true)
   }
 
   const handlChange = (event: ChangeEvent<HTMLInputElement>) => {
     const categoryNameValue = event.target.value
-    setNewCategoryName(categoryNameValue)
+    setNewCategory(categoryNameValue)
   }
 
-  const handleSubmitCategory = (event: FormEvent) => {
+  const handleSubmitCategory = async (event: FormEvent) => {
     event.preventDefault()
     if (!isEditCategory) {
-      const temCategory = { id: new Date().getTime(), name: newCategory }
       try {
-        dispatch(addCategory(temCategory))
-        setNewCategoryName('')
-        toast.success('Category added successfully', {
+        const newcategoryObject = { name: newCategory }
+        const response = await createCategory(newcategoryObject)
+        dispatch(fetchCategories())
+        console.log(response)
+        setNewCategory('')
+        toast.success(response.message, {
           position: 'top-right',
           autoClose: 5000,
           hideProgressBar: false,
@@ -106,12 +104,13 @@ const Category = () => {
         })
       }
     } else {
-      const updateCategory = { id: categoryId, name: newCategory }
       try {
-        dispatch(editCategory(updateCategory))
-        setNewCategoryName('')
+        const newcategoryObject = { id: categoryId, name: newCategory }
+        const response = await editCategory(newcategoryObject)
+        dispatch(fetchCategories())
+        setNewCategory('')
         setIsEditCategory(false)
-        toast.success('Category updated successfully', {
+        toast.success(response.message, {
           position: 'top-right',
           autoClose: 5000,
           hideProgressBar: false,
