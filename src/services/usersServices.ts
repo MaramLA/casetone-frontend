@@ -31,3 +31,16 @@ export const updateUserData = async (userData: any) => {
   const response = await axios.put(`${userApiBaseURL}/profile`, userData)
   return response.data
 }
+
+export const forgotUserPassword = async (email: string) => {
+  const response = await axios.post(`${userApiBaseURL}/forget-password`, { email })
+  return response.data
+}
+
+export const resetUserPassword = async (token: string, password: string) => {
+  const response = await axios.post(`${userApiBaseURL}/reset-password`, {
+    token: token,
+    password: password
+  })
+  return response.data
+}

@@ -183,7 +183,7 @@ const SignUp = () => {
                     id="formEmail"
                     className="formEmail"
                     name="email"
-                    placeholder="Email"
+                    placeholder="example@gmail.com"
                     onChange={handleChange}
                     value={newUser.email}
                     required

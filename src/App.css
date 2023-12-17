@@ -1533,7 +1533,7 @@ footer .bottom-section p {
   background: #696262;
   transition: all 0.2s ease-in;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 .signIn .signIn-container .form .signIn-btn:hover {
   cursor: pointer;
@@ -1542,6 +1542,7 @@ footer .bottom-section p {
 .signIn .signIn-container .formSignUp {
   display: flex;
   gap: 1rem;
+  margin-bottom: 0.8rem;
   align-items: center;
   justify-content: center;
 }
@@ -1549,7 +1550,7 @@ footer .bottom-section p {
   font-size: 1.8em;
   color: #696262;
   text-transform: capitalize;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   align-items: center;
   justify-content: center;
 }
@@ -1559,7 +1560,6 @@ footer .bottom-section p {
   color: #696262;
   text-transform: capitalize;
   font-weight: bolder;
-  margin-bottom: 2rem;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease-in;
@@ -1721,6 +1721,125 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of sign up styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of forgot password styling */
+/* ---------------------------------------------------------- */
+.forgotPassword {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassword .forgotPassword-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  background: white;
+  min-height: 11rem;
+  width: 46rem;
+  padding: 6rem 6rem;
+  text-align: center;
+  margin-top: 8rem;
+  border-radius: 50px;
+  color: #696262;
+  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+}
+.forgotPassword .forgotPassword-container .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 7rem;
+  text-align: center;
+}
+.forgotPassword .forgotPassword-container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+}
+.forgotPassword .forgotPassword-container .form .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassword .forgotPassword-container .form .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+.forgotPassword .forgotPassword-container .form .entry input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+.forgotPassword .forgotPassword-container .form .forgotPassword-btn {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.forgotPassword .forgotPassword-container .form .forgotPassword-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.forgotPassword .forgotPassword-container .formSignUp {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassword .forgotPassword-container .formSignUp p {
+  font-size: 1.8em;
+  color: #696262;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassword .forgotPassword-container .formSignUp a {
+  font-size: 1.8em;
+  text-decoration: none;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+.forgotPassword .forgotPassword-container .formSignUp a:hover {
+  cursor: pointer;
+  font-size: 1.9em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of forgot password styling */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* Start of profile styling */

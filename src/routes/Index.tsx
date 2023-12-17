@@ -1,36 +1,37 @@
-import { ToastContainer } from 'react-toastify'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 
 import {
-  homePath,
+  addProductPath,
+  categoryPath,
   errorPath,
-  usersPath,
+  forgotPasswordPath,
+  homePath,
+  profilePath,
+  purchasesPath,
   signInPath,
   signUpPath,
-  profilePath,
-  categoryPath,
-  purchasesPath,
-  addProductPath
+  usersPath
 } from '../pathLinks'
 
 import Header from '../layout/Header'
 
-import Home from '../pages/Home'
+import ActivateNewUser from '../pages/ActivateNewUser'
 import Error from '../pages/Error'
+import Home from '../pages/Home'
+import ProductDetails from '../pages/ProductDetails'
+import Profile from '../pages/Profile'
 import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
-import Profile from '../pages/Profile'
-import Users from '../pages/admin/Users'
-import Category from '../pages/admin/Category'
-import Purchases from '../pages/user/Purchases'
 import AddProduct from '../pages/admin/AddProduct'
+import Category from '../pages/admin/Category'
 import EditProduct from '../pages/admin/EditProduct'
-import ProductDetails from '../pages/ProductDetails'
-import UserProtectedRoutes from './UserProtectedRoutes'
-import AdminProtectedRoutes from './AdminProtectedRoutes'
-import ActivateNewUser from '../pages/ActivateNewUser'
+import Users from '../pages/admin/Users'
+import ForgotPassword from '../pages/forgotPassword'
+import ResetPassword from '../pages/resetPassword'
+import Purchases from '../pages/user/Purchases'
 
 const Index = () => {
   return (
@@ -59,6 +60,7 @@ const Index = () => {
         <Route path={errorPath} element={<Error />} />
         <Route path={signInPath} element={<SignIn />} />
         <Route path={signUpPath} element={<SignUp />} />
+        <Route path={'/reset-password/:token'} element={<ResetPassword />} />
         <Route path={'/products/:id'} element={<ProductDetails />} />
         <Route path={'/activate/:token'} element={<ActivateNewUser />} />
 
@@ -79,6 +81,8 @@ const Index = () => {
         <Route path={errorPath} element={<Error />} />
         <Route path={signInPath} element={<SignIn />} />
         <Route path={signUpPath} element={<SignUp />} />
+        <Route path={forgotPasswordPath} element={<ForgotPassword />} />
+        <Route path={'/reset-password/:token'} element={<ResetPassword />} />
         <Route path={'/products/:id'} element={<ProductDetails />} />
         <Route path={'/activate/:token'} element={<ActivateNewUser />} />
 

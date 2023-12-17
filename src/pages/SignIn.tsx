@@ -6,7 +6,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { AppDispatch, RootState } from '../redux/store'
 import { fetchUsers, setLoginCookie } from '../redux/slices/Users/userSlice'
 
-import { homePath, signUpPath } from '../pathLinks'
+import { forgotPasswordPath, homePath, signUpPath } from '../pathLinks'
 import { signIn } from '../services/authenticationServices'
 import { AxiosError } from 'axios'
 
@@ -143,7 +143,7 @@ const SignIn = () => {
                 id="formEmail"
                 className="formEmail"
                 name="email"
-                placeholder="Email"
+                placeholder="example@gmail.com"
                 value={logInUser.email}
                 onChange={handleInputChange}
                 required
@@ -167,11 +167,21 @@ const SignIn = () => {
             </button>
           </form>
           <div className="formSignUp">
-            <p>Do not have an account?</p>
+            {/* <p>Do not have an account?</p> */}
+            <Link to={forgotPasswordPath} className="formSignUp">
+              Forgot Password
+            </Link>
+            <p> | </p>
             <Link to={signUpPath} className="formSignUp">
               Sign Up
             </Link>
           </div>
+          {/* <div className="formSignUp">
+            <p>Forgot password?</p>
+            <Link to={signUpPath} className="formSignUp">
+              Reset Password
+            </Link>
+          </div> */}
         </div>
       </section>
     </main>
