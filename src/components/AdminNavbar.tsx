@@ -25,6 +25,7 @@ const AdminNavbar = () => {
     setIsMenueClicked(false)
     try {
       const response = await signOut()
+      console.log(response)
       if (response.status === 200) {
         dispatch(resetLoginCookie())
         toast.success(response.data.message, {
@@ -52,7 +53,6 @@ const AdminNavbar = () => {
       })
     }
   }
-
 
   return (
     <>

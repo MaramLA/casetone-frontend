@@ -11,3 +11,8 @@ export const createProduct = async (formData: FormData) => {
   const response = await axios.post(productApiBaseURL, formData)
   return response
 }
+
+export const getSingleProduct = async (id: string) => {
+  const response = await axios.post(`${productApiBaseURL}/${id}`)
+  return response
+}

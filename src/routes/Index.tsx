@@ -29,9 +29,12 @@ import AddProduct from '../pages/admin/AddProduct'
 import Category from '../pages/admin/Category'
 import EditProduct from '../pages/admin/EditProduct'
 import Users from '../pages/admin/Users'
-import ForgotPassword from '../pages/forgotPassword'
-import ResetPassword from '../pages/resetPassword'
+
 import Purchases from '../pages/user/Purchases'
+import ForgotPassword from '../pages/ForgotPassword'
+import ResetPassword from '../pages/ResetPassword'
+import AdminProtectedRoutes from './AdminProtectedRoutes'
+import UserProtectedRoutes from './UserProtectedRoutes'
 
 const Index = () => {
   return (
@@ -55,11 +58,12 @@ const Index = () => {
           padding: '3rem, 6rem'
         }}
       />
-      {/* <Routes>
+      <Routes>
         <Route path={homePath} element={<Home />} />
         <Route path={errorPath} element={<Error />} />
         <Route path={signInPath} element={<SignIn />} />
         <Route path={signUpPath} element={<SignUp />} />
+        <Route path={forgotPasswordPath} element={<ForgotPassword />} />
         <Route path={'/reset-password/:token'} element={<ResetPassword />} />
         <Route path={'/products/:id'} element={<ProductDetails />} />
         <Route path={'/activate/:token'} element={<ActivateNewUser />} />
@@ -75,8 +79,11 @@ const Index = () => {
           <Route path={profilePath} element={<Profile />} />
           <Route path={purchasesPath} element={<Purchases />} />
         </Route>
-      </Routes> */}
-      <Routes>
+      </Routes>
+
+      {/* -------------- */}
+
+      {/* <Routes>
         <Route path={homePath} element={<Home />} />
         <Route path={errorPath} element={<Error />} />
         <Route path={signInPath} element={<SignIn />} />
@@ -93,7 +100,7 @@ const Index = () => {
 
         <Route path={profilePath} element={<Profile />} />
         <Route path={purchasesPath} element={<Purchases />} />
-      </Routes>
+      </Routes> */}
     </BrowserRouter>
   )
 }

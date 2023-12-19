@@ -5,11 +5,12 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 import { AppDispatch, RootState } from '../redux/store'
 import { addToCart } from '../redux/slices/Orders/cartSlice'
-import { findProductById, ProductType } from '../redux/slices/products/productSlice'
+import { fetchProducts, findProductById, ProductType } from '../redux/slices/products/productSlice'
 
 import Footer from '../layout/Footer'
 
 import { homePath, signInPath } from '../pathLinks'
+import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
 
 const ProductDetails = () => {
   const { id } = useParams()
@@ -24,7 +25,9 @@ const ProductDetails = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    dispatch(findProductById(Number(id)))
+    dispatch(fetchCategories())
+    dispatch(fetchProducts())
+    dispatch(findProductById(id))
   }, [id])
 
   if (isLoading) {
@@ -67,23 +70,23 @@ const ProductDetails = () => {
     } else navigate(signInPath)
   }
 
-  const getCategoryNameById = (categoryId: number) => {
-    const category = categoriesList.find((category) => category.id === categoryId)
+  const getCategoryNameById = (categoryId: string) => {
+    const category = categoriesList.find((category) => category._id === categoryId)
     return category ? category.name + ' ' : 'Category not found'
   }
 
   return (
     <div>
       <main>
-        <section className="productDetails ">
+        <section className="productDetails">
           <div className="container">
             <div className="left-side">
-              <img src={singleProduct.image} alt={singleProduct.name} />
+              <img src={`http://localhost:5050/${singleProduct.image}`} alt={singleProduct.name} />
             </div>
             <div className="right-side">
               <p className="product-category">
                 {singleProduct.categories &&
-                  singleProduct.categories.map((categoryId: number) =>
+                  singleProduct.categories.map((categoryId: string) =>
                     getCategoryNameById(categoryId)
                   )}
               </p>
@@ -93,8 +96,8 @@ const ProductDetails = () => {
                 elit. Quod nisi facere dolores dignissimos explicabo non at fugit officiis dolor
                 odio nulla dolorem, reiciendis cum, atque impedit. Facilis impedit doloribus neque!
               </p>
-              <h3>Models: {singleProduct.variants && singleProduct.variants.join(', ')}</h3>
-              <h3>Size: {singleProduct.sizes && singleProduct.sizes.join(', ')}</h3>
+              <h3>Models: {singleProduct.variants}</h3>
+              <h3>Size: {singleProduct.sizes}</h3>
               <h3>Price: {singleProduct.price}$</h3>
 
               <div className="buttons">
