@@ -5,6 +5,7 @@ import { categoryApiBaseURL } from '../../../services/categoriesServices'
 
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
   const response = await axios.get(categoryApiBaseURL)
+  console.log(response)
   return response.data.payload.allCategoriesOnPage
 })
 
@@ -28,14 +29,7 @@ const initialState: CategoryState = {
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
-  reducers: {
-    //   deleteCategory: (state, action) => {
-    //     const newcategoriesList = state.categoriesList.filter(
-    //       (category) => category._id !== action.payload
-    //     )
-    //     state.categoriesList = newcategoriesList
-    //   }
-  },
+  reducers: {},
   extraReducers(builder) {
     builder.addCase(fetchCategories.pending, (state) => {
       state.isLoading = true

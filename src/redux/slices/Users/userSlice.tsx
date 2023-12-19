@@ -2,12 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { userApiBaseURL } from '../../../services/usersServices'
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-  const response = await axios.get(userApiBaseURL)
-  console.log(response.data.allUsers)
-  return response.data.allUsers
-})
-
 export type UserType = {
   _id: string
   firstName: string
@@ -19,6 +13,12 @@ export type UserType = {
   balance: number
   address: string
 }
+
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+  const response = await axios.get(userApiBaseURL)
+  console.log(response.data.allUsers)
+  return response.data.allUsers
+})
 
 export type UsersState = {
   usersList: UserType[]

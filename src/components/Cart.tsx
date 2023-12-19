@@ -2,16 +2,21 @@ import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { MdDelete } from 'react-icons/md'
-
+import { useEffect } from 'react'
 import { AppDispatch, RootState } from '../redux/store'
 import { deleteForomCart, resetCart } from '../redux/slices/Orders/cartSlice'
+import { fetchProducts } from '../redux/slices/products/productSlice'
 
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cartReducer)
 
   const dispatch: AppDispatch = useDispatch()
 
-  const handleDeleteCartItem = (id: number) => {
+  useEffect(() => {
+    dispatch(fetchProducts())
+  }, [])
+
+  const handleDeleteCartItem = (id: string) => {
     try {
       dispatch(deleteForomCart(id))
       toast.success('Product deleted from cart successfully', {
@@ -56,12 +61,12 @@ const Cart = () => {
         {cartItems.length > 0 &&
           cartItems.map((item) => {
             return (
-              <div key={item.id} className="item">
+              <div key={item._id} className="item">
                 <img src={item.image} alt={item.name} className="item-image" />
                 <p className="item-name">{item.name}</p>
                 <p className="item-price">{item.price}</p>
                 <div className="controllers">
-                  <MdDelete className="deleteIcon" onClick={() => handleDeleteCartItem(item.id)} />
+                  <MdDelete className="deleteIcon" onClick={() => handleDeleteCartItem(item._id)} />
                 </div>
               </div>
             )

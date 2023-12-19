@@ -1,21 +1,24 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import api from '../../../api'
+import axios from 'axios'
+import { productApiBaseURL } from '../../../services/productsServices'
 
 export const fetchProducts = createAsyncThunk('product/fetchProducts', async () => {
-  const response = await api.get('/mock/e-commerce/products.json')
-  return response.data
+  const response = await axios.get(productApiBaseURL)
+  return response.data.payload.products.allProductOnPage
 })
 
 export type ProductType = {
-  id: number
+  _id: string
   name: string
-  image: string
-  description: string
-  categories: number[]
-  variants: string[]
-  sizes: string[]
   price: number
+  image: string
+  quantity: number
+  sold: number
+  categories: string[]
+  description: string
+  sizes: string
+  variants: string
 }
 
 export type ProductState = {
@@ -39,9 +42,9 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     findProductById: (state, action) => {
-      const id: number = action.payload
+      const id: string = action.payload
       state.productsList.find((product: ProductType) => {
-        if (product.id === id) {
+        if (product._id === id) {
           state.singleProduct = product
         }
       })
@@ -63,15 +66,13 @@ export const productSlice = createSlice({
       }
     },
     deleteProduct: (state, action) => {
-      const newProductsList = state.productsList.filter((product) => product.id !== action.payload)
+      const newProductsList = state.productsList.filter((product) => product._id !== action.payload)
       state.productsList = newProductsList
     },
-    addProduct: (state, action) => {
-      state.productsList.push(action.payload)
-    },
+
     editProduct: (state, action) => {
       const updatedProduct = action.payload
-      const foundProduct = state.productsList.find((product) => product.id === updatedProduct.id)
+      const foundProduct = state.productsList.find((product) => product._id === updatedProduct.id)
       if (foundProduct) {
         foundProduct.name = updatedProduct.name
         foundProduct.image = updatedProduct.image
@@ -99,12 +100,6 @@ export const productSlice = createSlice({
   }
 })
 
-export const {
-  findProductById,
-  searchProducts,
-  sortProducts,
-  deleteProduct,
-  addProduct,
-  editProduct
-} = productSlice.actions
+export const { findProductById, searchProducts, sortProducts, deleteProduct, editProduct } =
+  productSlice.actions
 export default productSlice.reducer

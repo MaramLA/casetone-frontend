@@ -1,39 +1,42 @@
-import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
-import { homePath } from '../../pathLinks'
-
+import { AxiosError } from 'axios'
+import { fetchCategories } from '../../redux/slices/Categories/categoriesSlice'
 import { AppDispatch, RootState } from '../../redux/store'
-import { addProduct, fetchProducts, ProductType } from '../../redux/slices/products/productSlice'
+import { createProduct } from '../../services/productsServices'
 
 type NewProductType = {
-  id: number
   name: string
   image: string
   description: string
-  categories: number
+  categories: string[]
   variants: string
   sizes: string
   price: number
+  quantity: number
 }
 
 const AddProduct = () => {
+  useEffect(() => {
+    dispatch(fetchCategories())
+  }, [])
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
   const [newProduct, setNewProduct] = useState<NewProductType>({
-    id: 0,
     name: '',
     image: '',
     description: '',
-    categories: 0,
+    categories: [],
     variants: '',
     sizes: '',
-    price: 0
+    price: 0,
+    quantity: 0
   })
 
   const handelInputChange = (
@@ -42,16 +45,70 @@ const AddProduct = () => {
       | ChangeEvent<HTMLTextAreaElement>
       | ChangeEvent<HTMLSelectElement>
   ) => {
-    setNewProduct((prevProduct) => {
-      const { value, name } = event.target
-      return { ...prevProduct, [name]: value }
-    })
+    if (event.target.type === 'file') {
+      const fileInput = (event.target as HTMLInputElement) || ''
+      // console.log(fileInput.files?.[0].name)
+      setNewProduct((prevProduct) => {
+        const { name } = event.target
+        return { ...prevProduct, [name]: fileInput.files?.[0].name }
+      })
+    } else {
+      setNewProduct((prevProduct) => {
+        const { value, name } = event.target
+        return { ...prevProduct, [name]: value }
+      })
+    }
   }
 
-  const handleProductSubmit = (event: FormEvent) => {
+  const handleProductSubmit = async (event: FormEvent) => {
     event.preventDefault()
+    console.log(newProduct.categories)
+    if (
+      newProduct.name.length < 2 ||
+      newProduct.description.length < 2 ||
+      newProduct.variants.length < 2 ||
+      newProduct.sizes.length < 2
+    ) {
+      toast.error('Fill all the fields please', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+      return
+    }
     if (newProduct.price <= 0) {
-      toast.warning('Price should be more then 0', {
+      toast.error('Price should be more than 0', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+      return
+    }
+    if (newProduct.quantity <= 0) {
+      toast.error('Quantity should be more than 0', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      })
+      return
+    }
+    if (!newProduct.image) {
+      toast.error('Product image is required', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -64,21 +121,45 @@ const AddProduct = () => {
       return
     }
     try {
-      const newProductData: ProductType = {
-        id: new Date().getMilliseconds(),
+      const newProductData: NewProductType = {
         name: newProduct.name,
         image: newProduct.image,
         description: newProduct.description,
         categories: [],
-        variants: [],
-        sizes: [],
-        price: Number(newProduct.price)
+        variants: newProduct.variants,
+        sizes: newProduct.sizes,
+        price: Number(newProduct.price),
+        quantity: newProduct.quantity
       }
-      newProductData.categories.push(Number(newProduct.categories))
-      newProductData.variants.push(newProduct.variants)
-      newProductData.sizes.push(newProduct.sizes)
-      dispatch(fetchProducts()).then(() => dispatch(addProduct(newProductData)))
-      navigate(homePath)
+      newProductData.categories.push(String(newProduct.categories))
+
+      const formData = new FormData()
+      formData.append('name', newProductData.name)
+      formData.append('image', newProductData.image)
+      formData.append('description', newProductData.description)
+      formData.append('categories', newProductData.categories.toString())
+      formData.append('variants', newProductData.variants)
+      formData.append('sizes', newProductData.sizes)
+      formData.append('quantity', newProductData.quantity.toString())
+      formData.append('price', newProductData.price.toString())
+
+      console.log('form data')
+      for (var key of formData.entries()) {
+        console.log(key[0] + ', ' + key[1])
+      }
+      // newProductData.variants.push(newProduct.variants)
+      // newProductData.sizes.push(newProduct.sizes)
+      // dispatch(fetchProducts()).then(() => dispatch(addProduct(newProductData)))
+      // navigate(homePath)
+
+      try {
+        const response = await createProduct(formData)
+        console.log('response: ' + response)
+      } catch (error) {
+        console.log(error)
+        return
+      }
+
       toast.success('Product added successffully', {
         position: 'top-right',
         autoClose: 5000,
@@ -89,8 +170,8 @@ const AddProduct = () => {
         progress: undefined,
         theme: 'colored'
       })
-    } catch (error) {
-      toast.error('Something went wrong', {
+    } catch (error: AxiosError | any) {
+      toast.error(error.response.data.errors, {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -102,6 +183,7 @@ const AddProduct = () => {
       })
     }
   }
+
   return (
     <main>
       <section className="add-edit-product" id="addEditProduct">
@@ -163,6 +245,21 @@ const AddProduct = () => {
               />
             </div>
           </div>
+          <div className="entry">
+            <label htmlFor="productQuantity">Quantity</label>
+            <div className="input-btn">
+              <input
+                type="text"
+                id="productQuantity"
+                className="formPassword"
+                name="quantity"
+                placeholder="product Quantity"
+                value={newProduct.quantity}
+                onChange={handelInputChange}
+                required
+              />
+            </div>
+          </div>
 
           <div className="entry">
             <label htmlFor="formCategory">Category</label>
@@ -176,7 +273,7 @@ const AddProduct = () => {
                 {categoriesList.length > 0 &&
                   categoriesList.map((category) => {
                     return (
-                      <option key={category.id} value={category.id}>
+                      <option key={category._id} value={category._id}>
                         {category.name}
                       </option>
                     )
@@ -185,21 +282,6 @@ const AddProduct = () => {
             </div>
           </div>
 
-          <div className="entry">
-            <label htmlFor="productImage">Product Image</label>
-            <div className="input-btn">
-              <input
-                type="text"
-                id="productImage"
-                className="formPassword"
-                name="image"
-                value={newProduct.image}
-                onChange={handelInputChange}
-                placeholder="product image"
-                required
-              />
-            </div>
-          </div>
           <div className="entry">
             <label htmlFor="productSizes">Price</label>
             <div className="input-btn">
@@ -213,6 +295,21 @@ const AddProduct = () => {
                 required
               />
               <p className="currency">$</p>
+            </div>
+          </div>
+          <div className="entry">
+            <label htmlFor="productImage">Product Image</label>
+            <div className="input-btn">
+              <input
+                type="file"
+                id="productImage"
+                className="formPassword"
+                name="image"
+                onChange={handelInputChange}
+                accept="image/*"
+                placeholder="product image"
+                required
+              />
             </div>
           </div>
           <button type="submit" className="add-btn">

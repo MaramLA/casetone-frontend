@@ -7,7 +7,7 @@ export const deleteProduct = async (id: string) => {
   return response.data
 }
 
-export const createProduct = async (fromData: FormData) => {
-  const response = await axios.post(`${productApiBaseURL}`)
-  return response.data
+export const createProduct = async (formData: FormData) => {
+  const response = await axios.post(productApiBaseURL, formData)
+  return response
 }
