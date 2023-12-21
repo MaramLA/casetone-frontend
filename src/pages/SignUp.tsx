@@ -4,10 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { fetchUsers } from '../redux/slices/Users/userSlice'
+import { fetchUsers, signUpUser } from '../redux/slices/Users/userSlice'
 
 import { signInPath } from '../pathLinks'
-import { createUser } from '../services/usersServices'
 
 const SignUp = () => {
   const passwordValidation = new RegExp(
@@ -140,10 +139,9 @@ const SignUp = () => {
         }
       }
 
-      const response = await createUser(newUser)
+      dispatch(signUpUser(newUser))
 
-      // dispatch(fetchUsers()).then(() => dispatch(addUser(newUser)))
-      toast.success(response.message, {
+      toast.success('Check your email to activate the account', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,

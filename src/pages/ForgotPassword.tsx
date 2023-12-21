@@ -2,15 +2,14 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { UserType, fetchUsers } from '../redux/slices/Users/userSlice'
+import { UserType, fetchUsers, forgotUserPassword } from '../redux/slices/Users/userSlice'
 import { AppDispatch, RootState } from '../redux/store'
 
 import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
-import { forgotUserPassword } from '../services/usersServices'
 
 const ForgotPassword = () => {
-  const { usersList } = useSelector((state: RootState) => state.usersReducer)
+  const { usersList, data } = useSelector((state: RootState) => state.usersReducer)
 
   const [userEmail, setUserEmail] = useState<string>('')
 
@@ -45,9 +44,9 @@ const ForgotPassword = () => {
         return
       }
       console.log(foundUser?.email)
-      const response = await forgotUserPassword(userEmail)
-      console.log(response)
-      toast.success(response.message, {
+      dispatch(forgotUserPassword(userEmail))
+      console.log(data)
+      toast.success('Check your email', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,

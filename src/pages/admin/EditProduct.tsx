@@ -10,7 +10,8 @@ import { AppDispatch, RootState } from '../../redux/store'
 import {
   editProduct,
   fetchProducts,
-  findProductById,
+  fetchSingleProduct,
+  // findProductById,
   ProductType
 } from '../../redux/slices/products/productSlice'
 
@@ -23,8 +24,8 @@ const EditProduct = () => {
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
-  const [newProduct, setNewProduct] = useState<ProductType>({
-    id: singleProduct.id,
+  const [newProduct, setNewProduct] = useState({
+    _id: singleProduct._id,
     name: singleProduct.name,
     image: singleProduct.image,
     description: singleProduct.description,
@@ -35,10 +36,10 @@ const EditProduct = () => {
   })
 
   useEffect(() => {
-    dispatch(findProductById(Number(id)))
+    dispatch(fetchSingleProduct(String(id)))
     if (singleProduct) {
       setNewProduct({
-        id: singleProduct.id,
+        _id: singleProduct._id,
         name: singleProduct.name,
         image: singleProduct.image,
         description: singleProduct.description,
@@ -64,19 +65,18 @@ const EditProduct = () => {
 
   const handleProductSubmit = (event: FormEvent) => {
     event.preventDefault()
-    const newProductData: ProductType = {
-      id: newProduct.id,
+    const newProductData = {
+      _id: newProduct._id,
       name: newProduct.name,
       image: newProduct.image,
       description: newProduct.description,
       categories: [],
-      variants: [],
-      sizes: [],
+      variants: newProduct.variants,
+      sizes: newProduct.sizes,
       price: Number(newProduct.price)
     }
-    newProductData.categories.push(Number(newProduct.categories))
-    newProductData.variants.push(newProduct.variants.toString())
-    newProductData.sizes.push(newProduct.sizes.toString())
+    // newProductData.categories.push(newProduct.categories)
+   
 
     if (newProduct.price <= 0) {
       toast.warning('Price should be more then 0', {
@@ -123,7 +123,7 @@ const EditProduct = () => {
     <main>
       <section className="add-edit-product" id="addEditProduct">
         <h2 className="section-title">Add Product</h2>
-        {newProduct.id && (
+        {newProduct._id && (
           <form className="form" onSubmit={handleProductSubmit}>
             <div className="entry">
               <label htmlFor="productName">Product Name</label>
@@ -195,7 +195,7 @@ const EditProduct = () => {
                   {categoriesList.length > 0 &&
                     categoriesList.map((category) => {
                       return (
-                        <option key={category.id} value={category.id}>
+                        <option key={category._id} value={category._id}>
                           {category.name}
                         </option>
                       )

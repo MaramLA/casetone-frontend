@@ -2,7 +2,7 @@ import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { MdDelete } from 'react-icons/md'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { AppDispatch, RootState } from '../redux/store'
 import { deleteForomCart, resetCart } from '../redux/slices/Orders/cartSlice'
 import { fetchProducts } from '../redux/slices/products/productSlice'
@@ -75,12 +75,14 @@ const Cart = () => {
         <div className="purchase-summary">
           <p className="total-items">Total Items: {cartItems.length}</p>
           <p className="total-price">Total Price: {cartTotalAmount().toFixed(2)}$</p>
-          <div className="btns">
-            <button className="reset-btn" onClick={handleResetCart}>
-              Reset
-            </button>
-            <button className="checkout-btn">Checkout</button>
-          </div>
+          {cartItems.length > 0 && (
+            <div className="btns">
+              <button className="reset-btn" onClick={handleResetCart}>
+                Reset
+              </button>
+              <button className="checkout-btn">Checkout</button>
+            </div>
+          )}
         </div>
       </div>
     </section>

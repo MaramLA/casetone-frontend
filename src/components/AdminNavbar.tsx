@@ -7,39 +7,37 @@ import logo from '../assets/logo.png'
 
 import { homePath, usersPath, categoryPath, productsPath, profilePath } from '../pathLinks'
 
-import { RootState } from '../redux/store'
-import { signOut } from '../services/authenticationServices'
+import { AppDispatch, RootState } from '../redux/store'
 import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
-import { resetLoginCookie } from '../redux/slices/Users/userSlice'
+import { signOutUser } from '../redux/slices/Users/userSlice'
 
 const AdminNavbar = () => {
   const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
 
   const [isMenueClicked, setIsMenueClicked] = useState(false)
 
-  const dispatch = useDispatch()
+  const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
   const handleLogout = async () => {
     setIsMenueClicked(false)
     try {
-      const response = await signOut()
-      console.log(response)
-      if (response.status === 200) {
-        dispatch(resetLoginCookie())
-        toast.success(response.data.message, {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
-        navigate(homePath)
-      }
+      dispatch(signOutUser())
+      // if (response.status === 200) {
+      //   dispatch(resetLoginCookie())
+      //   toast.success(response.data.message, {
+      //     position: 'top-right',
+      //     autoClose: 5000,
+      //     hideProgressBar: false,
+      //     closeOnClick: true,
+      //     pauseOnHover: true,
+      //     draggable: true,
+      //     progress: undefined,
+      //     theme: 'colored'
+      //   })
+      //   navigate(homePath)
+      // }
     } catch (error: AxiosError | any) {
       toast.error(error.response.data.msg, {
         position: 'top-right',

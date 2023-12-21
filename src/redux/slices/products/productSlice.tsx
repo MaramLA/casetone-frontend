@@ -8,6 +8,22 @@ export const fetchProducts = createAsyncThunk('product/fetchProducts', async () 
   return response.data.payload.products.allProductOnPage
 })
 
+export const fetchSingleProduct = createAsyncThunk(
+  'product/fetchSinglProduct',
+  async (id: string) => {
+    const response = await axios.get(`${productApiBaseURL}/${id}`)
+    return response.data.payload
+  }
+)
+
+export const deleteSingleProduct = createAsyncThunk(
+  'product/deleteSingleProduct',
+  async (id: string) => {
+    const response = await axios.delete(`${productApiBaseURL}/${id}`)
+    return response.data
+  }
+)
+
 export type ProductType = {
   _id: string
   name: string
@@ -41,14 +57,14 @@ export const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    findProductById: (state, action) => {
-      const id: string = action.payload
-      state.productsList.find((product: ProductType) => {
-        if (product._id === id) {
-          state.singleProduct = product
-        }
-      })
-    },
+    // findProductById: (state, action) => {
+    //   const id: string = action.payload
+    //   state.productsList.find((product: ProductType) => {
+    //     if (product._id === id) {
+    //       state.singleProduct = product
+    //     }
+    //   })
+    // },
     searchProducts: (state, action) => {
       state.searchTerm = action.payload
     },
@@ -65,10 +81,10 @@ export const productSlice = createSlice({
         )
       }
     },
-    deleteProduct: (state, action) => {
-      const newProductsList = state.productsList.filter((product) => product._id !== action.payload)
-      state.productsList = newProductsList
-    },
+    // deleteProduct: (state, action) => {
+    //   const newProductsList = state.productsList.filter((product) => product._id !== action.payload)
+    //   state.productsList = newProductsList
+    // },
 
     editProduct: (state, action) => {
       const updatedProduct = action.payload
@@ -85,6 +101,7 @@ export const productSlice = createSlice({
     }
   },
   extraReducers(builder) {
+    // fetchProducts
     builder.addCase(fetchProducts.pending, (state) => {
       state.isLoading = true
       state.error = null
@@ -93,13 +110,42 @@ export const productSlice = createSlice({
       state.productsList = action.payload
       state.isLoading = false
     })
+    builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
+      console.log(action.payload)
+      state.singleProduct = action.payload
+      state.isLoading = false
+    })
+    builder.addCase(deleteSingleProduct.fulfilled, (state, action) => {
+      console.log('from delete builder: ' + action.payload)
+      // state.singleProduct = action.payload
+      state.isLoading = false
+    })
     builder.addCase(fetchProducts.rejected, (state, action) => {
       state.error = action.error.message || 'Fetching products data ended unsuccessfully'
       state.isLoading = false
     })
+
+    // // fetchSingleProduct
+    // builder.addCase(fetchSingleProduct.pending, (state) => {
+    //   state.isLoading = true
+    //   state.error = null
+    // })
+    // builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
+    //   state.singleProduct = action.payload
+    //   state.isLoading = false
+    // })
+    // builder.addCase(fetchSingleProduct.rejected, (state, action) => {
+    //   state.error = action.error.message || 'Fetching product data ended unsuccessfully'
+    //   state.isLoading = false
+    // })
   }
 })
 
-export const { findProductById, searchProducts, sortProducts, deleteProduct, editProduct } =
-  productSlice.actions
+export const {
+  // findProductById,
+  searchProducts,
+  sortProducts,
+  // deleteProduct,
+  editProduct
+} = productSlice.actions
 export default productSlice.reducer

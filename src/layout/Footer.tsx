@@ -22,9 +22,8 @@ import {
 } from '../pathLinks'
 
 import { toast } from 'react-toastify'
-import { signOut } from '../services/authenticationServices'
 import { AxiosError } from 'axios'
-import { resetLoginCookie } from '../redux/slices/Users/userSlice'
+import { signOutUser } from '../redux/slices/Users/userSlice'
 
 const Footer = () => {
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
@@ -32,36 +31,36 @@ const Footer = () => {
   const navigate = useNavigate()
   const dispatch: AppDispatch = useDispatch()
 
-  const handleLogout = async () => {
-    try {
-      const response = await signOut()
-      if (response.status === 200) {
-        dispatch(resetLoginCookie())
-        toast.success(response.data.message, {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
-        navigate(homePath)
-      }
-    } catch (error: AxiosError | any) {
-      toast.error(error.response.data.msg, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
-    }
+const handleLogout = async () => {
+  try {
+    dispatch(signOutUser())
+    // if (response.status === 200) {
+    //   dispatch(resetLoginCookie())
+    //   toast.success(response.data.message, {
+    //     position: 'top-right',
+    //     autoClose: 5000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: 'colored'
+    //   })
+    //   navigate(homePath)
+    // }
+  } catch (error: AxiosError | any) {
+    toast.error(error.response.data.msg, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'colored'
+    })
   }
+}
 
   return (
     <footer>

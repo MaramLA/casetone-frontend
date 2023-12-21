@@ -6,7 +6,7 @@ import { AppDispatch } from './redux/store'
 import Index from './routes/Index'
 
 function App() {
-  const dispatch: AppDispatch = useDispatch()
+  // const dispatch: AppDispatch = useDispatch()
   // useEffect(() => {
   //   dispatch(fetchCategories())
   //   dispatch(fetchUsers())

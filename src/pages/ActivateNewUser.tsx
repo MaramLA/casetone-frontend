@@ -1,18 +1,22 @@
 import jwtDecode from 'jwt-decode'
 import { useNavigate, useParams } from 'react-router-dom'
 import { signInPath } from '../pathLinks'
-import { activateUserAccount } from '../services/usersServices'
 import { toast } from 'react-toastify'
+import { AppDispatch } from '../redux/store'
+import { activateUser } from '../redux/slices/Users/userSlice'
+import { useDispatch } from 'react-redux'
 
 const ActivateNewUser = () => {
   const { token } = useParams()
   const decoded = jwtDecode(String(token))
+  const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
   const handleActivatAccount = async () => {
     try {
-      const response = await activateUserAccount(String(token))
-      toast.success(response.message, {
+      // const response = await activateUserAccount(String(token))
+      dispatch(activateUser(String(token)))
+      toast.success('User activated successfully', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,

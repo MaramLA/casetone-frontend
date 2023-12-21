@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-import { fetchUsers } from '../redux/slices/Users/userSlice'
-import { AppDispatch, RootState } from '../redux/store'
+import { fetchUsers, resetUserPassword } from '../redux/slices/Users/userSlice'
+import { AppDispatch } from '../redux/store'
 
 import { AxiosError } from 'axios'
-import { resetUserPassword } from '../services/usersServices'
+import { signInPath } from '../pathLinks'
 
 const ResetPassword = () => {
   const passwordValidation = new RegExp(
@@ -104,9 +104,8 @@ const ResetPassword = () => {
         })
         return
       }
-      const response = await resetUserPassword(String(token), newPassword)
-      console.log(response)
-      toast.success(response.message, {
+      dispatch(resetUserPassword({ token: String(token), password: newPassword }))
+      toast.success('Password reseted successfully', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -118,6 +117,7 @@ const ResetPassword = () => {
       })
       setNewPassword('')
       setConfirmPassword('')
+      navigate(signInPath)
     } catch (error: AxiosError | any) {
       toast.error(error.response.data.msg, {
         position: 'top-right',

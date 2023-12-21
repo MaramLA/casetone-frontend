@@ -5,7 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { AppDispatch, RootState } from '../../redux/store'
 import { ProductType } from '../../redux/slices/products/productSlice'
-import { fetchUsers, searchUser, UserType } from '../../redux/slices/Users/userSlice'
+import {
+  banUser,
+  deleteUser,
+  fetchUsers,
+  searchUser,
+  unbanUser,
+  UserType
+} from '../../redux/slices/Users/userSlice'
 
 import Footer from '../../layout/Footer'
 
@@ -14,7 +21,6 @@ import {
   deleteSingleUserOrder,
   OrderType
 } from '../../redux/slices/Orders/ordersSlice'
-import { banUser, deleteUser, unbanUser } from '../../services/usersServices'
 
 const Users = () => {
   const users = useSelector((state: RootState) => state.usersReducer)
@@ -25,20 +31,7 @@ const Users = () => {
 
   useEffect(() => {
     dispatch(fetchUsers())
-  }, [])
-
-  if (users.isLoading || orders.isLoading || products.isLoading) {
-    return <p>Loading...</p>
-  }
-  if (users.error) {
-    return <p>{users.error}</p>
-  }
-  if (orders.error) {
-    return <p>{orders.error}</p>
-  }
-  if (products.error) {
-    return <p>{products.error}</p>
-  }
+  }, [dispatch])
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value
@@ -53,9 +46,9 @@ const Users = () => {
 
   const handleRemoveUser = async (userId: string, firstName: string, lastName: string) => {
     try {
-      dispatch(deleteAllUserOrders(userId))
-      const response = await deleteUser(userId)
-      dispatch(fetchUsers())
+      // dispatch(deleteAllUserOrders(userId))
+      dispatch(deleteUser(userId))
+      // dispatch(fetchUsers())
       toast.success(`${firstName + ' ' + lastName + ' '} deleted successfully`, {
         position: 'top-right',
         autoClose: 5000,
@@ -88,8 +81,7 @@ const Users = () => {
   ) => {
     try {
       if (!isBanned) {
-        const response = await banUser(userId)
-        dispatch(fetchUsers())
+        dispatch(banUser(userId))
         toast.success(`${firstName + ' ' + lastName + ' '}banned successfully`, {
           position: 'top-right',
           autoClose: 5000,
@@ -101,8 +93,7 @@ const Users = () => {
           theme: 'colored'
         })
       } else {
-        const response = await unbanUser(userId)
-        dispatch(fetchUsers())
+        dispatch(unbanUser(userId))
         toast.success(`${firstName + ' ' + lastName + ' '}unbanned successfully`, {
           position: 'top-right',
           autoClose: 5000,
@@ -114,8 +105,8 @@ const Users = () => {
           theme: 'colored'
         })
       }
-    } catch (error) {
-      toast.error('Something went wrong', {
+    } catch (error: any) {
+      toast.error(error, {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,

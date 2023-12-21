@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 import { AppDispatch, RootState } from '../redux/store'
 import { addToCart } from '../redux/slices/Orders/cartSlice'
-import { fetchProducts, findProductById, ProductType } from '../redux/slices/products/productSlice'
+import { ProductType, fetchSingleProduct } from '../redux/slices/products/productSlice'
 
 import Footer from '../layout/Footer'
 
@@ -24,10 +24,14 @@ const ProductDetails = () => {
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
+  // useEffect(() => {
+  //   dispatch(fetchCategories())
+  //   dispatch(findProductById(id))
+  // }, [id])
+
   useEffect(() => {
     dispatch(fetchCategories())
-    dispatch(fetchProducts())
-    dispatch(findProductById(id))
+    dispatch(fetchSingleProduct(String(id)))
   }, [id])
 
   if (isLoading) {
@@ -81,7 +85,7 @@ const ProductDetails = () => {
         <section className="productDetails">
           <div className="container">
             <div className="left-side">
-              <img src={`http://localhost:5050/${singleProduct.image}`} alt={singleProduct.name} />
+              <img src={singleProduct.image} alt={singleProduct.name} />
             </div>
             <div className="right-side">
               <p className="product-category">

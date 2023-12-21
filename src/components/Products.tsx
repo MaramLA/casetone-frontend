@@ -11,7 +11,7 @@ import { BsCartPlusFill } from 'react-icons/bs'
 import { AppDispatch, RootState } from '../redux/store'
 import { addToCart } from '../redux/slices/Orders/cartSlice'
 import {
-  deleteProduct,
+  deleteSingleProduct,
   fetchProducts,
   ProductType,
   searchProducts
@@ -78,16 +78,18 @@ const Products = () => {
 
   const handleDeleteProduct = (id: string) => {
     try {
-      dispatch(deleteProduct(id))
-      toast.success('Product deleted successfully', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
+      dispatch(deleteSingleProduct(id)).then((data) => {
+        console.log(data)
+        toast.success('Product deleted successfully', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
       })
     } catch (error) {
       toast.error('Something went worng', {
@@ -154,7 +156,7 @@ const Products = () => {
                 return (
                   <div key={product._id} className="product">
                     <Link className="product-details-link" to={`/products/${product._id}`}>
-                      <img src={`http://localhost:5050/${product.image}`} alt={product.name} />
+                      <img src={product.image} alt={product.name} />
                     </Link>
                     <div className="product__details">
                       <p className="product__title">{product.name}</p>
@@ -214,7 +216,7 @@ const Products = () => {
                     return (
                       <div key={product._id} className="product">
                         <Link className="product-details-link" to={`/products/${product._id}`}>
-                          <img src={`http://localhost:5050/${product.image}`} alt={product.name} />
+                          <img src={product.image} alt={product.name} />
                         </Link>
                         <div className="product__details">
                           <p className="product__title">{product.name}</p>
