@@ -24,43 +24,29 @@ import {
 import { toast } from 'react-toastify'
 import { AxiosError } from 'axios'
 import { signOutUser } from '../redux/slices/Users/userSlice'
+import { useEffect } from 'react'
+import { errorResponse } from '../utils/messages'
 
 const Footer = () => {
-  const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
+  const { isSignedIn, userData, error } = useSelector((state: RootState) => state.usersReducer)
 
   const navigate = useNavigate()
   const dispatch: AppDispatch = useDispatch()
 
-const handleLogout = async () => {
-  try {
-    dispatch(signOutUser())
-    // if (response.status === 200) {
-    //   dispatch(resetLoginCookie())
-    //   toast.success(response.data.message, {
-    //     position: 'top-right',
-    //     autoClose: 5000,
-    //     hideProgressBar: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    //     theme: 'colored'
-    //   })
-    //   navigate(homePath)
-    // }
-  } catch (error: AxiosError | any) {
-    toast.error(error.response.data.msg, {
-      position: 'top-right',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'colored'
-    })
+  useEffect(() => {
+    if (error) {
+      errorResponse(error)
+    }
+  }, [error])
+
+  const handleLogout = async () => {
+    try {
+      dispatch(signOutUser())
+      navigate(signInPath)
+    } catch (error: AxiosError | any) {
+      errorResponse(error.response.data.msg)
+    }
   }
-}
 
   return (
     <footer>

@@ -24,7 +24,7 @@ const cartSlice = createSlice({
     },
     deleteForomCart: (state, action) => {
       const removeId = action.payload
-      const newCartItems = state.cartItems.filter((cartItem) => cartItem.id !== removeId)
+      const newCartItems = state.cartItems.filter((cartItem) => cartItem._id !== removeId)
       state.cartItems = newCartItems
       localStorage.setItem('cart', JSON.stringify(state.cartItems))
     },

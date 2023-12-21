@@ -1,15 +1,13 @@
-import { toast } from 'react-toastify'
-import { Link, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
-import { AppDispatch, RootState } from '../redux/store'
 import { fetchUsers, signInUser } from '../redux/slices/Users/userSlice'
+import { AppDispatch, RootState } from '../redux/store'
 
 import { forgotPasswordPath, homePath, signUpPath } from '../pathLinks'
-
-import { AxiosError } from 'axios'
-import { response } from 'express'
+import { errorResponse } from '../utils/messages'
 
 type LogInUserType = {
   email: string
@@ -17,7 +15,7 @@ type LogInUserType = {
 }
 
 const SignIn = () => {
-  const { error, userData, isSignedIn } = useSelector((state: RootState) => state.usersReducer)
+  const { error, isSignedIn } = useSelector((state: RootState) => state.usersReducer)
 
   const [logInUser, setLogInUser] = useState<LogInUserType>({
     email: '',
@@ -31,20 +29,11 @@ const SignIn = () => {
     dispatch(fetchUsers())
   }, [])
 
-  useEffect(() => {
-    if (error) {
-      toast.error(error, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
-    }
-  }, [error])
+  // useEffect(() => {
+  //   if (error) {
+  //     errorResponse(error)
+  //   }
+  // }, [error])
 
   useEffect(() => {
     if (isSignedIn) {
@@ -63,8 +52,8 @@ const SignIn = () => {
     event.preventDefault()
     try {
       dispatch(signInUser(logInUser))
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      errorResponse(error.response.data.msg)
     }
   }
 

@@ -7,13 +7,14 @@ import { AppDispatch, RootState } from '../redux/store'
 import { fetchUsers, signUpUser } from '../redux/slices/Users/userSlice'
 
 import { signInPath } from '../pathLinks'
+import { errorResponse, successResponse } from '../utils/messages'
 
 const SignUp = () => {
   const passwordValidation = new RegExp(
     '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})'
   )
 
-  const { usersList } = useSelector((state: RootState) => state.usersReducer)
+  const { usersList, data } = useSelector((state: RootState) => state.usersReducer)
 
   const [newUser, setNewUser] = useState({
     firstName: '',
@@ -29,7 +30,14 @@ const SignUp = () => {
 
   useEffect(() => {
     dispatch(fetchUsers())
-  }, [])
+  }, [dispatch])
+
+  useEffect(() => {
+    if (data) {
+      successResponse('Check your email to activate the account')
+      navigate(signInPath)
+    }
+  }, [data])
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNewUser((prevUser) => {
@@ -72,98 +80,32 @@ const SignUp = () => {
         newUser.address.length < 2 ||
         confirmPassword.length < 2
       ) {
-        const error = new Error('Provide valid data please')
-        throw error
+        errorResponse('Provide valid data please')
+        return
       } else {
         const foundEmail = usersList.find((user) => user.email === newUser.email)
         if (foundEmail) {
-          const error = new Error('This email already exists')
-          throw error
+          errorResponse('This email already exists')
+          return
         }
         if (newUser.password !== confirmPassword) {
-          const error = new Error('Passwords do not match')
-          throw error
+          errorResponse('Passwords do not match')
+          return
         }
 
         if (!passwordValidation.test(newUser.password)) {
-          toast.error('Password should contain at least 1 lowercase character', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored'
-          })
-          toast.error('Password should contain at least 1 uppercase character ', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored'
-          })
-          toast.error('Password should contain at least 1 numeric character ', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored'
-          })
-          toast.error('Password should contain at least 1 special character ', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored'
-          })
-          toast.error('Password should contain at least 8 characters ', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored'
-          })
+          errorResponse('Password should contain at least 1 lowercase character')
+          errorResponse('Password should contain at least 1 uppercase character ')
+          errorResponse('Password should contain at least 1 numeric character ')
+          errorResponse('Password should contain at least 1 special character ')
+          errorResponse('Password should contain at least 5 characters ')
+          return
         }
       }
 
       dispatch(signUpUser(newUser))
-
-      toast.success('Check your email to activate the account', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
-
-      navigate(signInPath)
     } catch (error: any) {
-      toast.error(`${error}`, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      errorResponse(error.response.data.msg)
     }
   }
   return (

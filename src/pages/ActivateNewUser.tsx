@@ -1,10 +1,11 @@
 import jwtDecode from 'jwt-decode'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { signInPath } from '../pathLinks'
-import { toast } from 'react-toastify'
-import { AppDispatch } from '../redux/store'
 import { activateUser } from '../redux/slices/Users/userSlice'
-import { useDispatch } from 'react-redux'
+import { AppDispatch, RootState } from '../redux/store'
+import { errorResponse, successResponse } from '../utils/messages'
 
 const ActivateNewUser = () => {
   const { token } = useParams()
@@ -12,33 +13,26 @@ const ActivateNewUser = () => {
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
+  const { data, error } = useSelector((state: RootState) => state.usersReducer)
+
+  useEffect(() => {
+    if (data) {
+      successResponse('User activated successfully')
+      navigate(signInPath)
+    }
+  }, [data])
+
+  useEffect(() => {
+    if (error) {
+      errorResponse(error)
+    }
+  }, [error])
+
   const handleActivatAccount = async () => {
     try {
-      // const response = await activateUserAccount(String(token))
       dispatch(activateUser(String(token)))
-      toast.success('User activated successfully', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
-      navigate(signInPath)
     } catch (error: any) {
-      console.log(error.response.data.message)
-      toast.error(error.response.data.message, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      errorResponse(error.response.data.msg)
     }
   }
 

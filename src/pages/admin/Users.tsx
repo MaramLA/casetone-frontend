@@ -7,10 +7,12 @@ import { AppDispatch, RootState } from '../../redux/store'
 import { ProductType } from '../../redux/slices/products/productSlice'
 import {
   banUser,
+  degradeUser,
   deleteUser,
   fetchUsers,
   searchUser,
   unbanUser,
+  upgradeUser,
   UserType
 } from '../../redux/slices/Users/userSlice'
 
@@ -21,6 +23,7 @@ import {
   deleteSingleUserOrder,
   OrderType
 } from '../../redux/slices/Orders/ordersSlice'
+import { errorResponse, successResponse } from '../../utils/messages'
 
 const Users = () => {
   const users = useSelector((state: RootState) => state.usersReducer)
@@ -31,7 +34,13 @@ const Users = () => {
 
   useEffect(() => {
     dispatch(fetchUsers())
-  }, [dispatch])
+  }, [dispatch, users.usersList])
+
+  useEffect(() => {
+    if (users.error) {
+      errorResponse(users.error)
+    }
+  }, [users.error])
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value
@@ -48,28 +57,9 @@ const Users = () => {
     try {
       // dispatch(deleteAllUserOrders(userId))
       dispatch(deleteUser(userId))
-      // dispatch(fetchUsers())
-      toast.success(`${firstName + ' ' + lastName + ' '} deleted successfully`, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
-    } catch (error) {
-      toast.error('Something went wrong', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      successResponse(`${firstName + ' ' + lastName + ' '} deleted successfully`)
+    } catch (error: any) {
+      errorResponse(error.response.data.msg)
     }
   }
 
@@ -82,67 +72,51 @@ const Users = () => {
     try {
       if (!isBanned) {
         dispatch(banUser(userId))
-        toast.success(`${firstName + ' ' + lastName + ' '}banned successfully`, {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
+        successResponse(`${firstName + ' ' + lastName + ' '}banned successfully`)
       } else {
         dispatch(unbanUser(userId))
-        toast.success(`${firstName + ' ' + lastName + ' '}unbanned successfully`, {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
+        successResponse(`${firstName + ' ' + lastName + ' '}unbanned successfully`)
       }
     } catch (error: any) {
-      toast.error(error, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      errorResponse(error.response.data.msg)
+    }
+  }
+
+  const handleUserRole = async (
+    userId: string,
+    isAdmin: boolean,
+    firstName: string,
+    lastName: string
+  ) => {
+    try {
+      if (!isAdmin) {
+        dispatch(upgradeUser(userId))
+        successResponse(`${firstName + ' ' + lastName + ' '}upgraded to admin successfully`)
+      } else {
+        dispatch(degradeUser(userId))
+        successResponse(`${firstName + ' ' + lastName + ' '}degraded to regular user successfully`)
+      }
+    } catch (error: any) {
+      errorResponse(error.response.data.msg)
     }
   }
 
   const handleDeleteOrder = (orderId: number) => {
     try {
       dispatch(deleteSingleUserOrder(orderId))
-      toast.success(`Order with id# ${orderId} deleted successfully`, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
-    } catch (error) {
-      toast.error('Something went wrong', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      successResponse(`Order with id# ${orderId} deleted successfully`)
+      // toast.success(`Order with id# ${orderId} deleted successfully`, {
+      //   position: 'top-right',
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: 'colored'
+      // })
+    } catch (error: any) {
+      errorResponse(error.response.data.msg)
     }
   }
 
@@ -162,7 +136,7 @@ const Users = () => {
           />
           {searchedUsers.length > 0 &&
             searchedUsers.map((user: UserType) => {
-              if (!user.isAdmin) {
+              if (user._id !== users.userData?._id) {
                 return (
                   <div key={user._id} className="orders" id="orders">
                     <div className="orders-container">
@@ -222,6 +196,13 @@ const Users = () => {
                             )
                           }>
                           {user.isBanned ? 'Unban' : 'Ban'}
+                        </button>
+                        <button
+                          className="block-btn"
+                          onClick={() => {
+                            handleUserRole(user._id, user.isAdmin, user.firstName, user.lastName)
+                          }}>
+                          {user.isAdmin ? 'Degrade' : 'Upgrade'}
                         </button>
                       </div>
                     </div>

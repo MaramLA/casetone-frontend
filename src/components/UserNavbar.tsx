@@ -1,62 +1,45 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import logo from '../assets/logo.png'
 
 import {
-  homePath,
   aboutPath,
-  signInPath,
-  signUpPath,
-  profilePath,
+  homePath,
   productsPath,
-  purchasesPath
+  profilePath,
+  purchasesPath,
+  signInPath,
+  signUpPath
 } from '../pathLinks'
 
-import { AppDispatch, RootState } from '../redux/store'
 import { AxiosError } from 'axios'
-import { toast } from 'react-toastify'
 import { signOutUser } from '../redux/slices/Users/userSlice'
+import { AppDispatch, RootState } from '../redux/store'
+import { errorResponse } from '../utils/messages'
 
 const UserNavbar = () => {
-  const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
-
+  const { isSignedIn, error } = useSelector((state: RootState) => state.usersReducer)
   const [isMenueClicked, setIsMenueClicked] = useState(false)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
+  useEffect(() => {
+    if (error) {
+      errorResponse(error)
+    }
+  }, [error])
+
   const handleLogout = async () => {
     setIsMenueClicked(false)
     try {
       dispatch(signOutUser())
-      // if (response.status === 200) {
-      //   dispatch(resetLoginCookie())
-      //   toast.success(response.data.message, {
-      //     position: 'top-right',
-      //     autoClose: 5000,
-      //     hideProgressBar: false,
-      //     closeOnClick: true,
-      //     pauseOnHover: true,
-      //     draggable: true,
-      //     progress: undefined,
-      //     theme: 'colored'
-      //   })
-      //   navigate(homePath)
-      // }
-    } catch (error: AxiosError | any) {
-      toast.error(error.response.data.msg, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      navigate(signInPath)
+    } catch (error: any) {
+      errorResponse(error.response.data.msg)
     }
   }
 

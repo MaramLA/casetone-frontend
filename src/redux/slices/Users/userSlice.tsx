@@ -60,6 +60,32 @@ export const unbanUser = createAsyncThunk(
   }
 )
 
+// upgrade user
+export const upgradeUser = createAsyncThunk(
+  'users/upgradeUser',
+  async (id: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.put(`${baseURL}/users/admin/${id}`)
+      return response.data
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
+// downgrade user
+export const degradeUser = createAsyncThunk(
+  'users/downgradeUser',
+  async (id: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.put(`${baseURL}/users/notadmin/${id}`)
+      return response.data
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
 // sign in user
 export const signInUser = createAsyncThunk(
   'users/signInUser',
@@ -139,27 +165,6 @@ export const resetUserPassword = createAsyncThunk(
   }
 )
 
-// export const resetUserPassword = createAsyncThunk(
-//   'users/resetUserPassword',
-//   async ({ token, password }: ResetUserPasswordPayload, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.post(`${baseURL}/users/reset-password`, {
-//         token,
-//         password
-//       })
-//       return response.data
-//     } catch (error) {
-//       if (axios.isAxiosError(error)) {
-//         // If the request was made and the server responded with a status code outside of 2xx
-//         return rejectWithValue(error.response?.data?.msg || 'An error occurred')
-//       } else {
-//         // If the request was not made or the server did not respond
-//         return rejectWithValue('An error occurred')
-//       }
-//     }
-//   }
-// )
-
 export type UserType = {
   _id: string
   firstName: string
@@ -230,6 +235,7 @@ const usersSlice = createSlice({
       state.error = null
       state.usersList = action.payload
     })
+    // delete user
     builder.addCase(deleteUser.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
@@ -256,6 +262,29 @@ const usersSlice = createSlice({
         }
       })
     })
+
+    // upgrade user
+    builder.addCase(upgradeUser.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      state.usersList.map((user) => {
+        if (user._id === action.payload.id) {
+          user.isAdmin = true
+        }
+      })
+    })
+
+    // degrade user
+    builder.addCase(degradeUser.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      state.usersList.map((user) => {
+        if (user._id === action.payload.id) {
+          user.isAdmin = false
+        }
+      })
+    })
+
     // sign in user
     builder.addCase(signInUser.fulfilled, (state, action) => {
       state.isLoading = false
@@ -271,20 +300,22 @@ const usersSlice = createSlice({
     builder.addCase(signUpUser.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
+      state.data = action.payload
       console.log('signUpUser: ', action.payload)
     })
     // activate user
     builder.addCase(activateUser.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
+      state.data = action.payload
       console.log('activateUser: ', action.payload)
     })
     // sign out user
-    builder.addCase(signOutUser.fulfilled, (state) => {
+    builder.addCase(signOutUser.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
       state.isSignedIn = false
-      state.userData = null
+      state.userData = action.payload
       localStorage.setItem(
         'signInData',
         JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
