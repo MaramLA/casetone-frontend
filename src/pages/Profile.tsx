@@ -1,39 +1,46 @@
 import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 import Footer from '../layout/Footer'
 import userProfile from '../assets/userProfile.png'
 
 import { AppDispatch, RootState } from '../redux/store'
-import { updateUser } from '../redux/slices/Users/userSlice'
-import { updateUserData } from '../services/usersServices'
+import { fetchSingleUser, updateUserData } from '../redux/slices/Users/userSlice'
 import { AxiosError } from 'axios'
+import { errorResponse, successResponse } from '../utils/messages'
 
 const Profile = () => {
-  const { userData, isLoading, error } = useSelector((state: RootState) => state.usersReducer)
+  const { userData, data } = useSelector((state: RootState) => state.usersReducer)
 
   const [profileUpdate, setProfileUpdate] = useState({
     _id: userData?._id,
-    firstName: userData?.firstName,
-    lastName: userData?.lastName,
-    email: userData?.email,
-    password: userData?.password,
+    firstName: String(userData?.firstName),
+    lastName: String(userData?.lastName),
+    email: String(userData?.email),
+    balance: userData?.balance,
     isAdmin: userData?.isAdmin,
     isBanned: userData?.isBanned,
-    balance: userData?.balance,
-    address: userData?.address
+    address: String(userData?.address)
   })
   const [isInfoEdited, setIsInfoEdited] = useState(false)
 
   const dispatch: AppDispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchSingleUser())
+  }, [dispatch])
 
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
-  if (error) {
-    return <p>{error}</p>
-  }
+  // useEffect(() => {
+  //   if (data) {
+  //     successResponse('Profile updated successfully')
+  //   }
+  // }, [data])
+
+  // useEffect(() => {
+  //   if (error) {
+  //     errorResponse(error)
+  //   }
+  // }, [error])
 
   const handleProfileChange = (event: ChangeEvent<HTMLInputElement>) => {
     setProfileUpdate((previousProfile) => {
@@ -45,33 +52,20 @@ const Profile = () => {
 
   const handleProfileUpdate = async (event: FormEvent) => {
     event.preventDefault()
+    if (
+      profileUpdate?.firstName.length < 2 ||
+      profileUpdate?.lastName.length < 2 ||
+      profileUpdate?.address.length < 2
+    ) {
+      errorResponse('Provide valid data')
+      return
+    }
     try {
-      // dispatch(updateUser(profileUpdate))
-      const response = await updateUserData(profileUpdate)
-      console.log('response after update: ' + response)
+      dispatch(updateUserData(profileUpdate))
       setIsInfoEdited(false)
-      toast.success('Profile updated successfully', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      successResponse('Profile updated successfully')
     } catch (error: AxiosError | any) {
-      console.log(error.response.data)
-      // toast.error('Something went wrong', {
-      //   position: 'top-right',
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: 'colored'
-      // })
+      errorResponse(error.response.data.msg)
     }
   }
 
@@ -117,7 +111,7 @@ const Profile = () => {
                     name="email"
                     placeholder="Email"
                     value={profileUpdate?.email}
-                    onChange={handleProfileChange}
+                    readOnly
                   />
                 </div>
                 <div className="entry">
@@ -132,18 +126,20 @@ const Profile = () => {
                     onChange={handleProfileChange}
                   />
                 </div>
-                <div className="entry">
-                  <label htmlFor="balance">Balance</label>
-                  <input
-                    type="text"
-                    id="balance"
-                    className="formEmail"
-                    name="balance"
-                    placeholder="Balance"
-                    value={profileUpdate?.balance}
-                    readOnly
-                  />
-                </div>
+                {!profileUpdate.isAdmin && (
+                  <div className="entry">
+                    <label htmlFor="balance">Balance</label>
+                    <input
+                      type="text"
+                      id="balance"
+                      className="formEmail"
+                      name="balance"
+                      placeholder="Balance"
+                      value={profileUpdate?.balance}
+                      readOnly
+                    />
+                  </div>
+                )}
               </div>
               {isInfoEdited && (
                 <div className="bottom-side">

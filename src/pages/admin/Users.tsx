@@ -180,23 +180,29 @@ const Users = () => {
                           }
                         })} */}
                       <div className="buttons">
-                        <button
-                          className="remove-btn"
-                          onClick={() => handleRemoveUser(user._id, user.firstName, user.lastName)}>
-                          Remove
-                        </button>
-                        <button
-                          className="block-btn"
-                          onClick={() =>
-                            handleBanUnbanUser(
-                              user._id,
-                              user.isBanned,
-                              user.firstName,
-                              user.lastName
-                            )
-                          }>
-                          {user.isBanned ? 'Unban' : 'Ban'}
-                        </button>
+                        {user.isAdmin === false && (
+                          <>
+                            <button
+                              className="remove-btn"
+                              onClick={() =>
+                                handleRemoveUser(user._id, user.firstName, user.lastName)
+                              }>
+                              Remove
+                            </button>
+                            <button
+                              className="block-btn"
+                              onClick={() =>
+                                handleBanUnbanUser(
+                                  user._id,
+                                  user.isBanned,
+                                  user.firstName,
+                                  user.lastName
+                                )
+                              }>
+                              {user.isBanned ? 'Unban' : 'Ban'}
+                            </button>
+                          </>
+                        )}
                         <button
                           className="block-btn"
                           onClick={() => {

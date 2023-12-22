@@ -1,10 +1,9 @@
-import { toast } from 'react-toastify'
-import { Link, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 
-import { AppDispatch, RootState } from '../redux/store'
 import { fetchUsers, signUpUser } from '../redux/slices/Users/userSlice'
+import { AppDispatch, RootState } from '../redux/store'
 
 import { signInPath } from '../pathLinks'
 import { errorResponse, successResponse } from '../utils/messages'

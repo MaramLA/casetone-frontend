@@ -21,6 +21,16 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
   }
 })
 
+// fetch single user
+export const fetchSingleUser = createAsyncThunk('users/fetchSingleUser', async () => {
+  try {
+    const response = await axios.get(`${baseURL}/users/profile`)
+    return response.data.user
+  } catch (error: AxiosError | any) {
+    return error.response.data.msg
+  }
+})
+
 // delete user
 export const deleteUser = createAsyncThunk(
   'users/deleteUser',
@@ -28,6 +38,19 @@ export const deleteUser = createAsyncThunk(
     try {
       const response = await axios.delete(`${baseURL}/users/${id}`)
       return id
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
+// update user
+export const updateUserData = createAsyncThunk(
+  'users/updateUserData',
+  async (userData: Partial<UserType>, { rejectWithValue }) => {
+    try {
+      const response = await axios.put(`${baseURL}/users/profile`, userData)
+      return userData
     } catch (error: AxiosError | any) {
       return rejectWithValue(error.response.data.msg)
     }
@@ -141,7 +164,6 @@ export const forgotUserPassword = createAsyncThunk(
   async (email: string, { rejectWithValue }) => {
     try {
       const response = await axios.post(`${baseURL}/users/forget-password`, { email })
-      console.log(response)
       return response.data
     } catch (error: AxiosError | any) {
       return rejectWithValue(error.response.data.msg)
@@ -181,7 +203,7 @@ export type UsersState = {
   usersList: UserType[]
   isLoading: boolean
   error: null | string
-  data: object | string | null
+  data: object | null | any
   isSignedIn: boolean
   userData: null | UserType
   searchTerm: string
@@ -211,21 +233,6 @@ const usersSlice = createSlice({
     },
     clearError: (state) => {
       state.error = null
-    },
-    updateUser: (state, action) => {
-      const { id, firstName, lastName, email } = action.payload
-      const foundUser = state.usersList.find((user) => user._id === id)
-
-      if (foundUser) {
-        foundUser.firstName = firstName
-        foundUser.lastName = lastName
-        state.userData = foundUser
-        foundUser.email = email
-        localStorage.setItem(
-          'signInData',
-          JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
-        )
-      }
     }
   },
   extraReducers(builder) {
@@ -235,12 +242,36 @@ const usersSlice = createSlice({
       state.error = null
       state.usersList = action.payload
     })
+    // fetch single user
+    builder.addCase(fetchSingleUser.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      state.data = action.payload
+    })
     // delete user
     builder.addCase(deleteUser.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
       const newUsersList = state.usersList.filter((user) => user._id !== action.payload)
       state.usersList = newUsersList
+    })
+    // update user
+    builder.addCase(updateUserData.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      state.data = action.payload
+      const foundUser = state.usersList.find((user) => user._id === state.data._id)
+      if (foundUser) {
+        foundUser.firstName = String(state.data.firstName)
+        foundUser.lastName = String(state.data.lastName)
+        state.userData = state.data
+        foundUser.email = String(state.data.email)
+        foundUser.address = String(state.data.address)
+        localStorage.setItem(
+          'signInData',
+          JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
+        )
+      }
     })
     // ban user
     builder.addCase(banUser.fulfilled, (state, action) => {
@@ -301,14 +332,12 @@ const usersSlice = createSlice({
       state.isLoading = false
       state.error = null
       state.data = action.payload
-      console.log('signUpUser: ', action.payload)
     })
     // activate user
     builder.addCase(activateUser.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
       state.data = action.payload
-      console.log('activateUser: ', action.payload)
     })
     // sign out user
     builder.addCase(signOutUser.fulfilled, (state, action) => {
@@ -346,15 +375,13 @@ const usersSlice = createSlice({
     builder.addMatcher(
       (action) => action.type.endsWith('/rejected'),
       (state, action) => {
-        console.log('rejected: ', action.payload)
         state.isLoading = false
         state.data = null
         state.error = action.payload || 'An error occured'
-        console.log('error: ', state.error)
       }
     )
   }
 })
 
-export const { searchUser, clearError, updateUser } = usersSlice.actions
+export const { searchUser, clearError } = usersSlice.actions
 export default usersSlice.reducer

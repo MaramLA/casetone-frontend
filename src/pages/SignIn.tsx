@@ -1,7 +1,6 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
 import { fetchUsers, signInUser } from '../redux/slices/Users/userSlice'
 import { AppDispatch, RootState } from '../redux/store'

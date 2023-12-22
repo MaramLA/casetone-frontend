@@ -1,6 +1,4 @@
-import axios from 'axios'
-
-export const userApiBaseURL = 'http://localhost:5050/users'
+// export const userApiBaseURL = 'http://localhost:5050/users'
 
 // export const deleteUser = async (id: string) => {
 //   const response = await axios.delete(`${userApiBaseURL}/${id}`)
@@ -27,10 +25,10 @@ export const userApiBaseURL = 'http://localhost:5050/users'
 //   return response.data
 // }
 
-export const updateUserData = async (userData: any) => {
-  const response = await axios.put(`${userApiBaseURL}/profile`, userData)
-  return response.data
-}
+// export const updateUserData = async (userData: any) => {
+//   const response = await axios.put(`${userApiBaseURL}/profile`, userData)
+//   return response.data
+// }
 
 // export const forgotUserPassword = async (email: string) => {
 //   const response = await axios.post(`${userApiBaseURL}/forget-password`, { email })
