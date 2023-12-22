@@ -1,26 +1,39 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import axios from 'axios'
-import { productApiBaseURL } from '../../../services/productsServices'
+import axios, { AxiosError } from 'axios'
+
+const productApiBaseURL = 'http://localhost:5050/products'
 
 export const fetchProducts = createAsyncThunk('product/fetchProducts', async () => {
-  const response = await axios.get(productApiBaseURL)
-  return response.data.payload.products.allProductOnPage
+  try {
+    const response = await axios.get(productApiBaseURL)
+    return response.data.payload.products.allProductOnPage
+  } catch (error: AxiosError | any) {
+    return error.response.data.msg
+  }
 })
 
 export const fetchSingleProduct = createAsyncThunk(
   'product/fetchSinglProduct',
-  async (id: string) => {
-    const response = await axios.get(`${productApiBaseURL}/${id}`)
-    return response.data.payload
+  async (id: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${productApiBaseURL}/${id}`)
+      return response.data.payload
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
   }
 )
 
 export const deleteSingleProduct = createAsyncThunk(
   'product/deleteSingleProduct',
-  async (id: string) => {
-    const response = await axios.delete(`${productApiBaseURL}/${id}`)
-    return response.data
+  async (id: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.delete(`${productApiBaseURL}/${id}`)
+      return id
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
   }
 )
 
@@ -57,14 +70,6 @@ export const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    // findProductById: (state, action) => {
-    //   const id: string = action.payload
-    //   state.productsList.find((product: ProductType) => {
-    //     if (product._id === id) {
-    //       state.singleProduct = product
-    //     }
-    //   })
-    // },
     searchProducts: (state, action) => {
       state.searchTerm = action.payload
     },
@@ -101,51 +106,45 @@ export const productSlice = createSlice({
     }
   },
   extraReducers(builder) {
-    // fetchProducts
-    builder.addCase(fetchProducts.pending, (state) => {
-      state.isLoading = true
-      state.error = null
-    })
+    // fetch products
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
-      state.productsList = action.payload
       state.isLoading = false
+      state.error = null
+      state.productsList = action.payload
     })
+    // fetch single product
     builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
       console.log(action.payload)
       state.singleProduct = action.payload
-      state.isLoading = false
     })
+    // delete single product
     builder.addCase(deleteSingleProduct.fulfilled, (state, action) => {
-      console.log('from delete builder: ' + action.payload)
-      // state.singleProduct = action.payload
       state.isLoading = false
-    })
-    builder.addCase(fetchProducts.rejected, (state, action) => {
-      state.error = action.error.message || 'Fetching products data ended unsuccessfully'
-      state.isLoading = false
-    })
+      state.error = null
 
-    // // fetchSingleProduct
-    // builder.addCase(fetchSingleProduct.pending, (state) => {
-    //   state.isLoading = true
-    //   state.error = null
-    // })
-    // builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
-    //   state.singleProduct = action.payload
-    //   state.isLoading = false
-    // })
-    // builder.addCase(fetchSingleProduct.rejected, (state, action) => {
-    //   state.error = action.error.message || 'Fetching product data ended unsuccessfully'
-    //   state.isLoading = false
-    // })
+      const newProductsList = state.productsList.filter((product) => product._id !== action.payload)
+      state.productsList = newProductsList
+    })
+    // pending
+    builder.addMatcher(
+      (action) => action.type.endsWith('/pending'),
+      (state) => {
+        state.isLoading = true
+        state.error = null
+      }
+    )
+    // rejected
+    builder.addMatcher(
+      (action) => action.type.endsWith('/rejected'),
+      (state, action) => {
+        state.isLoading = false
+        state.error = action.payload || 'An error occured'
+      }
+    )
   }
 })
 
-export const {
-  // findProductById,
-  searchProducts,
-  sortProducts,
-  // deleteProduct,
-  editProduct
-} = productSlice.actions
+export const { searchProducts, sortProducts, editProduct } = productSlice.actions
 export default productSlice.reducer

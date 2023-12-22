@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const productApiBaseURL = 'http://localhost:5050/products'
+ const productApiBaseURL = 'http://localhost:5050/products'
 
 // export const deleteProduct = async (id: string) => {
 //   const response = await axios.delete(`${productApiBaseURL}/${id}`)

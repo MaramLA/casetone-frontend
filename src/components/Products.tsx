@@ -1,26 +1,25 @@
-import { toast } from 'react-toastify'
 import { ChangeEvent, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 
-import { MdDelete } from 'react-icons/md'
-import { AiFillEye } from 'react-icons/ai'
-import { AiFillEdit } from 'react-icons/ai'
+import { AiFillEdit, AiFillEye } from 'react-icons/ai'
 import { BsCartPlusFill } from 'react-icons/bs'
+import { MdDelete } from 'react-icons/md'
 
-import { AppDispatch, RootState } from '../redux/store'
 import { addToCart } from '../redux/slices/Orders/cartSlice'
 import {
+  ProductType,
   deleteSingleProduct,
   fetchProducts,
-  ProductType,
   searchProducts
 } from '../redux/slices/products/productSlice'
+import { AppDispatch, RootState } from '../redux/store'
 
 import SortProducts from './SortProducts'
 
+import { AxiosError } from 'axios'
 import { addProductPath, signInPath } from '../pathLinks'
-import { productApiBaseURL } from '../services/productsServices'
+import { errorResponse, successResponse } from '../utils/messages'
 
 const Products = () => {
   const { productsList, isLoading, error, searchTerm } = useSelector(
@@ -31,77 +30,38 @@ const Products = () => {
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
+
   useEffect(() => {
     dispatch(fetchProducts())
   }, [])
-  console.log(productsList)
+
+  useEffect(() => {
+    if (error) {
+      errorResponse(error)
+    }
+  }, [error])
 
   // const [currentPage, setCurrnetPage] = useState(1)
   // const [itesmPerPage, setItesmPerPage] = useState(3)
   const [isShowMore, setIsShowMore] = useState(false)
 
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
-  if (error) {
-    return <p>{error}</p>
-  }
-
   const handleCartBtn = (product: ProductType) => {
     if (isSignedIn) {
       try {
         dispatch(addToCart(product))
-        toast.success('Product added to cart successfully', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
-      } catch (error) {
-        toast.error('Something went worng', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
+        successResponse('Product added to cart successfully')
+      } catch (error: AxiosError | any) {
+        errorResponse(error.response.data.msg)
       }
     } else navigate(signInPath)
   }
 
   const handleDeleteProduct = (id: string) => {
     try {
-      dispatch(deleteSingleProduct(id)).then((data) => {
-        console.log(data)
-        toast.success('Product deleted successfully', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
-      })
-    } catch (error) {
-      toast.error('Something went worng', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      dispatch(deleteSingleProduct(id))
+      successResponse('Product deleted successfully')
+    } catch (error: AxiosError | any) {
+      errorResponse(error.response.data.msg)
     }
   }
 
