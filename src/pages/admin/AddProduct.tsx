@@ -1,12 +1,13 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
 import { AxiosError } from 'axios'
 import { fetchCategories } from '../../redux/slices/Categories/categoriesSlice'
+import { createNewProduct, fetchProducts } from '../../redux/slices/products/productSlice'
 import { AppDispatch, RootState } from '../../redux/store'
-import { createProduct } from '../../services/productsServices'
+import { errorResponse, successResponse } from '../../utils/messages'
+import { productsPath } from '../../pathLinks'
 
 type NewProductType = {
   name: string
@@ -19,25 +20,44 @@ type NewProductType = {
   quantity: number
 }
 
+const initialProductData = {
+  name: '',
+  image: '',
+  description: '',
+  categories: [],
+  variants: '',
+  sizes: '',
+  price: 0,
+  quantity: 0
+}
 const AddProduct = () => {
-  useEffect(() => {
-    dispatch(fetchCategories())
-  }, [])
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
+  const { error } = useSelector((state: RootState) => state.productsReducer)
+  const [newProduct, setNewProduct] = useState<NewProductType>({ ...initialProductData })
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
-  const [newProduct, setNewProduct] = useState<NewProductType>({
-    name: '',
-    image: '',
-    description: '',
-    categories: [],
-    variants: '',
-    sizes: '',
-    price: 0,
-    quantity: 0
-  })
+  useEffect(() => {
+    dispatch(fetchCategories())
+    dispatch(fetchProducts())
+  }, [dispatch])
+
+  useEffect(() => {
+    // Update newProduct only when categoriesList is available and not empty
+    if (categoriesList && categoriesList.length > 0 && newProduct.categories.length === 0) {
+      setNewProduct((prevProduct) => ({
+        ...prevProduct,
+        categories: [categoriesList[0]._id] // Update categories as an array with the first category ID
+      }))
+    }
+  }, [categoriesList, newProduct.categories])
+
+  useEffect(() => {
+    if (error) {
+      errorResponse(error)
+    }
+  }, [error])
 
   const handelInputChange = (
     event:
@@ -45,16 +65,14 @@ const AddProduct = () => {
       | ChangeEvent<HTMLTextAreaElement>
       | ChangeEvent<HTMLSelectElement>
   ) => {
-    if (event.target.type === 'file') {
-      const fileInput = (event.target as HTMLInputElement) || ''
-      // console.log(fileInput.files?.[0].name)
+    const { name, value, type } = event.target
+    if (type === 'file') {
+      const fileInput = event.target as HTMLInputElement
       setNewProduct((prevProduct) => {
-        const { name } = event.target
-        return { ...prevProduct, [name]: fileInput.files?.[0].name }
+        return { ...prevProduct, [name]: fileInput.files?.[0] }
       })
     } else {
       setNewProduct((prevProduct) => {
-        const { value, name } = event.target
         return { ...prevProduct, [name]: value }
       })
     }
@@ -62,62 +80,27 @@ const AddProduct = () => {
 
   const handleProductSubmit = async (event: FormEvent) => {
     event.preventDefault()
-    console.log(newProduct.categories)
+    console.log('newProduct: ', newProduct)
+    console.log('categoreies1: ', newProduct.categories)
     if (
       newProduct.name.length < 2 ||
       newProduct.description.length < 2 ||
       newProduct.variants.length < 2 ||
       newProduct.sizes.length < 2
     ) {
-      toast.error('Fill all the fields please', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      errorResponse('Fill all the fields please')
       return
     }
     if (newProduct.price <= 0) {
-      toast.error('Price should be more than 0', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      errorResponse('Price should be more than 0')
       return
     }
     if (newProduct.quantity <= 0) {
-      toast.error('Quantity should be more than 0', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      errorResponse('Quantity should be more than 0')
       return
     }
     if (!newProduct.image) {
-      toast.error('Product image is required', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      errorResponse('Product image is required')
       return
     }
     try {
@@ -129,9 +112,11 @@ const AddProduct = () => {
         variants: newProduct.variants,
         sizes: newProduct.sizes,
         price: Number(newProduct.price),
-        quantity: newProduct.quantity
+        quantity: Number(newProduct.quantity)
       }
       newProductData.categories.push(String(newProduct.categories))
+
+      console.log('newProductData: ', newProductData)
 
       const formData = new FormData()
       formData.append('name', newProductData.name)
@@ -147,40 +132,13 @@ const AddProduct = () => {
       for (var key of formData.entries()) {
         console.log(key[0] + ', ' + key[1])
       }
-      // newProductData.variants.push(newProduct.variants)
-      // newProductData.sizes.push(newProduct.sizes)
-      // dispatch(fetchProducts()).then(() => dispatch(addProduct(newProductData)))
-      // navigate(homePath)
 
-      try {
-        const response = await createProduct(formData)
-        console.log('response: ' + response)
-      } catch (error) {
-        console.log(error)
-        return
-      }
-
-      toast.success('Product added successffully', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      dispatch(createNewProduct(formData))
+      setNewProduct(initialProductData)
+      navigate(productsPath)
+      successResponse('Product added successffully')
     } catch (error: AxiosError | any) {
-      toast.error(error.response.data.errors, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      errorResponse(error.response.data.msg)
     }
   }
 

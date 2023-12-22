@@ -37,6 +37,18 @@ export const deleteSingleProduct = createAsyncThunk(
   }
 )
 
+export const createNewProduct = createAsyncThunk(
+  'product/createNewProduct',
+  async (formData: FormData, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(productApiBaseURL, formData)
+      return response.data.createdProduct
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
 export type ProductType = {
   _id: string
   name: string
@@ -86,10 +98,6 @@ export const productSlice = createSlice({
         )
       }
     },
-    // deleteProduct: (state, action) => {
-    //   const newProductsList = state.productsList.filter((product) => product._id !== action.payload)
-    //   state.productsList = newProductsList
-    // },
 
     editProduct: (state, action) => {
       const updatedProduct = action.payload
@@ -126,6 +134,13 @@ export const productSlice = createSlice({
 
       const newProductsList = state.productsList.filter((product) => product._id !== action.payload)
       state.productsList = newProductsList
+    })
+    // create new product
+    builder.addCase(createNewProduct.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      state.productsList.push(action.payload)
+      console.log('from create builder: ', action.payload)
     })
     // pending
     builder.addMatcher(

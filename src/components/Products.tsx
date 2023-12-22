@@ -22,7 +22,7 @@ import { addProductPath, signInPath } from '../pathLinks'
 import { errorResponse, successResponse } from '../utils/messages'
 
 const Products = () => {
-  const { productsList, isLoading, error, searchTerm } = useSelector(
+  const { productsList, error, searchTerm } = useSelector(
     (state: RootState) => state.productsReducer
   )
 
@@ -33,7 +33,7 @@ const Products = () => {
 
   useEffect(() => {
     dispatch(fetchProducts())
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     if (error) {

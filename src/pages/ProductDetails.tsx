@@ -11,6 +11,8 @@ import Footer from '../layout/Footer'
 
 import { homePath, signInPath } from '../pathLinks'
 import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
+import { errorResponse, successResponse } from '../utils/messages'
+import { AxiosError } from 'axios'
 
 const ProductDetails = () => {
   const { id } = useParams()
@@ -24,23 +26,10 @@ const ProductDetails = () => {
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   dispatch(fetchCategories())
-  //   dispatch(findProductById(id))
-  // }, [id])
-
   useEffect(() => {
     dispatch(fetchCategories())
     dispatch(fetchSingleProduct(String(id)))
   }, [id])
-
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
-
-  if (error) {
-    return <p>{error}</p>
-  }
 
   const goBack = () => {
     navigate(homePath)
@@ -49,27 +38,9 @@ const ProductDetails = () => {
     if (isSignedIn) {
       try {
         dispatch(addToCart(product))
-        toast.success('Product added to cart successfully', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
-      } catch (error) {
-        toast.error('Something went worng', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
+        successResponse('Product added to cart successfully')
+      } catch (error: AxiosError | any) {
+        errorResponse(error.response.data.msg)
       }
     } else navigate(signInPath)
   }
