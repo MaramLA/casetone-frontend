@@ -4,6 +4,12 @@ import axios, { AxiosError } from 'axios'
 
 const productApiBaseURL = 'http://localhost:5050/products'
 
+export type EditProductPayload = {
+  formData: FormData
+  id: string
+}
+
+// fetch products
 export const fetchProducts = createAsyncThunk('product/fetchProducts', async () => {
   try {
     const response = await axios.get(productApiBaseURL)
@@ -13,6 +19,7 @@ export const fetchProducts = createAsyncThunk('product/fetchProducts', async () 
   }
 })
 
+// fetch single product
 export const fetchSingleProduct = createAsyncThunk(
   'product/fetchSinglProduct',
   async (id: string, { rejectWithValue }) => {
@@ -25,6 +32,7 @@ export const fetchSingleProduct = createAsyncThunk(
   }
 )
 
+// delete single product
 export const deleteSingleProduct = createAsyncThunk(
   'product/deleteSingleProduct',
   async (id: string, { rejectWithValue }) => {
@@ -37,12 +45,26 @@ export const deleteSingleProduct = createAsyncThunk(
   }
 )
 
+// create new produtct
 export const createNewProduct = createAsyncThunk(
   'product/createNewProduct',
   async (formData: FormData, { rejectWithValue }) => {
     try {
       const response = await axios.post(productApiBaseURL, formData)
       return response.data.createdProduct
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
+// edit single produtct
+export const editSingleProduct = createAsyncThunk(
+  'product/editSingleProduct',
+  async ({ formData, id }: EditProductPayload, { rejectWithValue }) => {
+    try {
+      const response = await axios.put(`${productApiBaseURL}/${id}`, formData)
+      return response.data.payload
     } catch (error: AxiosError | any) {
       return rejectWithValue(error.response.data.msg)
     }
@@ -97,21 +119,22 @@ export const productSlice = createSlice({
             Number(currentProduct.price) - Number(nextProduct.price)
         )
       }
-    },
-
-    editProduct: (state, action) => {
-      const updatedProduct = action.payload
-      const foundProduct = state.productsList.find((product) => product._id === updatedProduct.id)
-      if (foundProduct) {
-        foundProduct.name = updatedProduct.name
-        foundProduct.image = updatedProduct.image
-        foundProduct.description = updatedProduct.description
-        foundProduct.categories = updatedProduct.categories
-        foundProduct.variants = updatedProduct.variants
-        foundProduct.sizes = updatedProduct.sizes
-        foundProduct.price = updatedProduct.price
-      }
     }
+
+    // editProduct: (state, action) => {
+    //   const updatedProduct = action.payload
+    //   const foundProduct = state.productsList.find((product) => product._id === updatedProduct.id)
+    //   if (foundProduct) {
+    //     foundProduct.name = updatedProduct.name
+    //     foundProduct.image = updatedProduct.image
+    //     foundProduct.description = updatedProduct.description
+    //     foundProduct.categories = updatedProduct.categories
+    //     foundProduct.variants = updatedProduct.variants
+    //     foundProduct.sizes = updatedProduct.sizes
+    //     foundProduct.price = updatedProduct.price
+    //     foundProduct.quantity = updatedProduct.quantity
+    //   }
+    // }
   },
   extraReducers(builder) {
     // fetch products
@@ -142,6 +165,24 @@ export const productSlice = createSlice({
       state.productsList.push(action.payload)
       console.log('from create builder: ', action.payload)
     })
+    // edit single product
+    builder.addCase(editSingleProduct.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      console.log('from edit builder: ', action.payload)
+      const updatedProduct = action.payload
+      const foundProduct = state.productsList.find((product) => product._id === updatedProduct.id)
+      if (foundProduct) {
+        foundProduct.name = updatedProduct.name
+        foundProduct.image = updatedProduct.image
+        foundProduct.description = updatedProduct.description
+        foundProduct.categories = updatedProduct.categories
+        foundProduct.variants = updatedProduct.variants
+        foundProduct.sizes = updatedProduct.sizes
+        foundProduct.price = updatedProduct.price
+        foundProduct.quantity = updatedProduct.quantity
+      }
+    })
     // pending
     builder.addMatcher(
       (action) => action.type.endsWith('/pending'),
@@ -161,5 +202,5 @@ export const productSlice = createSlice({
   }
 })
 
-export const { searchProducts, sortProducts, editProduct } = productSlice.actions
+export const { searchProducts, sortProducts } = productSlice.actions
 export default productSlice.reducer

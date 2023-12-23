@@ -2086,6 +2086,7 @@ footer {
   justify-content: center;
   @include center();
   box-shadow: $primary-color5 0px 10px 10px -10px;
+
   .section-title {
     font-size: $font-size6;
     text-transform: capitalize;
@@ -2108,7 +2109,12 @@ footer {
     box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
     @include center();
     gap: 1.5rem;
-
+    .productImg {
+      height: 40vh;
+      border-radius: 50%;
+      box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+      margin-bottom: 5rem;
+    }
     .entry {
       position: relative;
       display: flex;

@@ -2381,6 +2381,12 @@ footer .bottom-section p {
   justify-content: center;
   gap: 1.5rem;
 }
+.add-edit-product .form .productImg {
+  height: 40vh;
+  border-radius: 50%;
+  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+  margin-bottom: 5rem;
+}
 .add-edit-product .form .entry {
   position: relative;
   display: flex;

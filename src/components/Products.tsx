@@ -33,7 +33,7 @@ const Products = () => {
 
   useEffect(() => {
     dispatch(fetchProducts())
-  }, [dispatch])
+  }, [dispatch, productsList])
 
   useEffect(() => {
     if (error) {

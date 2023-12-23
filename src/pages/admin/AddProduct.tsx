@@ -88,7 +88,7 @@ const AddProduct = () => {
       newProduct.variants.length < 2 ||
       newProduct.sizes.length < 2
     ) {
-      errorResponse('Fill all the fields please')
+      errorResponse('Provide valid data please')
       return
     }
     if (newProduct.price <= 0) {
@@ -133,10 +133,13 @@ const AddProduct = () => {
         console.log(key[0] + ', ' + key[1])
       }
 
-      dispatch(createNewProduct(formData))
-      setNewProduct(initialProductData)
-      navigate(productsPath)
-      successResponse('Product added successffully')
+      dispatch(createNewProduct(formData)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          setNewProduct(initialProductData)
+          successResponse('Product added successffully')
+          navigate(productsPath)
+        }
+      })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
@@ -250,13 +253,14 @@ const AddProduct = () => {
                 name="price"
                 placeholder="product price"
                 onChange={handelInputChange}
+                value={newProduct.price}
                 required
               />
               <p className="currency">$</p>
             </div>
           </div>
           <div className="entry">
-            <label htmlFor="productImage">Product Image</label>
+            <label htmlFor="productImage">Image</label>
             <div className="input-btn">
               <input
                 type="file"
