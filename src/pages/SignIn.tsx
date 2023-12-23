@@ -1,12 +1,13 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { fetchUsers, signInUser } from '../redux/slices/Users/userSlice'
-import { AppDispatch, RootState } from '../redux/store'
+import { AppDispatch } from '../redux/store'
 
 import { forgotPasswordPath, homePath, signUpPath } from '../pathLinks'
 import { errorResponse } from '../utils/messages'
+import { AxiosError } from 'axios'
 
 type LogInUserType = {
   email: string
@@ -14,8 +15,6 @@ type LogInUserType = {
 }
 
 const SignIn = () => {
-  const { error, isSignedIn } = useSelector((state: RootState) => state.usersReducer)
-
   const [logInUser, setLogInUser] = useState<LogInUserType>({
     email: '',
     password: ''
@@ -28,19 +27,6 @@ const SignIn = () => {
     dispatch(fetchUsers())
   }, [])
 
-  // useEffect(() => {
-  //   if (error) {
-  //     errorResponse(error)
-  //   }
-  // }, [error])
-
-  useEffect(() => {
-    if (isSignedIn) {
-      setLogInUser({ email: '', password: '' })
-      navigate(homePath)
-    }
-  }, [isSignedIn])
-
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setLogInUser((previousState) => {
       return { ...previousState, [event.target.name]: event.target.value }
@@ -50,8 +36,13 @@ const SignIn = () => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
     try {
-      dispatch(signInUser(logInUser))
-    } catch (error: any) {
+      dispatch(signInUser(logInUser)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          setLogInUser({ email: '', password: '' })
+          navigate(homePath)
+        }
+      })
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }

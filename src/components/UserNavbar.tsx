@@ -21,24 +21,21 @@ import { AppDispatch, RootState } from '../redux/store'
 import { errorResponse } from '../utils/messages'
 
 const UserNavbar = () => {
-  const { isSignedIn, error } = useSelector((state: RootState) => state.usersReducer)
+  const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
   const [isMenueClicked, setIsMenueClicked] = useState(false)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (error) {
-      errorResponse(error)
-    }
-  }, [error])
-
   const handleLogout = async () => {
     setIsMenueClicked(false)
     try {
-      dispatch(signOutUser())
-      navigate(signInPath)
-    } catch (error: any) {
+      dispatch(signOutUser()).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          navigate(signInPath)
+        }
+      })
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }

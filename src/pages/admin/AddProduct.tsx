@@ -32,7 +32,6 @@ const initialProductData = {
 }
 const AddProduct = () => {
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
-  const { error } = useSelector((state: RootState) => state.productsReducer)
   const [newProduct, setNewProduct] = useState<NewProductType>({ ...initialProductData })
 
   const dispatch: AppDispatch = useDispatch()
@@ -53,11 +52,6 @@ const AddProduct = () => {
     }
   }, [categoriesList, newProduct.categories])
 
-  useEffect(() => {
-    if (error) {
-      errorResponse(error)
-    }
-  }, [error])
 
   const handelInputChange = (
     event:

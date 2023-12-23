@@ -1,44 +1,38 @@
-import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import logo from '../assets/logo.png'
 
 import {
-  homePath,
-  usersPath,
   categoryPath,
+  homePath,
   productsPath,
   profilePath,
-  signInPath
+  signInPath,
+  usersPath
 } from '../pathLinks'
 
-import { AppDispatch, RootState } from '../redux/store'
 import { AxiosError } from 'axios'
-import { toast } from 'react-toastify'
 import { signOutUser } from '../redux/slices/Users/userSlice'
+import { AppDispatch, RootState } from '../redux/store'
 import { errorResponse } from '../utils/messages'
 
 const AdminNavbar = () => {
-  const { isSignedIn, error } = useSelector((state: RootState) => state.usersReducer)
+  const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
 
   const [isMenueClicked, setIsMenueClicked] = useState(false)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (error) {
-      errorResponse(error)
-    }
-  }, [error])
-
   const handleLogout = async () => {
     setIsMenueClicked(false)
     try {
-      dispatch(signOutUser())
-      navigate(signInPath)
+      dispatch(signOutUser()).then((data) => {
+        navigate(signInPath)
+      })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }

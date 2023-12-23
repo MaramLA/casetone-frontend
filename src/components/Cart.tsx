@@ -1,11 +1,12 @@
-import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { AxiosError } from 'axios'
+import { useEffect } from 'react'
 import { MdDelete } from 'react-icons/md'
-import { useEffect, useState } from 'react'
-import { AppDispatch, RootState } from '../redux/store'
-import { deleteForomCart, resetCart } from '../redux/slices/Orders/cartSlice'
+import { deleteFromCart, resetCart } from '../redux/slices/Orders/cartSlice'
 import { fetchProducts } from '../redux/slices/products/productSlice'
+import { AppDispatch, RootState } from '../redux/store'
+import { errorResponse, successResponse } from '../utils/messages'
 
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cartReducer)
@@ -18,28 +19,10 @@ const Cart = () => {
 
   const handleDeleteCartItem = (id: string) => {
     try {
-      dispatch(deleteForomCart(id))
-      toast.success('Product deleted from cart successfully', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
-    } catch (error) {
-      toast.error('Something went wrong', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+      dispatch(deleteFromCart(id))
+      successResponse('Product deleted from cart successfully')
+    } catch (error: AxiosError | any) {
+      errorResponse(error.response.data.msg)
     }
   }
   const handleResetCart = () => {

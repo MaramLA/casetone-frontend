@@ -1,25 +1,22 @@
 import { useEffect } from 'react'
-import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
-import { AppDispatch, RootState } from '../redux/store'
 import { addToCart } from '../redux/slices/Orders/cartSlice'
 import { ProductType, fetchSingleProduct } from '../redux/slices/products/productSlice'
+import { AppDispatch, RootState } from '../redux/store'
 
 import Footer from '../layout/Footer'
 
+import { AxiosError } from 'axios'
 import { homePath, signInPath } from '../pathLinks'
 import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
 import { errorResponse, successResponse } from '../utils/messages'
-import { AxiosError } from 'axios'
 
 const ProductDetails = () => {
   const { id } = useParams()
 
-  const { singleProduct, isLoading, error } = useSelector(
-    (state: RootState) => state.productsReducer
-  )
+  const { singleProduct } = useSelector((state: RootState) => state.productsReducer)
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
 

@@ -14,8 +14,6 @@ const ResetPassword = () => {
     '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})'
   )
 
-  const { data, error } = useSelector((state: RootState) => state.usersReducer)
-
   const [newPassword, setNewPassword] = useState<string>('')
   const [confirmPassword, setConfirmPassword] = useState<string>('')
   const { token } = useParams()
@@ -26,21 +24,6 @@ const ResetPassword = () => {
   useEffect(() => {
     dispatch(fetchUsers())
   }, [])
-
-  // useEffect(() => {
-  //   if (data) {
-  //     successResponse('Password reseted successfully')
-  //     setNewPassword('')
-  //     setConfirmPassword('')
-  //     navigate(signInPath)
-  //   }
-  // }, [data])
-
-  useEffect(() => {
-    if (error) {
-      errorResponse(error)
-    }
-  }, [error])
 
   const handleNewPassChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newPasswordValue = event.target.value

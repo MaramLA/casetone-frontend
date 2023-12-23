@@ -22,7 +22,7 @@ import { addProductPath, signInPath } from '../pathLinks'
 import { errorResponse, successResponse } from '../utils/messages'
 
 const Products = () => {
-  const { productsList, error, searchTerm } = useSelector(
+  const { productsList, searchTerm } = useSelector(
     (state: RootState) => state.productsReducer
   )
 
@@ -34,12 +34,6 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch, productsList])
-
-  useEffect(() => {
-    if (error) {
-      errorResponse(error)
-    }
-  }, [error])
 
   // const [currentPage, setCurrnetPage] = useState(1)
   // const [itesmPerPage, setItesmPerPage] = useState(3)

@@ -1,10 +1,6 @@
 import { ChangeEvent, useEffect } from 'react'
-import { toast } from 'react-toastify'
-import { MdDelete } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { AppDispatch, RootState } from '../../redux/store'
-import { ProductType } from '../../redux/slices/products/productSlice'
 import {
   banUser,
   degradeUser,
@@ -15,14 +11,12 @@ import {
   upgradeUser,
   UserType
 } from '../../redux/slices/Users/userSlice'
+import { AppDispatch, RootState } from '../../redux/store'
 
 import Footer from '../../layout/Footer'
 
-import {
-  deleteAllUserOrders,
-  deleteSingleUserOrder,
-  OrderType
-} from '../../redux/slices/Orders/ordersSlice'
+import { AxiosError } from 'axios'
+import { deleteSingleUserOrder } from '../../redux/slices/Orders/ordersSlice'
 import { errorResponse, successResponse } from '../../utils/messages'
 
 const Users = () => {
@@ -35,12 +29,6 @@ const Users = () => {
   useEffect(() => {
     dispatch(fetchUsers())
   }, [dispatch, users.usersList])
-
-  useEffect(() => {
-    if (users.error) {
-      errorResponse(users.error)
-    }
-  }, [users.error])
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value
@@ -61,7 +49,7 @@ const Users = () => {
           successResponse(`${firstName + ' ' + lastName + ' '} deleted successfully`)
         }
       })
-    } catch (error: any) {
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }
@@ -86,7 +74,7 @@ const Users = () => {
           }
         })
       }
-    } catch (error: any) {
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }
@@ -113,7 +101,7 @@ const Users = () => {
           }
         })
       }
-    } catch (error: any) {
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }
@@ -122,7 +110,7 @@ const Users = () => {
     try {
       dispatch(deleteSingleUserOrder(orderId))
       successResponse(`Order with id# ${orderId} deleted successfully`)
-    } catch (error: any) {
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }

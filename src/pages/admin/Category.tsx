@@ -20,7 +20,7 @@ import { fetchProducts } from '../../redux/slices/products/productSlice'
 import { errorResponse, successResponse } from '../../utils/messages'
 
 const Category = () => {
-  const { categoriesList, error } = useSelector((state: RootState) => state.categoriesReducer)
+  const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
 
   const [newCategory, setNewCategory] = useState('')
   const [isEditCategory, setIsEditCategory] = useState(false)

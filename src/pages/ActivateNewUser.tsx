@@ -1,10 +1,10 @@
+import { AxiosError } from 'axios'
 import jwtDecode from 'jwt-decode'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { signInPath } from '../pathLinks'
 import { activateUser } from '../redux/slices/Users/userSlice'
-import { AppDispatch, RootState } from '../redux/store'
+import { AppDispatch } from '../redux/store'
 import { errorResponse, successResponse } from '../utils/messages'
 
 const ActivateNewUser = () => {
@@ -12,21 +12,6 @@ const ActivateNewUser = () => {
   const decoded = jwtDecode(String(token))
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
-
-  const { data, error } = useSelector((state: RootState) => state.usersReducer)
-
-  useEffect(() => {
-    if (data) {
-      successResponse('User activated successfully')
-      navigate(signInPath)
-    }
-  }, [data])
-
-  useEffect(() => {
-    if (error) {
-      errorResponse(error)
-    }
-  }, [error])
 
   const handleActivatAccount = async () => {
     try {
@@ -36,7 +21,7 @@ const ActivateNewUser = () => {
           navigate(signInPath)
         }
       })
-    } catch (error: any) {
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }

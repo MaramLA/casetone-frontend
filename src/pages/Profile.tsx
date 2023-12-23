@@ -1,13 +1,12 @@
-import { toast } from 'react-toastify'
-import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import Footer from '../layout/Footer'
 import userProfile from '../assets/userProfile.png'
+import Footer from '../layout/Footer'
 
-import { AppDispatch, RootState } from '../redux/store'
-import { fetchSingleUser, updateUserData } from '../redux/slices/Users/userSlice'
 import { AxiosError } from 'axios'
+import { fetchSingleUser, updateUserData } from '../redux/slices/Users/userSlice'
+import { AppDispatch, RootState } from '../redux/store'
 import { errorResponse, successResponse } from '../utils/messages'
 
 const Profile = () => {
@@ -29,18 +28,6 @@ const Profile = () => {
   useEffect(() => {
     dispatch(fetchSingleUser())
   }, [dispatch])
-
-  // useEffect(() => {
-  //   if (data) {
-  //     successResponse('Profile updated successfully')
-  //   }
-  // }, [data])
-
-  // useEffect(() => {
-  //   if (error) {
-  //     errorResponse(error)
-  //   }
-  // }, [error])
 
   const handleProfileChange = (event: ChangeEvent<HTMLInputElement>) => {
     setProfileUpdate((previousProfile) => {

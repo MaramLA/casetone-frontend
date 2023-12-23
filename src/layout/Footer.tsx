@@ -28,21 +28,18 @@ import { useEffect } from 'react'
 import { errorResponse } from '../utils/messages'
 
 const Footer = () => {
-  const { isSignedIn, userData, error } = useSelector((state: RootState) => state.usersReducer)
+  const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
 
   const navigate = useNavigate()
   const dispatch: AppDispatch = useDispatch()
 
-  useEffect(() => {
-    if (error) {
-      errorResponse(error)
-    }
-  }, [error])
-
   const handleLogout = async () => {
     try {
-      dispatch(signOutUser())
-      navigate(signInPath)
+      dispatch(signOutUser()).then((data) => {
+        if ((data.meta.requestStatus = 'fulfilled')) {
+          navigate(signInPath)
+        }
+      })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }

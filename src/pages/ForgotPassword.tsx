@@ -5,9 +5,10 @@ import { UserType, fetchUsers, forgotUserPassword } from '../redux/slices/Users/
 import { AppDispatch, RootState } from '../redux/store'
 
 import { errorResponse, successResponse } from '../utils/messages'
+import { AxiosError } from 'axios'
 
 const ForgotPassword = () => {
-  const { usersList, data, error } = useSelector((state: RootState) => state.usersReducer)
+  const { usersList } = useSelector((state: RootState) => state.usersReducer)
 
   const [userEmail, setUserEmail] = useState<string>('')
 
@@ -16,19 +17,6 @@ const ForgotPassword = () => {
   useEffect(() => {
     dispatch(fetchUsers())
   }, [])
-
-  useEffect(() => {
-    if (data) {
-      successResponse('Check your email to reset the password')
-      setUserEmail('')
-    }
-  }, [data])
-
-  useEffect(() => {
-    if (error) {
-      errorResponse(error)
-    }
-  }, [error])
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const inputEmail = event.target.value
@@ -49,7 +37,7 @@ const ForgotPassword = () => {
           setUserEmail('')
         }
       })
-    } catch (error: any) {
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }

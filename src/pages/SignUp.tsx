@@ -7,6 +7,7 @@ import { AppDispatch, RootState } from '../redux/store'
 
 import { signInPath } from '../pathLinks'
 import { errorResponse, successResponse } from '../utils/messages'
+import { AxiosError } from 'axios'
 
 const SignUp = () => {
   const passwordValidation = new RegExp(
@@ -89,7 +90,7 @@ const SignUp = () => {
           navigate(signInPath)
         }
       })
-    } catch (error: any) {
+    } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
   }
