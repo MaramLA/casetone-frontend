@@ -58,8 +58,11 @@ const Products = () => {
 
   const handleDeleteProduct = (id: string) => {
     try {
-      dispatch(deleteSingleProduct(id))
-      successResponse('Product deleted successfully')
+      dispatch(deleteSingleProduct(id)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          successResponse('Product deleted successfully')
+        }
+      })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }

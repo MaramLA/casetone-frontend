@@ -27,14 +27,14 @@ const ResetPassword = () => {
     dispatch(fetchUsers())
   }, [])
 
-  useEffect(() => {
-    if (data) {
-      successResponse('Password reseted successfully')
-      setNewPassword('')
-      setConfirmPassword('')
-      navigate(signInPath)
-    }
-  }, [data])
+  // useEffect(() => {
+  //   if (data) {
+  //     successResponse('Password reseted successfully')
+  //     setNewPassword('')
+  //     setConfirmPassword('')
+  //     navigate(signInPath)
+  //   }
+  // }, [data])
 
   useEffect(() => {
     if (error) {
@@ -67,7 +67,14 @@ const ResetPassword = () => {
         errorResponse('Password should contain at least 5 characters ')
         return
       }
-      dispatch(resetUserPassword({ token: String(token), password: newPassword }))
+      dispatch(resetUserPassword({ token: String(token), password: newPassword })).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          successResponse('Password reseted successfully')
+          setNewPassword('')
+          setConfirmPassword('')
+          navigate(signInPath)
+        }
+      })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }

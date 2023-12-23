@@ -31,12 +31,12 @@ const SignUp = () => {
     dispatch(fetchUsers())
   }, [dispatch])
 
-  useEffect(() => {
-    if (data) {
-      successResponse('Check your email to activate the account')
-      navigate(signInPath)
-    }
-  }, [data])
+  // useEffect(() => {
+  //   if (data) {
+  //     successResponse('Check your email to activate the account')
+  //     navigate(signInPath)
+  //   }
+  // }, [data])
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNewUser((prevUser) => {
@@ -51,25 +51,6 @@ const SignUp = () => {
   }
   const handleSubmitUser = async (event: FormEvent) => {
     event.preventDefault()
-
-    // ***** this way should be used in the porducts because it has an image *****
-    // const formData = new FormData()
-    // formData.append('firstName', newUser.firstName)
-    // formData.append('lastName', newUser.lastName)
-    // formData.append('email', newUser.email)
-    // formData.append('password', newUser.password)
-    // formData.append('address', newUser.address)
-    // formData.append('confirmPassword', confirmPassword)
-    // try {
-    // console.log('form data')
-    // for (var key of formData.entries()) {
-    //   console.log(key[0] + ', ' + key[1])
-    // }
-    //   const response = await createUser(formData)
-    // } catch (error: any) {
-    //   console.log(error.response.data.errors)
-    // }
-
     try {
       if (
         newUser.firstName.length < 2 ||
@@ -102,7 +83,12 @@ const SignUp = () => {
         }
       }
 
-      dispatch(signUpUser(newUser))
+      dispatch(signUpUser(newUser)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          successResponse('Check your email to activate the account')
+          navigate(signInPath)
+        }
+      })
     } catch (error: any) {
       errorResponse(error.response.data.msg)
     }

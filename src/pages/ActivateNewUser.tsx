@@ -30,7 +30,12 @@ const ActivateNewUser = () => {
 
   const handleActivatAccount = async () => {
     try {
-      dispatch(activateUser(String(token)))
+      dispatch(activateUser(String(token))).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          successResponse('User activated successfully')
+          navigate(signInPath)
+        }
+      })
     } catch (error: any) {
       errorResponse(error.response.data.msg)
     }

@@ -56,8 +56,11 @@ const Users = () => {
   const handleRemoveUser = async (userId: string, firstName: string, lastName: string) => {
     try {
       // dispatch(deleteAllUserOrders(userId))
-      dispatch(deleteUser(userId))
-      successResponse(`${firstName + ' ' + lastName + ' '} deleted successfully`)
+      dispatch(deleteUser(userId)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          successResponse(`${firstName + ' ' + lastName + ' '} deleted successfully`)
+        }
+      })
     } catch (error: any) {
       errorResponse(error.response.data.msg)
     }
@@ -71,11 +74,17 @@ const Users = () => {
   ) => {
     try {
       if (!isBanned) {
-        dispatch(banUser(userId))
-        successResponse(`${firstName + ' ' + lastName + ' '}banned successfully`)
+        dispatch(banUser(userId)).then((data) => {
+          if (data.meta.requestStatus === 'fulfilled') {
+            successResponse(`${firstName + ' ' + lastName + ' '}banned successfully`)
+          }
+        })
       } else {
-        dispatch(unbanUser(userId))
-        successResponse(`${firstName + ' ' + lastName + ' '}unbanned successfully`)
+        dispatch(unbanUser(userId)).then((data) => {
+          if (data.meta.requestStatus === 'fulfilled') {
+            successResponse(`${firstName + ' ' + lastName + ' '}unbanned successfully`)
+          }
+        })
       }
     } catch (error: any) {
       errorResponse(error.response.data.msg)
@@ -90,11 +99,19 @@ const Users = () => {
   ) => {
     try {
       if (!isAdmin) {
-        dispatch(upgradeUser(userId))
-        successResponse(`${firstName + ' ' + lastName + ' '}upgraded to admin successfully`)
+        dispatch(upgradeUser(userId)).then((data) => {
+          if (data.meta.requestStatus === 'fulfilled') {
+            successResponse(`${firstName + ' ' + lastName + ' '}upgraded to admin successfully`)
+          }
+        })
       } else {
-        dispatch(degradeUser(userId))
-        successResponse(`${firstName + ' ' + lastName + ' '}degraded to regular user successfully`)
+        dispatch(degradeUser(userId)).then((data) => {
+          if (data.meta.requestStatus === 'fulfilled') {
+            successResponse(
+              `${firstName + ' ' + lastName + ' '}degraded to regular user successfully`
+            )
+          }
+        })
       }
     } catch (error: any) {
       errorResponse(error.response.data.msg)
@@ -105,16 +122,6 @@ const Users = () => {
     try {
       dispatch(deleteSingleUserOrder(orderId))
       successResponse(`Order with id# ${orderId} deleted successfully`)
-      // toast.success(`Order with id# ${orderId} deleted successfully`, {
-      //   position: 'top-right',
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: 'colored'
-      // })
     } catch (error: any) {
       errorResponse(error.response.data.msg)
     }

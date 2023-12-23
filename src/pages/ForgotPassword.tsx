@@ -43,7 +43,12 @@ const ForgotPassword = () => {
         errorResponse('No account exist with this email')
         return
       }
-      dispatch(forgotUserPassword(userEmail))
+      dispatch(forgotUserPassword(userEmail)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          successResponse('Check your email to reset the password')
+          setUserEmail('')
+        }
+      })
     } catch (error: any) {
       errorResponse(error.response.data.msg)
     }

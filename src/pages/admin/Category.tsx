@@ -1,21 +1,27 @@
-import { toast } from 'react-toastify'
-import { useDispatch, useSelector } from 'react-redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { MdDelete } from 'react-icons/md'
 import { AiFillEdit } from 'react-icons/ai'
+import { MdDelete } from 'react-icons/md'
 
 import { AppDispatch, RootState } from '../../redux/store'
 
 import Footer from '../../layout/Footer'
 
-import { CategoryType, fetchCategories } from '../../redux/slices/Categories/categoriesSlice'
-import { createCategory, deleteCategory, editCategory } from '../../services/categoriesServices'
+import { AxiosError } from 'axios'
+import {
+  CategoryType,
+  createNewCategory,
+  deleteSingleCategory,
+  fetchCategories,
+  updateSingleCategory
+} from '../../redux/slices/Categories/categoriesSlice'
+import { fetchProducts } from '../../redux/slices/products/productSlice'
+import { errorResponse, successResponse } from '../../utils/messages'
 
 const Category = () => {
-  const { categoriesList, isLoading, error } = useSelector(
-    (state: RootState) => state.categoriesReducer
-  )
+  const { categoriesList, error } = useSelector((state: RootState) => state.categoriesReducer)
+
   const [newCategory, setNewCategory] = useState('')
   const [isEditCategory, setIsEditCategory] = useState(false)
   const [categoryId, setCategoryId] = useState<string>('')
@@ -23,41 +29,21 @@ const Category = () => {
   const dispatch: AppDispatch = useDispatch()
 
   useEffect(() => {
+    dispatch(fetchProducts())
+  }, [dispatch])
+  useEffect(() => {
     dispatch(fetchCategories())
-  }, [])
-
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
-  if (error) {
-    return <p>{error}</p>
-  }
+  }, [dispatch, categoriesList, isEditCategory])
 
   const handleDeleteCategory = async (categoryId: string) => {
     try {
-      const response = await deleteCategory(categoryId)
-      dispatch(fetchCategories())
-      toast.success(response.message, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
+      dispatch(deleteSingleCategory(categoryId)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          successResponse(`Category deleted successufully`)
+        }
       })
-    } catch (error) {
-      toast.error('Something went worng', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      })
+    } catch (error: AxiosError | any) {
+      errorResponse(error.response.data.msg)
     }
   }
 
@@ -77,60 +63,27 @@ const Category = () => {
     if (!isEditCategory) {
       try {
         const newcategoryObject = { name: newCategory }
-        const response = await createCategory(newcategoryObject)
-        dispatch(fetchCategories())
-        console.log(response)
-        setNewCategory('')
-        toast.success(response.message, {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
+        dispatch(createNewCategory(newcategoryObject)).then((data) => {
+          if (data.meta.requestStatus === 'fulfilled') {
+            setNewCategory('')
+            successResponse('Category created successfully')
+          }
         })
-      } catch (error) {
-        toast.error('Something went worng', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
+      } catch (error: AxiosError | any) {
+        errorResponse(error.response.data.msg)
       }
     } else {
       try {
         const newcategoryObject = { id: categoryId, name: newCategory }
-        const response = await editCategory(newcategoryObject)
-        dispatch(fetchCategories())
-        setNewCategory('')
-        setIsEditCategory(false)
-        toast.success(response.message, {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
+        dispatch(updateSingleCategory(newcategoryObject)).then((data) => {
+          if (data.meta.requestStatus === 'fulfilled') {
+            setNewCategory('')
+            setIsEditCategory(false)
+            successResponse(`Category updated successufully`)
+          }
         })
-      } catch (error) {
-        toast.error('Something went worng', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored'
-        })
+      } catch (error: AxiosError | any) {
+        errorResponse(error.response.data.msg)
       }
     }
   }

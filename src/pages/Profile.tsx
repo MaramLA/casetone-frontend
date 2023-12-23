@@ -61,9 +61,12 @@ const Profile = () => {
       return
     }
     try {
-      dispatch(updateUserData(profileUpdate))
-      setIsInfoEdited(false)
-      successResponse('Profile updated successfully')
+      dispatch(updateUserData(profileUpdate)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          setIsInfoEdited(false)
+          successResponse('Profile updated successfully')
+        }
+      })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
