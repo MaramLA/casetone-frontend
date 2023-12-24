@@ -25,7 +25,7 @@ const Orders = () => {
     return <p>{orders.error}</p>
   }
   const filteredOrders = orders.ordersList.filter(
-    (order: OrderType) => order.userId === userData?.id
+    (order: OrderType) => order.userId === userData?._id
   )
 
   return (
@@ -42,13 +42,13 @@ const Orders = () => {
                 <div className="order-images">
                   {products.productsList.length > 0 &&
                     products.productsList.map((product: ProductType) => {
-                      if (order.productId === product.id) {
+                      if (order.productId === product._id) {
                         return (
                           <img
-                            src={product.image}
+                            src={product.image as string}
                             alt={product.name}
                             className="order-image"
-                            key={product.id}
+                            key={product._id}
                             height="100px"
                           />
                         )

@@ -13,8 +13,8 @@ const SortProducts = () => {
   return (
     <div className="sort-section">
       <select className="sort-btn" onChange={handleSortChange}>
-        <option value="sort" defaultValue="sort">
-          Sort By
+        <option value="" disabled selected>
+          Sort by
         </option>
         <option value="price">Price</option>
         <option value="name">Name</option>

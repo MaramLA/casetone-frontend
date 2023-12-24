@@ -1665,7 +1665,7 @@ footer .bottom-section p {
   font-weight: bolder;
   margin-bottom: 2rem;
 }
-.signUp .signUp-container .form .top-side .left-side .entry input {
+.signUp .signUp-container .form .top-side .left-side .entry .lower-case-input {
   width: 30rem;
   height: 5rem;
   border-radius: 50px;
@@ -1673,6 +1673,17 @@ footer .bottom-section p {
   font-size: 2.1em;
   color: #696262;
   text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+.signUp .signUp-container .form .top-side .left-side .entry .regular-case-input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
   border: 4px solid #696262;
   margin-bottom: 2rem;
   outline: none;
@@ -1691,14 +1702,13 @@ footer .bottom-section p {
   font-weight: bolder;
   margin-bottom: 2rem;
 }
-.signUp .signUp-container .form .top-side .right-side .entry input {
+.signUp .signUp-container .form .top-side .right-side .entry .regular-case-input {
   width: 30rem;
   height: 5rem;
   border-radius: 50px;
   padding: 0 4rem;
   font-size: 2.1em;
   color: #696262;
-  text-transform: lowercase;
   border: 4px solid #696262;
   margin-bottom: 2rem;
   outline: none;
@@ -1889,7 +1899,6 @@ footer .bottom-section p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5rem;
 }
 .profile .profile-container {
   display: flex;
@@ -1901,63 +1910,44 @@ footer .bottom-section p {
   width: fit-content;
   padding: 6rem 8rem;
   text-align: center;
-  align-items: center;
-  justify-content: center;
   border-radius: 50px;
   color: #696262;
   box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
 }
-.profile .profile-container img {
+.profile .profile-container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container .form img {
   height: 200px;
   width: 200px;
   margin-bottom: 2rem;
   border: 3px solid #dddddd;
   border-radius: 50%;
-}
-.profile .profile-container .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 6rem;
-  text-align: center;
-}
-.profile .profile-container .form {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .profile .profile-container .form .top-side {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  gap: 8rem;
 }
-.profile .profile-container .form .top-side .entry {
+.profile .profile-container .form .top-side .left-side .entry {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
-.profile .profile-container .form .top-side .entry label {
+.profile .profile-container .form .top-side .left-side .entry label {
   font-size: 2.1em;
   color: #696262;
   text-transform: capitalize;
   font-weight: bolder;
   margin-bottom: 2rem;
 }
-.profile .profile-container .form .top-side .entry .name {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .top-side .entry .formEmail {
+.profile .profile-container .form .top-side .left-side .entry .lower-case-input {
   width: 30rem;
   height: 5rem;
   border-radius: 50px;
@@ -1969,11 +1959,122 @@ footer .bottom-section p {
   margin-bottom: 2rem;
   outline: none;
 }
-.profile .profile-container .form .bottom-side {
-  display: inline;
-  flex-direction: column;
+.profile .profile-container .form .top-side .left-side .entry .upper-case-input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
 }
-.profile .profile-container .form .bottom-side .save-btn {
+.profile .profile-container .form .top-side .left-side .entry .regular-case-input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+.profile .profile-container .form .top-side .right-side .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container .form .top-side .right-side .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+.profile .profile-container .form .top-side .right-side .entry .lower-case-input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+.profile .profile-container .form .top-side .right-side .entry .upper-case-input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+.profile .profile-container .form .top-side .right-side .entry .regular-case-input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+.profile .profile-container .form .bottom-side {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.profile .profile-container .form .bottom-side .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container .form .bottom-side .entry label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+.profile .profile-container .form .bottom-side .entry .lower-case-input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+.profile .profile-container .form .bottom-side .entry .regular-case-input {
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  outline: none;
+}
+.profile .profile-container .form .bottom-side .profile-btn {
   font-size: 2em;
   font-weight: bolder;
   text-transform: capitalize;
@@ -1988,19 +2089,18 @@ footer .bottom-section p {
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
-  margin-bottom: 2rem;
 }
-.profile .profile-container .form .bottom-side .save-btn:hover {
+.profile .profile-container .form .bottom-side .profile-btn:hover {
   cursor: pointer;
   padding: 0.7em 1.7em;
 }
-.profile .formSignUp {
+.profile .formProfile {
   display: flex;
   gap: 1rem;
   align-items: center;
   justify-content: center;
 }
-.profile .formSignUp p {
+.profile .formProfile p {
   font-size: 1.8em;
   color: #696262;
   text-transform: capitalize;
@@ -2008,7 +2108,7 @@ footer .bottom-section p {
   align-items: center;
   justify-content: center;
 }
-.profile .formSignUp a {
+.profile .formProfile a {
   font-size: 1.8em;
   text-decoration: none;
   color: #696262;
@@ -2019,7 +2119,7 @@ footer .bottom-section p {
   justify-content: center;
   transition: all 0.2s ease-in;
 }
-.profile .formSignUp a:hover {
+.profile .formProfile a:hover {
   cursor: pointer;
   font-size: 1.9em;
 }

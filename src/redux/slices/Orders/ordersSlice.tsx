@@ -8,9 +8,9 @@ export const fetchOrders = createAsyncThunk('orders/fetchOrders', async () => {
 })
 
 export type OrderType = {
-  id: number
-  productId: number
-  userId: number
+  id: string
+  productId: string
+  userId: string
   purchasedAt: string
 }
 

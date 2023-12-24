@@ -107,7 +107,7 @@ const SignUp = () => {
                   <input
                     type="email"
                     id="formEmail"
-                    className="formEmail"
+                    className="lower-case-input"
                     name="email"
                     placeholder="example@gmail.com"
                     onChange={handleChange}
@@ -120,7 +120,7 @@ const SignUp = () => {
                   <input
                     type="password"
                     id="formPassword"
-                    className="formPassword"
+                    className="regular-case-input"
                     name="password"
                     placeholder="********"
                     onChange={handleChange}
@@ -133,7 +133,7 @@ const SignUp = () => {
                   <input
                     type="password"
                     id="formConfirmtPassword"
-                    className="Password2"
+                    className="regular-case-input"
                     name="confirmPassword"
                     placeholder="********"
                     onChange={handleConfirmPassChange}
@@ -148,7 +148,7 @@ const SignUp = () => {
                   <input
                     type="text"
                     id="firstName"
-                    className="formEmail"
+                    className="regular-case-input"
                     name="firstName"
                     placeholder="First Name"
                     onChange={handleChange}
@@ -161,7 +161,7 @@ const SignUp = () => {
                   <input
                     type="text"
                     id="lastName"
-                    className="formEmail"
+                    className="regular-case-input"
                     name="lastName"
                     placeholder="Last Name"
                     onChange={handleChange}
@@ -174,7 +174,7 @@ const SignUp = () => {
                   <input
                     type="text"
                     id="address"
-                    className="formEmail"
+                    className="regular-case-input"
                     name="address"
                     placeholder="Address"
                     onChange={handleChange}

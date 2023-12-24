@@ -1491,7 +1491,7 @@ footer {
               font-weight: bolder;
               margin-bottom: 2rem;
             }
-            input {
+            .lower-case-input {
               width: 30rem;
               height: 5rem;
               border-radius: 50px;
@@ -1499,6 +1499,17 @@ footer {
               font-size: $font-size4;
               color: $primary-color1;
               text-transform: lowercase;
+              border: 4px solid $primary-color1;
+              margin-bottom: 2rem;
+              outline: none;
+            }
+            .regular-case-input {
+              width: 30rem;
+              height: 5rem;
+              border-radius: 50px;
+              padding: 0 4rem;
+              font-size: $font-size4;
+              color: $primary-color1;
               border: 4px solid $primary-color1;
               margin-bottom: 2rem;
               outline: none;
@@ -1519,14 +1530,13 @@ footer {
               font-weight: bolder;
               margin-bottom: 2rem;
             }
-            input {
+            .regular-case-input {
               width: 30rem;
               height: 5rem;
               border-radius: 50px;
               padding: 0 4rem;
               font-size: $font-size4;
               color: $primary-color1;
-              text-transform: lowercase;
               border: 4px solid $primary-color1;
               margin-bottom: 2rem;
               outline: none;
@@ -1686,13 +1696,13 @@ footer {
 /* ---------------------------------------------------------- */
 /* Start of profile styling */
 /* ---------------------------------------------------------- */
+
 .profile {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5rem;
   .profile-container {
     display: flex;
     flex-direction: column;
@@ -1702,34 +1712,134 @@ footer {
     width: fit-content;
     padding: 6rem 8rem;
     text-align: center;
-    @include center();
 
     border-radius: 50px;
     color: $primary-color1;
     box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-    img {
-      height: 200px;
-      width: 200px;
-      margin-bottom: 2rem;
-      border: 3px solid $primary-color5;
-      border-radius: 50%;
-    }
-    .section-title {
-      font-size: $font-size6;
-      text-transform: capitalize;
-      color: $primary-color1;
-      font-weight: bolder;
-      margin-bottom: 6rem;
-      text-align: center;
-    }
+
     .form {
       display: flex;
       flex-direction: column;
+      @include center();
+      img {
+        height: 200px;
+        width: 200px;
+        margin-bottom: 2rem;
+        border: 3px solid $primary-color5;
+        border-radius: 50%;
+        @include center();
+      }
       .top-side {
         display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+        gap: 8rem;
+        .left-side {
+          .entry {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
 
+            @include center();
+            label {
+              font-size: $font-size4;
+              color: $primary-color1;
+              text-transform: capitalize;
+              font-weight: bolder;
+              margin-bottom: 2rem;
+            }
+            .lower-case-input {
+              width: 30rem;
+              height: 5rem;
+              border-radius: 50px;
+              padding: 0 4rem;
+              font-size: $font-size4;
+              color: $primary-color1;
+              text-transform: lowercase;
+              border: 4px solid $primary-color1;
+              margin-bottom: 2rem;
+              outline: none;
+            }
+            .upper-case-input {
+              width: 30rem;
+              height: 5rem;
+              border-radius: 50px;
+              padding: 0 4rem;
+              font-size: $font-size4;
+              color: $primary-color1;
+              text-transform: capitalize;
+              border: 4px solid $primary-color1;
+              margin-bottom: 2rem;
+              outline: none;
+            }
+            .regular-case-input {
+              width: 30rem;
+              height: 5rem;
+              border-radius: 50px;
+              padding: 0 4rem;
+              font-size: $font-size4;
+              color: $primary-color1;
+              border: 4px solid $primary-color1;
+              margin-bottom: 2rem;
+              outline: none;
+            }
+          }
+        }
+        .right-side {
+          .entry {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            @include center();
+            label {
+              font-size: $font-size4;
+              color: $primary-color1;
+              text-transform: capitalize;
+              font-weight: bolder;
+              margin-bottom: 2rem;
+            }
+            .lower-case-input {
+              width: 30rem;
+              height: 5rem;
+              border-radius: 50px;
+              padding: 0 4rem;
+              font-size: $font-size4;
+              color: $primary-color1;
+              text-transform: lowercase;
+              border: 4px solid $primary-color1;
+              margin-bottom: 2rem;
+              outline: none;
+            }
+            .upper-case-input {
+              width: 30rem;
+              height: 5rem;
+              border-radius: 50px;
+              padding: 0 4rem;
+              font-size: $font-size4;
+              color: $primary-color1;
+              text-transform: capitalize;
+              border: 4px solid $primary-color1;
+              margin-bottom: 2rem;
+              outline: none;
+            }
+            .regular-case-input {
+              width: 30rem;
+              height: 5rem;
+              border-radius: 50px;
+              padding: 0 4rem;
+              font-size: $font-size4;
+              color: $primary-color1;
+              border: 4px solid $primary-color1;
+              margin-bottom: 2rem;
+              outline: none;
+            }
+          }
+        }
+      }
+      .bottom-side {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
         .entry {
           display: flex;
           flex-direction: column;
@@ -1743,19 +1853,7 @@ footer {
             font-weight: bolder;
             margin-bottom: 2rem;
           }
-          .name {
-            width: 30rem;
-            height: 5rem;
-            border-radius: 50px;
-            padding: 0 4rem;
-            font-size: $font-size4;
-            color: $primary-color1;
-            text-transform: capitalize;
-            border: 4px solid $primary-color1;
-            margin-bottom: 2rem;
-            outline: none;
-          }
-          .formEmail {
+          .lower-case-input {
             width: 30rem;
             height: 5rem;
             border-radius: 50px;
@@ -1767,21 +1865,27 @@ footer {
             margin-bottom: 2rem;
             outline: none;
           }
+          .regular-case-input {
+            width: 30rem;
+            height: 5rem;
+            border-radius: 50px;
+            padding: 0 4rem;
+            font-size: $font-size4;
+            color: $primary-color1;
+            border: 4px solid $primary-color1;
+            margin-bottom: 2rem;
+            outline: none;
+          }
         }
-      }
-      .bottom-side {
-        display: inline;
-        flex-direction: column;
-        .save-btn {
+        .profile-btn {
           @include mainButton2-Styling();
           @include center();
           margin-top: 2rem;
-          margin-bottom: 2rem;
         }
       }
     }
   }
-  .formSignUp {
+  .formProfile {
     display: flex;
     gap: 1rem;
     @include center();

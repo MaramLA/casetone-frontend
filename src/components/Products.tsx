@@ -34,8 +34,8 @@ const Products = () => {
     dispatch(fetchProducts())
   }, [dispatch])
 
-  // const [currentPage, setCurrnetPage] = useState(1)
-  // const [itesmPerPage, setItesmPerPage] = useState(3)
+  const [currentPage, setCurrnetPage] = useState(1)
+  const [itesmPerPage, setItesmPerPage] = useState(3)
   const [isShowMore, setIsShowMore] = useState(false)
 
   const handleCartBtn = (product: ProductType) => {
@@ -82,22 +82,22 @@ const Products = () => {
       )
     : productsList
 
-  // const lastItemIndex = currentPage * itesmPerPage
-  // const firstItemIndex = lastItemIndex - itesmPerPage
-  // const currentItems = searchedProducts.slice(firstItemIndex, lastItemIndex)
+  const lastItemIndex = currentPage * itesmPerPage
+  const firstItemIndex = lastItemIndex - itesmPerPage
+  const currentItems = searchedProducts.slice(firstItemIndex, lastItemIndex)
 
-  // const totalPages = Math.ceil(searchedProducts.length / itesmPerPage)
-  // const handlePreviousPage = () => {
-  //   if (currentPage === 1) {
-  //     setCurrnetPage(totalPages)
-  //   } else setCurrnetPage(currentPage - 1)
-  // }
+  const totalPages = Math.ceil(searchedProducts.length / itesmPerPage)
+  const handlePreviousPage = () => {
+    if (currentPage === 1) {
+      setCurrnetPage(totalPages)
+    } else setCurrnetPage(currentPage - 1)
+  }
 
-  // const handleNextPage = () => {
-  //   if (currentPage === totalPages) {
-  //     setCurrnetPage(1)
-  //   } else setCurrnetPage(currentPage + 1)
-  // }
+  const handleNextPage = () => {
+    if (currentPage === totalPages) {
+      setCurrnetPage(1)
+    } else setCurrnetPage(currentPage + 1)
+  }
 
   return (
     <section className="products" id="productsSection">
@@ -122,7 +122,7 @@ const Products = () => {
                 return (
                   <div key={product._id} className="product">
                     <Link className="product-details-link" to={`/products/${product._id}`}>
-                      <img src={product.image} alt={product.name} />
+                      <img src={product.image as string} alt={product.name} />
                     </Link>
                     <div className="product__details">
                       <p className="product__title">{product.name}</p>
@@ -173,16 +173,20 @@ const Products = () => {
         <>
           <div className="pagination-div">
             <div className="top-section">
-              {/* <div className="page-controller">
-                <i className="fa-solid fa-chevron-left arrow-icon" onClick={handlePreviousPage}></i>
-              </div> */}
+              {productsList.length > 3 && (
+                <div className="page-controller">
+                  <i
+                    className="fa-solid fa-chevron-left arrow-icon"
+                    onClick={handlePreviousPage}></i>
+                </div>
+              )}
               <div className="products-div">
-                {productsList.length > 0 &&
-                  productsList.map((product: ProductType) => {
+                {currentItems.length > 0 &&
+                  currentItems.map((product: ProductType) => {
                     return (
                       <div key={product._id} className="product">
                         <Link className="product-details-link" to={`/products/${product._id}`}>
-                          <img src={product.image} alt={product.name} />
+                          <img src={product.image as string} alt={product.name} />
                         </Link>
                         <div className="product__details">
                           <p className="product__title">{product.name}</p>
@@ -219,9 +223,11 @@ const Products = () => {
                     )
                   })}
               </div>
-              {/* <div className="page-controller">
-                <i className="fa-solid fa-chevron-right arrow-icon" onClick={handleNextPage}></i>
-              </div> */}
+              {productsList.length > 3 && (
+                <div className="page-controller">
+                  <i className="fa-solid fa-chevron-right arrow-icon" onClick={handleNextPage}></i>
+                </div>
+              )}
             </div>
             <div className="bottm-section">
               <button className="products-btn" onClick={() => setIsShowMore(!isShowMore)}>

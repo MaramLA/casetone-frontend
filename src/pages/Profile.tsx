@@ -60,48 +60,52 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      <main>
-        <section className="profile" id="profile">
-          <div className="profile-container">
+    <main>
+      <section className="profile" id="profile">
+        <div className="profile-container">
+          <form className="form" onSubmit={handleProfileUpdate}>
             <img src={userProfile} alt="user" />
-
-            <form className="form" onSubmit={handleProfileUpdate}>
-              <div className="top-side">
+            <div className="top-side">
+              <div className="left-side">
                 <div className="entry">
                   <label htmlFor="firstName">First Name</label>
                   <input
                     type="text"
                     id="firstName"
-                    className="name"
+                    className="upper-case-input"
                     name="firstName"
                     placeholder="First Name"
                     value={profileUpdate?.firstName}
                     onChange={handleProfileChange}
-                  />
-                </div>
-                <div className="entry">
-                  <label htmlFor="lastName">Last Name</label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    className="name"
-                    name="lastName"
-                    placeholder="Last Name"
-                    value={profileUpdate?.lastName}
-                    onChange={handleProfileChange}
+                    required
                   />
                 </div>
                 <div className="entry">
                   <label htmlFor="email">Email</label>
                   <input
                     type="text"
-                    id="formEmail"
-                    className="formEmail"
+                    id="email"
+                    className="lower-case-input"
                     name="email"
                     placeholder="Email"
                     value={profileUpdate?.email}
+                    onChange={handleProfileChange}
                     readOnly
+                  />
+                </div>
+              </div>
+              <div className="right-side">
+                <div className="entry">
+                  <label htmlFor="lastName">Last Name</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    className="upper-case-input"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={profileUpdate?.lastName}
+                    onChange={handleProfileChange}
+                    required
                   />
                 </div>
                 <div className="entry">
@@ -109,42 +113,131 @@ const Profile = () => {
                   <input
                     type="text"
                     id="address"
-                    className="formEmail"
+                    className="regular-case-input"
                     name="address"
                     placeholder="Address"
                     value={profileUpdate?.address}
                     onChange={handleProfileChange}
+                    required
                   />
                 </div>
-                {!profileUpdate.isAdmin && (
-                  <div className="entry">
-                    <label htmlFor="balance">Balance</label>
-                    <input
-                      type="text"
-                      id="balance"
-                      className="formEmail"
-                      name="balance"
-                      placeholder="Balance"
-                      value={profileUpdate?.balance}
-                      readOnly
-                    />
-                  </div>
-                )}
               </div>
+            </div>
+            <div className="bottom-side">
+              {!profileUpdate.isAdmin && (
+                <div className="entry">
+                  <label htmlFor="balance">Balance</label>
+                  <input
+                    type="text"
+                    id="balance"
+                    className="regular-case-input"
+                    name="balance"
+                    placeholder="Balance"
+                    value={profileUpdate?.balance}
+                    readOnly
+                  />
+                </div>
+              )}
               {isInfoEdited && (
-                <div className="bottom-side">
-                  <button type="submit" className="save-btn">
+                <div className="button-div">
+                  <button type="submit" className="profile-btn">
                     Save
                   </button>
                 </div>
               )}
-            </form>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
   )
+
+  // return (
+  //   <div>
+  //     <main>
+  //       <section className="profile" id="profile">
+  //         <div className="profile-container">
+  //           <img src={userProfile} alt="user" />
+
+  //           <form className="form" onSubmit={handleProfileUpdate}>
+  //             <div className="top-side">
+  //               <div className="entry">
+  //                 <label htmlFor="firstName">First Name</label>
+  //                 <input
+  //                   type="text"
+  //                   id="firstName"
+  //                   className="name"
+  //                   name="firstName"
+  //                   placeholder="First Name"
+  //                   value={profileUpdate?.firstName}
+  //                   onChange={handleProfileChange}
+  //                 />
+  //               </div>
+  //               <div className="entry">
+  //                 <label htmlFor="lastName">Last Name</label>
+  //                 <input
+  //                   type="text"
+  //                   id="lastName"
+  //                   className="name"
+  //                   name="lastName"
+  //                   placeholder="Last Name"
+  //                   value={profileUpdate?.lastName}
+  //                   onChange={handleProfileChange}
+  //                 />
+  //               </div>
+  //               <div className="entry">
+  //                 <label htmlFor="email">Email</label>
+  //                 <input
+  //                   type="text"
+  //                   id="formEmail"
+  //                   className="formEmail"
+  //                   name="email"
+  //                   placeholder="Email"
+  //                   value={profileUpdate?.email}
+  //                   readOnly
+  //                 />
+  //               </div>
+  //               <div className="entry">
+  //                 <label htmlFor="address">Address</label>
+  //                 <input
+  //                   type="text"
+  //                   id="address"
+  //                   className="formEmail"
+  //                   name="address"
+  //                   placeholder="Address"
+  //                   value={profileUpdate?.address}
+  //                   onChange={handleProfileChange}
+  //                 />
+  //               </div>
+  //               {!profileUpdate.isAdmin && (
+  //                 <div className="entry">
+  //                   <label htmlFor="balance">Balance</label>
+  //                   <input
+  //                     type="text"
+  //                     id="balance"
+  //                     className="formEmail"
+  //                     name="balance"
+  //                     placeholder="Balance"
+  //                     value={profileUpdate?.balance}
+  //                     readOnly
+  //                   />
+  //                 </div>
+  //               )}
+  //             </div>
+  //             {isInfoEdited && (
+  //               <div className="bottom-side">
+  //                 <button type="submit" className="save-btn">
+  //                   Save
+  //                 </button>
+  //               </div>
+  //             )}
+  //           </form>
+  //         </div>
+  //       </section>
+  //     </main>
+  //     <Footer />
+  //   </div>
+  // )
 }
 
 export default Profile
