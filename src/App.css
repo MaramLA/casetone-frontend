@@ -1221,11 +1221,48 @@ footer .bottom-section p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 10vw;
+  gap: 6vw;
   width: 60vw;
   height: 5rem;
   padding-bottom: 1.2rem;
   box-shadow: #dddddd 0px 10px 10px -10px;
+}
+.cart .items .item .quantity-div {
+  position: relative;
+  display: flex;
+  width: 20rem;
+  align-items: center;
+  justify-content: center;
+}
+.cart .items .item .quantity-div .quantity-input {
+  width: 6rem;
+  height: 3rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  text-align: center;
+  border: 0;
+  outline: none;
+}
+.cart .items .item .quantity-div .quantity-add {
+  position: absolute;
+  left: 0;
+  font-size: 1.8em;
+  color: #696262;
+  transition: all 0.2s ease-in;
+}
+.cart .items .item .quantity-div .quantity-add:hover {
+  cursor: pointer;
+}
+.cart .items .item .quantity-div .quantity-subtract {
+  position: absolute;
+  right: 0;
+  font-size: 1.8em;
+  color: #696262;
+  transition: all 0.2s ease-in;
+}
+.cart .items .item .quantity-div .quantity-subtract:hover {
+  cursor: pointer;
 }
 .cart .items .item img {
   display: flex;
@@ -1238,10 +1275,12 @@ footer .bottom-section p {
   color: #696262;
   text-transform: capitalize;
   width: 20rem;
+  text-align: center;
 }
 .cart .items .item .deleteIcon {
   position: absolute;
   right: 0;
+  bottom: 1.8rem;
   font-size: 3.5em;
   color: rgb(163, 54, 54);
   transition: all 0.2s ease-in;
@@ -1261,14 +1300,14 @@ footer .bottom-section p {
 .cart .items .purchase-summary .total-items {
   font-size: 2.2em;
   color: #696262;
-  width: 20rem;
+  width: 60rem;
   text-align: center;
   text-transform: capitalize;
 }
 .cart .items .purchase-summary .total-price {
   font-size: 2.2em;
   color: #696262;
-  width: 20rem;
+  width: 60rem;
   text-align: center;
   text-transform: capitalize;
   font-weight: bold;

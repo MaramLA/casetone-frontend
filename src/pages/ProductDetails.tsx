@@ -11,7 +11,7 @@ import Footer from '../layout/Footer'
 import { AxiosError } from 'axios'
 import { homePath, signInPath } from '../pathLinks'
 import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
-import { errorResponse, successResponse } from '../utils/messages'
+import { errorResponse, successResponse, warningResponse } from '../utils/messages'
 
 const ProductDetails = () => {
   const { id } = useParams()
@@ -19,6 +19,7 @@ const ProductDetails = () => {
   const { singleProduct } = useSelector((state: RootState) => state.productsReducer)
   const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
+  const { cartItems } = useSelector((state: RootState) => state.cartReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
@@ -34,8 +35,18 @@ const ProductDetails = () => {
   const handleCartBtn = (product: ProductType) => {
     if (isSignedIn) {
       try {
-        dispatch(addToCart(product))
-        successResponse('Product added to cart successfully')
+        const foundProduct = cartItems.find((item) => {
+          if (item._id === product._id) {
+            return item
+          }
+        })
+        if (foundProduct) {
+          warningResponse('Product add to the cart already')
+          return
+        } else {
+          dispatch(addToCart(product))
+          successResponse('Product added to cart successfully')
+        }
       } catch (error: AxiosError | any) {
         errorResponse(error.response.data.msg)
       }

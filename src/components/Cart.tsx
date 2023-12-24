@@ -1,21 +1,29 @@
+import { FaMinus } from 'react-icons/fa'
+import { FaPlus } from 'react-icons/fa6'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { AxiosError } from 'axios'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { MdDelete } from 'react-icons/md'
 import { deleteFromCart, resetCart } from '../redux/slices/Orders/cartSlice'
-import { fetchProducts } from '../redux/slices/products/productSlice'
 import { AppDispatch, RootState } from '../redux/store'
 import { errorResponse, successResponse } from '../utils/messages'
 
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cartReducer)
-
   const dispatch: AppDispatch = useDispatch()
 
+  // Create a state to manage quantities for each item
+  const [quantities, setQuantities] = useState<{ [key: string]: number }>({})
+
   useEffect(() => {
-    dispatch(fetchProducts())
-  }, [])
+    // Initialize quantities state based on cartItems
+    const quantitiesMap: { [key: string]: number } = {}
+    cartItems.forEach((item) => {
+      quantitiesMap[item._id] = item.quantity || 1 // Set default quantity to 1 if not available
+    })
+    setQuantities(quantitiesMap)
+  }, [cartItems])
 
   const handleDeleteCartItem = (id: string) => {
     try {
@@ -25,17 +33,40 @@ const Cart = () => {
       errorResponse(error.response.data.msg)
     }
   }
+
   const handleResetCart = () => {
     dispatch(resetCart())
   }
+
   const cartTotalAmount = () => {
+    // Calculate total amount based on updated quantities
     let totalAmount = 0
-    cartItems.length > 0 &&
-      cartItems.map((item) => {
-        totalAmount += item.price
-      })
+    cartItems.forEach((item) => {
+      totalAmount += (item.price || 0) * (quantities[item._id] || 1)
+    })
     return totalAmount
   }
+
+  const handleQuantityChange = (id: string, quantity: number) => {
+    // Update quantity for the specific item
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [id]: Math.max(Math.min(quantity, 10), 1) // Ensure quantity is between 1 and 10
+    }))
+  }
+
+  const handleSubmitOrder = () => {
+    const updatedCartItems = cartItems.map((item) => {
+      return {
+        ...item,
+        quantity: quantities[item._id] || 1 // Update the quantity for each item
+      }
+    })
+
+    // Now updatedCartItems contains the cart data with the new quantities
+    console.log('Updated Cart Items: ', updatedCartItems)
+  }
+
   return (
     <section className="cart">
       <h2 className="section-title">Purchases</h2>
@@ -47,6 +78,31 @@ const Cart = () => {
               <div key={item._id} className="item">
                 <img src={item.image} alt={item.name} className="item-image" />
                 <p className="item-name">{item.name}</p>
+                <p className="item-name">{item.sizes}</p>
+                <div className="quantity-div">
+                  <FaMinus
+                    className="quantity-add"
+                    onClick={() => handleQuantityChange(item._id, (quantities[item._id] || 1) - 1)}
+                  />
+
+                  <input
+                    type="number"
+                    name="quantity"
+                    id="quantity"
+                    className="quantity-input"
+                    maxLength={2}
+                    min={1}
+                    max={10}
+                    value={quantities[item._id] || 1}
+                    onChange={(e) => handleQuantityChange(item._id, parseInt(e.target.value))}
+                  />
+
+                  <FaPlus
+                    className="quantity-subtract"
+                    onClick={() => handleQuantityChange(item._id, (quantities[item._id] || 1) + 1)}
+                  />
+                </div>
+
                 <p className="item-price">{item.price}</p>
                 <div className="controllers">
                   <MdDelete className="deleteIcon" onClick={() => handleDeleteCartItem(item._id)} />
@@ -63,7 +119,9 @@ const Cart = () => {
               <button className="reset-btn" onClick={handleResetCart}>
                 Reset
               </button>
-              <button className="checkout-btn">Checkout</button>
+              <button className="checkout-btn" onClick={handleSubmitOrder}>
+                Checkout
+              </button>
             </div>
           )}
         </div>

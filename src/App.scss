@@ -1119,11 +1119,49 @@ footer {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 10vw;
+      gap: 6vw;
       width: 60vw;
       height: 5rem;
       padding-bottom: 1.2rem;
       box-shadow: $primary-color5 0px 10px 10px -10px;
+      .quantity-div {
+        position: relative;
+        display: flex;
+        width: 20rem;
+        // background: lightblue;
+        @include center();
+        .quantity-input {
+          width: 6rem;
+          height: 3rem;
+          // border-radius: 50px;
+          font-size: $font-size4;
+          color: $primary-color1;
+          text-transform: lowercase;
+          text-align: center;
+          border: 0;
+          outline: none;
+        }
+        .quantity-add {
+          position: absolute;
+          left: 0;
+          font-size: 1.8em;
+          color: $primary-color1;
+          transition: all 0.2s ease-in;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .quantity-subtract {
+          position: absolute;
+          right: 0;
+          font-size: 1.8em;
+          color: $primary-color1;
+          transition: all 0.2s ease-in;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
       img {
         display: flex;
         justify-content: center;
@@ -1135,10 +1173,13 @@ footer {
         color: $primary-color1;
         text-transform: capitalize;
         width: 20rem;
+        // background: lightblue;
+        text-align: center;
       }
       .deleteIcon {
         position: absolute;
         right: 0;
+        bottom: 1.8rem;
         font-size: 3.5em;
         color: rgb(163, 54, 54);
         transition: all 0.2s ease-in;
@@ -1159,14 +1200,14 @@ footer {
       .total-items {
         font-size: $font-size5;
         color: $primary-color1;
-        width: 20rem;
+        width: 60rem;
         text-align: center;
         text-transform: capitalize;
       }
       .total-price {
         font-size: $font-size5;
         color: $primary-color1;
-        width: 20rem;
+        width: 60rem;
         text-align: center;
         text-transform: capitalize;
         font-weight: bold;

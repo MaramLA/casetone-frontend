@@ -19,21 +19,20 @@ import SortProducts from './SortProducts'
 
 import { AxiosError } from 'axios'
 import { addProductPath, signInPath } from '../pathLinks'
-import { errorResponse, successResponse } from '../utils/messages'
+import { errorResponse, successResponse, warningResponse } from '../utils/messages'
 
 const Products = () => {
-  const { productsList, searchTerm } = useSelector(
-    (state: RootState) => state.productsReducer
-  )
+  const { productsList, searchTerm } = useSelector((state: RootState) => state.productsReducer)
 
   const { userData, isSignedIn } = useSelector((state: RootState) => state.usersReducer)
+  const { cartItems } = useSelector((state: RootState) => state.cartReducer)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(fetchProducts())
-  }, [dispatch, productsList])
+  }, [dispatch])
 
   // const [currentPage, setCurrnetPage] = useState(1)
   // const [itesmPerPage, setItesmPerPage] = useState(3)
@@ -42,8 +41,18 @@ const Products = () => {
   const handleCartBtn = (product: ProductType) => {
     if (isSignedIn) {
       try {
-        dispatch(addToCart(product))
-        successResponse('Product added to cart successfully')
+        const foundProduct = cartItems.find((item) => {
+          if (item._id === product._id) {
+            return item
+          }
+        })
+        if (foundProduct) {
+          warningResponse('Product add to the cart already')
+          return
+        } else {
+          dispatch(addToCart(product))
+          successResponse('Product added to cart successfully')
+        }
       } catch (error: AxiosError | any) {
         errorResponse(error.response.data.msg)
       }

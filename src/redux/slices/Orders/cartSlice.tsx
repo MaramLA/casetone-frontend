@@ -19,7 +19,18 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const productData = action.payload
-      state.cartItems.push(productData)
+      // const foundProduct = state.cartItems.find((item) => {
+      //   if (item._id === productData._id) {
+      //     return item
+      //   }
+      // })
+      // console.log('foundProduct')
+      // if (foundProduct) {
+      //   warningResponse('Product add to the cart already')
+      //   return
+      // }
+      const newProductData = { ...productData, quantity: 1 }
+      state.cartItems.push(newProductData)
       localStorage.setItem('cart', JSON.stringify(state.cartItems))
     },
     deleteFromCart: (state, action) => {
