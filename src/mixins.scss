@@ -47,3 +47,21 @@
     padding: 0.7em 1.7em;
   }
 }
+
+@mixin mainButton3-Styling {
+  font-size: $font-size3;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid $primary-color7;
+  background: $primary-color7;
+  transition: all 0.2s ease-in;
+  &:hover {
+    cursor: pointer;
+    padding: 0.7em 1.7em;
+  }
+}

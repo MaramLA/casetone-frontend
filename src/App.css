@@ -578,11 +578,11 @@ footer .bottom-section p {
 .products .products-div {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin-bottom: 8rem;
-  max-width: 80vw;
+  width: 68vw;
 }
 .products .products-div .product {
   background: white;
@@ -2339,12 +2339,14 @@ footer .bottom-section p {
 }
 .productDetails .container .left-side img {
   height: 60vh;
+  width: 60vh;
   border-radius: 50%;
   box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
 }
 .productDetails .container .right-side {
   display: flex;
   flex-direction: column;
+  width: 50rem;
 }
 .productDetails .container .right-side .product-category {
   font-size: 1.9em;
@@ -2380,10 +2382,17 @@ footer .bottom-section p {
   width: 45rem;
 }
 .productDetails .container .right-side .buttons {
+  position: relative;
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
+  height: 15rem;
   text-align: left;
-  gap: 3rem;
+  gap: 2rem;
+}
+.productDetails .container .right-side .buttons .btn-link {
+  text-decoration: none;
 }
 .productDetails .container .right-side .buttons .buy-btn {
   margin-top: 5rem;
@@ -2419,6 +2428,24 @@ footer .bottom-section p {
   transition: all 0.2s ease-in;
 }
 .productDetails .container .right-side .buttons .back-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.productDetails .container .right-side .buttons .delete-btn {
+  margin-top: 5rem;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid rgb(163, 54, 54);
+  background: rgb(163, 54, 54);
+  transition: all 0.2s ease-in;
+}
+.productDetails .container .right-side .buttons .delete-btn:hover {
   cursor: pointer;
   padding: 0.7em 1.7em;
 }
@@ -2520,12 +2547,6 @@ footer .bottom-section p {
   justify-content: center;
   gap: 1.5rem;
 }
-.add-edit-product .form .productImg {
-  height: 40vh;
-  border-radius: 50%;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-  margin-bottom: 5rem;
-}
 .add-edit-product .form .entry {
   position: relative;
   display: flex;
@@ -2613,6 +2634,12 @@ footer .bottom-section p {
   margin-bottom: 2rem;
   outline: none;
   resize: none;
+}
+.add-edit-product .form .image-preview {
+  height: 40vh;
+  width: 40vh;
+  border-radius: 50%;
+  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
 }
 .add-edit-product .add-btn {
   font-size: 2em;

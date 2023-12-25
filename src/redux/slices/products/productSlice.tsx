@@ -75,7 +75,7 @@ export type ProductType = {
   _id: string
   name: string
   price: number
-  image: string | undefined | File
+  image: string
   quantity: number
   sold: number
   categories: string[]

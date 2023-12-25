@@ -17,7 +17,7 @@ import { productsPath } from '../../pathLinks'
 type EditProductType = {
   _id: string
   name: string
-  image: string
+  image: File | undefined | string
   description: string
   categories: string[]
   variants: string
@@ -158,7 +158,7 @@ const EditProduct = () => {
 
       const formData = new FormData()
       formData.append('name', String(newProductData.name))
-      formData.append('image', String(newProductData.image))
+      formData.append('image', newProductData.image as Blob)
       formData.append('description', String(newProductData.description))
       // formData.append('categories', String(newProductData.categories))
       newProductData.categories?.forEach((value, index) => {
@@ -185,8 +185,8 @@ const EditProduct = () => {
         console.log('data: ', data)
         if (data.meta.requestStatus === 'fulfilled') {
           successResponse('Product updated successffully')
-          // setNewProduct(initialProductData)
-          // navigate(productsPath)
+          setNewProduct(initialProductData)
+          navigate(productsPath)
         }
       })
     } catch (error: AxiosError | any) {
@@ -199,7 +199,6 @@ const EditProduct = () => {
       <section className="add-edit-product" id="addEditProduct">
         <h2 className="section-title">Edit Product</h2>
         <form className="form" onSubmit={handleProductSubmit}>
-          <img className="productImg" src={newProduct.image} alt={newProduct.name} />
           <div className="entry">
             <label htmlFor="productName">Product Name</label>
             <div className="input-btn">
@@ -323,6 +322,19 @@ const EditProduct = () => {
               />
             </div>
           </div>
+          {newProduct.image && (
+            <div>
+              {newProduct.image instanceof File ? (
+                <img
+                  className="image-preview"
+                  src={URL.createObjectURL(newProduct.image)}
+                  alt="preview"
+                />
+              ) : (
+                <img className="image-preview" src={newProduct.image as string} alt="preview" />
+              )}
+            </div>
+          )}
           <button type="submit" className="add-btn">
             Save
           </button>

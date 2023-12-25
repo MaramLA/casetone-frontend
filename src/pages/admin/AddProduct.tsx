@@ -11,7 +11,7 @@ import { productsPath } from '../../pathLinks'
 
 type NewProductType = {
   name: string
-  image: string
+  image: File | undefined | string
   description: string
   categories: string[]
   variants: string
@@ -51,7 +51,6 @@ const AddProduct = () => {
       }))
     }
   }, [categoriesList, newProduct.categories])
-
 
   const handelInputChange = (
     event:
@@ -114,7 +113,7 @@ const AddProduct = () => {
 
       const formData = new FormData()
       formData.append('name', newProductData.name)
-      formData.append('image', newProductData.image)
+      formData.append('image', newProductData.image as Blob)
       formData.append('description', newProductData.description)
       formData.append('categories', newProductData.categories.toString())
       formData.append('variants', newProductData.variants)
@@ -268,6 +267,19 @@ const AddProduct = () => {
               />
             </div>
           </div>
+          {newProduct.image && (
+            <div>
+              {newProduct.image instanceof File ? (
+                <img
+                  className="image-preview"
+                  src={URL.createObjectURL(newProduct.image)}
+                  alt="preview"
+                />
+              ) : (
+                <img className="image-preview" src={newProduct.image as string} alt="preview" />
+              )}
+            </div>
+          )}
           <button type="submit" className="add-btn">
             Add
           </button>

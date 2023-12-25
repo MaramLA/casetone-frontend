@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { addToCart } from '../redux/slices/Orders/cartSlice'
-import { ProductType, fetchSingleProduct } from '../redux/slices/products/productSlice'
+import {
+  ProductType,
+  deleteSingleProduct,
+  fetchSingleProduct
+} from '../redux/slices/products/productSlice'
 import { AppDispatch, RootState } from '../redux/store'
 
 import Footer from '../layout/Footer'
@@ -12,6 +16,7 @@ import { AxiosError } from 'axios'
 import { homePath, signInPath } from '../pathLinks'
 import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
 import { errorResponse, successResponse, warningResponse } from '../utils/messages'
+import { Link } from 'react-router-dom'
 
 const ProductDetails = () => {
   const { id } = useParams()
@@ -53,6 +58,19 @@ const ProductDetails = () => {
     } else navigate(signInPath)
   }
 
+  const handleDeleteProduct = (id: string) => {
+    try {
+      dispatch(deleteSingleProduct(id)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          successResponse('Product deleted successfully')
+          navigate(homePath)
+        }
+      })
+    } catch (error: AxiosError | any) {
+      errorResponse(error.response.data.msg)
+    }
+  }
+
   const getCategoryNameById = (categoryId: string) => {
     const category = categoriesList.find((category) => category._id === categoryId)
     return category ? category.name + ' ' : 'Category not found'
@@ -88,6 +106,16 @@ const ProductDetails = () => {
                   <button onClick={() => handleCartBtn(singleProduct)} className="buy-btn">
                     Add to Cart
                   </button>
+                )}
+                {userData?.isAdmin === true && (
+                  <>
+                    <button onClick={() => handleDeleteProduct(String(id))} className="delete-btn">
+                      Delete
+                    </button>
+                    <Link className="btn-link" to={`/registerd/admin/edit-product/${id}`}>
+                      <button className="back-btn">Edit</button>
+                    </Link>
+                  </>
                 )}
                 <button onClick={goBack} className="back-btn">
                   Go Back
