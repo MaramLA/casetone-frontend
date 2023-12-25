@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
-import { addToCart } from '../redux/slices/Orders/cartSlice'
+import { NewCartItemType, addToCart } from '../redux/slices/Orders/cartSlice'
 import {
   ProductType,
   deleteSingleProduct,
@@ -41,15 +41,28 @@ const ProductDetails = () => {
     if (isSignedIn) {
       try {
         const foundProduct = cartItems.find((item) => {
-          if (item._id === product._id) {
-            return item
+          if (item.product._id === product._id) {
+            return true
           }
         })
         if (foundProduct) {
           warningResponse('Product add to the cart already')
           return
         } else {
-          dispatch(addToCart(product))
+          const newCartProduct: Partial<NewCartItemType> = {
+            product: {
+              _id: product._id,
+              name: product.name,
+              price: product.price,
+              image: product.image,
+              categories: product.categories,
+              description: product.description,
+              sizes: product.sizes,
+              variants: product.variants
+            },
+            quantity: 1
+          }
+          dispatch(addToCart(newCartProduct))
           successResponse('Product added to cart successfully')
         }
       } catch (error: AxiosError | any) {
