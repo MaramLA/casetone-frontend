@@ -17,6 +17,7 @@ export const addProductPath = '/registerd/admin/add-product'
 //Inner Links
 export const aboutPath = '/#aboutUsSection'
 export const productsPath = '/#productsSection'
+export const ordersPath = '/registerd/user/purchases/#ordersSection'
 
 //Social Media Links
 export const twitter = 'https://twitter.com'

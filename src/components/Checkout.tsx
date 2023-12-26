@@ -6,14 +6,14 @@ import { PaywithBraintree, fetchBraintreeToken } from '../redux/slices/products/
 import { closeCheckout, resetCart } from '../redux/slices/Orders/cartSlice'
 import { errorResponse, successResponse } from '../utils/messages'
 import { useNavigate } from 'react-router-dom'
-import { purchasesPath } from '../pathLinks'
+import { ordersPath, purchasesPath } from '../pathLinks'
 import { AxiosError } from 'axios'
 
 const Checkout = () => {
   const { cartItems } = useSelector((state: RootState) => state.cartReducer)
 
   const [braintreeClientToken, setBraintreeClientToken] = useState()
-  const [instance, setInstance] = useState(null)
+  const [instance, setInstance] = useState<any>(null)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
@@ -50,6 +50,7 @@ const Checkout = () => {
           successResponse('Order placef successfully')
           dispatch(resetCart())
           dispatch(closeCheckout())
+          navigate(ordersPath)
         }
       })
     } catch (error: AxiosError | any) {

@@ -1275,7 +1275,7 @@ footer {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 6.7vw;
+      gap: 5vw;
       width: 60vw;
       height: 5rem;
       padding-bottom: 1.3rem;
@@ -1284,17 +1284,41 @@ footer {
         display: flex;
         justify-content: center;
         gap: 0.5rem;
-        width: 20rem;
+        width: 620px;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap;
+
+        .order-image {
+          display: inline-block;
+          justify-content: center;
+          height: 5rem;
+          width: 5rem;
+        }
       }
       p {
         font-size: $font-size5;
         color: $primary-color1;
         text-transform: capitalize;
-        width: 30rem;
+        width: 20rem;
+        text-align: center;
+      }
+      .meta-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .order-id {
+          width: 38rem;
+          text-align: center;
+        }
+      }
+      .order-status {
+        width: 38rem;
+        text-align: center;
       }
       .deleteIcon {
         position: absolute;
         right: 0;
+        bottom: 1.5rem;
         font-size: 3.5em;
         color: rgb(163, 54, 54);
         transition: all 0.2s ease-in;

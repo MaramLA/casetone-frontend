@@ -1,17 +1,32 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import api from '../../../api'
+import axios, { AxiosError } from 'axios'
 
-export const fetchOrders = createAsyncThunk('orders/fetchOrders', async () => {
-  const response = await api.get('/mock/e-commerce/orders.json')
-  return response.data
+const baseUrl = 'http://localhost:5050/orders'
+
+export const fetchUserOrders = createAsyncThunk('orders/fetchUserOrders', async () => {
+  try {
+    const response = await axios.get(baseUrl)
+    return response.data.payload
+  } catch (error: AxiosError | any) {
+    return error.response.data.msg
+  }
 })
 
+export interface IOrderProduct {
+  product: string
+  quantity: number
+}
+
+export interface IOrderPayment {}
+
 export type OrderType = {
-  id: string
-  productId: string
-  userId: string
-  purchasedAt: string
+  _id: string
+  products: IOrderProduct[]
+  payment: IOrderPayment
+  user: string
+  status: string
+  createdAt: string
 }
 
 type OrdersState = {
@@ -31,27 +46,37 @@ const ordersSlice = createSlice({
   initialState,
   reducers: {
     deleteAllUserOrders: (state, action) => {
-      const newOrdersList = state.ordersList.filter((order) => order.userId !== action.payload)
+      const newOrdersList = state.ordersList.filter((order) => order.user !== action.payload)
       state.ordersList = newOrdersList
     },
     deleteSingleUserOrder: (state, action) => {
-      const newOrdersList = state.ordersList.filter((order) => order.id !== action.payload)
+      const newOrdersList = state.ordersList.filter((order) => order._id !== action.payload)
       state.ordersList = newOrdersList
     }
   },
   extraReducers(builder) {
-    builder.addCase(fetchOrders.pending, (state) => {
-      state.isLoading = true
-      state.error = null
-    })
-    builder.addCase(fetchOrders.fulfilled, (state, action) => {
+    builder.addCase(fetchUserOrders.fulfilled, (state, action) => {
       state.isLoading = false
+      state.error = null
+      console.log('fetchUserOrders:', action.payload)
       state.ordersList = action.payload
     })
-    builder.addCase(fetchOrders.rejected, (state, action) => {
-      ;(state.isLoading = false),
-        (state.error = action.error.message || 'Fetching orders data ended unsuccessfully')
-    })
+    // pending
+    builder.addMatcher(
+      (action) => action.type.endsWith('/pending'),
+      (state) => {
+        state.isLoading = true
+        state.error = null
+      }
+    )
+    // rejected
+    builder.addMatcher(
+      (action) => action.type.endsWith('/rejected'),
+      (state, action) => {
+        state.isLoading = false
+        state.error = action.payload || 'An error occured'
+      }
+    )
   }
 })
 
