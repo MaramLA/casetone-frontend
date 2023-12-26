@@ -1,5 +1,6 @@
 import { ChangeEvent, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { GiSaveArrow } from 'react-icons/gi'
 
 import {
   banUser,
@@ -22,12 +23,13 @@ import {
   OrderType
 } from '../../redux/slices/Orders/ordersSlice'
 import { errorResponse, successResponse } from '../../utils/messages'
-import { MdDelete } from 'react-icons/md'
+import { MdDelete, MdSaveAlt } from 'react-icons/md'
 
 const Users = () => {
   const { usersList, searchTerm, userData } = useSelector((state: RootState) => state.usersReducer)
   const { ordersList } = useSelector((state: RootState) => state.ordersReducer)
-  const products = useSelector((state: RootState) => state.productsReducer)
+
+  const orderStatus = ['pending', 'shipping', 'shipped', 'delivered', 'canceled']
 
   const dispatch: AppDispatch = useDispatch()
 
@@ -115,8 +117,12 @@ const Users = () => {
 
   const handleDeleteOrder = (orderId: string) => {
     try {
-      dispatch(deleteSingleUserOrder(orderId))
-      successResponse(`Order with id# ${orderId} deleted successfully`)
+      dispatch(deleteSingleUserOrder(orderId)).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          dispatch(fetchOrdersForAdmin())
+          successResponse(`Order deleted successfully`)
+        }
+      })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
     }
@@ -173,12 +179,41 @@ const Users = () => {
                                       )
                                     })}
                                   </div>
-                                  <p className="order-status">
-                                    <b>{order.status}</b>
-                                  </p>
+
+                                  <div className="entry">
+                                    <div className="input-btn">
+                                      <select
+                                        id="orderStatus"
+                                        name="orderStatus"
+                                        // onChange={handelInputChange}
+                                        className="selectStatus"
+                                        required>
+                                        <option key={order.status} value={order.status} disabled>
+                                          {order.status}
+                                        </option>
+                                        {orderStatus.map((status) => {
+                                          return (
+                                            <option key={status} value={status}>
+                                              {status}
+                                            </option>
+                                          )
+                                        })}
+                                      </select>
+                                    </div>
+                                  </div>
                                   <p className="order-price">{order.payment.transaction.amount}$</p>
                                   <div className="controllers">
-                                    <MdDelete className="deleteIcon" />
+                                    <MdDelete
+                                      className="deleteIcon"
+                                      onClick={() => {
+                                        handleDeleteOrder(order._id)
+                                      }}
+                                    />
+                                    <MdSaveAlt
+                                      className="saveIcon"
+                                      // onClick={() => {
+                                      // }}
+                                    />
                                   </div>
                                 </div>
                               </div>

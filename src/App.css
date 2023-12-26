@@ -1402,7 +1402,7 @@ footer .bottom-section p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 4vw;
+  gap: 1vw;
   width: 60vw;
   height: 5rem;
   padding-bottom: 1.3rem;
@@ -1457,6 +1457,30 @@ footer .bottom-section p {
 .orders .orders-container .order .deleteIcon:hover {
   cursor: pointer;
   padding-top: 0.4rem;
+}
+.orders .orders-container .order .saveIcon {
+  position: absolute;
+  right: 70px;
+  bottom: 2rem;
+  font-size: 2.8em;
+  color: #696262;
+  transition: all 0.2s ease-in;
+}
+.orders .orders-container .order .saveIcon:hover {
+  cursor: pointer;
+  padding-top: 0.4rem;
+}
+.orders .orders-container .order .selectStatus {
+  font-size: 2.2em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 15rem;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+.orders .orders-container .order .selectStatus:hover {
+  cursor: pointer;
 }
 .orders .orders-container .purchase-summary {
   display: flex;

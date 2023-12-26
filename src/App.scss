@@ -1276,7 +1276,7 @@ footer {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 4vw;
+      gap: 1vw;
       width: 60vw;
       height: 5rem;
       padding-bottom: 1.3rem;
@@ -1331,6 +1331,32 @@ footer {
         &:hover {
           cursor: pointer;
           padding-top: 0.4rem;
+        }
+      }
+      .saveIcon {
+        position: absolute;
+        right: 70px;
+        bottom: 2rem;
+        font-size: 2.8em;
+        color: $primary-color1;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          cursor: pointer;
+          padding-top: 0.4rem;
+        }
+      }
+      .selectStatus {
+        font-size: $font-size5;
+        color: $primary-color1;
+        text-transform: capitalize;
+        width: 15rem;
+        text-align: center;
+        outline: none;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
         }
       }
     }
