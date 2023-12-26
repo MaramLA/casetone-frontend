@@ -1265,6 +1265,7 @@ footer {
         color: $primary-color1;
         font-weight: bolder;
         text-align: center;
+        margin-bottom: 5rem;
       }
       .email {
         margin-bottom: 3rem;
@@ -1275,7 +1276,7 @@ footer {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 5vw;
+      gap: 4vw;
       width: 60vw;
       height: 5rem;
       padding-bottom: 1.3rem;
@@ -1307,11 +1308,15 @@ footer {
         flex-direction: column;
         gap: 1rem;
         .order-id {
-          width: 38rem;
-          text-align: center;
+          width: 34rem;
+          text-align: left;
         }
       }
       .order-status {
+        width: 38rem;
+        text-align: center;
+      }
+      .order-price {
         width: 38rem;
         text-align: center;
       }
@@ -2402,8 +2407,11 @@ footer {
 
 /* ---------------------------------------------------------- */
 /* End of add edit product page styling */
-/* ----------------------------------------------------------
+/* ---------------------------------------------------------- */
 
+.test-class {
+  margin-top: 15rem;
+}
 
 // Media queries for responsive design
 

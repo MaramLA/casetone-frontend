@@ -4,9 +4,19 @@ import axios, { AxiosError } from 'axios'
 
 const baseUrl = 'http://localhost:5050/orders'
 
+// fetch orders for a specific user
 export const fetchUserOrders = createAsyncThunk('orders/fetchUserOrders', async () => {
   try {
     const response = await axios.get(baseUrl)
+    return response.data.payload
+  } catch (error: AxiosError | any) {
+    return error.response.data.msg
+  }
+})
+// fetch all orders for admin
+export const fetchOrdersForAdmin = createAsyncThunk('orders/fetchOrdersForAdmin', async () => {
+  try {
+    const response = await axios.get(`${baseUrl}/all-orders`)
     return response.data.payload
   } catch (error: AxiosError | any) {
     return error.response.data.msg
@@ -55,10 +65,18 @@ const ordersSlice = createSlice({
     }
   },
   extraReducers(builder) {
+    // fetch orders for a specific user
     builder.addCase(fetchUserOrders.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
       console.log('fetchUserOrders:', action.payload)
+      state.ordersList = action.payload
+    })
+    // fetch all orders for admin
+    builder.addCase(fetchOrdersForAdmin.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      console.log('fetchOrdersForAdmin:', action.payload)
       state.ordersList = action.payload
     })
     // pending

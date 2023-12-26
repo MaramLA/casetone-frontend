@@ -84,7 +84,7 @@ export const fetchBraintreeToken = createAsyncThunk('product/fetchBraintreeToken
 // fetch braintree token
 export const PaywithBraintree = createAsyncThunk(
   'product/PaywithBraintree',
-  async (data: object, {rejectWithValue}) => {
+  async (data: object, { rejectWithValue }) => {
     try {
       const response = await axios.post(`${productApiBaseURL}/braintree/payment`, data)
       return response.data
@@ -210,7 +210,6 @@ export const productSlice = createSlice({
     builder.addCase(PaywithBraintree.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
-      
     })
     // pending
     builder.addMatcher(

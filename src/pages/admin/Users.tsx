@@ -16,30 +16,37 @@ import { AppDispatch, RootState } from '../../redux/store'
 import Footer from '../../layout/Footer'
 
 import { AxiosError } from 'axios'
-import { deleteSingleUserOrder } from '../../redux/slices/Orders/ordersSlice'
+import {
+  deleteSingleUserOrder,
+  fetchOrdersForAdmin,
+  OrderType
+} from '../../redux/slices/Orders/ordersSlice'
 import { errorResponse, successResponse } from '../../utils/messages'
+import { MdDelete } from 'react-icons/md'
 
 const Users = () => {
-  const users = useSelector((state: RootState) => state.usersReducer)
-  const orders = useSelector((state: RootState) => state.ordersReducer)
+  const { usersList, searchTerm, userData } = useSelector((state: RootState) => state.usersReducer)
+  const { ordersList } = useSelector((state: RootState) => state.ordersReducer)
   const products = useSelector((state: RootState) => state.productsReducer)
 
   const dispatch: AppDispatch = useDispatch()
 
   useEffect(() => {
+    dispatch(fetchOrdersForAdmin())
+  }, [dispatch])
+
+  useEffect(() => {
     dispatch(fetchUsers())
-  }, [dispatch, users.usersList])
+  }, [dispatch, usersList])
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value
     dispatch(searchUser(searchValue))
   }
 
-  const searchedUsers = users.searchTerm
-    ? users.usersList.filter((user) =>
-        user.firstName.toLowerCase().includes(users.searchTerm?.toLowerCase())
-      )
-    : users.usersList
+  const searchedUsers = searchTerm
+    ? usersList.filter((user) => user.firstName.toLowerCase().includes(searchTerm?.toLowerCase()))
+    : usersList
 
   const handleRemoveUser = async (userId: string, firstName: string, lastName: string) => {
     try {
@@ -106,7 +113,7 @@ const Users = () => {
     }
   }
 
-  const handleDeleteOrder = (orderId: number) => {
+  const handleDeleteOrder = (orderId: string) => {
     try {
       dispatch(deleteSingleUserOrder(orderId))
       successResponse(`Order with id# ${orderId} deleted successfully`)
@@ -126,12 +133,12 @@ const Users = () => {
             name="searchTerm"
             id="search-product"
             placeholder="search"
-            value={users.searchTerm?.toString()}
+            value={searchTerm?.toString()}
             onChange={handleSearchInput}
           />
           {searchedUsers.length > 0 &&
             searchedUsers.map((user: UserType) => {
-              if (user._id !== users.userData?._id) {
+              if (user._id !== userData?._id) {
                 return (
                   <div key={user._id} className="orders" id="orders">
                     <div className="orders-container">
@@ -139,41 +146,48 @@ const Users = () => {
                         <h3 className="username">{user.firstName + ' ' + user.lastName}</h3>
                         <p className="email">{user.email}</p>
                       </div>
-                      {/* the below code will display the orders for each user but currently it has problem with the datatype of the id and will be fixed soon */}
-                      {/* {orders.ordersList.length > 0 &&
-                        user.isBanned === false &&
-                        orders.ordersList.map((order: OrderType) => {
-                          if (order.userId === user._id) {
+                      {Array.isArray(ordersList) && ordersList.length > 0 ? (
+                        ordersList.map((order: any) => {
+                          if (order.user._id === user._id) {
                             return (
-                              <div key={order.id} className="order">
-                                <p className="order-id">Order# {order.id}</p>
-                                <div className="order-images">
-                                  {products.productsList.length > 0 &&
-                                    products.productsList.map((product: ProductType) => {
-                                      if (order.productId === product.id) {
-                                        return (
-                                          <img
-                                            src={product.image}
-                                            alt={product.name}
-                                            className="order-image"
-                                            key={product.id}
-                                            height="100px"
-                                          />
-                                        )
-                                      }
+                              <div key={order._id}>
+                                <div className="order">
+                                  <div className="meta-info">
+                                    <p className="order-id">
+                                      <b>ID:</b> {order._id}
+                                    </p>
+                                    <p className="order-id">
+                                      <b>Date:</b> {order.createdAt}
+                                    </p>
+                                  </div>
+                                  {/* <p className="order-date">{order.createdAt}</p> */}
+                                  <div className="order-images">
+                                    {order.products.map((singleItem: any) => {
+                                      return (
+                                        <img
+                                          className="order-image"
+                                          src={singleItem.product.image}
+                                          alt={singleItem.product.name}
+                                          key={singleItem.product._id} // Use a unique key for each image
+                                        />
+                                      )
                                     })}
-                                </div>
-                                <p className="order-date">{order.purchasedAt}</p>
-                                <div className="controllers">
-                                  <MdDelete
-                                    className="deleteIcon"
-                                    onClick={() => handleDeleteOrder(order.id)}
-                                  />
+                                  </div>
+                                  <p className="order-status">
+                                    <b>{order.status}</b>
+                                  </p>
+                                  <p className="order-price">{order.payment.transaction.amount}$</p>
+                                  <div className="controllers">
+                                    <MdDelete className="deleteIcon" />
+                                  </div>
                                 </div>
                               </div>
                             )
                           }
-                        })} */}
+                        })
+                      ) : (
+                        <div>no orders</div>
+                      )}
                       <div className="buttons">
                         {user.isAdmin === false && (
                           <>
@@ -219,3 +233,37 @@ const Users = () => {
 }
 
 export default Users
+
+//////////////
+// import React, { useEffect } from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { AppDispatch, RootState } from '../../redux/store'
+// import { fetchOrdersForAdmin, fetchUserOrders } from '../../redux/slices/Orders/ordersSlice'
+// import { fetchProducts } from '../../redux/slices/products/productSlice'
+
+// const Users = () => {
+//   const { ordersList } = useSelector((state: RootState) => state.ordersReducer)
+//   const dispatch: AppDispatch = useDispatch()
+//   useEffect(() => {
+//     dispatch(fetchProducts()), dispatch(fetchOrdersForAdmin())
+//   }, [])
+
+//   return (
+//     <div className="test-class">
+//       {Array.isArray(ordersList) && ordersList.length > 0 ? (
+//         ordersList.map((order) => (
+//           <div>
+//             <div>order id: {order._id}</div>
+//             <div>order user: {order.user._id}</div>
+//             <div>order total amount: {order.payment.transaction.amount}</div>
+//           </div>
+
+//         ))
+//       ) : (
+//         <div>none</div>
+//       )}
+//     </div>
+//   )
+// }
+
+// export default Users

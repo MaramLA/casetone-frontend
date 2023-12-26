@@ -1392,6 +1392,7 @@ footer .bottom-section p {
   color: #696262;
   font-weight: bolder;
   text-align: center;
+  margin-bottom: 5rem;
 }
 .orders .orders-container .info .email {
   margin-bottom: 3rem;
@@ -1401,7 +1402,7 @@ footer .bottom-section p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 5vw;
+  gap: 4vw;
   width: 60vw;
   height: 5rem;
   padding-bottom: 1.3rem;
@@ -1434,10 +1435,14 @@ footer .bottom-section p {
   gap: 1rem;
 }
 .orders .orders-container .order .meta-info .order-id {
+  width: 34rem;
+  text-align: left;
+}
+.orders .orders-container .order .order-status {
   width: 38rem;
   text-align: center;
 }
-.orders .orders-container .order .order-status {
+.orders .orders-container .order .order-price {
   width: 38rem;
   text-align: center;
 }
@@ -2706,10 +2711,10 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of add edit product page styling */
-/* ----------------------------------------------------------
-
-
-// Media queries for responsive design
+/* ---------------------------------------------------------- */
+.test-class {
+  margin-top: 15rem;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media screen and (min-width: 1000px) {
