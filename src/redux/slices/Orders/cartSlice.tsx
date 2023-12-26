@@ -17,10 +17,14 @@ const cartData =
 
 type CartState = {
   cartItems: NewCartItemType[]
+  isCheckout: boolean
+  newOrderObject: Object
 }
 
 const initialState: CartState = {
-  cartItems: cartData
+  cartItems: cartData,
+  isCheckout: false,
+  newOrderObject: {}
 }
 
 const cartSlice = createSlice({
@@ -53,6 +57,12 @@ const cartSlice = createSlice({
       state.cartItems = []
       localStorage.setItem('cart', JSON.stringify(state.cartItems))
     },
+    closeCheckout: (state) => {
+      state.isCheckout = false
+    },
+    openCheckout: (state) => {
+      state.isCheckout = true
+    },
     updateCartItem(state, action) {
       const { id, quantity } = action.payload
       const updatedCartItems = state.cartItems.map((item) => {
@@ -69,10 +79,11 @@ const cartSlice = createSlice({
       state.cartItems = updatedCartItems
 
       // Save the updated cartItems to local storage
-      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems))
+      localStorage.setItem('cart', JSON.stringify(state.cartItems))
     }
   }
 })
 
-export const { addToCart, deleteFromCart, resetCart, updateCartItem } = cartSlice.actions
+export const { addToCart, deleteFromCart, resetCart, updateCartItem, closeCheckout, openCheckout } =
+  cartSlice.actions
 export default cartSlice.reducer

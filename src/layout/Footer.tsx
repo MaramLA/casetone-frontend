@@ -1,5 +1,5 @@
-import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import { HashLink as InnerLink } from 'react-router-hash-link'
 
 import logo from '../assets/logo.png'
@@ -7,24 +7,22 @@ import logo from '../assets/logo.png'
 import { AppDispatch, RootState } from '../redux/store'
 
 import {
-  twitter,
-  linkedin,
-  homePath,
-  usersPath,
   aboutPath,
+  categoryPath,
+  homePath,
   instagram,
+  linkedin,
+  productsPath,
+  profilePath,
+  purchasesPath,
   signInPath,
   signUpPath,
-  profilePath,
-  productsPath,
-  categoryPath,
-  purchasesPath
+  twitter,
+  usersPath
 } from '../pathLinks'
 
-import { toast } from 'react-toastify'
 import { AxiosError } from 'axios'
 import { signOutUser } from '../redux/slices/Users/userSlice'
-import { useEffect } from 'react'
 import { errorResponse } from '../utils/messages'
 
 const Footer = () => {

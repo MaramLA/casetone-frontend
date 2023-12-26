@@ -8,6 +8,7 @@ export const resetPasswordPath = '/reset-password'
 
 export const profilePath = '/registerd/profile'
 export const purchasesPath = '/registerd/user/purchases'
+export const checkoutPath = '/registerd/user/purchases/checkout'
 
 export const usersPath = '/registerd/admin/users'
 export const categoryPath = '/registerd/admin/category'

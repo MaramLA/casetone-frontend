@@ -1490,6 +1490,25 @@ footer .bottom-section p {
   cursor: pointer;
   padding: 0.7em 1.7em;
 }
+.orders .orders-container .buttons .ok-btn {
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 4px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+}
+.orders .orders-container .buttons .ok-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
 
 /* ---------------------------------------------------------- */
 /* End of orders styling */

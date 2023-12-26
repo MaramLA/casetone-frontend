@@ -1332,6 +1332,10 @@ footer {
         @include center();
         @include mainButton1-Styling();
       }
+      .ok-btn {
+        @include center();
+        @include mainButton2-Styling();
+      }
     }
   }
 }

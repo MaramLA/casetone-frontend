@@ -71,6 +71,29 @@ export const editSingleProduct = createAsyncThunk(
   }
 )
 
+// fetch braintree token
+export const fetchBraintreeToken = createAsyncThunk('product/fetchBraintreeToken', async () => {
+  try {
+    const response = await axios.get(`${productApiBaseURL}/braintree/token`)
+    return response.data
+  } catch (error: AxiosError | any) {
+    return error.response.data.msg
+  }
+})
+
+// fetch braintree token
+export const PaywithBraintree = createAsyncThunk(
+  'product/PaywithBraintree',
+  async (data: object, {rejectWithValue}) => {
+    try {
+      const response = await axios.post(`${productApiBaseURL}/braintree/payment`, data)
+      return response.data
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
 export type ProductType = {
   _id: string
   name: string
@@ -182,6 +205,12 @@ export const productSlice = createSlice({
         foundProduct.price = updatedProduct.price
         foundProduct.quantity = updatedProduct.quantity
       }
+    })
+    // pay with braintree
+    builder.addCase(PaywithBraintree.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      
     })
     // pending
     builder.addMatcher(
