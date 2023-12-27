@@ -46,7 +46,7 @@ const Checkout = () => {
     try {
       dispatch(PaywithBraintree({ nonce, cartItems, totalAmount })).then((data) => {
         if (data.meta.requestStatus) {
-          successResponse('Order placef successfully')
+          successResponse('Order placed successfully')
           dispatch(resetCart())
           dispatch(closeCheckout())
           navigate(ordersPath)

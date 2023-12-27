@@ -35,6 +35,6 @@ export const warningResponse = (message: string) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'colored'
+    theme: 'light'
   })
 }

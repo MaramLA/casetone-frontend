@@ -72,6 +72,8 @@ const Users = () => {
     try {
       dispatch(deleteUser(userId)).then((data) => {
         if (data.meta.requestStatus === 'fulfilled') {
+          dispatch(fetchUsers())
+          dispatch(fetchOrdersForAdmin())
           successResponse(`${firstName + ' ' + lastName + ' '} deleted successfully`)
         }
       })
