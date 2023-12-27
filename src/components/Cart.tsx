@@ -38,7 +38,6 @@ const Cart = () => {
   }
 
   const cartTotalAmount = () => {
-    // Calculate total amount based on updated quantities
     let totalAmount = 0
     cartItems.forEach((item) => {
       totalAmount += Number(item.product.price) * Number(item.quantity)
@@ -55,7 +54,6 @@ const Cart = () => {
   }
 
   const handleQuantityChange = (id: string, quantity: number) => {
-    // Dispatch an action to update the quantity for the specific item
     dispatch(updateCartItem({ id, quantity }))
   }
 

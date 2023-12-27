@@ -1,9 +1,9 @@
 import Footer from '../../layout/Footer'
 
-import Orders from '../../components/Orders'
+import { useSelector } from 'react-redux'
 import PurchasesList from '../../components/Cart'
 import Checkout from '../../components/Checkout'
-import { useSelector } from 'react-redux'
+import Orders from '../../components/Orders'
 import { RootState } from '../../redux/store'
 
 const Purchases = () => {

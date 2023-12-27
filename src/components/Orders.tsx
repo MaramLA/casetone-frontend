@@ -36,7 +36,6 @@ const Orders = () => {
                       <b>Date:</b> {order.createdAt}
                     </p>
                   </div>
-                  {/* <p className="order-date">{order.createdAt}</p> */}
                   <div className="order-images">
                     {order.products.map((singleItem: any) => {
                       return (
@@ -44,7 +43,7 @@ const Orders = () => {
                           className="order-image"
                           src={singleItem.product.image}
                           alt={singleItem.product.name}
-                          key={singleItem.product._id} // Use a unique key for each image
+                          key={singleItem.product._id}
                         />
                       )
                     })}
@@ -53,9 +52,6 @@ const Orders = () => {
                     <b>{order.status}</b>
                   </p>
                   <p className="order-price">{order.payment.transaction.amount}$</p>
-                  {/* <div className="controllers">
-                    <MdDelete className="deleteIcon" />
-                  </div> */}
                 </div>
               </div>
             )

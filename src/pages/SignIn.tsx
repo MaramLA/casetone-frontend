@@ -93,7 +93,6 @@ const SignIn = () => {
             </button>
           </form>
           <div className="formSignUp">
-            {/* <p>Do not have an account?</p> */}
             <Link to={forgotPasswordPath} className="formSignUp">
               Forgot Password
             </Link>

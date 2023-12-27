@@ -7,6 +7,28 @@ type UpdateStatusPayload = {
   id: string
 }
 
+export interface IOrderProduct {
+  product: string
+  quantity: number
+}
+
+export interface IOrderPayment {}
+
+export type OrderType = {
+  _id: string
+  products: IOrderProduct[]
+  payment: IOrderPayment
+  user: string
+  status: string
+  createdAt: string
+}
+
+type OrdersState = {
+  ordersList: OrderType[]
+  isLoading: boolean
+  error: null | string
+}
+
 const baseOrderUrl = 'http://localhost:5050/orders'
 
 // fetch orders for a specific user
@@ -18,6 +40,7 @@ export const fetchUserOrders = createAsyncThunk('orders/fetchUserOrders', async 
     return error.response.data.msg
   }
 })
+
 // fetch all orders for admin
 export const fetchOrdersForAdmin = createAsyncThunk('orders/fetchOrdersForAdmin', async () => {
   try {
@@ -67,28 +90,6 @@ export const updateOrderStatus = createAsyncThunk(
   }
 )
 
-export interface IOrderProduct {
-  product: string
-  quantity: number
-}
-
-export interface IOrderPayment {}
-
-export type OrderType = {
-  _id: string
-  products: IOrderProduct[]
-  payment: IOrderPayment
-  user: string
-  status: string
-  createdAt: string
-}
-
-type OrdersState = {
-  ordersList: OrderType[]
-  isLoading: boolean
-  error: null | string
-}
-
 const initialState: OrdersState = {
   ordersList: [],
   isLoading: false,
@@ -98,12 +99,7 @@ const initialState: OrdersState = {
 const ordersSlice = createSlice({
   name: 'orders',
   initialState,
-  reducers: {
-    // deleteAllUserOrders: (state, action) => {
-    //   const newOrdersList = state.ordersList.filter((order) => order.user !== action.payload)
-    //   state.ordersList = newOrdersList
-    // }
-  },
+  reducers: {},
   extraReducers(builder) {
     // fetch orders for a specific user
     builder.addCase(fetchUserOrders.fulfilled, (state, action) => {
@@ -140,9 +136,9 @@ const ordersSlice = createSlice({
       console.log('status update action.payload:', action.payload)
       const updatedOrders = state.ordersList.map((order) => {
         if (order._id === action.payload.id) {
-          return { ...order, status: action.payload.status } // Update the status and return the updated order
+          return { ...order, status: action.payload.status }
         }
-        return order // Return the original order if no update is required
+        return order
       })
       state.ordersList = updatedOrders
     })

@@ -9,7 +9,7 @@ export const successResponse = (message: string) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'colored'
+    theme: 'light'
   })
 }
 
@@ -22,10 +22,9 @@ export const errorResponse = (error: string) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'colored'
+    theme: 'light'
   })
 }
-
 
 export const warningResponse = (message: string) => {
   toast.warning(message, {

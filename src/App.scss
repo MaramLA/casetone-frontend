@@ -147,7 +147,6 @@ header {
       .nav-buttons {
         display: flex;
         gap: 2.5rem;
-        // margin-right: 6rem;
         .link-btn {
           text-decoration: none;
           .btn-1 {
@@ -225,7 +224,6 @@ header {
         list-style: none;
         @include center();
         li {
-          // margin: 1.5rem;
           width: 6rem;
           text-align: center;
           .mini-navLinks {
@@ -275,7 +273,6 @@ footer {
     // Styling footer top left section
     .top-left-section {
       margin: 5vh;
-      // margin-top: 4rem;
       width: 33.33%;
       height: 40vh;
       white-space: nowrap;
@@ -304,7 +301,6 @@ footer {
     // Styling footer top mid seciton
     .top-mid-section {
       margin: 5vh;
-      // margin-top: 4rem;
       width: 33.33%;
       height: 40vh;
       white-space: nowrap;
@@ -374,7 +370,6 @@ footer {
     // Styling footer top right seciton
     .top-right-section {
       margin: 5vh;
-      // margin-top: 4rem;
       display: flex;
       width: 33.33%;
       height: 40vh;
@@ -507,9 +502,6 @@ footer {
   }
   .sort-section {
     .sort-btn {
-      // -webkit-appearance: none;
-      // -moz-appearance: none;
-      // appearance: none;
       @include mainButton2-Styling();
       outline: none;
       text-align: center;
@@ -521,10 +513,8 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    // @include center();
     flex-wrap: wrap;
     margin-bottom: 8rem;
-    // max-width: 80vw;
     width: 68vw;
 
     .product {
@@ -931,7 +921,6 @@ footer {
   // Divide the seciton to left and right
   .main-section {
     display: flex;
-    // flex-direction: row;
     @include center();
     width: 100%;
     // Styling the rating icon div
@@ -952,7 +941,6 @@ footer {
         color: $primary-color1;
         font-size: 10rem;
         margin-top: 5rem;
-        // margin-bottom: 20rem;
         font-weight: bold;
       }
     }
@@ -1131,12 +1119,10 @@ footer {
         position: relative;
         display: flex;
         width: 20rem;
-        // background: lightblue;
         @include center();
         .quantity-input {
           width: 6rem;
           height: 3rem;
-          // border-radius: 50px;
           font-size: $font-size4;
           color: $primary-color1;
           text-transform: lowercase;
@@ -1176,7 +1162,6 @@ footer {
         color: $primary-color1;
         text-transform: capitalize;
         width: 20rem;
-        // background: lightblue;
         text-align: center;
       }
       .deleteIcon {
@@ -1325,7 +1310,6 @@ footer {
         color: $primary-color1;
         text-transform: capitalize;
         width: 20rem;
-        // background: lightblue;
         text-align: center;
       }
       .item-sizes {
@@ -1333,7 +1317,6 @@ footer {
         color: $primary-color1;
         text-transform: capitalize;
         width: 20rem;
-        // background: lightblue;
         text-align: center;
       }
       .deleteIcon {
@@ -1754,7 +1737,6 @@ footer {
         color: $primary-color1;
         text-transform: capitalize;
         font-weight: bolder;
-        // margin-bottom: 2rem;
         @include center();
         transition: all 0.2s ease-in;
         &:hover {
@@ -2006,7 +1988,6 @@ footer {
   align-items: center;
   justify-content: center;
   @include center();
-  // box-shadow: $primary-color5 0px 10px 10px -10px;
   .form {
     display: flex;
     flex-direction: column;
@@ -2351,7 +2332,7 @@ footer {
       display: flex;
       flex-direction: column;
       width: 80vh;
-      margin-bottom: 3rem; // background: lightblue;
+      margin-bottom: 3rem;
       @include center();
       label {
         font-size: $font-size4;
@@ -2529,9 +2510,6 @@ footer {
       bottom: 2rem;
     }
   }
-  // .nav-bar .right-section .nav-buttons button {
-  //   display: none !important;
-  // }
 
   .pagination-div .top-section .page-controller {
     display: none;

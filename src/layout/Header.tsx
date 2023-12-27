@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux'
 
 import { RootState } from '../redux/store'
 
-import UserNavbar from '../components/UserNavbar'
 import AdminNavbar from '../components/AdminNavbar'
+import UserNavbar from '../components/UserNavbar'
 
 const Header = () => {
   const { userData } = useSelector((state: RootState) => state.usersReducer)

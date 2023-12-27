@@ -9,6 +9,27 @@ export type EditProductPayload = {
   id: string
 }
 
+export type ProductType = {
+  _id: string
+  name: string
+  price: number
+  image: string
+  quantity: number
+  sold: number
+  categories: string[]
+  description: string
+  sizes: string
+  variants: string
+}
+
+export type ProductState = {
+  productsList: ProductType[]
+  error: null | string
+  isLoading: boolean
+  singleProduct: ProductType
+  searchTerm: string | null
+}
+
 // fetch products
 export const fetchProducts = createAsyncThunk('product/fetchProducts', async () => {
   try {
@@ -94,27 +115,6 @@ export const PaywithBraintree = createAsyncThunk(
   }
 )
 
-export type ProductType = {
-  _id: string
-  name: string
-  price: number
-  image: string
-  quantity: number
-  sold: number
-  categories: string[]
-  description: string
-  sizes: string
-  variants: string
-}
-
-export type ProductState = {
-  productsList: ProductType[]
-  error: null | string
-  isLoading: boolean
-  singleProduct: ProductType
-  searchTerm: string | null
-}
-
 const initialState: ProductState = {
   productsList: [],
   error: null,
@@ -143,21 +143,6 @@ export const productSlice = createSlice({
         )
       }
     }
-
-    // editProduct: (state, action) => {
-    //   const updatedProduct = action.payload
-    //   const foundProduct = state.productsList.find((product) => product._id === updatedProduct.id)
-    //   if (foundProduct) {
-    //     foundProduct.name = updatedProduct.name
-    //     foundProduct.image = updatedProduct.image
-    //     foundProduct.description = updatedProduct.description
-    //     foundProduct.categories = updatedProduct.categories
-    //     foundProduct.variants = updatedProduct.variants
-    //     foundProduct.sizes = updatedProduct.sizes
-    //     foundProduct.price = updatedProduct.price
-    //     foundProduct.quantity = updatedProduct.quantity
-    //   }
-    // }
   },
   extraReducers(builder) {
     // fetch products

@@ -5,10 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { AxiosError } from 'axios'
 import { productsPath } from '../../pathLinks'
 import { fetchCategories } from '../../redux/slices/Categories/categoriesSlice'
-import {
-  editSingleProduct,
-  fetchSingleProduct
-} from '../../redux/slices/products/productSlice'
+import { editSingleProduct, fetchSingleProduct } from '../../redux/slices/products/productSlice'
 import { AppDispatch, RootState } from '../../redux/store'
 import { errorResponse, successResponse } from '../../utils/messages'
 
@@ -39,10 +36,9 @@ const EditProduct = () => {
   const { id } = useParams()
 
   const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
-  const { singleProduct, error } = useSelector((state: RootState) => state.productsReducer)
+  const { singleProduct } = useSelector((state: RootState) => state.productsReducer)
 
   const [newProduct, setNewProduct] = useState<EditProductType>({ ...initialProductData })
-  // const [selectedFile, setSelectedFile] = useState<File | null>(null)
 
   const dispatch: AppDispatch = useDispatch()
   const navigate = useNavigate()
@@ -68,22 +64,6 @@ const EditProduct = () => {
     }
   }, [id, singleProduct])
 
-  // useEffect(() => {
-  //   // Update newProduct only when categoriesList is available and not empty
-  //   if (categoriesList && categoriesList.length > 0 && newProduct.categories.length === 0) {
-  //     setNewProduct((prevProduct) => ({
-  //       ...prevProduct,
-  //       categories: [newProduct.categories[0]] // Update categories as an array with the first category ID
-  //     }))
-  //   }
-  // }, [categoriesList, newProduct.categories])
-
-  // useEffect(() => {
-  //   if (error) {
-  //     errorResponse(error)
-  //   }
-  // }, [error])
-
   const handelInputChange = (
     event:
       | ChangeEvent<HTMLInputElement>
@@ -102,14 +82,6 @@ const EditProduct = () => {
       })
     }
   }
-
-  // const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //   const file = event.target.files?.[0] // Access the selected file
-
-  //   if (file) {
-  //     setSelectedFile(file) // Set the selected file in state
-  //   }
-  // }
 
   const handleProductSubmit = async (event: FormEvent) => {
     event.preventDefault()
@@ -145,10 +117,6 @@ const EditProduct = () => {
         price: Number(newProduct.price),
         quantity: Number(newProduct.quantity)
       }
-      // selectedFile === null
-      //   ? (newProductData.image = singleProduct.image)
-      //   : (newProductData.image = String(selectedFile))
-      // console.log('selectedFile-a: ', selectedFile)
 
       newProductData.categories?.push(String(newProduct.categories))
 

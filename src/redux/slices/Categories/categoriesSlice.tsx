@@ -13,6 +13,17 @@ type NewCategoryPaylosad = {
   name: string
 }
 
+export type CategoryType = {
+  _id: string
+  name: string
+}
+
+export type CategoryState = {
+  categoriesList: CategoryType[]
+  error: null | string
+  isLoading: boolean
+}
+
 // fetch categoreis
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
   try {
@@ -61,17 +72,6 @@ export const updateSingleCategory = createAsyncThunk(
     }
   }
 )
-
-export type CategoryType = {
-  _id: string
-  name: string
-}
-
-export type CategoryState = {
-  categoriesList: CategoryType[]
-  error: null | string
-  isLoading: boolean
-}
 
 const initialState: CategoryState = {
   categoriesList: [],
@@ -129,5 +129,4 @@ const categoriesSlice = createSlice({
   }
 })
 
-// export const { deleteCategory } = categoriesSlice.actions
 export default categoriesSlice.reducer

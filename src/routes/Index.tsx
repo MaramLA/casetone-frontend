@@ -50,7 +50,7 @@ const Index = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="colored"
+        theme="light"
         style={{
           marginTop: '12rem',
           fontSize: '2em',

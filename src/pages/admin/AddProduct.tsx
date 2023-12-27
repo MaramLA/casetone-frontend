@@ -43,11 +43,10 @@ const AddProduct = () => {
   }, [dispatch])
 
   useEffect(() => {
-    // Update newProduct only when categoriesList is available and not empty
     if (categoriesList && categoriesList.length > 0 && newProduct.categories.length === 0) {
       setNewProduct((prevProduct) => ({
         ...prevProduct,
-        categories: [categoriesList[0]._id] // Update categories as an array with the first category ID
+        categories: [categoriesList[0]._id]
       }))
     }
   }, [categoriesList, newProduct.categories])

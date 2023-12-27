@@ -187,7 +187,7 @@ const Users = () => {
                                       <b>Date:</b> {order.createdAt}
                                     </p>
                                   </div>
-                                  {/* <p className="order-date">{order.createdAt}</p> */}
+
                                   <div className="order-images">
                                     {order.products.map((singleItem: any) => {
                                       return (
@@ -195,7 +195,7 @@ const Users = () => {
                                           className="order-image"
                                           src={singleItem.product.image}
                                           alt={singleItem.product.name}
-                                          key={singleItem.product._id} // Use a unique key for each image
+                                          key={singleItem.product._id}
                                         />
                                       )
                                     })}
@@ -211,8 +211,7 @@ const Users = () => {
                                         }}
                                         className="selectStatus"
                                         required
-                                        value={order.status} // Set the value to the current order status
-                                      >
+                                        value={order.status}>
                                         <option disabled>Select Status</option>
                                         <option value="pending">Pending</option>
                                         <option value="shipping">Shipping</option>
@@ -285,37 +284,3 @@ const Users = () => {
 }
 
 export default Users
-
-//////////////
-// import React, { useEffect } from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { AppDispatch, RootState } from '../../redux/store'
-// import { fetchOrdersForAdmin, fetchUserOrders } from '../../redux/slices/Orders/ordersSlice'
-// import { fetchProducts } from '../../redux/slices/products/productSlice'
-
-// const Users = () => {
-//   const { ordersList } = useSelector((state: RootState) => state.ordersReducer)
-//   const dispatch: AppDispatch = useDispatch()
-//   useEffect(() => {
-//     dispatch(fetchProducts()), dispatch(fetchOrdersForAdmin())
-//   }, [])
-
-//   return (
-//     <div className="test-class">
-//       {Array.isArray(ordersList) && ordersList.length > 0 ? (
-//         ordersList.map((order) => (
-//           <div>
-//             <div>order id: {order._id}</div>
-//             <div>order user: {order.user._id}</div>
-//             <div>order total amount: {order.payment.transaction.amount}</div>
-//           </div>
-
-//         ))
-//       ) : (
-//         <div>none</div>
-//       )}
-//     </div>
-//   )
-// }
-
-// export default Users

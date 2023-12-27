@@ -32,7 +32,6 @@ const Checkout = () => {
   }, [])
 
   const cartTotalAmount = () => {
-    // Calculate total amount based on updated quantities
     let totalAmount = 0
     cartItems.forEach((item) => {
       totalAmount += Number(item.product.price) * Number(item.quantity)

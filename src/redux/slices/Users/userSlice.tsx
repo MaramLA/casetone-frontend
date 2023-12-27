@@ -8,6 +8,28 @@ type ResetUserPasswordPayload = {
   password: string
 }
 
+export type UserType = {
+  _id: string
+  firstName: string
+  lastName: string
+  email: string
+  password: string
+  isAdmin: boolean
+  isBanned: boolean
+  balance: number
+  address: string
+}
+
+export type UsersState = {
+  usersList: UserType[]
+  isLoading: boolean
+  error: null | string
+  data: object | null | any
+  isSignedIn: boolean
+  userData: null | UserType
+  searchTerm: string
+}
+
 const baseURL = 'http://localhost:5050'
 
 // fetch users
@@ -185,28 +207,6 @@ export const resetUserPassword = createAsyncThunk(
     }
   }
 )
-
-export type UserType = {
-  _id: string
-  firstName: string
-  lastName: string
-  email: string
-  password: string
-  isAdmin: boolean
-  isBanned: boolean
-  balance: number
-  address: string
-}
-
-export type UsersState = {
-  usersList: UserType[]
-  isLoading: boolean
-  error: null | string
-  data: object | null | any
-  isSignedIn: boolean
-  userData: null | UserType
-  searchTerm: string
-}
 
 const signInData =
   localStorage.getItem('signInData') !== null
