@@ -20,26 +20,36 @@ import { AxiosError } from 'axios'
 import {
   deleteSingleUserOrder,
   fetchOrdersForAdmin,
-  OrderType
+  OrderType,
+  updateOrderStatus
 } from '../../redux/slices/Orders/ordersSlice'
 import { errorResponse, successResponse } from '../../utils/messages'
 import { MdDelete, MdSaveAlt } from 'react-icons/md'
+import { fetchProducts } from '../../redux/slices/products/productSlice'
 
 const Users = () => {
   const { usersList, searchTerm, userData } = useSelector((state: RootState) => state.usersReducer)
   const { ordersList } = useSelector((state: RootState) => state.ordersReducer)
 
-  const orderStatus = ['pending', 'shipping', 'shipped', 'delivered', 'canceled']
-
   const dispatch: AppDispatch = useDispatch()
 
   useEffect(() => {
+    dispatch(fetchUsers())
     dispatch(fetchOrdersForAdmin())
   }, [dispatch])
 
-  useEffect(() => {
-    dispatch(fetchUsers())
-  }, [dispatch, usersList])
+  const handleStatusChange = async (event: ChangeEvent<HTMLSelectElement>, id: string) => {
+    const status = event.target.value
+    try {
+      const data = await dispatch(updateOrderStatus({ status, id }))
+      if (data.meta.requestStatus === 'fulfilled') {
+        dispatch(fetchOrdersForAdmin())
+        successResponse(`Status updated to ${status}`)
+      }
+    } catch (error: AxiosError | any) {
+      errorResponse(error.response.data.msg)
+    }
+  }
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value
@@ -98,12 +108,15 @@ const Users = () => {
       if (!isAdmin) {
         dispatch(upgradeUser(userId)).then((data) => {
           if (data.meta.requestStatus === 'fulfilled') {
+            dispatch(fetchUsers())
             successResponse(`${firstName + ' ' + lastName + ' '}upgraded to admin successfully`)
           }
         })
       } else {
         dispatch(degradeUser(userId)).then((data) => {
           if (data.meta.requestStatus === 'fulfilled') {
+            dispatch(fetchUsers())
+
             successResponse(
               `${firstName + ' ' + lastName + ' '}degraded to regular user successfully`
             )
@@ -185,22 +198,23 @@ const Users = () => {
                                       <select
                                         id="orderStatus"
                                         name="orderStatus"
-                                        // onChange={handelInputChange}
+                                        onChange={(e) => {
+                                          handleStatusChange(e, order._id)
+                                        }}
                                         className="selectStatus"
-                                        required>
-                                        <option key={order.status} value={order.status} disabled>
-                                          {order.status}
-                                        </option>
-                                        {orderStatus.map((status) => {
-                                          return (
-                                            <option key={status} value={status}>
-                                              {status}
-                                            </option>
-                                          )
-                                        })}
+                                        required
+                                        value={order.status} // Set the value to the current order status
+                                      >
+                                        <option disabled>Select Status</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="shipping">Shipping</option>
+                                        <option value="shipped">Shipped</option>
+                                        <option value="delivered">Delivered</option>
+                                        <option value="canceled">Canceled</option>
                                       </select>
                                     </div>
                                   </div>
+
                                   <p className="order-price">{order.payment.transaction.amount}$</p>
                                   <div className="controllers">
                                     <MdDelete
@@ -208,11 +222,6 @@ const Users = () => {
                                       onClick={() => {
                                         handleDeleteOrder(order._id)
                                       }}
-                                    />
-                                    <MdSaveAlt
-                                      className="saveIcon"
-                                      // onClick={() => {
-                                      // }}
                                     />
                                   </div>
                                 </div>

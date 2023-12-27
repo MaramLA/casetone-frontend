@@ -2,12 +2,17 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import axios, { AxiosError } from 'axios'
 
-const baseUrl = 'http://localhost:5050/orders'
+type UpdateStatusPayload = {
+  status: string
+  id: string
+}
+
+const baseOrderUrl = 'http://localhost:5050/orders'
 
 // fetch orders for a specific user
 export const fetchUserOrders = createAsyncThunk('orders/fetchUserOrders', async () => {
   try {
-    const response = await axios.get(baseUrl)
+    const response = await axios.get(baseOrderUrl)
     return response.data.payload
   } catch (error: AxiosError | any) {
     return error.response.data.msg
@@ -16,7 +21,7 @@ export const fetchUserOrders = createAsyncThunk('orders/fetchUserOrders', async 
 // fetch all orders for admin
 export const fetchOrdersForAdmin = createAsyncThunk('orders/fetchOrdersForAdmin', async () => {
   try {
-    const response = await axios.get(`${baseUrl}/all-orders`)
+    const response = await axios.get(`${baseOrderUrl}/all-orders`)
     return response.data.payload
   } catch (error: AxiosError | any) {
     return error.response.data.msg
@@ -28,8 +33,21 @@ export const deleteSingleUserOrder = createAsyncThunk(
   'orders/deleteSingleUserOrder',
   async (id: string, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(`${baseUrl}/${id}`)
+      const response = await axios.delete(`${baseOrderUrl}/${id}`)
       return id
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
+// update order status
+export const updateOrderStatus = createAsyncThunk(
+  'orders/updateOrderStatus',
+  async ({ status, id }: UpdateStatusPayload, { rejectWithValue }) => {
+    try {
+      const response = await axios.put(`${baseOrderUrl}/${id}`, { status })
+      return { status, id }
     } catch (error: AxiosError | any) {
       return rejectWithValue(error.response.data.msg)
     }
@@ -72,10 +90,6 @@ const ordersSlice = createSlice({
       const newOrdersList = state.ordersList.filter((order) => order.user !== action.payload)
       state.ordersList = newOrdersList
     }
-    // deleteSingleUserOrder: (state, action) => {
-    //   const newOrdersList = state.ordersList.filter((order) => order._id !== action.payload)
-    //   state.ordersList = newOrdersList
-    // }
   },
   extraReducers(builder) {
     // fetch orders for a specific user
@@ -98,6 +112,19 @@ const ordersSlice = createSlice({
       state.error = null
       const newOrdersList = state.ordersList.filter((order) => order._id !== action.payload)
       state.ordersList = newOrdersList
+    })
+    // update order status
+    builder.addCase(updateOrderStatus.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      console.log('status update action.payload:', action.payload)
+      const updatedOrders = state.ordersList.map((order) => {
+        if (order._id === action.payload.id) {
+          return { ...order, status: action.payload.status } // Update the status and return the updated order
+        }
+        return order // Return the original order if no update is required
+      })
+      state.ordersList = updatedOrders
     })
     // pending
     builder.addMatcher(
