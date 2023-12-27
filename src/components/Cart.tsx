@@ -48,8 +48,6 @@ const Cart = () => {
   const handleSubmitOrder = () => {
     const totalAmount = cartTotalAmount().toFixed(2)
 
-    console.log('submitted cartItems: ', cartItems)
-
     dispatch(openCheckout())
   }
 

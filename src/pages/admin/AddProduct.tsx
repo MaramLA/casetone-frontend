@@ -72,8 +72,7 @@ const AddProduct = () => {
 
   const handleProductSubmit = async (event: FormEvent) => {
     event.preventDefault()
-    console.log('newProduct: ', newProduct)
-    console.log('categoreies1: ', newProduct.categories)
+
     if (
       newProduct.name.length < 2 ||
       newProduct.description.length < 2 ||
@@ -108,8 +107,6 @@ const AddProduct = () => {
       }
       newProductData.categories.push(String(newProduct.categories))
 
-      console.log('newProductData: ', newProductData)
-
       const formData = new FormData()
       formData.append('name', newProductData.name)
       formData.append('image', newProductData.image as Blob)
@@ -119,11 +116,6 @@ const AddProduct = () => {
       formData.append('sizes', newProductData.sizes)
       formData.append('quantity', newProductData.quantity.toString())
       formData.append('price', newProductData.price.toString())
-
-      console.log('form data')
-      for (var key of formData.entries()) {
-        console.log(key[0] + ', ' + key[1])
-      }
 
       dispatch(createNewProduct(formData)).then((data) => {
         if (data.meta.requestStatus === 'fulfilled') {

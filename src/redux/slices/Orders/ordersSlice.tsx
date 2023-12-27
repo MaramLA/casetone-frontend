@@ -105,14 +105,12 @@ const ordersSlice = createSlice({
     builder.addCase(fetchUserOrders.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
-      console.log('fetchUserOrders:', action.payload)
       state.ordersList = action.payload
     })
     // fetch all orders for admin
     builder.addCase(fetchOrdersForAdmin.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
-      console.log('fetchOrdersForAdmin:', action.payload)
       state.ordersList = action.payload
     })
     // delete single user order
@@ -133,7 +131,6 @@ const ordersSlice = createSlice({
     builder.addCase(updateOrderStatus.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
-      console.log('status update action.payload:', action.payload)
       const updatedOrders = state.ordersList.map((order) => {
         if (order._id === action.payload.id) {
           return { ...order, status: action.payload.status }

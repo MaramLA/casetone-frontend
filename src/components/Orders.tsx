@@ -13,8 +13,6 @@ const Orders = () => {
     dispatch(fetchProducts()), dispatch(fetchUserOrders())
   }, [])
 
-  console.log('ordersList: ', ordersList)
-
   return (
     <section className="orders" id="orders">
       <div className="orders-container">

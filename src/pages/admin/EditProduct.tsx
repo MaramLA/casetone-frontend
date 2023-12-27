@@ -85,8 +85,7 @@ const EditProduct = () => {
 
   const handleProductSubmit = async (event: FormEvent) => {
     event.preventDefault()
-    console.log('newProduct: ', newProduct)
-    console.log('categoreies1: ', newProduct.categories)
+
     if (
       newProduct.name.length < 2 ||
       newProduct.description.length < 2 ||
@@ -106,7 +105,6 @@ const EditProduct = () => {
     }
 
     try {
-      console.log('newProduct: ', newProduct)
       const newProductData: Partial<EditProductType> = {
         name: newProduct.name,
         image: newProduct.image,
@@ -119,8 +117,6 @@ const EditProduct = () => {
       }
 
       newProductData.categories?.push(String(newProduct.categories))
-
-      console.log('newProductData: ', newProductData)
 
       const formData = new FormData()
       formData.append('name', String(newProductData.name))
@@ -135,20 +131,12 @@ const EditProduct = () => {
       formData.append('quantity', String(newProductData.quantity))
       formData.append('price', String(newProductData.price))
 
-      console.log('edit form data ')
-      for (var key of formData.entries()) {
-        console.log(key[0] + ', ' + key[1])
-      }
-
-      console.log('singleProduct.image: ', singleProduct.image)
-
       dispatch(
         editSingleProduct({
           formData: formData,
           id: String(id)
         })
       ).then((data) => {
-        console.log('data: ', data)
         if (data.meta.requestStatus === 'fulfilled') {
           successResponse('Product updated successffully')
           setNewProduct(initialProductData)

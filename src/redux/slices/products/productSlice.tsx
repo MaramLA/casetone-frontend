@@ -155,7 +155,6 @@ export const productSlice = createSlice({
     builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
-      console.log(action.payload)
       state.singleProduct = action.payload
     })
     // delete single product
@@ -171,13 +170,11 @@ export const productSlice = createSlice({
       state.isLoading = false
       state.error = null
       state.productsList.push(action.payload)
-      console.log('from create builder: ', action.payload)
     })
     // edit single product
     builder.addCase(editSingleProduct.fulfilled, (state, action) => {
       state.isLoading = false
       state.error = null
-      console.log('from edit builder: ', action.payload)
       const updatedProduct = action.payload
       const foundProduct = state.productsList.find((product) => product._id === updatedProduct.id)
       if (foundProduct) {

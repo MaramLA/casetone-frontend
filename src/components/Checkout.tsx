@@ -23,7 +23,7 @@ const Checkout = () => {
       const response = await dispatch(fetchBraintreeToken())
       setBraintreeClientToken(response.payload.clientToken)
     } catch (error) {
-      console.log(error)
+      return error
     }
   }
 
@@ -42,7 +42,6 @@ const Checkout = () => {
   const handlePayment = async () => {
     const totalAmount = cartTotalAmount()
     const { nonce } = await instance.requestPaymentMethod()
-    console.log(nonce)
     try {
       dispatch(PaywithBraintree({ nonce, cartItems, totalAmount })).then((data) => {
         if (data.meta.requestStatus) {
