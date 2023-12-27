@@ -2,7 +2,6 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import userProfile from '../assets/userProfile.png'
-import Footer from '../layout/Footer'
 
 import { AxiosError } from 'axios'
 import { fetchSingleUser, updateUserData } from '../redux/slices/Users/userSlice'

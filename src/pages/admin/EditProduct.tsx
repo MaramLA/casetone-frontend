@@ -3,16 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { AxiosError } from 'axios'
+import { productsPath } from '../../pathLinks'
 import { fetchCategories } from '../../redux/slices/Categories/categoriesSlice'
 import {
-  createNewProduct,
   editSingleProduct,
-  fetchProducts,
   fetchSingleProduct
 } from '../../redux/slices/products/productSlice'
 import { AppDispatch, RootState } from '../../redux/store'
 import { errorResponse, successResponse } from '../../utils/messages'
-import { productsPath } from '../../pathLinks'
 
 type EditProductType = {
   _id: string

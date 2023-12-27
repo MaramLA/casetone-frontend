@@ -41,6 +41,19 @@ export const deleteSingleUserOrder = createAsyncThunk(
   }
 )
 
+// delete all user orders
+export const deleteAllUserOrders = createAsyncThunk(
+  'orders/deleteAllUserOrders',
+  async (id: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.delete(`/delete-all/${id}`)
+      return id
+    } catch (error: AxiosError | any) {
+      return rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
 // update order status
 export const updateOrderStatus = createAsyncThunk(
   'orders/updateOrderStatus',
@@ -86,10 +99,10 @@ const ordersSlice = createSlice({
   name: 'orders',
   initialState,
   reducers: {
-    deleteAllUserOrders: (state, action) => {
-      const newOrdersList = state.ordersList.filter((order) => order.user !== action.payload)
-      state.ordersList = newOrdersList
-    }
+    // deleteAllUserOrders: (state, action) => {
+    //   const newOrdersList = state.ordersList.filter((order) => order.user !== action.payload)
+    //   state.ordersList = newOrdersList
+    // }
   },
   extraReducers(builder) {
     // fetch orders for a specific user
@@ -111,6 +124,13 @@ const ordersSlice = createSlice({
       state.isLoading = false
       state.error = null
       const newOrdersList = state.ordersList.filter((order) => order._id !== action.payload)
+      state.ordersList = newOrdersList
+    })
+    // delete all user orders
+    builder.addCase(deleteAllUserOrders.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.error = null
+      const newOrdersList = state.ordersList.filter((order) => order.user !== action.payload)
       state.ordersList = newOrdersList
     })
     // update order status
@@ -145,5 +165,4 @@ const ordersSlice = createSlice({
   }
 })
 
-export const { deleteAllUserOrders } = ordersSlice.actions
 export default ordersSlice.reducer

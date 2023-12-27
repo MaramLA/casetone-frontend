@@ -5,9 +5,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { fetchUsers, signUpUser } from '../redux/slices/Users/userSlice'
 import { AppDispatch, RootState } from '../redux/store'
 
+import { AxiosError } from 'axios'
 import { signInPath } from '../pathLinks'
 import { errorResponse, successResponse } from '../utils/messages'
-import { AxiosError } from 'axios'
 
 const SignUp = () => {
   const passwordValidation = new RegExp(
@@ -31,13 +31,6 @@ const SignUp = () => {
   useEffect(() => {
     dispatch(fetchUsers())
   }, [dispatch])
-
-  // useEffect(() => {
-  //   if (data) {
-  //     successResponse('Check your email to activate the account')
-  //     navigate(signInPath)
-  //   }
-  // }, [data])
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNewUser((prevUser) => {

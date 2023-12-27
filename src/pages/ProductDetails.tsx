@@ -13,10 +13,10 @@ import { AppDispatch, RootState } from '../redux/store'
 import Footer from '../layout/Footer'
 
 import { AxiosError } from 'axios'
+import { Link } from 'react-router-dom'
 import { homePath, signInPath } from '../pathLinks'
 import { fetchCategories } from '../redux/slices/Categories/categoriesSlice'
 import { errorResponse, successResponse, warningResponse } from '../utils/messages'
-import { Link } from 'react-router-dom'
 
 const ProductDetails = () => {
   const { id } = useParams()

@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { UserType, fetchUsers, forgotUserPassword } from '../redux/slices/Users/userSlice'
 import { AppDispatch, RootState } from '../redux/store'
 
-import { errorResponse, successResponse } from '../utils/messages'
 import { AxiosError } from 'axios'
+import { errorResponse, successResponse } from '../utils/messages'
 
 const ForgotPassword = () => {
   const { usersList } = useSelector((state: RootState) => state.usersReducer)

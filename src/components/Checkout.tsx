@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import DropIn from 'braintree-web-drop-in-react'
-import { AppDispatch, RootState } from '../redux/store'
-import { useDispatch, useSelector } from 'react-redux'
-import { PaywithBraintree, fetchBraintreeToken } from '../redux/slices/products/productSlice'
-import { closeCheckout, resetCart } from '../redux/slices/Orders/cartSlice'
-import { errorResponse, successResponse } from '../utils/messages'
-import { useNavigate } from 'react-router-dom'
-import { ordersPath, purchasesPath } from '../pathLinks'
 import { AxiosError } from 'axios'
+import DropIn from 'braintree-web-drop-in-react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { ordersPath } from '../pathLinks'
+import { closeCheckout, resetCart } from '../redux/slices/Orders/cartSlice'
+import { PaywithBraintree, fetchBraintreeToken } from '../redux/slices/products/productSlice'
+import { AppDispatch, RootState } from '../redux/store'
+import { errorResponse, successResponse } from '../utils/messages'
 
 const Checkout = () => {
   const { cartItems } = useSelector((state: RootState) => state.cartReducer)

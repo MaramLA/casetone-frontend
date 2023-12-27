@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import axios, { AxiosError } from 'axios'
-import { stat } from 'fs'
 
 export const categoryApiBaseURL = 'http://localhost:5050/categories'
 

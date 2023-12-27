@@ -1320,6 +1320,22 @@ footer {
         width: 38rem;
         text-align: center;
       }
+      .item-name {
+        font-size: $font-size5;
+        color: $primary-color1;
+        text-transform: capitalize;
+        width: 20rem;
+        // background: lightblue;
+        text-align: center;
+      }
+      .item-sizes {
+        font-size: $font-size5;
+        color: $primary-color1;
+        text-transform: capitalize;
+        width: 20rem;
+        // background: lightblue;
+        text-align: center;
+      }
       .deleteIcon {
         position: absolute;
         right: 0;
@@ -2066,6 +2082,7 @@ footer {
         color: $primary-color1;
         text-transform: capitalize;
         width: 50rem;
+        margin-right: 12rem;
       }
       .controllers {
         position: relative;
@@ -2502,9 +2519,27 @@ footer {
     // display: none;
     margin-right: 1rem;
   }
+  .orders .orders-container .order {
+    gap: 3.4rem;
+
+    .meta-info {
+      display: none;
+    }
+    .deleteIcon {
+      bottom: 2rem;
+    }
+  }
   // .nav-bar .right-section .nav-buttons button {
   //   display: none !important;
   // }
+
+  .pagination-div .top-section .page-controller {
+    display: none;
+  }
+
+  .cart .items .item .item-name {
+    display: none;
+  }
 
   .reviews .main-section {
     flex-direction: column;

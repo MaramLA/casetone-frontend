@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import {
   addProductPath,
   categoryPath,
-  checkoutPath,
   errorPath,
   forgotPasswordPath,
   homePath,
@@ -31,12 +30,11 @@ import Category from '../pages/admin/Category'
 import EditProduct from '../pages/admin/EditProduct'
 import Users from '../pages/admin/Users'
 
-import Purchases from '../pages/user/Purchases'
 import ForgotPassword from '../pages/ForgotPassword'
 import ResetPassword from '../pages/ResetPassword'
+import Purchases from '../pages/user/Purchases'
 import AdminProtectedRoutes from './AdminProtectedRoutes'
 import UserProtectedRoutes from './UserProtectedRoutes'
-import Checkout from '../components/Checkout'
 
 const Index = () => {
   return (
@@ -80,7 +78,6 @@ const Index = () => {
         <Route path="/registerd" element={<UserProtectedRoutes />}>
           <Route path={profilePath} element={<Profile />} />
           <Route path={purchasesPath} element={<Purchases />} />
-          {/* <Route path={checkoutPath} element={<Checkout />} /> */}
         </Route>
       </Routes>
 

@@ -1,6 +1,5 @@
 import { ChangeEvent, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { GiSaveArrow } from 'react-icons/gi'
 
 import {
   banUser,
@@ -17,26 +16,33 @@ import { AppDispatch, RootState } from '../../redux/store'
 import Footer from '../../layout/Footer'
 
 import { AxiosError } from 'axios'
+import { MdDelete } from 'react-icons/md'
 import {
   deleteSingleUserOrder,
   fetchOrdersForAdmin,
-  OrderType,
   updateOrderStatus
 } from '../../redux/slices/Orders/ordersSlice'
 import { errorResponse, successResponse } from '../../utils/messages'
-import { MdDelete, MdSaveAlt } from 'react-icons/md'
-import { fetchProducts } from '../../redux/slices/products/productSlice'
 
 const Users = () => {
-  const { usersList, searchTerm, userData } = useSelector((state: RootState) => state.usersReducer)
-  const { ordersList } = useSelector((state: RootState) => state.ordersReducer)
+  const users = useSelector((state: RootState) => state.usersReducer)
+  const orders = useSelector((state: RootState) => state.ordersReducer)
 
   const dispatch: AppDispatch = useDispatch()
 
   useEffect(() => {
     dispatch(fetchUsers())
+  }, [dispatch])
+
+  useEffect(() => {
     dispatch(fetchOrdersForAdmin())
   }, [dispatch])
+
+  useEffect(() => {
+    if (users.error) {
+      errorResponse(users.error)
+    }
+  }, [users.error])
 
   const handleStatusChange = async (event: ChangeEvent<HTMLSelectElement>, id: string) => {
     const status = event.target.value
@@ -56,13 +62,14 @@ const Users = () => {
     dispatch(searchUser(searchValue))
   }
 
-  const searchedUsers = searchTerm
-    ? usersList.filter((user) => user.firstName.toLowerCase().includes(searchTerm?.toLowerCase()))
-    : usersList
+  const searchedUsers = users.searchTerm
+    ? users.usersList.filter((user) =>
+        user.firstName.toLowerCase().includes(users.searchTerm?.toLowerCase())
+      )
+    : users.usersList
 
   const handleRemoveUser = async (userId: string, firstName: string, lastName: string) => {
     try {
-      // dispatch(deleteAllUserOrders(userId))
       dispatch(deleteUser(userId)).then((data) => {
         if (data.meta.requestStatus === 'fulfilled') {
           successResponse(`${firstName + ' ' + lastName + ' '} deleted successfully`)
@@ -116,7 +123,6 @@ const Users = () => {
         dispatch(degradeUser(userId)).then((data) => {
           if (data.meta.requestStatus === 'fulfilled') {
             dispatch(fetchUsers())
-
             successResponse(
               `${firstName + ' ' + lastName + ' '}degraded to regular user successfully`
             )
@@ -152,12 +158,12 @@ const Users = () => {
             name="searchTerm"
             id="search-product"
             placeholder="search"
-            value={searchTerm?.toString()}
+            value={users.searchTerm?.toString()}
             onChange={handleSearchInput}
           />
           {searchedUsers.length > 0 &&
             searchedUsers.map((user: UserType) => {
-              if (user._id !== userData?._id) {
+              if (user._id !== users.userData?._id) {
                 return (
                   <div key={user._id} className="orders" id="orders">
                     <div className="orders-container">
@@ -165,8 +171,10 @@ const Users = () => {
                         <h3 className="username">{user.firstName + ' ' + user.lastName}</h3>
                         <p className="email">{user.email}</p>
                       </div>
-                      {Array.isArray(ordersList) && ordersList.length > 0 ? (
-                        ordersList.map((order: any) => {
+                      {Array.isArray(orders.ordersList) &&
+                      !user.isBanned &&
+                      orders.ordersList.length > 0 ? (
+                        orders.ordersList.map((order: any) => {
                           if (order.user._id === user._id) {
                             return (
                               <div key={order._id}>
@@ -230,7 +238,7 @@ const Users = () => {
                           }
                         })
                       ) : (
-                        <div>no orders</div>
+                        <div></div>
                       )}
                       <div className="buttons">
                         {user.isAdmin === false && (

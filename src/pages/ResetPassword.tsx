@@ -1,9 +1,9 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { fetchUsers, resetUserPassword } from '../redux/slices/Users/userSlice'
-import { AppDispatch, RootState } from '../redux/store'
+import { AppDispatch } from '../redux/store'
 
 import { AxiosError } from 'axios'
 import { signInPath } from '../pathLinks'

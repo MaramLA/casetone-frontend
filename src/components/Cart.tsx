@@ -3,6 +3,7 @@ import { FaPlus } from 'react-icons/fa6'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { AxiosError } from 'axios'
+import { useEffect } from 'react'
 import { MdDelete } from 'react-icons/md'
 import {
   closeCheckout,
@@ -13,15 +14,13 @@ import {
 } from '../redux/slices/Orders/cartSlice'
 import { AppDispatch, RootState } from '../redux/store'
 import { errorResponse, successResponse } from '../utils/messages'
-import { useEffect } from 'react'
 
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cartReducer)
-  const { userData } = useSelector((state: RootState) => state.usersReducer)
 
   const dispatch: AppDispatch = useDispatch()
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(closeCheckout())
   })
 
@@ -49,17 +48,6 @@ const Cart = () => {
 
   const handleSubmitOrder = () => {
     const totalAmount = cartTotalAmount().toFixed(2)
-    // const userId = userData?._id
-
-    // const newOrderData = {
-    //   products: cartItems,
-    //   payment: {
-    //     method: 'credit-card',
-    //     totalAmount: totalAmount
-    //   },
-    //   user: userId,
-    //   status: 'pending'
-    // }
 
     console.log('submitted cartItems: ', cartItems)
 
@@ -86,7 +74,7 @@ const Cart = () => {
                   className="item-image"
                 />
                 <p className="item-name">{item.product.name}</p>
-                <p className="item-name">{item.product.sizes}</p>
+                <p className="item-size">{item.product.sizes}</p>
                 <div className="quantity-div">
                   {
                     <FaMinus

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { HashLink as InnerLink } from 'react-router-hash-link'
@@ -111,7 +111,7 @@ const UserNavbar = () => {
                   className="mini-navLinks"
                   onClick={() => setIsMenueClicked(!isMenueClicked)}
                   to={homePath}>
-                  Ho
+                  Home
                 </Link>
               </li>
               <li>

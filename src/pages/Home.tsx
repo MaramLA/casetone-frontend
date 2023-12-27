@@ -1,7 +1,7 @@
 import Footer from '../layout/Footer'
 
-import Hero from '../components/Hero'
 import About from '../components/About'
+import Hero from '../components/Hero'
 import Products from '../components/Products'
 
 const Home = () => {

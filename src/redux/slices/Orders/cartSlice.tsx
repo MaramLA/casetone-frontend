@@ -2,11 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 
 import { ProductType } from '../products/productSlice'
 
-// export type NewCartProductType = {
-//   product: Partial<ProductType>
-//   quantity: number
-// }
-
 export type NewCartItemType = {
   product: Partial<ProductType>
   quantity: number
