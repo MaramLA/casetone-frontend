@@ -34,9 +34,7 @@ const Footer = () => {
   const handleLogout = async () => {
     try {
       dispatch(signOutUser()).then((data) => {
-        if ((data.meta.requestStatus = 'fulfilled')) {
-          navigate(signInPath)
-        }
+        navigate(signInPath)
       })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
