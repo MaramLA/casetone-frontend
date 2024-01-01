@@ -30,7 +30,7 @@ export type UsersState = {
   searchTerm: string
 }
 
-const baseURL = 'http://localhost:5050'
+const baseURL = 'https://casetone-backend-api.vercel.app'
 
 // fetch users
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {

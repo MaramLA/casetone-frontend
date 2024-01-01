@@ -31,9 +31,10 @@ const Category = () => {
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])
+
   useEffect(() => {
     dispatch(fetchCategories())
-  }, [dispatch, categoriesList, isEditCategory])
+  }, [dispatch])
 
   const handleDeleteCategory = async (categoryId: string) => {
     try {

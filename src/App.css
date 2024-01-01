@@ -578,7 +578,7 @@ footer .bottom-section p {
 .products .products-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   margin-bottom: 8rem;

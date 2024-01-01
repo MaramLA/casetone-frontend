@@ -29,7 +29,7 @@ type OrdersState = {
   error: null | string
 }
 
-const baseOrderUrl = 'http://localhost:5050/orders'
+const baseOrderUrl = 'https://casetone-backend-api.vercel.app/orders'
 
 // fetch orders for a specific user
 export const fetchUserOrders = createAsyncThunk('orders/fetchUserOrders', async () => {

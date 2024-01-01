@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import axios, { AxiosError } from 'axios'
 
-export const categoryApiBaseURL = 'http://localhost:5050/categories'
+export const categoryApiBaseURL = 'https://casetone-backend-api.vercel.app/categories'
 
 type UpdateCategoryPayload = {
   id: string

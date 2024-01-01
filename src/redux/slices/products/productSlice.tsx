@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import axios, { AxiosError } from 'axios'
 
-const productApiBaseURL = 'http://localhost:5050/products'
+const productApiBaseURL = 'https://casetone-backend-api.vercel.app/products'
 
 export type EditProductPayload = {
   formData: FormData
