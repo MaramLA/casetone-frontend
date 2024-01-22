@@ -22,9 +22,7 @@ import { addProductPath, signInPath } from '../pathLinks'
 import { errorResponse, successResponse, warningResponse } from '../utils/messages'
 
 const Products = () => {
-  const { productsList, searchTerm, isLoading } = useSelector(
-    (state: RootState) => state.productsReducer
-  )
+  const { productsList, searchTerm } = useSelector((state: RootState) => state.productsReducer)
 
   const { userData, isSignedIn } = useSelector((state: RootState) => state.usersReducer)
   const { cartItems } = useSelector((state: RootState) => state.cartReducer)
@@ -35,14 +33,6 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])
-
-  if (isLoading) {
-    return (
-      <div className="loading-div">
-        <h2 className="loading-div-content">Loading Products...</h2>
-      </div>
-    )
-  }
 
   const [currentPage, setCurrnetPage] = useState(1)
   const [itesmPerPage, setItemsPerPage] = useState(3)
