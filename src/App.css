@@ -37,6 +37,18 @@ main {
   min-height: 23rem;
 }
 
+.loading-div {
+  margin: 2rem;
+}
+.loading-div .loading-div-content {
+  font-size: 2.1em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+  animation: h1-move 2s infinite;
+}
+
 /* ---------------------------------------------------------- */
 /* Start of navbar styling */
 /* ---------------------------------------------------------- */
