@@ -30,8 +30,10 @@ const AdminNavbar = () => {
   const handleLogout = async () => {
     setIsMenueClicked(false)
     try {
-      await dispatch(signOutUser()).then((data) => {
-        navigate(signInPath)
+      dispatch(signOutUser()).then((data) => {
+        if (data.meta.requestStatus === 'fulfilled') {
+          navigate(signInPath)
+        }
       })
     } catch (error: AxiosError | any) {
       errorResponse(error.response.data.msg)
