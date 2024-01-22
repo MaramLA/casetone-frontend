@@ -52,6 +52,18 @@ main {
   // background-color: lightblue;
 }
 
+.loading-div {
+  margin: 3rem;
+  .loading-div-content {
+    font-size: $font-size4;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    margin-bottom: 3rem;
+    animation: h1-move 2s infinite;
+  }
+}
+
 /* ---------------------------------------------------------- */
 /* Start of navbar styling */
 /* ---------------------------------------------------------- */
