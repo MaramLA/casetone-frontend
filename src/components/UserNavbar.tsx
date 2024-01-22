@@ -64,7 +64,7 @@ const UserNavbar = () => {
           </ul>
         </div>
         <div className="right-section">
-          <Link to={purchasesPath}>
+          <Link to={isSignedIn ? purchasesPath : homePath}>
             <i className="fa fa-shopping-cart icon1" aria-hidden="true"></i>
           </Link>
 
