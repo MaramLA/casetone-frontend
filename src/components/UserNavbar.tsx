@@ -21,7 +21,7 @@ import { AppDispatch, RootState } from '../redux/store'
 import { errorResponse } from '../utils/messages'
 
 const UserNavbar = () => {
-  const { isSignedIn } = useSelector((state: RootState) => state.usersReducer)
+  const { isSignedIn, userData } = useSelector((state: RootState) => state.usersReducer)
   const [isMenueClicked, setIsMenueClicked] = useState(false)
 
   const dispatch: AppDispatch = useDispatch()
@@ -66,7 +66,7 @@ const UserNavbar = () => {
           </ul>
         </div>
         <div className="right-section">
-          <Link to={isSignedIn ? purchasesPath : homePath}>
+          <Link to={isSignedIn ? (userData?.isAdmin ? homePath : purchasesPath) : signInPath}>
             <i className="fa fa-shopping-cart icon1" aria-hidden="true"></i>
           </Link>
 
