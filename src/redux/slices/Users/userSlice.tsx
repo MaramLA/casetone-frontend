@@ -343,7 +343,7 @@ const usersSlice = createSlice({
       state.isLoading = false
       state.error = null
       state.isSignedIn = false
-      state.userData = action.payload
+      state.userData = null
       localStorage.setItem(
         'signInData',
         JSON.stringify({ isSignedIn: state.isSignedIn, userData: state.userData })
