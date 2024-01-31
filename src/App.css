@@ -1888,6 +1888,7 @@ footer .bottom-section p {
   font-weight: bolder;
   margin-bottom: 7rem;
   text-align: center;
+  line-height: 2rem;
 }
 .forgotPassword .forgotPassword-container .form {
   display: flex;
