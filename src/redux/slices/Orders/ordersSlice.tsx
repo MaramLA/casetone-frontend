@@ -99,7 +99,11 @@ const initialState: OrdersState = {
 const ordersSlice = createSlice({
   name: 'orders',
   initialState,
-  reducers: {},
+  reducers: {
+    clearError: (state) => {
+      state.error = null
+    }
+  },
   extraReducers(builder) {
     // fetch orders for a specific user
     builder.addCase(fetchUserOrders.fulfilled, (state, action) => {
@@ -157,5 +161,7 @@ const ordersSlice = createSlice({
     )
   }
 })
+
+export const { clearError } = ordersSlice.actions
 
 export default ordersSlice.reducer

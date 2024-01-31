@@ -82,7 +82,11 @@ const initialState: CategoryState = {
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
-  reducers: {},
+  reducers: {
+    clearError: (state) => {
+      state.error = null
+    }
+  },
   extraReducers(builder) {
     // fetch categories
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
@@ -128,5 +132,7 @@ const categoriesSlice = createSlice({
     )
   }
 })
+
+export const { clearError } = categoriesSlice.actions
 
 export default categoriesSlice.reducer

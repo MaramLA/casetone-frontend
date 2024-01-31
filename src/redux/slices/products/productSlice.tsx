@@ -142,6 +142,9 @@ export const productSlice = createSlice({
             Number(currentProduct.price) - Number(nextProduct.price)
         )
       }
+    },
+    clearError: (state) => {
+      state.error = null
     }
   },
   extraReducers(builder) {
@@ -212,5 +215,5 @@ export const productSlice = createSlice({
   }
 })
 
-export const { searchProducts, sortProducts } = productSlice.actions
+export const { searchProducts, sortProducts, clearError } = productSlice.actions
 export default productSlice.reducer

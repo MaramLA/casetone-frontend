@@ -18,9 +18,10 @@ import {
 } from '../../redux/slices/Categories/categoriesSlice'
 import { fetchProducts } from '../../redux/slices/products/productSlice'
 import { errorResponse, successResponse } from '../../utils/messages'
+import { clearError } from '../../redux/slices/Users/userSlice'
 
 const Category = () => {
-  const { categoriesList } = useSelector((state: RootState) => state.categoriesReducer)
+  const { categoriesList, error } = useSelector((state: RootState) => state.categoriesReducer)
 
   const [newCategory, setNewCategory] = useState('')
   const [isEditCategory, setIsEditCategory] = useState(false)
@@ -35,6 +36,15 @@ const Category = () => {
   useEffect(() => {
     dispatch(fetchCategories())
   }, [dispatch])
+
+  useEffect(() => {
+    if (error) {
+      errorResponse(error)
+      setTimeout(() => {
+        dispatch(clearError())
+      }, 6000)
+    }
+  }, [error])
 
   const handleDeleteCategory = async (categoryId: string) => {
     try {
@@ -85,7 +95,7 @@ const Category = () => {
           }
         })
       } catch (error: AxiosError | any) {
-        errorResponse(error.response.data.msg)
+        return error.response.data.msg
       }
     }
   }
