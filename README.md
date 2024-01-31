@@ -1,10 +1,11 @@
 # Casetone
-An ecommerce website for selling iPhone cases. 
 
+An ecommerce website for selling iPhone cases.
 
 ## Details ------------------------------
 
 ### Tools used
+
 - React and Redux
 - Typescript
 - Javascript and JSX
@@ -12,12 +13,13 @@ An ecommerce website for selling iPhone cases.
 - HTML
 
 ### Deployment
+
 - Deployed at Vercel
 
 ### Backend Server
+
 - Developed using Node.js and Express.js.
 - Deployed at Vercel
-
 
 ## Users And Features ------------------------------
 
@@ -25,7 +27,8 @@ An ecommerce website for selling iPhone cases.
 - Guest
 - Registered User
 
-#### Admin Features
+### Admin Features
+
 - Add/Update/Delete/View products
 - Add/Update/Delete/View categories
 - Add/Update/Delete/View users
@@ -35,12 +38,14 @@ An ecommerce website for selling iPhone cases.
 - Update/View Profile
 - Sign Out
 
-#### Guest Features
+### Guest Features
+
 - View Products
 - Sign In
 - Sign Up
 
-#### Registered User Features
+### Registered User Features
+
 - View Products
 - Sign Out
 - Add/Delete/View products in cart
