@@ -47,7 +47,7 @@ const Products = () => {
           }
         })
         if (foundProduct) {
-          warningResponse('Product add to the cart already')
+          warningResponse('Product was added to the cart already')
           return
         } else {
           const newCartProduct: Partial<NewCartItemType> = {
