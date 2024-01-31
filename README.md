@@ -1,10 +1,48 @@
 # Casetone
-
-### counterd issues
-
-- login is working but not giving access to edit th profile for any kind of users (solved)
-
-- there is a problem with the logout (solved)
+An ecommerce website for selling iPhone cases. 
 
 
-- there is problem in going to the cart if user is not logged it keeps him in the home page after first logout because it did not log out actually
+## Details ------------------------------
+
+### Tools used
+- React and Redux
+- Typescript
+- Javascript and JSX
+- CSS/SASS
+- HTML
+
+### Deployment
+- Deployed at Vercel
+
+### Backend Server
+- Developed using Node.js and Express.js.
+- Deployed at Vercel
+
+
+## Users And Features ------------------------------
+
+- Admin
+- Guest
+- Registered User
+
+#### Admin Features
+- Add/Update/Delete/View products
+- Add/Update/Delete/View categories
+- Add/Update/Delete/View users
+- Upgrade/Degrade users
+- Ban/Unban users
+- Add/Update/Delete/View orders
+- Update/View Profile
+- Sign Out
+
+#### Guest Features
+- View Products
+- Sign In
+- Sign Up
+
+#### Registered User Features
+- View Products
+- Sign Out
+- Add/Delete/View products in cart
+- Purchase products
+- View Orders

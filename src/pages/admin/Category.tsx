@@ -81,6 +81,7 @@ const Category = () => {
             setNewCategory('')
             setIsEditCategory(false)
             successResponse(`Category updated successufully`)
+            dispatch(fetchCategories())
           }
         })
       } catch (error: AxiosError | any) {
