@@ -1869,11 +1869,12 @@ footer .bottom-section p {
 .forgotPassword .forgotPassword-container {
   display: flex;
   flex-direction: column;
-  margin: 2rem;
   background: white;
   min-height: 11rem;
-  width: 46rem;
-  padding: 6rem 6rem;
+  margin: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6rem 8rem;
   text-align: center;
   margin-top: 8rem;
   border-radius: 50px;

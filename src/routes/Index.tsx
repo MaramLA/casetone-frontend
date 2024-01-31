@@ -80,27 +80,6 @@ const Index = () => {
           <Route path={purchasesPath} element={<Purchases />} />
         </Route>
       </Routes>
-
-      {/* -------------- */}
-
-      {/* <Routes>
-        <Route path={homePath} element={<Home />} />
-        <Route path={errorPath} element={<Error />} />
-        <Route path={signInPath} element={<SignIn />} />
-        <Route path={signUpPath} element={<SignUp />} />
-        <Route path={forgotPasswordPath} element={<ForgotPassword />} />
-        <Route path={'/reset-password/:token'} element={<ResetPassword />} />
-        <Route path={'/products/:id'} element={<ProductDetails />} />
-        <Route path={'/activate/:token'} element={<ActivateNewUser />} />
-
-        <Route path={usersPath} element={<Users />} />
-        <Route path={categoryPath} element={<Category />} />
-        <Route path={addProductPath} element={<AddProduct />} />
-        <Route path={'/registerd/admin/edit-product/:id'} element={<EditProduct />} />
-
-        <Route path={profilePath} element={<Profile />} />
-        <Route path={purchasesPath} element={<Purchases />} />
-      </Routes> */}
     </BrowserRouter>
   )
 }

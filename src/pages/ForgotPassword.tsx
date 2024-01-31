@@ -46,7 +46,11 @@ const ForgotPassword = () => {
     <main>
       <section className="forgotPassword" id="forgotPassword">
         <div className="forgotPassword-container">
-          <h2 className="section-title">Forgot Password</h2>
+          <h2 className="section-title">
+            Forgot
+            <br />
+            Password
+          </h2>
           <form className="form" onSubmit={handleSubmit}>
             <div className="entry">
               <label htmlFor="formEmail">Enter your email</label>
