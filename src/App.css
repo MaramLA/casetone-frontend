@@ -798,4 +798,298 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of about us section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of reviews section styling */
+/* ---------------------------------------------------------- */
+.reviews {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15rem;
+  margin-bottom: 10rem;
+  box-shadow: #dddddd 0px 10px 10px -10px;
+}
+.reviews .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 10rem;
+  text-align: center;
+}
+.reviews .main-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.reviews .main-section .rate-div {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reviews .main-section .rate-div .rate-icon {
+  position: relative;
+  color: #696262;
+  font-size: 40rem;
+  margin-right: 1rem;
+  animation: star-move 1.5s infinite;
+}
+.reviews .main-section .rate-div .rating-value {
+  color: #696262;
+  font-size: 10rem;
+  margin-top: 5rem;
+  font-weight: bold;
+}
+.reviews .main-section .reviews-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reviews .main-section .reviews-div .review {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 3rem;
+  background: white;
+  min-height: 11rem;
+  width: 45rem;
+  border-radius: 50px;
+  color: #696262;
+  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+  transition: all 0.2s ease-in;
+}
+.reviews .main-section .reviews-div .review:hover {
+  transform: translateX(-50px);
+}
+.reviews .main-section .reviews-div .review .review__rating {
+  justify-content: flex-start;
+  font-size: 2.1em;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+}
+.reviews .main-section .reviews-div .review .review__username {
+  justify-content: flex-start;
+  font-size: 2.1em;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+}
+.reviews .main-section .reviews-div .review .review__content {
+  justify-content: flex-start;
+  font-size: 2.1em;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+  max-width: 40rem;
+}
+
+/* ---------------------------------------------------------- */
+/* End of reviews section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of newsletter subscription section styling */
+/* ---------------------------------------------------------- */
+.newsletter-subscription {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15rem;
+  padding-top: 4rem;
+  box-shadow: #dddddd 0px 10px 10px -10px;
+}
+.newsletter-subscription .section-title {
+  font-size: 4.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.newsletter-subscription .content {
+  font-size: 2.2em;
+  text-align: center;
+  margin-top: 3rem;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+}
+.newsletter-subscription .subscription-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 1.5rem;
+}
+.newsletter-subscription .subscription-form .email-label {
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+.newsletter-subscription .subscription-form .email-textbox {
+  width: 50vw;
+  height: 5rem;
+  border-radius: 50px;
+  padding: 0 4rem;
+  font-size: 2.1em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 4px solid #696262;
+  margin-bottom: 2rem;
+  background: #edefef;
+  outline: none;
+}
+.newsletter-subscription .subscription-form .form-submit-btn {
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+  align-items: center;
+  justify-content: center;
+}
+.newsletter-subscription .subscription-form .form-submit-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of newsletter subscription section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of sign in styling */
+/* ---------------------------------------------------------- */
+.signIn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.signIn .signIn-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  background: white;
+  min-height: 11rem;
+  width: 23rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-radius: 30px;
+  color: #696262;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+}
+.signIn .signIn-container .section-title {
+  font-size: 2.25em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.signIn .signIn-container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  gap: 1.5rem;
+}
+.signIn .signIn-container .form .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.signIn .signIn-container .form .entry label {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.signIn .signIn-container .form .entry input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 50px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.signIn .signIn-container .form .signIn-btn {
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.signIn .signIn-container .form .signIn-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.signIn .signIn-container .formSignUp {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+.signIn .signIn-container .formSignUp p {
+  font-size: 0.9em;
+  color: #696262;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.signIn .signIn-container .formSignUp a {
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+.signIn .signIn-container .formSignUp a:hover {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of sign in styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
