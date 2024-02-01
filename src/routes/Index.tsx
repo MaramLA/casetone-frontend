@@ -54,7 +54,7 @@ const Index = () => {
         style={{
           marginTop: '12rem',
           fontSize: '1em',
-          width: '15rem',
+          width: '17rem',
           padding: '1.5rem, 3rem'
         }}
       />
