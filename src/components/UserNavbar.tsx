@@ -140,7 +140,7 @@ const UserNavbar = () => {
                 <Link
                   className="mini-navLinks"
                   onClick={() => setIsMenueClicked(!isMenueClicked)}
-                  to={purchasesPath}>
+                  to={isSignedIn ? (userData?.isAdmin ? homePath : purchasesPath) : signInPath}>
                   <i className="fa fa-shopping-cart icon1" aria-hidden="true"></i>
                 </Link>
               </li>
