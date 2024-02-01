@@ -1330,152 +1330,152 @@ footer {
 /* End of sign in styling */
 /* ---------------------------------------------------------- */
 
-// // Sign up page styling
-// /* ---------------------------------------------------------- */
-// /* Start of sign up styling */
-// /* ---------------------------------------------------------- */
-// .signUp {
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   .signUp-container {
-//     display: flex;
-//     flex-direction: column;
-//     margin: 2rem;
-//     background: $primary-color0;
-//     min-height: 11rem;
-//     width: fit-content;
-//     padding: 6rem 8rem;
-//     text-align: center;
+// Sign up page styling
+/* ---------------------------------------------------------- */
+/* Start of sign up styling */
+/* ---------------------------------------------------------- */
+.signUp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .signUp-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    background: $primary-color0;
+    min-height: 5.5rem;
+    width: fit-content;
+    padding: 3rem 4rem;
+    text-align: center;
 
-//     border-radius: 50px;
-//     color: $primary-color1;
-//     box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-//     .section-title {
-//       font-size: $font-size6;
-//       text-transform: capitalize;
-//       color: $primary-color1;
-//       font-weight: bolder;
-//       margin-bottom: 6rem;
-//       text-align: center;
-//     }
-//     .form {
-//       display: flex;
-//       flex-direction: column;
-//       .top-side {
-//         display: flex;
-//         gap: 8rem;
-//         .left-side {
-//           .entry {
-//             display: flex;
-//             flex-direction: column;
-//             width: 100%;
+    border-radius: 30px;
+    color: $primary-color1;
+    box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+    .section-title {
+      font-size: 2.25em;
+      text-transform: capitalize;
+      color: $primary-color1;
+      font-weight: bolder;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      .top-side {
+        display: flex;
+        gap: 4rem;
+        .left-side {
+          .entry {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
 
-//             @include center();
-//             label {
-//               font-size: $font-size4;
-//               color: $primary-color1;
-//               text-transform: capitalize;
-//               font-weight: bolder;
-//               margin-bottom: 2rem;
-//             }
-//             .lower-case-input {
-//               width: 30rem;
-//               height: 5rem;
-//               border-radius: 50px;
-//               padding: 0 4rem;
-//               font-size: $font-size4;
-//               color: $primary-color1;
-//               text-transform: lowercase;
-//               border: 4px solid $primary-color1;
-//               margin-bottom: 2rem;
-//               outline: none;
-//             }
-//             .regular-case-input {
-//               width: 30rem;
-//               height: 5rem;
-//               border-radius: 50px;
-//               padding: 0 4rem;
-//               font-size: $font-size4;
-//               color: $primary-color1;
-//               border: 4px solid $primary-color1;
-//               margin-bottom: 2rem;
-//               outline: none;
-//             }
-//           }
-//         }
-//         .right-side {
-//           .entry {
-//             display: flex;
-//             flex-direction: column;
-//             width: 100%;
+            @include center();
+            label {
+              font-size: 1.05em;
+              color: $primary-color1;
+              text-transform: capitalize;
+              font-weight: bolder;
+              margin-bottom: 1rem;
+            }
+            .lower-case-input {
+              width: 15rem;
+              height: 2.5rem;
+              border-radius: 30px;
+              padding: 0 2rem;
+              font-size: 1.05em;
+              color: $primary-color1;
+              text-transform: lowercase;
+              border: 2px solid $primary-color1;
+              margin-bottom: 1rem;
+              outline: none;
+            }
+            .regular-case-input {
+              width: 15rem;
+              height: 2.5rem;
+              border-radius: 30px;
+              padding: 0 2rem;
+              font-size: 1.05em;
+              color: $primary-color1;
+              border: 2px solid $primary-color1;
+              margin-bottom: 1rem;
+              outline: none;
+            }
+          }
+        }
+        .right-side {
+          .entry {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
 
-//             @include center();
-//             label {
-//               font-size: $font-size4;
-//               color: $primary-color1;
-//               text-transform: capitalize;
-//               font-weight: bolder;
-//               margin-bottom: 2rem;
-//             }
-//             .regular-case-input {
-//               width: 30rem;
-//               height: 5rem;
-//               border-radius: 50px;
-//               padding: 0 4rem;
-//               font-size: $font-size4;
-//               color: $primary-color1;
-//               border: 4px solid $primary-color1;
-//               margin-bottom: 2rem;
-//               outline: none;
-//             }
-//           }
-//         }
-//       }
-//       .bottom-side {
-//         display: inline;
-//         flex-direction: column;
-//         .signUp-btn {
-//           @include mainButton2-Styling();
-//           @include center();
-//           margin-top: 2rem;
-//           margin-bottom: 2rem;
-//         }
-//       }
-//     }
-//   }
-//   .formSignUp {
-//     display: flex;
-//     gap: 1rem;
-//     @include center();
-//     p {
-//       font-size: $font-size1;
-//       color: $primary-color1;
-//       text-transform: capitalize;
-//       margin-bottom: 2rem;
-//       @include center();
-//     }
-//     a {
-//       font-size: $font-size1;
-//       text-decoration: none;
-//       color: $primary-color1;
-//       text-transform: capitalize;
-//       font-weight: bolder;
-//       margin-bottom: 2rem;
-//       @include center();
-//       transition: all 0.2s ease-in;
-//       &:hover {
-//         cursor: pointer;
-//         font-size: $font-size2;
-//       }
-//     }
-//   }
-// }
-// /* ---------------------------------------------------------- */
-// /* End of sign up styling */
-// /* ---------------------------------------------------------- */
+            @include center();
+            label {
+              font-size: 1.05em;
+              color: $primary-color1;
+              text-transform: capitalize;
+              font-weight: bolder;
+              margin-bottom: 1rem;
+            }
+            .regular-case-input {
+              width: 15rem;
+              height: 2.5rem;
+              border-radius: 30px;
+              padding: 0 2rem;
+              font-size: 1.05em;
+              color: $primary-color1;
+              border: 2px solid $primary-color1;
+              margin-bottom: 1rem;
+              outline: none;
+            }
+          }
+        }
+      }
+      .bottom-side {
+        display: inline;
+        flex-direction: column;
+        .signUp-btn {
+          @include mainButton2-Styling();
+          @include center();
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  .formSignUp {
+    display: flex;
+    gap: 1rem;
+    @include center();
+    p {
+      font-size: 0.9em;
+      color: $primary-color1;
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+      @include center();
+    }
+    a {
+      font-size: 0.9em;
+      text-decoration: none;
+      color: $primary-color1;
+      text-transform: capitalize;
+      font-weight: bolder;
+      margin-bottom: 1rem;
+      @include center();
+      transition: all 0.2s ease-in;
+      &:hover {
+        cursor: pointer;
+        font-size: 1em;
+      }
+    }
+  }
+}
+/* ---------------------------------------------------------- */
+/* End of sign up styling */
+/* ---------------------------------------------------------- */
 
 // // Sign in page styling
 // /* ---------------------------------------------------------- */
