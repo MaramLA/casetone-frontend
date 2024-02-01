@@ -1373,4 +1373,241 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of forgot password styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of profile styling */
+/* ---------------------------------------------------------- */
+.profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  background: white;
+  min-height: 5.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3rem 4rem;
+  text-align: center;
+  border-radius: 30px;
+  color: #696262;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+}
+.profile .profile-container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container .form img {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 1rem;
+  border: 1.5px solid #dddddd;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container .form .top-side {
+  display: flex;
+  gap: 8rem;
+}
+.profile .profile-container .form .top-side .left-side .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container .form .top-side .left-side .entry label {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.profile .profile-container .form .top-side .left-side .entry .lower-case-input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.profile .profile-container .form .top-side .left-side .entry .upper-case-input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.profile .profile-container .form .top-side .left-side .entry .regular-case-input {
+  width: 15rem;
+  height: 1.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.profile .profile-container .form .top-side .right-side .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container .form .top-side .right-side .entry label {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.profile .profile-container .form .top-side .right-side .entry .lower-case-input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.profile .profile-container .form .top-side .right-side .entry .upper-case-input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 3rem;
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.profile .profile-container .form .top-side .right-side .entry .regular-case-input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.profile .profile-container .form .bottom-side {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.profile .profile-container .form .bottom-side .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-container .form .bottom-side .entry label {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.profile .profile-container .form .bottom-side .entry .lower-case-input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.profile .profile-container .form .bottom-side .entry .regular-case-input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.profile .profile-container .form .bottom-side .profile-btn {
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.profile .profile-container .form .bottom-side .profile-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.profile .formProfile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.profile .formProfile p {
+  font-size: 0.9em;
+  color: #696262;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.profile .formProfile a {
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+.profile .formProfile a:hover {
+  cursor: pointer;
+  font-size: 1.9em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of profile page styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
