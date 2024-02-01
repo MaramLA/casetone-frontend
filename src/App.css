@@ -1688,7 +1688,7 @@ footer .bottom-section p {
   width: fit-content;
   gap: 2rem;
   border-radius: 30px;
-  padding: 3rem 1rem;
+  padding: 3rem 2rem;
   background: white;
   box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
 }
