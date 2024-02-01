@@ -1704,8 +1704,8 @@ footer .bottom-section p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 3.35vw;
-  width: 22.5vw;
+  gap: 6.7vw;
+  width: 45vw;
   height: 3rem;
   box-shadow: #dddddd 0px 5px 5px -5px;
 }
