@@ -1642,10 +1642,11 @@ footer .bottom-section p {
   color: #696262;
   font-weight: bolder;
   margin-bottom: 3rem;
+  margin-top: 3rem;
   text-align: center;
 }
 .category .form .entry input {
-  width: 25vw;
+  width: 50vw;
   height: 2.5rem;
   border-radius: 30px;
   padding: 0 2rem;
@@ -1669,7 +1670,7 @@ footer .bottom-section p {
   background: #696262;
   transition: all 0.2s ease-in;
   margin-top: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -1688,7 +1689,7 @@ footer .bottom-section p {
   width: fit-content;
   gap: 2rem;
   border-radius: 30px;
-  padding: 3rem 2rem;
+  padding: 3rem 3rem;
   background: white;
   box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
 }
@@ -1774,7 +1775,7 @@ footer .bottom-section p {
   -moz-text-align-last: center;
        text-align-last: center;
   margin-top: 1.5rem;
-  width: 25vw;
+  width: 30vw;
   text-transform: capitalize;
   color: #696262;
   line-height: 1.5em;
