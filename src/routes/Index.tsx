@@ -53,7 +53,7 @@ const Index = () => {
         theme="light"
         style={{
           marginTop: '12rem',
-          fontSize: '2em',
+          fontSize: '1em',
           width: '15rem',
           padding: '1.5rem, 3rem'
         }}
