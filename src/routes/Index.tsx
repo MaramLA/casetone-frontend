@@ -54,8 +54,8 @@ const Index = () => {
         style={{
           marginTop: '12rem',
           fontSize: '2em',
-          width: '30rem',
-          padding: '3rem, 6rem'
+          width: '15rem',
+          padding: '1.5rem, 3rem'
         }}
       />
       <Routes>

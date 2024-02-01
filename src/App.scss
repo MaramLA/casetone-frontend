@@ -1806,131 +1806,131 @@ footer {
 /* End of profile page styling */
 /* ---------------------------------------------------------- */
 
-// /* ---------------------------------------------------------- */
-// /* Start of category page styling */
-// /* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of category page styling */
+/* ---------------------------------------------------------- */
 
-// .category {
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   @include center();
-//   .form {
-//     display: flex;
-//     flex-direction: column;
-//     @include center();
-//     .entry {
-//       display: flex;
-//       flex-direction: column;
-//       width: 100%;
+.category {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include center();
+  .form {
+    display: flex;
+    flex-direction: column;
+    @include center();
+    .entry {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
 
-//       @include center();
-//       label {
-//         font-size: $font-size6;
-//         text-transform: capitalize;
-//         color: $primary-color1;
-//         font-weight: bolder;
-//         margin-bottom: 6rem;
-//         text-align: center;
-//       }
-//       input {
-//         width: 50vw;
-//         height: 5rem;
-//         border-radius: 50px;
-//         padding: 0 4rem;
-//         font-size: $font-size4;
-//         color: $primary-color1;
-//         border: 4px solid $primary-color1;
-//         margin-bottom: 2rem;
-//         background: $primary-color3;
-//         outline: none;
-//       }
-//     }
-//     .add-btn {
-//       @include mainButton2-Styling();
-//       margin-top: 2rem;
-//       margin-bottom: 10rem;
-//       width: fit-content;
-//     }
-//   }
+      @include center();
+      label {
+        font-size: 2.25em;
+        text-transform: capitalize;
+        color: $primary-color1;
+        font-weight: bolder;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      input {
+        width: 25vw;
+        height: 2.5rem;
+        border-radius: 30px;
+        padding: 0 2rem;
+        font-size: 1.05em;
+        color: $primary-color1;
+        border: 2px solid $primary-color1;
+        margin-bottom: 1rem;
+        background: $primary-color3;
+        outline: none;
+      }
+    }
+    .add-btn {
+      @include mainButton2-Styling();
+      margin-top: 1rem;
+      margin-bottom: 5rem;
+      width: fit-content;
+    }
+  }
 
-//   .category-container {
-//     position: relative;
-//     display: flex;
-//     @include center();
-//     flex-direction: column;
-//     margin-bottom: 10rem;
-//     width: 60vw;
-//     gap: 4rem;
-//     border-radius: 50px;
-//     padding: 6rem 0;
-//     background: white;
-//     box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+  .category-container {
+    position: relative;
+    display: flex;
+    @include center();
+    flex-direction: column;
+    margin-bottom: 5rem;
+    width: 30vw;
+    gap: 2rem;
+    border-radius: 30px;
+    padding: 3rem 0;
+    background: white;
+    box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
 
-//     .section-title {
-//       font-size: 3em;
-//       text-transform: capitalize;
-//       color: $primary-color1;
-//       font-weight: bolder;
-//       text-align: center;
-//       margin-bottom: 3rem;
-//     }
-//     .single-category {
-//       position: relative;
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       gap: 6.7vw;
-//       width: 45vw;
-//       height: 6rem;
-//       box-shadow: $primary-color5 0px 10px 10px -10px;
+    .section-title {
+      font-size: 1.5em;
+      text-transform: capitalize;
+      color: $primary-color1;
+      font-weight: bolder;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .single-category {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3.35vw;
+      width: 22.5vw;
+      height: 3rem;
+      box-shadow: $primary-color5 0px 5px 5px -5px;
 
-//       p {
-//         font-size: $font-size5;
-//         color: $primary-color1;
-//         text-transform: capitalize;
-//         width: 50rem;
-//         margin-right: 12rem;
-//       }
-//       .controllers {
-//         position: relative;
-//         height: 3rem;
-//         right: 6rem;
-//         gap: 3rem;
-//         .deleteIcon {
-//           position: absolute;
-//           left: 0;
-//           font-size: 3.5em;
-//           color: rgb(163, 54, 54);
-//           transition: all 0.2s ease-in;
+      p {
+        font-size: 1.1em;
+        color: $primary-color1;
+        text-transform: capitalize;
+        width: 25rem;
+        margin-right: 6rem;
+      }
+      .controllers {
+        position: relative;
+        height: 1.5rem;
+        right: 3rem;
+        gap: 1.5rem;
+        .deleteIcon {
+          position: absolute;
+          left: 0;
+          font-size: 1.75em;
+          color: rgb(163, 54, 54);
+          transition: all 0.2s ease-in;
 
-//           &:hover {
-//             cursor: pointer;
-//             padding-top: 0.4rem;
-//           }
-//         }
-//         .editIcon {
-//           position: absolute;
-//           right: 2rem;
-//           font-size: 3.5em;
-//           color: $primary-color6;
-//           transition: all 0.2s ease-in;
+          &:hover {
+            cursor: pointer;
+            padding-top: 0.2rem;
+          }
+        }
+        .editIcon {
+          position: absolute;
+          right: 1rem;
+          font-size: 1.75em;
+          color: $primary-color6;
+          transition: all 0.2s ease-in;
 
-//           &:hover {
-//             cursor: pointer;
-//             padding-top: 0.4rem;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+          &:hover {
+            cursor: pointer;
+            padding-top: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
 
-// /* ---------------------------------------------------------- */
-// /* End of category page styling */
-// /* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* End of category page styling */
+/* ---------------------------------------------------------- */
 
 // /* ---------------------------------------------------------- */
 // /* Start of error styling */

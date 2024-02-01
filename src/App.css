@@ -1610,4 +1610,141 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of profile page styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of category page styling */
+/* ---------------------------------------------------------- */
+.category {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.category .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.category .form .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.category .form .entry label {
+  font-size: 2.25em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.category .form .entry input {
+  width: 25vw;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  background: #edefef;
+  outline: none;
+}
+.category .form .add-btn {
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.category .form .add-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.category .category-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  width: 30vw;
+  gap: 2rem;
+  border-radius: 30px;
+  padding: 3rem 0;
+  background: white;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+}
+.category .category-container .section-title {
+  font-size: 1.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.category .category-container .single-category {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.35vw;
+  width: 22.5vw;
+  height: 3rem;
+  box-shadow: #dddddd 0px 5px 5px -5px;
+}
+.category .category-container .single-category p {
+  font-size: 1.1em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 25rem;
+  margin-right: 6rem;
+}
+.category .category-container .single-category .controllers {
+  position: relative;
+  height: 1.5rem;
+  right: 3rem;
+  gap: 1.5rem;
+}
+.category .category-container .single-category .controllers .deleteIcon {
+  position: absolute;
+  left: 0;
+  font-size: 1.75em;
+  color: rgb(163, 54, 54);
+  transition: all 0.2s ease-in;
+}
+.category .category-container .single-category .controllers .deleteIcon:hover {
+  cursor: pointer;
+  padding-top: 0.2rem;
+}
+.category .category-container .single-category .controllers .editIcon {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.75em;
+  color: #909090;
+  transition: all 0.2s ease-in;
+}
+.category .category-container .single-category .controllers .editIcon:hover {
+  cursor: pointer;
+  padding-top: 0.2rem;
+}
+
+/* ---------------------------------------------------------- */
+/* End of category page styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
