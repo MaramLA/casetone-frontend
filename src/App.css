@@ -541,8 +541,9 @@ footer .bottom-section p {
   align-items: center;
   justify-content: center;
   height: 20rem;
-  width: 5rem;
+  width: 4.7rem;
   margin: 5rem;
+  background: lightblue;
 }
 .pagination-div .top-section .page-controller .arrow-icon {
   display: flex;
@@ -550,6 +551,7 @@ footer .bottom-section p {
   justify-content: center;
   color: #909090;
   font-size: 5em;
+  background: lightcoral;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .page-controller .arrow-icon:hover {

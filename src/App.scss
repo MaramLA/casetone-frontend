@@ -490,13 +490,15 @@ footer {
       display: flex;
       @include center();
       height: 20rem;
-      width: 5rem;
+      width: 4.7rem;
       margin: 5rem;
+      background: lightblue;
       .arrow-icon {
         display: flex;
         @include center();
         color: $primary-color6;
         font-size: 5em;
+        background: lightcoral;
 
         transition: all 0.2s ease-in;
         &:hover {
