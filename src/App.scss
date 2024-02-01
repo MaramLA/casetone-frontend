@@ -1002,7 +1002,7 @@ footer {
 
         &:hover {
           cursor: pointer;
-          padding-top: 0.2rem;
+          padding-top: 1rem;
         }
       }
     }
@@ -1150,14 +1150,14 @@ footer {
       .deleteIcon {
         position: absolute;
         right: 0;
-        bottom: 0.75rem;
+        bottom: 1.5rem;
         font-size: 1.75em;
         color: rgb(163, 54, 54);
         transition: all 0.2s ease-in;
 
         &:hover {
           cursor: pointer;
-          padding-top: 0.2rem;
+          padding-top: 1.6rem;
         }
       }
       .saveIcon {

@@ -1089,7 +1089,7 @@ footer .bottom-section p {
 }
 .cart .items .item .deleteIcon:hover {
   cursor: pointer;
-  padding-top: 0.2rem;
+  padding-top: 1rem;
 }
 .cart .items .purchase-summary {
   display: flex;
@@ -1265,14 +1265,14 @@ footer .bottom-section p {
 .orders .orders-container .order .deleteIcon {
   position: absolute;
   right: 0;
-  bottom: 0.75rem;
+  bottom: 1.5rem;
   font-size: 1.75em;
   color: rgb(163, 54, 54);
   transition: all 0.2s ease-in;
 }
 .orders .orders-container .order .deleteIcon:hover {
   cursor: pointer;
-  padding-top: 0.2rem;
+  padding-top: 1.6rem;
 }
 .orders .orders-container .order .saveIcon {
   position: absolute;
