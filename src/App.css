@@ -541,7 +541,7 @@ footer .bottom-section p {
   align-items: center;
   justify-content: center;
   height: 20rem;
-  width: 4.7rem;
+  width: 4.5rem;
   margin: 5rem;
   background: lightblue;
 }
@@ -550,7 +550,7 @@ footer .bottom-section p {
   align-items: center;
   justify-content: center;
   color: #909090;
-  font-size: 5em;
+  font-size: 4.8em;
   background: lightcoral;
   transition: all 0.2s ease-in;
 }
