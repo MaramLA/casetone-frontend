@@ -1,6 +1,6 @@
 @keyframes h1-move {
   50% {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 }
 @keyframes star-move {
@@ -42,14 +42,14 @@ main {
 /* ---------------------------------------------------------- */
 header {
   position: relative;
-  height: 17vh;
+  height: 15vh;
 }
 header .nav-bar {
   display: flex;
   height: auto;
   width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   align-items: center;
   justify-content: center;
   background-color: #edefef;
@@ -70,32 +70,32 @@ header .nav-bar .left-section {
   align-items: center;
 }
 header .nav-bar .left-section .logo {
-  width: 400px;
-  height: 140px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 70px;
 }
 header .nav-bar .left-section .logo img {
-  width: 400px;
-  height: 140px;
-  margin-left: 6rem;
+  width: 200px;
+  height: 70px;
+  margin-left: 3.5rem;
   align-items: center;
   justify-content: center;
 }
 header .nav-bar .left-section ul {
-  margin-left: 3rem;
   display: flex;
-  list-style: none;
   align-items: center;
   justify-content: center;
+  list-style: none;
+  gap: 1.8rem;
 }
 header .nav-bar .left-section ul li {
-  margin: 1.5rem;
-  width: 13rem;
+  width: 7rem;
   text-align: center;
 }
 header .nav-bar .left-section ul li .navLinks {
   text-decoration: none;
   font-weight: bolder;
-  font-size: 2rem;
+  font-size: 1em;
   text-transform: capitalize;
   color: #696262;
   background: transparent;
@@ -104,33 +104,35 @@ header .nav-bar .left-section ul li .navLinks {
   transition: all 0.2s ease-in;
 }
 header .nav-bar .left-section ul li .navLinks:hover {
-  font-size: 2.1rem;
+  font-size: 1.05em;
 }
 header .nav-bar .right-section {
   width: 30%;
+  height: 70px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  padding-right: 3.5rem;
 }
 header .nav-bar .right-section .icon1 {
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   color: #696262;
-  margin: 1.4rem;
+  margin: 0.3rem;
   transition: all 0.2s ease-in;
 }
 header .nav-bar .right-section .icon1:hover {
   cursor: pointer;
-  padding-right: 0.4rem;
+  padding-right: 0.3rem;
 }
 header .nav-bar .right-section .icon2 {
-  font-size: 3.5rem;
+  font-size: 1.75rem;
   color: #696262;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease-in;
   display: none;
-  margin-right: 3rem;
+  margin-right: 0.75rem;
 }
 header .nav-bar .right-section .icon2:hover {
   cursor: pointer;
@@ -138,13 +140,13 @@ header .nav-bar .right-section .icon2:hover {
 }
 header .nav-bar .right-section .nav-buttons {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.25rem;
 }
 header .nav-bar .right-section .nav-buttons .link-btn {
   text-decoration: none;
 }
 header .nav-bar .right-section .nav-buttons .link-btn .btn-1 {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bolder;
   text-transform: capitalize;
   color: #696262;
@@ -154,7 +156,7 @@ header .nav-bar .right-section .nav-buttons .link-btn .btn-1 {
   white-space: nowrap;
   padding: 0.7em 1.5em;
   border-radius: 50px;
-  border: 4px solid #696262;
+  border: 2px solid #696262;
   transition: all 0.2s ease-in;
   align-items: center;
   justify-content: center;
@@ -164,7 +166,7 @@ header .nav-bar .right-section .nav-buttons .link-btn .btn-1:hover {
   padding: 0.7em 1.7em;
 }
 header .nav-bar .right-section .nav-buttons .link-btn .btn-2 {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bolder;
   text-transform: capitalize;
   color: white;
@@ -172,7 +174,7 @@ header .nav-bar .right-section .nav-buttons .link-btn .btn-2 {
   white-space: nowrap;
   padding: 0.7em 1.5em;
   border-radius: 50px;
-  border: 4px solid #696262;
+  border: 2px solid #696262;
   background: #696262;
   transition: all 0.2s ease-in;
   align-items: center;
@@ -183,7 +185,7 @@ header .nav-bar .right-section .nav-buttons .link-btn .btn-2:hover {
   padding: 0.7em 1.7em;
 }
 header .nav-bar .right-section .nav-buttons .btn-1 {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bolder;
   text-transform: capitalize;
   color: #696262;
@@ -193,7 +195,7 @@ header .nav-bar .right-section .nav-buttons .btn-1 {
   white-space: nowrap;
   padding: 0.7em 1.5em;
   border-radius: 50px;
-  border: 4px solid #696262;
+  border: 2px solid #696262;
   transition: all 0.2s ease-in;
   align-items: center;
   justify-content: center;
@@ -303,8 +305,8 @@ footer {
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding-bottom: 2rem;
-  padding-top: 4rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
   background: #dddddd;
 }
 footer .top-sections {
@@ -333,14 +335,14 @@ footer .top-sections .top-left-section ul li {
 }
 footer .top-sections .top-left-section ul li a {
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1em;
   text-transform: capitalize;
   color: #696262;
-  line-height: 1.5em;
+  line-height: 0.75em;
   transition: all 0.2s ease-in;
 }
 footer .top-sections .top-left-section ul li a:hover {
-  font-size: 2.1em;
+  font-size: 1.05em;
   cursor: pointer;
 }
 footer .top-sections .top-mid-section {
@@ -359,58 +361,54 @@ footer .top-sections .top-mid-section .contact-info {
   white-space: nowrap;
 }
 footer .top-sections .top-mid-section .contact-info .section-title {
-  font-size: 2em;
-  margin: 1.5rem;
+  font-size: 1em;
+  margin: 1rem;
   font-weight: bolder;
 }
 footer .top-sections .top-mid-section .contact-info a {
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1em;
   color: #696262;
-  line-height: 1.5em;
-  margin: 1.5rem;
+  line-height: 1em;
   transition: all 0.2s ease-in;
 }
 footer .top-sections .top-mid-section .contact-info a:hover {
-  font-size: 2.1em;
+  font-size: 1.05em;
 }
 footer .top-sections .top-mid-section .contact-info p {
-  font-size: 2em;
+  font-size: 1em;
   color: #696262;
   line-height: 1.5em;
-  margin: 1.5rem;
 }
 footer .top-sections .top-mid-section .social-media-icons {
   width: -moz-fit-content;
   width: fit-content;
 }
 footer .top-sections .top-mid-section .social-media-icons .section-title {
-  font-size: 2em;
-  margin: 1.5rem;
+  font-size: 1em;
   font-weight: bolder;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 footer .top-sections .top-mid-section .social-media-icons .icons {
-  height: 7rem;
-  margin-bottom: 4rem;
+  height: 5rem;
 }
 footer .top-sections .top-mid-section .social-media-icons .icons .footer-social-links {
   color: #696262;
 }
 footer .top-sections .top-mid-section .social-media-icons .icons .footer-social-links .icon {
-  border: 4px solid #696262;
+  border: 2px solid #696262;
   border-radius: 50px;
-  padding: 1rem;
-  font-size: 2.5rem;
-  margin: 1rem;
+  padding: 0.5rem;
+  font-size: 1.25em;
+  margin: 0.5rem;
   font-weight: bolder;
   transition: all 0.2s ease-in;
   background: #edefef;
 }
 footer .top-sections .top-mid-section .social-media-icons .icons .footer-social-links .icon:hover {
   cursor: pointer;
-  font-size: 2.8rem;
+  font-size: 1.4em;
 }
 footer .top-sections .top-right-section {
   margin: 5vh;
@@ -425,6 +423,8 @@ footer .top-sections .top-right-section img {
   text-align: center;
   align-items: center;
   justify-content: center;
+  width: 200px;
+  height: 70px;
 }
 footer .bottom-section {
   width: 100%;
@@ -437,7 +437,7 @@ footer .bottom-section {
   color: #696262;
 }
 footer .bottom-section p {
-  font-size: 2em;
+  font-size: 1em;
   color: #696262;
   margin: 1.5rem;
   align-items: center;
@@ -461,19 +461,19 @@ footer .bottom-section p {
   padding-top: 2rem;
   align-items: center;
   justify-content: center;
-  padding-bottom: 7rem;
-  margin-bottom: 10rem;
+  padding-bottom: 3.5rem;
+  margin-bottom: 5rem;
   box-shadow: #dddddd 0px 10px 10px -10px;
 }
 .hero img {
-  width: 130rem;
-  padding-bottom: 7em;
+  width: 65rem;
+  padding-bottom: 3.5em;
 }
 .hero .circle-background {
-  height: 50rem;
-  width: 50rem;
+  height: 25rem;
+  width: 25rem;
   background: #edefef;
-  border: 6px solid #696262;
+  border: 3px solid #696262;
   border-radius: 50%;
   padding: 4rem;
   display: none;
@@ -485,22 +485,22 @@ footer .bottom-section p {
   justify-content: center;
 }
 .hero .hero__content .heading-title {
-  font-size: 6em;
+  font-size: 3em;
   text-transform: capitalize;
   color: #696262;
   font-weight: bolder;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   animation: h1-move 2s infinite;
 }
 .hero .hero__content p {
-  font-size: 2em;
+  font-size: 1em;
   text-transform: capitalize;
   color: #696262;
   line-height: 1.5em;
-  margin-bottom: 3.8rem;
+  margin-bottom: 1.9rem;
 }
 .hero .hero__content .hero__button {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bolder;
   text-transform: capitalize;
   color: white;
@@ -508,7 +508,7 @@ footer .bottom-section p {
   white-space: nowrap;
   padding: 0.7em 1.5em;
   border-radius: 50px;
-  border: 4px solid #696262;
+  border: 2px solid #696262;
   background: #696262;
   transition: all 0.2s ease-in;
   align-items: center;
@@ -525,205 +525,6 @@ footer .bottom-section p {
 /* ---------------------------------------------------------- */
 /* Start of products section styling */
 /* ---------------------------------------------------------- */
-.products {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 13rem;
-  margin-bottom: 10rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.products .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 7rem;
-  text-align: center;
-}
-.products .search-product {
-  width: 40vw;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 4rem;
-  outline: none;
-  background: #edefef;
-}
-.products .sort-section .sort-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  outline: none;
-  text-align: center;
-  margin-bottom: 5rem;
-}
-.products .sort-section .sort-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.products .products-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 8rem;
-  width: 68vw;
-}
-.products .products-div .product {
-  background: white;
-  border-radius: 50px;
-  width: 34rem;
-  height: 50rem;
-  margin: 2.2rem;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-  transition: all 0.2s ease-in;
-}
-.products .products-div .product:hover {
-  transform: translateY(-20px);
-}
-.products .products-div .product .product-details-link {
-  text-decoration: none;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-}
-.products .products-div .product .product-details-link img {
-  width: 100%;
-  height: 34rem;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-}
-.products .products-div .product .product__details {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin: 2.5rem;
-  color: #696262;
-}
-.products .products-div .product .product__details .controllers {
-  display: flex;
-  background: lightblue;
-  width: 10rem;
-}
-.products .products-div .product .product__details .controllers .icon1 {
-  position: absolute;
-  left: 380px;
-  top: 125px;
-  font-size: 2.5em;
-  color: #909090;
-  margin: 1.4rem;
-  transition: all 0.2s ease-in;
-}
-.products .products-div .product .product__details .controllers .icon1:hover {
-  cursor: pointer;
-  font-size: 2.7em;
-}
-.products .products-div .product .product__details .controllers .icon2 {
-  position: absolute;
-  left: 330px;
-  top: 125px;
-  font-size: 2.5em;
-  color: #909090;
-  margin: 1.4rem;
-  transition: all 0.2s ease-in;
-}
-.products .products-div .product .product__details .controllers .icon2:hover {
-  cursor: pointer;
-  font-size: 2.7em;
-}
-.products .products-div .product .product__details .controllers .icon3 {
-  position: absolute;
-  left: 400px;
-  top: 125px;
-  font-size: 2.5em;
-  color: rgb(163, 54, 54);
-  margin: 1.4rem;
-  transition: all 0.2s ease-in;
-}
-.products .products-div .product .product__details .controllers .icon3:hover {
-  cursor: pointer;
-  font-size: 2.7em;
-}
-.products .products-div .product .product__details .controllers .icon4 {
-  position: absolute;
-  left: 310px;
-  top: 125px;
-  font-size: 2.5em;
-  color: #909090;
-  margin: 1.4rem;
-  transition: all 0.2s ease-in;
-}
-.products .products-div .product .product__details .controllers .icon4:hover {
-  cursor: pointer;
-  font-size: 2.7em;
-}
-.products .products-div .product .product__details .controllers .icon5 {
-  position: absolute;
-  left: 260px;
-  top: 125px;
-  font-size: 2.5em;
-  color: #909090;
-  margin: 1.4rem;
-  transition: all 0.2s ease-in;
-}
-.products .products-div .product .product__details .controllers .icon5:hover {
-  cursor: pointer;
-  font-size: 2.7em;
-}
-.products .products-div .product .product__details .product__title {
-  font-size: 2.1em;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 1.5rem;
-}
-.products .products-div .product .product__details .product__description {
-  font-size: 1.7em;
-  margin-bottom: 1.5rem;
-}
-.products .products-div .product .product__details .product__price {
-  font-size: 1.9em;
-  margin-bottom: 1.5rem;
-}
-.products .products-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  align-items: center;
-  justify-content: center;
-}
-.products .products-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of products section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of products pagenation section styling */
-/* ---------------------------------------------------------- */
 .pagination-div {
   display: flex;
   flex-direction: column;
@@ -739,8 +540,8 @@ footer .bottom-section p {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40rem;
-  width: 10rem;
+  height: 20rem;
+  width: 5rem;
   margin: 5rem;
 }
 .pagination-div .top-section .page-controller .arrow-icon {
@@ -748,12 +549,12 @@ footer .bottom-section p {
   align-items: center;
   justify-content: center;
   color: #909090;
-  font-size: 10rem;
+  font-size: 5em;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .page-controller .arrow-icon:hover {
   cursor: pointer;
-  font-size: 11rem;
+  font-size: 5.3em;
 }
 .pagination-div .top-section .products {
   position: relative;
@@ -765,23 +566,23 @@ footer .bottom-section p {
   box-shadow: #dddddd 0px 10px 10px -10px;
 }
 .pagination-div .top-section .products .section-title {
-  font-size: 4.5em;
+  font-size: 2.2em;
   text-transform: capitalize;
   color: #696262;
   font-weight: bolder;
-  margin-bottom: 7rem;
+  margin-bottom: 3.5rem;
   text-align: center;
 }
 .pagination-div .top-section .products .search-product {
   width: 40vw;
-  height: 5rem;
+  height: 2.5rem;
   border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
+  padding: 0 2rem;
+  font-size: 1.05em;
   color: #696262;
   text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 4rem;
+  border: 2px solid #696262;
+  margin-bottom: 2rem;
   outline: none;
   background: #edefef;
 }
@@ -789,7 +590,7 @@ footer .bottom-section p {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bolder;
   text-transform: capitalize;
   color: white;
@@ -797,12 +598,12 @@ footer .bottom-section p {
   white-space: nowrap;
   padding: 0.7em 1.5em;
   border-radius: 50px;
-  border: 4px solid #696262;
+  border: 2px solid #696262;
   background: #696262;
   transition: all 0.2s ease-in;
   outline: none;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 }
 .pagination-div .top-section .products .sort-section .sort-btn:hover {
   cursor: pointer;
@@ -814,16 +615,16 @@ footer .bottom-section p {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
   max-width: 80vw;
 }
 .pagination-div .top-section .products .products-div .product {
   background: white;
-  border-radius: 50px;
-  width: 34rem;
-  height: 50rem;
-  margin: 2.2rem;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+  border-radius: 30px;
+  width: 17rem;
+  height: 25rem;
+  margin: 1.1rem;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .products .products-div .product:hover {
@@ -836,7 +637,7 @@ footer .bottom-section p {
 }
 .pagination-div .top-section .products .products-div .product .product-details-link img {
   width: 100%;
-  height: 34rem;
+  height: 17rem;
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
 }
@@ -844,95 +645,95 @@ footer .bottom-section p {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 2.5rem;
+  margin: 0.75rem;
   color: #696262;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers {
   display: flex;
-  background: lightblue;
   width: 10rem;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon1 {
   position: absolute;
-  left: 380px;
-  top: 125px;
-  font-size: 2.5em;
+  left: 190px;
+  top: 60px;
+  font-size: 1.25em;
   color: #909090;
   margin: 1.4rem;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon1:hover {
   cursor: pointer;
-  font-size: 2.7em;
+  font-size: 1.35em;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon2 {
   position: absolute;
-  left: 330px;
-  top: 125px;
-  font-size: 2.5em;
+  left: 170px;
+  top: 60px;
+  font-size: 1.25em;
   color: #909090;
   margin: 1.4rem;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon2:hover {
   cursor: pointer;
-  font-size: 2.7em;
+  font-size: 1.35em;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon3 {
   position: absolute;
-  left: 400px;
-  top: 125px;
-  font-size: 2.5em;
+  left: 200px;
+  top: 60px;
+  font-size: 1.25em;
   color: rgb(163, 54, 54);
   margin: 1.4rem;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon3:hover {
   cursor: pointer;
-  font-size: 2.7em;
+  font-size: 1.35em;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon4 {
   position: absolute;
-  left: 310px;
-  top: 125px;
-  font-size: 2.5em;
+  left: 160px;
+  top: 60px;
+  font-size: 1.25em;
   color: #909090;
   margin: 1.4rem;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon4:hover {
   cursor: pointer;
-  font-size: 2.7em;
+  font-size: 1.35em;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon5 {
   position: absolute;
-  left: 260px;
-  top: 125px;
-  font-size: 2.5em;
+  left: 140px;
+  top: 60px;
+  font-size: 1.25em;
   color: #909090;
   margin: 1.4rem;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .products .products-div .product .product__details .controllers .icon5:hover {
   cursor: pointer;
-  font-size: 2.7em;
+  font-size: 1.35em;
 }
 .pagination-div .top-section .products .products-div .product .product__details .product__title {
-  font-size: 2.1em;
+  font-size: 1.05em;
   text-transform: capitalize;
   font-weight: bolder;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 .pagination-div .top-section .products .products-div .product .product__details .product__description {
-  font-size: 1.7em;
-  margin-bottom: 1.5rem;
+  font-size: 0.85em;
+  margin-bottom: 0.75rem;
+  width: 15rem;
 }
 .pagination-div .top-section .products .products-div .product .product__details .product__price {
-  font-size: 1.9em;
-  margin-bottom: 1.5rem;
+  font-size: 0.95em;
+  margin-bottom: 0.75rem;
 }
 .pagination-div .top-section .products .products-btn {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bolder;
   text-transform: capitalize;
   color: white;
@@ -940,7 +741,7 @@ footer .bottom-section p {
   white-space: nowrap;
   padding: 0.7em 1.5em;
   border-radius: 50px;
-  border: 4px solid #696262;
+  border: 2px solid #696262;
   background: #696262;
   transition: all 0.2s ease-in;
   align-items: center;
@@ -952,1912 +753,5 @@ footer .bottom-section p {
 }
 
 /* ---------------------------------------------------------- */
-/* End of products pagenation section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of about us section styling */
-/* ---------------------------------------------------------- */
-.AboutUs {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 15rem;
-  padding-top: 4rem;
-  margin-bottom: 10rem;
-}
-.AboutUs .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.AboutUs .content {
-  font-size: 2.2em;
-  text-align: justify;
-  -moz-text-align-last: center;
-       text-align-last: center;
-  margin-bottom: 3rem;
-  width: 55vw;
-  margin-top: 3rem;
-  text-transform: capitalize;
-  color: #696262;
-  line-height: 1.5em;
-}
-.AboutUs .content .innerTextLink {
-  text-decoration: none;
-  font-weight: bolder;
-  color: #696262;
-  text-transform: capitalize;
-}
-
-/* ---------------------------------------------------------- */
-/* End of about us section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of reviews section styling */
-/* ---------------------------------------------------------- */
-.reviews {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 15rem;
-  margin-bottom: 10rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.reviews .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 10rem;
-  text-align: center;
-}
-.reviews .main-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-.reviews .main-section .rate-div {
-  width: 100%;
-  height: 30rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.reviews .main-section .rate-div .rate-icon {
-  position: relative;
-  color: #696262;
-  font-size: 40rem;
-  margin-right: 1rem;
-  animation: star-move 1.5s infinite;
-}
-.reviews .main-section .rate-div .rating-value {
-  color: #696262;
-  font-size: 10rem;
-  margin-top: 5rem;
-  font-weight: bold;
-}
-.reviews .main-section .reviews-div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.reviews .main-section .reviews-div .review {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  padding: 3rem;
-  background: white;
-  min-height: 11rem;
-  width: 45rem;
-  border-radius: 50px;
-  color: #696262;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-  transition: all 0.2s ease-in;
-}
-.reviews .main-section .reviews-div .review:hover {
-  transform: translateX(-50px);
-}
-.reviews .main-section .reviews-div .review .review__rating {
-  justify-content: flex-start;
-  font-size: 2.1em;
-  font-weight: bolder;
-  margin-bottom: 1.5rem;
-}
-.reviews .main-section .reviews-div .review .review__username {
-  justify-content: flex-start;
-  font-size: 2.1em;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 1.5rem;
-  margin-left: 3rem;
-}
-.reviews .main-section .reviews-div .review .review__content {
-  justify-content: flex-start;
-  font-size: 2.1em;
-  margin-bottom: 1.5rem;
-  margin-left: 3rem;
-  max-width: 40rem;
-}
-
-/* ---------------------------------------------------------- */
-/* End of reviews section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of newsletter subscription section styling */
-/* ---------------------------------------------------------- */
-.newsletter-subscription {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 15rem;
-  padding-top: 4rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.newsletter-subscription .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.newsletter-subscription .content {
-  font-size: 2.2em;
-  text-align: center;
-  margin-top: 3rem;
-  text-transform: capitalize;
-  color: #696262;
-  line-height: 1.5em;
-}
-.newsletter-subscription .subscription-form {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5rem;
-  gap: 1.5rem;
-}
-.newsletter-subscription .subscription-form .email-label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.newsletter-subscription .subscription-form .email-textbox {
-  width: 50vw;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  background: #edefef;
-  outline: none;
-}
-.newsletter-subscription .subscription-form .form-submit-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  align-items: center;
-  justify-content: center;
-}
-.newsletter-subscription .subscription-form .form-submit-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of newsletter subscription section styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of purchases styling */
-/* ---------------------------------------------------------- */
-.cart {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 15rem;
-  padding-top: 2rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.cart .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.cart .items {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 80%;
-  gap: 4rem;
-  border-radius: 50px;
-  padding: 6rem 4rem;
-  background: white;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.cart .items .section-title {
-  font-size: 3em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.cart .items .item {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 6vw;
-  width: 60vw;
-  height: 5rem;
-  padding-bottom: 1.2rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.cart .items .item .quantity-div {
-  position: relative;
-  display: flex;
-  width: 20rem;
-  align-items: center;
-  justify-content: center;
-}
-.cart .items .item .quantity-div .quantity-input {
-  width: 6rem;
-  height: 3rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  text-align: center;
-  border: 0;
-  outline: none;
-}
-.cart .items .item .quantity-div .quantity-add {
-  position: absolute;
-  left: 0;
-  font-size: 1.8em;
-  color: #696262;
-  transition: all 0.2s ease-in;
-}
-.cart .items .item .quantity-div .quantity-add:hover {
-  cursor: pointer;
-}
-.cart .items .item .quantity-div .quantity-subtract {
-  position: absolute;
-  right: 0;
-  font-size: 1.8em;
-  color: #696262;
-  transition: all 0.2s ease-in;
-}
-.cart .items .item .quantity-div .quantity-subtract:hover {
-  cursor: pointer;
-}
-.cart .items .item img {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 6rem;
-}
-.cart .items .item p {
-  font-size: 2.2em;
-  color: #696262;
-  text-transform: capitalize;
-  width: 20rem;
-  text-align: center;
-}
-.cart .items .item .deleteIcon {
-  position: absolute;
-  right: 0;
-  bottom: 1.8rem;
-  font-size: 3.5em;
-  color: rgb(163, 54, 54);
-  transition: all 0.2s ease-in;
-}
-.cart .items .item .deleteIcon:hover {
-  cursor: pointer;
-  padding-top: 0.4rem;
-}
-.cart .items .purchase-summary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 75vw;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-.cart .items .purchase-summary .total-items {
-  font-size: 2.2em;
-  color: #696262;
-  width: 60rem;
-  text-align: center;
-  text-transform: capitalize;
-}
-.cart .items .purchase-summary .total-price {
-  font-size: 2.2em;
-  color: #696262;
-  width: 60rem;
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: bold;
-}
-.cart .items .purchase-summary .btns {
-  display: flex;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-.cart .items .purchase-summary .btns .checkout-btn {
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-}
-.cart .items .purchase-summary .btns .checkout-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.cart .items .purchase-summary .btns .reset-btn {
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #696262;
-  background: #edefef;
-  display: flex;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  transition: all 0.2s ease-in;
-}
-.cart .items .purchase-summary .btns .reset-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of purchases styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of orders styling */
-/* ---------------------------------------------------------- */
-.orders {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 15rem;
-  padding-top: 2rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.orders .orders-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 75vw;
-  gap: 4rem;
-  border-radius: 50px;
-  padding: 6rem 4rem;
-  background: white;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.orders .orders-container .info .section-title {
-  font-size: 3em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-  margin-bottom: 5rem;
-}
-.orders .orders-container .info .email {
-  margin-bottom: 3rem;
-}
-.orders .orders-container .order {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1vw;
-  width: 60vw;
-  height: 5rem;
-  padding-bottom: 1.3rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.orders .orders-container .order .order-images {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 620px;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  white-space: nowrap;
-}
-.orders .orders-container .order .order-images .order-image {
-  display: inline-block;
-  justify-content: center;
-  height: 5rem;
-  width: 5rem;
-}
-.orders .orders-container .order p {
-  font-size: 2.2em;
-  color: #696262;
-  text-transform: capitalize;
-  width: 20rem;
-  text-align: center;
-}
-.orders .orders-container .order .meta-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.orders .orders-container .order .meta-info .order-id {
-  width: 34rem;
-  text-align: left;
-}
-.orders .orders-container .order .order-status {
-  width: 38rem;
-  text-align: center;
-}
-.orders .orders-container .order .order-price {
-  width: 38rem;
-  text-align: center;
-}
-.orders .orders-container .order .item-name {
-  font-size: 2.2em;
-  color: #696262;
-  text-transform: capitalize;
-  width: 20rem;
-  text-align: center;
-}
-.orders .orders-container .order .item-sizes {
-  font-size: 2.2em;
-  color: #696262;
-  text-transform: capitalize;
-  width: 20rem;
-  text-align: center;
-}
-.orders .orders-container .order .deleteIcon {
-  position: absolute;
-  right: 0;
-  bottom: 1.5rem;
-  font-size: 3.5em;
-  color: rgb(163, 54, 54);
-  transition: all 0.2s ease-in;
-}
-.orders .orders-container .order .deleteIcon:hover {
-  cursor: pointer;
-  padding-top: 0.4rem;
-}
-.orders .orders-container .order .saveIcon {
-  position: absolute;
-  right: 70px;
-  bottom: 2rem;
-  font-size: 2.8em;
-  color: #696262;
-  transition: all 0.2s ease-in;
-}
-.orders .orders-container .order .saveIcon:hover {
-  cursor: pointer;
-  padding-top: 0.4rem;
-}
-.orders .orders-container .order .selectStatus {
-  font-size: 2.2em;
-  color: #696262;
-  text-transform: capitalize;
-  width: 15rem;
-  text-align: center;
-  outline: none;
-  border: none;
-}
-.orders .orders-container .order .selectStatus:hover {
-  cursor: pointer;
-}
-.orders .orders-container .purchase-summary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60vw;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-.orders .orders-container .purchase-summary p {
-  font-size: 2.2em;
-  color: #696262;
-  width: 20rem;
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: bold;
-}
-.orders .orders-container .buttons {
-  display: flex;
-  gap: 2rem;
-}
-.orders .orders-container .buttons .block-btn {
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #696262;
-  background: #edefef;
-  display: flex;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  transition: all 0.2s ease-in;
-}
-.orders .orders-container .buttons .block-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.orders .orders-container .buttons .remove-btn {
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #696262;
-  background: #edefef;
-  display: flex;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  transition: all 0.2s ease-in;
-}
-.orders .orders-container .buttons .remove-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.orders .orders-container .buttons .ok-btn {
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-}
-.orders .orders-container .buttons .ok-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of orders styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of sign in styling */
-/* ---------------------------------------------------------- */
-.signIn {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.signIn .signIn-container {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  background: white;
-  min-height: 11rem;
-  width: 46rem;
-  padding: 6rem 3rem;
-  text-align: center;
-  border-radius: 50px;
-  color: #696262;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.signIn .signIn-container .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 5rem;
-  text-align: center;
-}
-.signIn .signIn-container .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  gap: 1.5rem;
-}
-.signIn .signIn-container .form .entry {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.signIn .signIn-container .form .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.signIn .signIn-container .form .entry input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.signIn .signIn-container .form .signIn-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-}
-.signIn .signIn-container .form .signIn-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.signIn .signIn-container .formSignUp {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-  align-items: center;
-  justify-content: center;
-}
-.signIn .signIn-container .formSignUp p {
-  font-size: 1.8em;
-  color: #696262;
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-.signIn .signIn-container .formSignUp a {
-  font-size: 1.8em;
-  text-decoration: none;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in;
-}
-.signIn .signIn-container .formSignUp a:hover {
-  cursor: pointer;
-  font-size: 1.9em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of sign in styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of sign up styling */
-/* ---------------------------------------------------------- */
-.signUp {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.signUp .signUp-container {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  background: white;
-  min-height: 11rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 6rem 8rem;
-  text-align: center;
-  border-radius: 50px;
-  color: #696262;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.signUp .signUp-container .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 6rem;
-  text-align: center;
-}
-.signUp .signUp-container .form {
-  display: flex;
-  flex-direction: column;
-}
-.signUp .signUp-container .form .top-side {
-  display: flex;
-  gap: 8rem;
-}
-.signUp .signUp-container .form .top-side .left-side .entry {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.signUp .signUp-container .form .top-side .left-side .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.signUp .signUp-container .form .top-side .left-side .entry .lower-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.signUp .signUp-container .form .top-side .left-side .entry .regular-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.signUp .signUp-container .form .top-side .right-side .entry {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.signUp .signUp-container .form .top-side .right-side .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.signUp .signUp-container .form .top-side .right-side .entry .regular-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.signUp .signUp-container .form .bottom-side {
-  display: inline;
-  flex-direction: column;
-}
-.signUp .signUp-container .form .bottom-side .signUp-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.signUp .signUp-container .form .bottom-side .signUp-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.signUp .formSignUp {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-.signUp .formSignUp p {
-  font-size: 1.8em;
-  color: #696262;
-  text-transform: capitalize;
-  margin-bottom: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-.signUp .formSignUp a {
-  font-size: 1.8em;
-  text-decoration: none;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in;
-}
-.signUp .formSignUp a:hover {
-  cursor: pointer;
-  font-size: 1.9em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of sign up styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of forgot password styling */
-/* ---------------------------------------------------------- */
-.forgotPassword {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.forgotPassword .forgotPassword-container {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  min-height: 11rem;
-  margin: 2rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 6rem 8rem;
-  text-align: center;
-  margin-top: 8rem;
-  border-radius: 50px;
-  color: #696262;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.forgotPassword .forgotPassword-container .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 7rem;
-  text-align: center;
-  line-height: 6rem;
-}
-.forgotPassword .forgotPassword-container .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  gap: 1.5rem;
-}
-.forgotPassword .forgotPassword-container .form .entry {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-.forgotPassword .forgotPassword-container .form .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.forgotPassword .forgotPassword-container .form .entry input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.forgotPassword .forgotPassword-container .form .forgotPassword-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.forgotPassword .forgotPassword-container .form .forgotPassword-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.forgotPassword .forgotPassword-container .formSignUp {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-  align-items: center;
-  justify-content: center;
-}
-.forgotPassword .forgotPassword-container .formSignUp p {
-  font-size: 1.8em;
-  color: #696262;
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-.forgotPassword .forgotPassword-container .formSignUp a {
-  font-size: 1.8em;
-  text-decoration: none;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in;
-}
-.forgotPassword .forgotPassword-container .formSignUp a:hover {
-  cursor: pointer;
-  font-size: 1.9em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of forgot password styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of profile styling */
-/* ---------------------------------------------------------- */
-.profile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.profile .profile-container {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  background: white;
-  min-height: 11rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 6rem 8rem;
-  text-align: center;
-  border-radius: 50px;
-  color: #696262;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.profile .profile-container .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.profile .profile-container .form img {
-  height: 200px;
-  width: 200px;
-  margin-bottom: 2rem;
-  border: 3px solid #dddddd;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-}
-.profile .profile-container .form .top-side {
-  display: flex;
-  gap: 8rem;
-}
-.profile .profile-container .form .top-side .left-side .entry {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.profile .profile-container .form .top-side .left-side .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.profile .profile-container .form .top-side .left-side .entry .lower-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .top-side .left-side .entry .upper-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .top-side .left-side .entry .regular-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .top-side .right-side .entry {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.profile .profile-container .form .top-side .right-side .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.profile .profile-container .form .top-side .right-side .entry .lower-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .top-side .right-side .entry .upper-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .top-side .right-side .entry .regular-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .bottom-side {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.profile .profile-container .form .bottom-side .entry {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.profile .profile-container .form .bottom-side .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.profile .profile-container .form .bottom-side .entry .lower-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .bottom-side .entry .regular-case-input {
-  width: 30rem;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.profile .profile-container .form .bottom-side .profile-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.profile .profile-container .form .bottom-side .profile-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.profile .formProfile {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-.profile .formProfile p {
-  font-size: 1.8em;
-  color: #696262;
-  text-transform: capitalize;
-  margin-bottom: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-.profile .formProfile a {
-  font-size: 1.8em;
-  text-decoration: none;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in;
-}
-.profile .formProfile a:hover {
-  cursor: pointer;
-  font-size: 1.9em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of profile page styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of category page styling */
-/* ---------------------------------------------------------- */
-.category {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-}
-.category .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.category .form .entry {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.category .form .entry label {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 6rem;
-  text-align: center;
-}
-.category .form .entry input {
-  width: 50vw;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  background: #edefef;
-  outline: none;
-}
-.category .form .add-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  margin-top: 2rem;
-  margin-bottom: 10rem;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.category .form .add-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.category .category-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 10rem;
-  width: 60vw;
-  gap: 4rem;
-  border-radius: 50px;
-  padding: 6rem 0;
-  background: white;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.category .category-container .section-title {
-  font-size: 3em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.category .category-container .single-category {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 6.7vw;
-  width: 45vw;
-  height: 6rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.category .category-container .single-category p {
-  font-size: 2.2em;
-  color: #696262;
-  text-transform: capitalize;
-  width: 50rem;
-  margin-right: 12rem;
-}
-.category .category-container .single-category .controllers {
-  position: relative;
-  height: 3rem;
-  right: 6rem;
-  gap: 3rem;
-}
-.category .category-container .single-category .controllers .deleteIcon {
-  position: absolute;
-  left: 0;
-  font-size: 3.5em;
-  color: rgb(163, 54, 54);
-  transition: all 0.2s ease-in;
-}
-.category .category-container .single-category .controllers .deleteIcon:hover {
-  cursor: pointer;
-  padding-top: 0.4rem;
-}
-.category .category-container .single-category .controllers .editIcon {
-  position: absolute;
-  right: 2rem;
-  font-size: 3.5em;
-  color: #909090;
-  transition: all 0.2s ease-in;
-}
-.category .category-container .single-category .controllers .editIcon:hover {
-  cursor: pointer;
-  padding-top: 0.4rem;
-}
-
-/* ---------------------------------------------------------- */
-/* End of category page styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of error styling */
-/* ---------------------------------------------------------- */
-.error-container {
-  margin-top: 17vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.error-container h2 {
-  font-size: 5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.error-container p {
-  font-size: 2.8em;
-  text-align: justify;
-  -moz-text-align-last: center;
-       text-align-last: center;
-  margin-top: 3rem;
-  width: 50vw;
-  text-transform: capitalize;
-  color: #696262;
-  line-height: 1.5em;
-  margin-bottom: 5rem;
-}
-.error-container button {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  margin-bottom: 10rem;
-  animation: button-move 2s infinite;
-}
-.error-container button:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of error styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of product details styling */
-/* ---------------------------------------------------------- */
-.productDetails {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 6rem;
-  align-items: center;
-  justify-content: center;
-}
-.productDetails .container {
-  display: flex;
-  padding: 0 10rem;
-  gap: 14rem;
-  margin-bottom: 5rem;
-  justify-content: center;
-}
-.productDetails .container .left-side img {
-  height: 60vh;
-  width: 60vh;
-  border-radius: 50%;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.productDetails .container .right-side {
-  display: flex;
-  flex-direction: column;
-  width: 50rem;
-}
-.productDetails .container .right-side .product-category {
-  font-size: 1.9em;
-  color: #909090;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 1rem;
-}
-.productDetails .container .right-side h2 {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  margin-bottom: 2rem;
-  color: #696262;
-  font-weight: bolder;
-  text-align: left;
-}
-.productDetails .container .right-side .discription {
-  margin-bottom: 5rem;
-}
-.productDetails .container .right-side h3 {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 1rem;
-}
-.productDetails .container .right-side p {
-  font-size: 2.2em;
-  text-align: justify;
-  text-transform: capitalize;
-  color: #696262;
-  line-height: 1.5em;
-  width: 45rem;
-}
-.productDetails .container .right-side .buttons {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: 15rem;
-  text-align: left;
-  gap: 2rem;
-}
-.productDetails .container .right-side .buttons .btn-link {
-  text-decoration: none;
-}
-.productDetails .container .right-side .buttons .buy-btn {
-  margin-top: 5rem;
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-}
-.productDetails .container .right-side .buttons .buy-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.productDetails .container .right-side .buttons .back-btn {
-  margin-top: 5rem;
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #696262;
-  background: #edefef;
-  display: flex;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  transition: all 0.2s ease-in;
-}
-.productDetails .container .right-side .buttons .back-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-.productDetails .container .right-side .buttons .delete-btn {
-  margin-top: 5rem;
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid rgb(163, 54, 54);
-  background: rgb(163, 54, 54);
-  transition: all 0.2s ease-in;
-}
-.productDetails .container .right-side .buttons .delete-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of product details styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of users styling */
-/* ---------------------------------------------------------- */
-.users {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.users .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 5rem;
-  text-align: center;
-}
-.users .search-product {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40vw;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  border: 4px solid #696262;
-  margin-bottom: 8rem;
-  outline: none;
-  background: #edefef;
-}
-.users .info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.users .info .username {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.users .info .email {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: lowercase;
-  font-weight: bold;
-  margin-bottom: 2rem;
-}
-
-/* ---------------------------------------------------------- */
-/* End of users styling */
-/* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* Start of add edit product page styling */
-/* ---------------------------------------------------------- */
-.add-edit-product {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-  box-shadow: #dddddd 0px 10px 10px -10px;
-}
-.add-edit-product .section-title {
-  font-size: 4.5em;
-  text-transform: capitalize;
-  color: #696262;
-  font-weight: bolder;
-  margin-bottom: 5rem;
-  text-align: center;
-}
-.add-edit-product .form {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  background: white;
-  min-height: 11rem;
-  width: 50vw;
-  padding: 12rem 8rem;
-  text-align: center;
-  border-radius: 50px;
-  color: #696262;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-.add-edit-product .form .entry {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 80vh;
-  margin-bottom: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-.add-edit-product .form .entry label {
-  font-size: 2.1em;
-  color: #696262;
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
-.add-edit-product .form .entry .input-btn {
-  position: relative;
-}
-.add-edit-product .form .entry .input-btn input {
-  width: 40vw;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.add-edit-product .form .entry .input-btn .currency {
-  position: absolute;
-  font-size: 2em;
-  right: 3rem;
-  top: 1.5rem;
-}
-.add-edit-product .form .entry .input-btn .add-detail {
-  position: absolute;
-  right: 0rem;
-  bottom: 2.1rem;
-  font-size: 25pt;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: #696262;
-  background: #edefef;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.6em 1.5em;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border: 4px solid #696262;
-  transition: all 0.2s ease-in;
-}
-.add-edit-product .form .entry .input-btn .add-detail:hover {
-  cursor: pointer;
-  padding-left: 1.8em;
-}
-.add-edit-product .form .entry .input-btn .selectCategory {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 45vw;
-  height: 5rem;
-  border-radius: 50px;
-  padding: 0 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  background: #edefef;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-}
-.add-edit-product .form .entry .input-btn .selectCategory:hover {
-  cursor: pointer;
-}
-.add-edit-product .form .entry textarea {
-  width: 40vw;
-  min-height: 10rem;
-  border-radius: 50px;
-  padding: 2rem 4rem;
-  font-size: 2.1em;
-  color: #696262;
-  border: 4px solid #696262;
-  margin-bottom: 2rem;
-  outline: none;
-  resize: none;
-}
-.add-edit-product .form .image-preview {
-  height: 40vh;
-  width: 40vh;
-  border-radius: 50%;
-  box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
-}
-.add-edit-product .add-btn {
-  font-size: 2em;
-  font-weight: bolder;
-  text-transform: capitalize;
-  color: white;
-  width: auto;
-  white-space: nowrap;
-  padding: 0.7em 1.5em;
-  border-radius: 50px;
-  border: 4px solid #696262;
-  background: #696262;
-  transition: all 0.2s ease-in;
-  margin-top: 5rem;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.add-edit-product .add-btn:hover {
-  cursor: pointer;
-  padding: 0.7em 1.7em;
-}
-
-/* ---------------------------------------------------------- */
-/* End of add edit product page styling */
-/* ---------------------------------------------------------- */
-.test-class {
-  margin-top: 15rem;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media screen and (min-width: 1000px) {
-  .nav-bar .right-section .nav-buttons {
-    margin-right: 6rem;
-  }
-}
-@media screen and (max-width: 1300px) {
-  header .nav-bar .left-section .logo img {
-    width: 280px;
-    height: 100px;
-    margin-left: 3rem;
-    margin-top: 1.5rem;
-    align-items: center;
-    justify-content: center;
-  }
-  .nav-bar .right-section .nav-buttons {
-    position: relative;
-    display: flex;
-    margin-right: 6rem;
-    justify-content: flex-end;
-    gap: 0;
-  }
-  .header .nav-bar .right-section .nav-buttons .link-btn .btn-1 {
-    font-size: 1.5em;
-  }
-  .header .nav-bar .right-section .nav-buttons .link-btn .btn-2 {
-    font-size: 1.5em;
-  }
-  .header .nav-bar .right-section .nav-buttons .btn-1 {
-    font-size: 1.5em;
-  }
-}
-@media screen and (max-width: 2200px) {
-  .hero img {
-    display: none;
-  }
-  .hero .circle-background {
-    display: block;
-  }
-  .hero .hero__content .heading-title {
-    font-size: 4.5em;
-    margin-top: 8rem;
-  }
-  .nav-bar .left-section ul {
-    display: none !important;
-  }
-  .nav-bar .right-section .icon2 {
-    display: block !important;
-  }
-  .nav-bar .right-section .icon1 {
-    display: none;
-  }
-  .nav-bar .right-section .nav-buttons {
-    margin-right: 1rem;
-  }
-  .orders .orders-container .order {
-    gap: 3.4rem;
-  }
-  .orders .orders-container .order .meta-info {
-    display: none;
-  }
-  .orders .orders-container .order .deleteIcon {
-    bottom: 2rem;
-  }
-  .pagination-div .top-section .page-controller {
-    display: none;
-  }
-  .cart .items .item .item-name {
-    display: none;
-  }
-  .reviews .main-section {
-    flex-direction: column;
-    margin-top: 10rem;
-    gap: 25vh;
-  }
-  .signUp .signUp-container .form .top-side {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .profile .profile-container .form .top-side {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .productDetails .container {
-    display: flex;
-    flex-direction: column;
-  }
-  .productDetails .container .right-side .buttons {
-    text-align: center;
-  }
-}
-@media screen and (max-width: 1400px) {
-  footer .top-sections {
-    flex-direction: column;
-  }
-  footer .top-sections .top-left-section ul {
-    text-align: center;
-  }
-  footer .top-sections .top-mid-section {
-    text-align: center;
-  }
-}/*# sourceMappingURL=App.css.map */
+/* End of products section styling */
+/* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
