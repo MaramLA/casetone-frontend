@@ -1684,7 +1684,8 @@ footer .bottom-section p {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 5rem;
-  width: 50vw;
+  width: -moz-fit-content;
+  width: fit-content;
   gap: 2rem;
   border-radius: 30px;
   padding: 3rem 1rem;
