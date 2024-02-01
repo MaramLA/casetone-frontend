@@ -15,16 +15,15 @@
 
 @keyframes star-move {
   50% {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 }
 
 @keyframes button-move {
   50% {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 }
-
 /* ---------------------------------------------------------- */
 /* Start of layout styling */
 /* ---------------------------------------------------------- */
@@ -1932,44 +1931,44 @@ footer {
 /* End of category page styling */
 /* ---------------------------------------------------------- */
 
-// /* ---------------------------------------------------------- */
-// /* Start of error styling */
-// /* ---------------------------------------------------------- */
-// .error-container {
-//   margin-top: 17vh;
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   @include center();
+/* ---------------------------------------------------------- */
+/* Start of error styling */
+/* ---------------------------------------------------------- */
+.error-container {
+  margin-top: 17vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include center();
 
-//   h2 {
-//     font-size: $font-size7;
-//     text-transform: capitalize;
-//     color: $primary-color1;
-//     font-weight: bolder;
-//     text-align: center;
-//     margin-bottom: 2rem;
-//   }
-//   p {
-//     font-size: 2.8em;
-//     text-align: justify;
-//     text-align-last: center;
-//     margin-top: 3rem;
-//     width: 50vw;
-//     text-transform: capitalize;
-//     color: $primary-color1;
-//     line-height: 1.5em;
-//     margin-bottom: 5rem;
-//   }
-//   button {
-//     @include mainButton2-Styling();
-//     margin-bottom: 10rem;
-//     animation: button-move 2s infinite;
-//   }
-// }
-// /* ---------------------------------------------------------- */
-// /* End of error styling */
-// /* ---------------------------------------------------------- */
+  h2 {
+    font-size: 2.5em;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.4em;
+    text-align: justify;
+    text-align-last: center;
+    margin-top: 1.5rem;
+    width: 25vw;
+    text-transform: capitalize;
+    color: $primary-color1;
+    line-height: 1.5em;
+    margin-bottom: 2.5rem;
+  }
+  button {
+    @include mainButton2-Styling();
+    margin-bottom: 5rem;
+    animation: button-move 2s infinite;
+  }
+}
+/* ---------------------------------------------------------- */
+/* End of error styling */
+/* ---------------------------------------------------------- */
 
 // /* ---------------------------------------------------------- */
 // /* Start of product details styling */

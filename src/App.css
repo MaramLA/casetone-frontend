@@ -5,12 +5,12 @@
 }
 @keyframes star-move {
   50% {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 }
 @keyframes button-move {
   50% {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 }
 /* ---------------------------------------------------------- */
@@ -1748,4 +1748,58 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of category page styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of error styling */
+/* ---------------------------------------------------------- */
+.error-container {
+  margin-top: 17vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error-container h2 {
+  font-size: 2.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.error-container p {
+  font-size: 1.4em;
+  text-align: justify;
+  -moz-text-align-last: center;
+       text-align-last: center;
+  margin-top: 1.5rem;
+  width: 25vw;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+  margin-bottom: 2.5rem;
+}
+.error-container button {
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+  margin-bottom: 5rem;
+  animation: button-move 2s infinite;
+}
+.error-container button:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of error styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
