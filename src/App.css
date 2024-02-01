@@ -977,6 +977,225 @@ footer .bottom-section p {
 /* End of newsletter subscription section styling */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
+/* Start of orders styling */
+/* ---------------------------------------------------------- */
+.orders {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 7.5rem;
+  padding-top: 1rem;
+  box-shadow: #dddddd 0px 5px 5px -5px;
+}
+.orders .orders-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 75vw;
+  gap: 2rem;
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  background: white;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+}
+.orders .orders-container .info .section-title {
+  font-size: 1.5em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.orders .orders-container .info .email {
+  margin-bottom: 1.5rem;
+}
+.orders .orders-container .order {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1vw;
+  width: 60vw;
+  height: 2.5rem;
+  padding-bottom: 1.3rem;
+  box-shadow: #dddddd 0px 5px 5px -5px;
+}
+.orders .orders-container .order .order-images {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 310px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap;
+}
+.orders .orders-container .order .order-images .order-image {
+  display: inline-block;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.orders .orders-container .order p {
+  font-size: 1.1em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 5rem;
+  text-align: center;
+}
+.orders .orders-container .order .meta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.orders .orders-container .order .meta-info .order-id {
+  width: 17rem;
+  text-align: left;
+}
+.orders .orders-container .order .order-status {
+  width: 19rem;
+  text-align: center;
+}
+.orders .orders-container .order .order-price {
+  width: 19rem;
+  text-align: center;
+}
+.orders .orders-container .order .item-name {
+  font-size: 1.1em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 10rem;
+  text-align: center;
+}
+.orders .orders-container .order .item-sizes {
+  font-size: 1.1em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 10rem;
+  text-align: center;
+}
+.orders .orders-container .order .deleteIcon {
+  position: absolute;
+  right: 0;
+  bottom: 0.75rem;
+  font-size: 1.75em;
+  color: rgb(163, 54, 54);
+  transition: all 0.2s ease-in;
+}
+.orders .orders-container .order .deleteIcon:hover {
+  cursor: pointer;
+  padding-top: 0.2rem;
+}
+.orders .orders-container .order .saveIcon {
+  position: absolute;
+  right: 35px;
+  bottom: 1rem;
+  font-size: 1.4em;
+  color: #696262;
+  transition: all 0.2s ease-in;
+}
+.orders .orders-container .order .saveIcon:hover {
+  cursor: pointer;
+  padding-top: 0.2rem;
+}
+.orders .orders-container .order .selectStatus {
+  font-size: 1.1em;
+  color: #696262;
+  text-transform: capitalize;
+  width: 7.5rem;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+.orders .orders-container .order .selectStatus:hover {
+  cursor: pointer;
+}
+.orders .orders-container .purchase-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.orders .orders-container .purchase-summary p {
+  font-size: 1.1em;
+  color: #696262;
+  width: 10rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.orders .orders-container .buttons {
+  display: flex;
+  gap: 1rem;
+}
+.orders .orders-container .buttons .block-btn {
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  transition: all 0.2s ease-in;
+}
+.orders .orders-container .buttons .block-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.orders .orders-container .buttons .remove-btn {
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  transition: all 0.2s ease-in;
+}
+.orders .orders-container .buttons .remove-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.orders .orders-container .buttons .ok-btn {
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+}
+.orders .orders-container .buttons .ok-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of orders styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
 /* Start of sign in styling */
 /* ---------------------------------------------------------- */
 .signIn {
