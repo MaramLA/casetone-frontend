@@ -1940,4 +1940,61 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of product details styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of users styling */
+/* ---------------------------------------------------------- */
+.users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.users .section-title {
+  font-size: 2.25em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.users .search-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 2px solid #696262;
+  margin-bottom: 4rem;
+  outline: none;
+  background: #edefef;
+}
+.users .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.users .info .username {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.users .info .email {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: lowercase;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------------------------------------- */
+/* End of users styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */

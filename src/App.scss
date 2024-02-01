@@ -2065,60 +2065,59 @@ footer {
 /* ---------------------------------------------------------- */
 /* End of product details styling */
 /* ---------------------------------------------------------- */
-
-// /* ---------------------------------------------------------- */
-// /* Start of users styling */
-// /* ---------------------------------------------------------- */
-// .users {
-//   display: flex;
-//   flex-direction: column;
-//   @include center();
-//   .section-title {
-//     font-size: $font-size6;
-//     text-transform: capitalize;
-//     color: $primary-color1;
-//     font-weight: bolder;
-//     margin-bottom: 5rem;
-//     text-align: center;
-//   }
-//   .search-product {
-//     display: flex;
-//     @include center();
-//     width: 40vw;
-//     height: 5rem;
-//     border-radius: 50px;
-//     padding: 0 4rem;
-//     font-size: $font-size4;
-//     color: $primary-color1;
-//     text-transform: lowercase;
-//     border: 4px solid $primary-color1;
-//     margin-bottom: 8rem;
-//     outline: none;
-//     background: $primary-color3;
-//   }
-//   .info {
-//     display: flex;
-//     flex-direction: column;
-//     @include center();
-//     .username {
-//       font-size: $font-size4;
-//       color: $primary-color1;
-//       text-transform: capitalize;
-//       font-weight: bolder;
-//       margin-bottom: 2rem;
-//     }
-//     .email {
-//       font-size: $font-size4;
-//       color: $primary-color1;
-//       text-transform: lowercase;
-//       font-weight: bold;
-//       margin-bottom: 2rem;
-//     }
-//   }
-// }
-// /* ---------------------------------------------------------- */
-// /* End of users styling */
-// /* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of users styling */
+/* ---------------------------------------------------------- */
+.users {
+  display: flex;
+  flex-direction: column;
+  @include center();
+  .section-title {
+    font-size: 2.25em;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .search-product {
+    display: flex;
+    @include center();
+    width: 40vw;
+    height: 2.5rem;
+    border-radius: 30px;
+    padding: 0 2rem;
+    font-size: 1.05em;
+    color: $primary-color1;
+    text-transform: lowercase;
+    border: 2px solid $primary-color1;
+    margin-bottom: 4rem;
+    outline: none;
+    background: $primary-color3;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    @include center();
+    .username {
+      font-size: 1.05em;
+      color: $primary-color1;
+      text-transform: capitalize;
+      font-weight: bolder;
+      margin-bottom: 1rem;
+    }
+    .email {
+      font-size: 1.05em;
+      color: $primary-color1;
+      text-transform: lowercase;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  }
+}
+/* ---------------------------------------------------------- */
+/* End of users styling */
+/* ---------------------------------------------------------- */
 
 // /* ---------------------------------------------------------- */
 // /* Start of add edit product page styling */
