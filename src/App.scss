@@ -489,15 +489,15 @@ footer {
     .page-controller {
       display: flex;
       @include center();
-      height: 20rem;
-      width: 4.5rem;
-      margin: 5rem;
+      height: 24rem;
+      width: 4rem;
+      margin: 3rem;
       background: lightblue;
       .arrow-icon {
         display: flex;
         @include center();
         color: $primary-color6;
-        font-size: 4.8em;
+        font-size: 4.6em;
         background: lightcoral;
 
         transition: all 0.2s ease-in;
