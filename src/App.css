@@ -1803,4 +1803,140 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of error styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of product details styling */
+/* ---------------------------------------------------------- */
+.productDetails {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.productDetails .container {
+  display: flex;
+  padding: 0 5rem;
+  gap: 7rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+}
+.productDetails .container .left-side img {
+  height: 60vh;
+  width: 60vh;
+  border-radius: 50%;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+}
+.productDetails .container .right-side {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+}
+.productDetails .container .right-side .product-category {
+  font-size: 0.95em;
+  color: #909090;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}
+.productDetails .container .right-side h2 {
+  font-size: 2.25em;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  color: #696262;
+  font-weight: bolder;
+  text-align: left;
+}
+.productDetails .container .right-side .discription {
+  margin-bottom: 2.5rem;
+}
+.productDetails .container .right-side h3 {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}
+.productDetails .container .right-side p {
+  font-size: 1.1em;
+  text-align: justify;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 1.5em;
+  width: 22.5rem;
+}
+.productDetails .container .right-side .buttons {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 7.5rem;
+  text-align: left;
+  gap: 1rem;
+}
+.productDetails .container .right-side .buttons .btn-link {
+  text-decoration: none;
+}
+.productDetails .container .right-side .buttons .buy-btn {
+  margin-top: 2.5rem;
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+}
+.productDetails .container .right-side .buttons .buy-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.productDetails .container .right-side .buttons .back-btn {
+  margin-top: 2.5rem;
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  transition: all 0.2s ease-in;
+}
+.productDetails .container .right-side .buttons .back-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.productDetails .container .right-side .buttons .delete-btn {
+  margin-top: 2.5rem;
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid rgb(163, 54, 54);
+  background: rgb(163, 54, 54);
+  transition: all 0.2s ease-in;
+}
+.productDetails .container .right-side .buttons .delete-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of product details styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
