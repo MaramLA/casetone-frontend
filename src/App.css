@@ -1252,4 +1252,125 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of sign up styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of forgot password styling */
+/* ---------------------------------------------------------- */
+.forgotPassword {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassword .forgotPassword-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  min-height: 5.5rem;
+  margin: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3rem 4rem;
+  text-align: center;
+  margin-top: 4rem;
+  border-radius: 30px;
+  color: #696262;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+}
+.forgotPassword .forgotPassword-container .section-title {
+  font-size: 2.25em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 3.5rem;
+  text-align: center;
+  line-height: 3rem;
+}
+.forgotPassword .forgotPassword-container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  gap: 1.5rem;
+}
+.forgotPassword .forgotPassword-container .form .entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassword .forgotPassword-container .form .entry label {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.forgotPassword .forgotPassword-container .form .entry input {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: lowercase;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.forgotPassword .forgotPassword-container .form .forgotPassword-btn {
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.forgotPassword .forgotPassword-container .form .forgotPassword-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+.forgotPassword .forgotPassword-container .formSignUp {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassword .forgotPassword-container .formSignUp p {
+  font-size: 0.9em;
+  color: #696262;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassword .forgotPassword-container .formSignUp a {
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+.forgotPassword .forgotPassword-container .formSignUp a:hover {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of forgot password styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
