@@ -893,160 +893,161 @@ footer {
 /* End of newsletter subscription section styling */
 /* ---------------------------------------------------------- */
 
-// // Cart page styling
-// /* ---------------------------------------------------------- */
-// /* Start of purchases styling */
-// /* ---------------------------------------------------------- */
-// .cart {
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   @include center();
-//   padding-bottom: 15rem;
-//   padding-top: 2rem;
-//   box-shadow: $primary-color5 0px 10px 10px -10px;
-//   .section-title {
-//     font-size: $font-size6;
-//     text-transform: capitalize;
-//     color: $primary-color1;
-//     font-weight: bolder;
-//     text-align: center;
-//     margin-bottom: 4rem;
-//   }
-//   .items {
-//     position: relative;
-//     display: flex;
-//     @include center();
-//     flex-direction: column;
-//     width: 80%;
-//     gap: 4rem;
-//     border-radius: 50px;
-//     padding: 6rem 4rem;
-//     background: white;
-//     box-shadow: rgb(105, 98, 98) 0px 10px 36px 0px, rgb(105, 98, 98) 0px 0px 0px 1px;
+// Cart page styling
+/* ---------------------------------------------------------- */
+/* Start of purchases styling */
+/* ---------------------------------------------------------- */
+.cart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include center();
+  padding-bottom: 7.5rem;
+  padding-top: 1rem;
+  box-shadow: $primary-color5 0px 5px 5px -5px;
+  .section-title {
+    font-size: 2.25em;
+    text-transform: capitalize;
+    color: $primary-color1;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .items {
+    position: relative;
+    display: flex;
+    @include center();
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    background: white;
+    box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
 
-//     .section-title {
-//       font-size: 3em;
-//       text-transform: capitalize;
-//       color: $primary-color1;
-//       font-weight: bolder;
-//       text-align: center;
-//       margin-bottom: 3rem;
-//     }
-//     .item {
-//       position: relative;
-//       display: flex;
-//       justify-content: flex-start;
-//       align-items: center;
-//       gap: 6vw;
-//       width: 60vw;
-//       height: 5rem;
-//       padding-bottom: 1.2rem;
-//       box-shadow: $primary-color5 0px 10px 10px -10px;
-//       .quantity-div {
-//         position: relative;
-//         display: flex;
-//         width: 20rem;
-//         @include center();
-//         .quantity-input {
-//           width: 6rem;
-//           height: 3rem;
-//           font-size: $font-size4;
-//           color: $primary-color1;
-//           text-transform: lowercase;
-//           text-align: center;
-//           border: 0;
-//           outline: none;
-//         }
-//         .quantity-add {
-//           position: absolute;
-//           left: 0;
-//           font-size: 1.8em;
-//           color: $primary-color1;
-//           transition: all 0.2s ease-in;
-//           &:hover {
-//             cursor: pointer;
-//           }
-//         }
-//         .quantity-subtract {
-//           position: absolute;
-//           right: 0;
-//           font-size: 1.8em;
-//           color: $primary-color1;
-//           transition: all 0.2s ease-in;
-//           &:hover {
-//             cursor: pointer;
-//           }
-//         }
-//       }
-//       img {
-//         display: flex;
-//         justify-content: center;
-//         gap: 0.5rem;
-//         width: 6rem;
-//       }
-//       p {
-//         font-size: $font-size5;
-//         color: $primary-color1;
-//         text-transform: capitalize;
-//         width: 20rem;
-//         text-align: center;
-//       }
-//       .deleteIcon {
-//         position: absolute;
-//         right: 0;
-//         bottom: 1.8rem;
-//         font-size: 3.5em;
-//         color: rgb(163, 54, 54);
-//         transition: all 0.2s ease-in;
+    .section-title {
+      font-size: 1.5em;
+      text-transform: capitalize;
+      color: $primary-color1;
+      font-weight: bolder;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .item {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 6vw;
+      width: 60vw;
+      height: 2.5rem;
+      padding-bottom: 0.6rem;
+      box-shadow: $primary-color5 0px 5px 5px -5px;
+      .quantity-div {
+        position: relative;
+        display: flex;
+        width: 10rem;
+        @include center();
+        .quantity-input {
+          width: 3rem;
+          height: 1.5rem;
+          font-size: 1.05em;
+          color: $primary-color1;
+          text-transform: lowercase;
+          text-align: center;
+          border: 0;
+          outline: none;
+        }
+        .quantity-add {
+          position: absolute;
+          left: 0;
+          font-size: 0.9em;
+          color: $primary-color1;
+          transition: all 0.2s ease-in;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .quantity-subtract {
+          position: absolute;
+          right: 0;
+          font-size: 0.9em;
+          color: $primary-color1;
+          transition: all 0.2s ease-in;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      img {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 3rem;
+      }
+      p {
+        font-size: 1.1em;
+        color: $primary-color1;
+        text-transform: capitalize;
+        width: 10rem;
+        text-align: center;
+      }
+      .deleteIcon {
+        position: absolute;
+        right: 0;
+        bottom: 0.9rem;
+        font-size: 1.75em;
+        color: rgb(163, 54, 54);
+        transition: all 0.2s ease-in;
 
-//         &:hover {
-//           cursor: pointer;
-//           padding-top: 0.4rem;
-//         }
-//       }
-//     }
-//     .purchase-summary {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       width: 75vw;
-//       gap: 2rem;
-//       margin-top: 3rem;
-//       .total-items {
-//         font-size: $font-size5;
-//         color: $primary-color1;
-//         width: 60rem;
-//         text-align: center;
-//         text-transform: capitalize;
-//       }
-//       .total-price {
-//         font-size: $font-size5;
-//         color: $primary-color1;
-//         width: 60rem;
-//         text-align: center;
-//         text-transform: capitalize;
-//         font-weight: bold;
-//       }
-//       .btns {
-//         display: flex;
-//         gap: 2rem;
-//         margin-top: 3rem;
-//         .checkout-btn {
-//           @include center();
-//           @include mainButton2-Styling();
-//         }
-//         .reset-btn {
-//           @include center();
-//           @include mainButton1-Styling();
-//         }
-//       }
-//     }
-//   }
-// }
-// /* ---------------------------------------------------------- */
-// /* End of purchases styling */
-// /* ---------------------------------------------------------- */
+        &:hover {
+          cursor: pointer;
+          padding-top: 0.2rem;
+        }
+      }
+    }
+    .purchase-summary {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 75vw;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      .total-items {
+        font-size: 1.1em;
+        color: $primary-color1;
+        width: 30rem;
+        text-align: center;
+        text-transform: capitalize;
+      }
+      .total-price {
+        font-size: 1.1em;
+        color: $primary-color1;
+        width: 30rem;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      .btns {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        .checkout-btn {
+          @include center();
+          @include mainButton2-Styling();
+        }
+        .reset-btn {
+          @include center();
+          @include mainButton1-Styling();
+        }
+      }
+    }
+  }
+}
+/* ---------------------------------------------------------- */
+/* End of purchases styling */
+/* ---------------------------------------------------------- */
+
 /* ---------------------------------------------------------- */
 /* Start of orders styling */
 /* ---------------------------------------------------------- */
