@@ -1997,4 +1997,159 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of users styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of add edit product page styling */
+/* ---------------------------------------------------------- */
+.add-edit-product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  box-shadow: #dddddd 0px 5px 5px -5px;
+}
+.add-edit-product .section-title {
+  font-size: 2.25em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.add-edit-product .form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  background: white;
+  min-height: 5.5rem;
+  width: 50vw;
+  padding: 6rem 4rem;
+  text-align: center;
+  border-radius: 30px;
+  color: #696262;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.add-edit-product .form .entry {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80vh;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.add-edit-product .form .entry label {
+  font-size: 1.05em;
+  color: #696262;
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.add-edit-product .form .entry .input-btn {
+  position: relative;
+}
+.add-edit-product .form .entry .input-btn input {
+  width: 40vw;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.add-edit-product .form .entry .input-btn .currency {
+  position: absolute;
+  font-size: 1em;
+  right: 1.5rem;
+  top: 0.75rem;
+}
+.add-edit-product .form .entry .input-btn .add-detail {
+  position: absolute;
+  right: 0rem;
+  bottom: 2.1rem;
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #696262;
+  background: #edefef;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.6em 1.5em;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: 3px solid #696262;
+  transition: all 0.2s ease-in;
+}
+.add-edit-product .form .entry .input-btn .add-detail:hover {
+  cursor: pointer;
+  padding-left: 1.8em;
+}
+.add-edit-product .form .entry .input-btn .selectCategory {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 45vw;
+  height: 2.5rem;
+  border-radius: 30px;
+  padding: 0 3rem;
+  font-size: 1.05em;
+  color: #696262;
+  background: #edefef;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.add-edit-product .form .entry .input-btn .selectCategory:hover {
+  cursor: pointer;
+}
+.add-edit-product .form .entry textarea {
+  width: 40vw;
+  min-height: 10rem;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1.05em;
+  color: #696262;
+  border: 2px solid #696262;
+  margin-bottom: 1rem;
+  outline: none;
+  resize: none;
+}
+.add-edit-product .form .image-preview {
+  height: 40vh;
+  width: 40vh;
+  border-radius: 50%;
+  box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
+}
+.add-edit-product .add-btn {
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.7em 1.5em;
+  border-radius: 50px;
+  border: 2px solid #696262;
+  background: #696262;
+  transition: all 0.2s ease-in;
+  margin-top: 2.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.add-edit-product .add-btn:hover {
+  cursor: pointer;
+  padding: 0.7em 1.7em;
+}
+
+/* ---------------------------------------------------------- */
+/* End of add edit product page styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
