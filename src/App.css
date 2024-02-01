@@ -543,7 +543,6 @@ footer .bottom-section p {
   height: 24rem;
   width: 4rem;
   margin: 3rem;
-  background: lightblue;
 }
 .pagination-div .top-section .page-controller .arrow-icon {
   display: flex;
@@ -551,7 +550,6 @@ footer .bottom-section p {
   justify-content: center;
   color: #909090;
   font-size: 4.6em;
-  background: lightcoral;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .page-controller .arrow-icon:hover {
@@ -564,8 +562,8 @@ footer .bottom-section p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 13rem;
-  margin-bottom: 10rem;
+  padding-bottom: 6.5rem;
+  margin-bottom: 5rem;
   box-shadow: #dddddd 0px 10px 10px -10px;
 }
 .products .section-title {
@@ -757,4 +755,47 @@ footer .bottom-section p {
 
 /* ---------------------------------------------------------- */
 /* End of products section styling */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* Start of about us section styling */
+/* ---------------------------------------------------------- */
+.AboutUs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 7.5rem;
+  padding-top: 2rem;
+  margin-bottom: 5rem;
+}
+.AboutUs .section-title {
+  font-size: 2.2em;
+  text-transform: capitalize;
+  color: #696262;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.AboutUs .content {
+  font-size: 1.1em;
+  text-align: justify;
+  -moz-text-align-last: center;
+       text-align-last: center;
+  margin-bottom: 1.5rem;
+  width: 55vw;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  color: #696262;
+  line-height: 0.75em;
+}
+.AboutUs .content .innerTextLink {
+  text-decoration: none;
+  font-weight: bolder;
+  color: #696262;
+  text-transform: capitalize;
+}
+
+/* ---------------------------------------------------------- */
+/* End of about us section styling */
 /* ---------------------------------------------------------- *//*# sourceMappingURL=App.css.map */
