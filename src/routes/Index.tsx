@@ -52,7 +52,7 @@ const Index = () => {
         pauseOnHover
         theme="light"
         style={{
-          marginTop: '12rem',
+          marginTop: '6rem',
           fontSize: '1em',
           width: '17rem',
           padding: '1.5rem, 3rem'
