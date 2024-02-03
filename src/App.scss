@@ -70,7 +70,7 @@ header {
     z-index: 1;
     @include navTransBackgournd();
     box-shadow: $primary-color5 0px 10px 10px -10px;
-    gap: 7rem;
+    gap: 3rem;
 
     /* Navbar left section styling */
     .left-section {
@@ -94,12 +94,12 @@ header {
         display: flex;
         @include center();
         list-style: none;
-        gap: 1.8rem;
+        gap: 1.3rem;
 
         li {
           // background: lightblue;
           // margin: 1.6rem;
-          width: 7rem;
+          min-width: 6rem;
           text-align: center;
           .navLinks {
             text-decoration: none;
@@ -137,12 +137,12 @@ header {
         }
       }
       .icon2 {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
         color: $primary-color1;
         @include center();
         transition: all 0.2s ease-in;
         display: none;
-        margin-right: 0.75rem;
+        margin-top: 0.2rem;
         &:hover {
           cursor: pointer;
           padding-bottom: 1rem;
@@ -173,14 +173,14 @@ header {
     position: fixed;
     height: auto;
     z-index: 1;
-    top: 12.8rem;
+    top: 6.4rem;
     display: flex;
     flex-direction: column;
     width: 100%;
     @include center();
     @include navTransBackgournd();
-    padding: 5rem 0;
-    box-shadow: $primary-color6 0px 10px 10px -10px;
+    padding: 2.5rem 0;
+    box-shadow: $primary-color6 0px 5px 5px -5px;
 
     .top-section {
       position: relative;
@@ -190,27 +190,27 @@ header {
       width: 70%;
       justify-content: flex-start;
       align-items: center;
-      margin-bottom: 7rem;
+      margin-bottom: 3.5rem;
       .mini-nav-links {
         display: flex;
         flex-direction: column;
-        gap: 4rem;
+        gap: 2rem;
         list-style: none;
         @include center();
         li {
-          margin: 1.5rem;
-          width: 13rem;
+          margin: 0.75rem;
+          width: 6.5rem;
           text-align: center;
           .mini-navLinks {
             text-decoration: none;
             font-weight: bolder;
-            font-size: 2rem;
+            font-size: 1rem;
             text-transform: capitalize;
             color: $primary-color1;
             @include navTransBackgournd();
             transition: all 0.2s ease-in;
             &:hover {
-              font-size: 2.1rem;
+              font-size: 1.1rem;
             }
           }
         }
@@ -222,24 +222,24 @@ header {
       display: flex;
       width: 70%;
       align-items: center;
-      margin-bottom: 3rem;
+      margin-bottom: 1.5rem;
       .nav-links {
         display: flex;
         list-style: none;
         @include center();
         li {
-          width: 6rem;
+          width: 3rem;
           text-align: center;
           .mini-navLinks {
             text-decoration: none;
             font-weight: bolder;
-            font-size: 2rem;
+            font-size: 1rem;
             text-transform: capitalize;
             color: $primary-color1;
             @include navTransBackgournd();
             transition: all 0.2s ease-in;
             &:hover {
-              font-size: 2.1rem;
+              font-size: 1.1rem;
             }
           }
         }
@@ -430,12 +430,12 @@ footer {
   margin-bottom: 5rem;
   box-shadow: $primary-color5 0px 10px 10px -10px;
   img {
-    width: 65rem;
-    padding-bottom: 3.5em;
+    width: 75vw;
+    padding-bottom: 3.5vw;
   }
   .circle-background {
-    height: 25rem;
-    width: 25rem;
+    height: 40vw;
+    width: 40vw;
     background: $primary-color3;
     border: 3px solid $primary-color1;
     border-radius: 50%;
@@ -447,7 +447,7 @@ footer {
     text-align: center;
     @include center();
     .heading-title {
-      font-size: 3em;
+      font-size: 3.5lvw;
       text-transform: capitalize;
       color: $primary-color1;
       font-weight: bolder;
@@ -455,7 +455,7 @@ footer {
       animation: h1-move 2s infinite;
     }
     p {
-      font-size: 1em;
+      font-size: 1.25lvw;
       text-transform: capitalize;
       color: $primary-color1;
       line-height: 1.5em;
@@ -2260,6 +2260,121 @@ footer {
 /* End of add edit product page styling */
 /* ---------------------------------------------------------- */
 
+// Media queries for responsive design
+
+/* Extra small devices (phones, 600px and down) */
+
+@media screen and (max-device-width: 1045px) {
+  header .nav-bar .left-section .logo img {
+    width: 150px;
+    height: 55px;
+    // margin-left: 3rem;
+    margin-top: 0.6rem;
+    @include center();
+  }
+
+  // .hero img {
+  //   width: 52rem;
+  // }
+  // .hero .hero__content .heading-title {
+  //   font-size: 2.4em;
+  // }
+
+  .products .products-div {
+    // background: lightblue;
+    width: 90vw;
+  }
+
+  .products .products-div .product {
+    width: 13rem;
+    height: 20rem;
+  }
+  .products .products-div .product .product-details-link img {
+    height: 13rem;
+  }
+  .products .products-div .product .product__details .controllers {
+    .icon1 {
+      font-size: 1.2em;
+      top: 45px;
+      left: 138px;
+    }
+    .icon2 {
+      font-size: 1.2em;
+      top: 45px;
+    }
+    .icon3 {
+      font-size: 1.2em;
+      top: 45px;
+    }
+    .icon4 {
+      font-size: 1.2em;
+      top: 45px;
+      left: 110px;
+    }
+    .icon5 {
+      font-size: 1.2em;
+      top: 45px;
+    }
+  }
+  .products .products-div .product .product__details .product__title {
+    font-size: 1em;
+    margin-bottom: 0.5rem;
+  }
+  .products .products-div .product .product__details .product__description {
+    font-size: 0.9em;
+    width: 12rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-device-width: 930px) {
+  .hero img {
+    display: none;
+  }
+  .hero .circle-background {
+    display: block;
+  }
+  .hero .hero__content p {
+    font-size: 2.1lvw;
+  }
+  .hero .hero__content .heading-title {
+    font-size: 4.55lvw;
+    margin-top: 3rem;
+  }
+
+  .nav-bar .left-section ul {
+    display: none !important;
+  }
+
+  .nav-bar .right-section .icon2 {
+    display: block !important;
+  }
+  .nav-bar .right-section .icon1 {
+    display: none;
+  }
+
+  footer .top-sections {
+    flex-direction: column;
+  }
+
+  footer .top-sections .top-left-section ul {
+    text-align: center;
+  }
+  footer .top-sections .top-mid-section {
+    text-align: center;
+  }
+}
+
+@media screen and (max-device-width: 570px) {
+  header .nav-bar .right-section .nav-buttons .link-btn {
+    .btn-1,
+    .btn-2 {
+      display: none;
+    }
+  }
+}
+
+// -----------------
 // // Media queries for responsive design
 
 // /* Extra small devices (phones, 600px and down) */
