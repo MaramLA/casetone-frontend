@@ -600,21 +600,21 @@ footer .bottom-section p {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 24rem;
-  width: 4rem;
-  margin: 3rem;
+  height: 20rem;
+  width: 3rem;
+  margin: 2rem;
 }
 .pagination-div .top-section .page-controller .arrow-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #909090;
-  font-size: 4.6em;
+  font-size: 4em;
   transition: all 0.2s ease-in;
 }
 .pagination-div .top-section .page-controller .arrow-icon:hover {
   cursor: pointer;
-  font-size: 5.3em;
+  font-size: 5em;
 }
 
 .products {
@@ -624,7 +624,7 @@ footer .bottom-section p {
   align-items: center;
   padding-bottom: 6.5rem;
   margin-bottom: 5rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
+  box-shadow: #dddddd 0px 5px 5px -5px;
 }
 .products .section-title {
   font-size: 2.2em;
@@ -693,6 +693,7 @@ footer .bottom-section p {
   flex-wrap: wrap;
   margin-bottom: 4rem;
   max-width: 80vw;
+  background: lightblue;
 }
 .products .products-div .product {
   background: white;
@@ -700,6 +701,7 @@ footer .bottom-section p {
   width: 17rem;
   height: 25rem;
   margin: 1.1rem;
+  background: lightcoral;
   box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
   transition: all 0.2s ease-in;
 }
