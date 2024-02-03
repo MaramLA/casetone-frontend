@@ -602,7 +602,7 @@ footer .bottom-section p {
   justify-content: center;
   height: 20rem;
   width: 3rem;
-  margin: 2rem;
+  margin: 1rem;
 }
 .pagination-div .top-section .page-controller .arrow-icon {
   display: flex;
@@ -624,7 +624,7 @@ footer .bottom-section p {
   align-items: center;
   padding-bottom: 6.5rem;
   margin-bottom: 5rem;
-  box-shadow: #dddddd 0px 10px 10px -10px;
+  box-shadow: #dddddd 0px 5px 5px -5px;
 }
 .products .section-title {
   font-size: 2.2em;
@@ -692,7 +692,7 @@ footer .bottom-section p {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 4rem;
-  max-width: 80vw;
+  max-width: 68vw;
 }
 .products .products-div .product {
   background: white;
