@@ -554,7 +554,6 @@ footer {
     flex-wrap: wrap;
     margin-bottom: 4rem;
     max-width: 80vw;
-    background: lightblue;
 
     .product {
       background: $primary-color0;
@@ -562,7 +561,6 @@ footer {
       width: 17rem;
       height: 25rem;
       margin: 1.1rem;
-      background: lightcoral;
       box-shadow: rgb(105, 98, 98) 0px 5px 18px 0px, rgb(105, 98, 98) 0px 0px 0px 0.5px;
       transition: all 0.2s ease-in;
       &:hover {
