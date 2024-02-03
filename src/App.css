@@ -624,7 +624,7 @@ footer .bottom-section p {
   align-items: center;
   padding-bottom: 6.5rem;
   margin-bottom: 5rem;
-  box-shadow: #dddddd 0px 5px 5px -5px;
+  box-shadow: #dddddd 0px 10px 10px -10px;
 }
 .products .section-title {
   font-size: 2.2em;
@@ -2889,6 +2889,52 @@ footer .bottom-section p {
 /* End of add edit product page styling */
 /* ---------------------------------------------------------- */
 /* Extra small devices (phones, 600px and down) */
+@media screen and (max-device-width: 1340px) {
+  .products .products-div {
+    width: 90vw;
+  }
+  .products .products-div .product {
+    width: 15rem;
+    height: 22rem;
+  }
+  .products .products-div .product .product-details-link img {
+    height: 15rem;
+  }
+  .products .products-div .product .product__details .controllers .icon1 {
+    font-size: 1.2em;
+    top: 45px;
+    left: 160px;
+  }
+  .products .products-div .product .product__details .controllers .icon2 {
+    font-size: 1.2em;
+    top: 45px;
+    left: 160px;
+  }
+  .products .products-div .product .product__details .controllers .icon3 {
+    font-size: 1.2em;
+    top: 45px;
+    left: 100px;
+  }
+  .products .products-div .product .product__details .controllers .icon4 {
+    font-size: 1.2em;
+    top: 45px;
+    left: 130px;
+  }
+  .products .products-div .product .product__details .controllers .icon5 {
+    font-size: 1.2em;
+    top: 45px;
+    left: 70px;
+  }
+  .products .products-div .product .product__details .product__title {
+    font-size: 1em;
+    margin-bottom: 0.5rem;
+  }
+  .products .products-div .product .product__details .product__description {
+    font-size: 0.9em;
+    width: 12rem;
+    margin-bottom: 0.5rem;
+  }
+}
 @media screen and (max-device-width: 1045px) {
   header .nav-bar .left-section .logo img {
     width: 150px;
@@ -2910,24 +2956,27 @@ footer .bottom-section p {
   .products .products-div .product .product__details .controllers .icon1 {
     font-size: 1.2em;
     top: 45px;
-    left: 138px;
+    left: 133px;
   }
   .products .products-div .product .product__details .controllers .icon2 {
     font-size: 1.2em;
     top: 45px;
+    left: 133px;
   }
   .products .products-div .product .product__details .controllers .icon3 {
     font-size: 1.2em;
     top: 45px;
+    left: 73px;
   }
   .products .products-div .product .product__details .controllers .icon4 {
     font-size: 1.2em;
     top: 45px;
-    left: 110px;
+    left: 103px;
   }
   .products .products-div .product .product__details .controllers .icon5 {
     font-size: 1.2em;
     top: 45px;
+    left: 43px;
   }
   .products .products-div .product .product__details .product__title {
     font-size: 1em;
