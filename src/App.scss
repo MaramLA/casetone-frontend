@@ -2540,22 +2540,24 @@ footer {
   }
   .signUp {
     .signUp-container {
-      width: 16rem;
+      width: 12rem;
       .form .top-side {
         flex-direction: column;
         gap: 0rem;
         .left-side .entry {
           margin-bottom: 2rem;
           input {
-            width: 10rem;
+            width: 13rem;
             height: 2rem;
+            padding-left: 1rem;
           }
         }
         .right-side .entry {
           margin-bottom: 2rem;
           input {
-            width: 10rem;
+            width: 13rem;
             height: 2rem;
+            padding-left: 1rem;
           }
         }
       }
@@ -2580,6 +2582,7 @@ footer {
       .entry input {
         width: 10rem;
         height: 2rem;
+        padding-left: 1rem;
       }
       .signIn-btn {
         margin-top: 0;
