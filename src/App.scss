@@ -2532,11 +2532,8 @@ footer {
 }
 
 @media screen and (max-device-width: 570px) {
-  header .nav-bar .right-section .nav-buttons .link-btn {
-    .btn-1,
-    .btn-2 {
-      display: none;
-    }
+  header .nav-bar .right-section .nav-buttons {
+    display: none;
   }
   .signUp {
     .signUp-container {
@@ -2545,7 +2542,7 @@ footer {
         flex-direction: column;
         gap: 0rem;
         .left-side .entry {
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
           .lower-case-input,
           .regular-case-input {
             width: 10rem;
@@ -2555,7 +2552,7 @@ footer {
           }
         }
         .right-side .entry {
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
           .lower-case-input,
           .regular-case-input {
             width: 10rem;
@@ -2567,7 +2564,7 @@ footer {
       }
       .formSignUp {
         width: 15rem;
-        margin-top: 1rem;
+        // margin-top: 1rem;
         p {
           font-size: 0.9em;
         }

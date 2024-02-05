@@ -3132,8 +3132,7 @@ footer .bottom-section p {
   }
 }
 @media screen and (max-device-width: 570px) {
-  header .nav-bar .right-section .nav-buttons .link-btn .btn-1,
-  header .nav-bar .right-section .nav-buttons .link-btn .btn-2 {
+  header .nav-bar .right-section .nav-buttons {
     display: none;
   }
   .signUp .signUp-container {
@@ -3144,7 +3143,7 @@ footer .bottom-section p {
     gap: 0rem;
   }
   .signUp .signUp-container .form .top-side .left-side .entry {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .signUp .signUp-container .form .top-side .left-side .entry .lower-case-input,
   .signUp .signUp-container .form .top-side .left-side .entry .regular-case-input {
@@ -3154,7 +3153,7 @@ footer .bottom-section p {
     font-size: 0.9em;
   }
   .signUp .signUp-container .form .top-side .right-side .entry {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .signUp .signUp-container .form .top-side .right-side .entry .lower-case-input,
   .signUp .signUp-container .form .top-side .right-side .entry .regular-case-input {
@@ -3165,7 +3164,6 @@ footer .bottom-section p {
   }
   .signUp .signUp-container .formSignUp {
     width: 15rem;
-    margin-top: 1rem;
   }
   .signUp .signUp-container .formSignUp p {
     font-size: 0.9em;

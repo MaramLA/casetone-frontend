@@ -143,7 +143,6 @@ const UserNavbar = () => {
                   <li>
                     <InnerLink
                       className="mini-navLinks"
-                      smooth
                       onClick={() => setIsMenueClicked(!isMenueClicked)}
                       to={signInPath}>
                       Sign In
@@ -152,7 +151,6 @@ const UserNavbar = () => {
                   <li>
                     <InnerLink
                       className="mini-navLinks"
-                      smooth
                       onClick={() => setIsMenueClicked(!isMenueClicked)}
                       to={signUpPath}>
                       Sign Up
