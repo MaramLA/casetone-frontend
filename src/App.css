@@ -3071,6 +3071,14 @@ footer .bottom-section p {
   }
 }
 @media screen and (max-device-width: 736px) {
+  .hero .hero__content p {
+    font-size: 2.8lvw;
+  }
+  .hero .hero__content .heading-title {
+    font-size: 5.8lvw;
+    margin-top: 3rem;
+    width: 21rem;
+  }
   .pagination-div .top-section .page-controller {
     display: none;
   }
@@ -3080,7 +3088,7 @@ footer .bottom-section p {
   }
   .products .products-div .product {
     width: 15rem;
-    height: 21rem;
+    height: 21.3rem;
   }
   .products .products-div .product .product-details-link img {
     height: 15rem;
@@ -3112,12 +3120,12 @@ footer .bottom-section p {
   }
   .products .products-div .product .product__details .product__title {
     font-size: 1em;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.6rem;
   }
   .products .products-div .product .product__details .product__description {
     font-size: 0.7em;
     width: 13rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.6rem;
   }
   .products .products-div .product .product__details .product__price {
     font-size: 0.7em;
@@ -3127,5 +3135,50 @@ footer .bottom-section p {
   header .nav-bar .right-section .nav-buttons .link-btn .btn-1,
   header .nav-bar .right-section .nav-buttons .link-btn .btn-2 {
     display: none;
+  }
+  .signUp .signUp-container .form .top-side {
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .signUp .signUp-container .form .top-side .left-side .entry {
+    margin-bottom: 2rem;
+  }
+  .signUp .signUp-container .form .top-side .left-side .entry input {
+    width: 10rem;
+    height: 2rem;
+  }
+  .signUp .signUp-container .form .top-side .right-side .entry {
+    margin-bottom: 2rem;
+  }
+  .signUp .signUp-container .form .top-side .right-side .entry input {
+    width: 10rem;
+    height: 2rem;
+  }
+  .signUp .formSignUp {
+    width: 12rem;
+    margin-top: 1rem;
+  }
+  .signUp .formSignUp p {
+    font-size: 0.3em;
+  }
+}
+@media screen and (max-device-width: 510px) {
+  .signIn .signIn-container {
+    width: 16rem;
+    height: 20rem;
+  }
+  .signIn .signIn-container .form {
+    gap: 0.3rem;
+  }
+  .signIn .signIn-container .form .entry input {
+    width: 10rem;
+    height: 2rem;
+  }
+  .signIn .signIn-container .form .signIn-btn {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .signIn .signIn-container .form .formSignUp p {
+    font-size: 0.3em;
   }
 }/*# sourceMappingURL=App.css.map */
