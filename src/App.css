@@ -3177,6 +3177,7 @@ footer .bottom-section p {
   .forgotPassword .forgotPassword-container {
     width: 16rem;
     padding: 3rem 1.5rem;
+    margin-top: 2rem;
   }
   .forgotPassword .forgotPassword-container .form {
     gap: 0;
