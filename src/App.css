@@ -3151,6 +3151,7 @@ footer .bottom-section p {
     width: 10rem;
     height: 1.5rem;
     padding-left: 1rem;
+    font-size: 0.9em;
   }
   .signUp .signUp-container .form .top-side .right-side .entry {
     margin-bottom: 2rem;
@@ -3160,6 +3161,7 @@ footer .bottom-section p {
     width: 10rem;
     height: 1.5rem;
     padding-left: 1rem;
+    font-size: 0.9em;
   }
   .signUp .signUp-container .formSignUp {
     width: 12rem;
@@ -3181,6 +3183,7 @@ footer .bottom-section p {
     width: 10rem;
     height: 2rem;
     padding-left: 1rem;
+    font-size: 0.9em;
   }
   .signIn .signIn-container .form .signIn-btn {
     margin-top: 0;
