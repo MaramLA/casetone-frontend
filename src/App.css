@@ -3174,6 +3174,19 @@ footer .bottom-section p {
   .signUp .signUp-container .formSignUp p {
     font-size: 0.9em;
   }
+  .forgotPassword .forgotPassword-container {
+    width: 16rem;
+  }
+  .forgotPassword .forgotPassword-container .form .entry input {
+    width: 10rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.7em;
+  }
+  .forgotPassword .forgotPassword-container .formSignUp p {
+    font-size: 0.3em;
+  }
 }
 @media screen and (max-device-width: 510px) {
   .signIn .signIn-container {

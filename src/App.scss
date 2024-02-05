@@ -2410,6 +2410,7 @@ footer {
   footer .top-sections .top-mid-section {
     text-align: center;
   }
+
   .profile .profile-container .form .top-side {
     flex-direction: column;
     gap: 0;
@@ -2574,6 +2575,23 @@ footer {
         p {
           font-size: 0.9em;
         }
+      }
+    }
+  }
+  .forgotPassword .forgotPassword-container {
+    width: 16rem;
+    .form {
+      .entry input {
+        width: 10rem;
+        height: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 0.7em;
+      }
+    }
+    .formSignUp {
+      p {
+        font-size: 0.3em;
       }
     }
   }
