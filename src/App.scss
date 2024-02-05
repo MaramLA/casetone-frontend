@@ -2539,29 +2539,32 @@ footer {
     }
   }
   .signUp {
-    .signUp-container .form .top-side {
-      flex-direction: column;
-      gap: 0rem;
-      .left-side .entry {
-        margin-bottom: 2rem;
-        input {
-          width: 10rem;
-          height: 2rem;
+    .signUp-container {
+      width: 16rem;
+      .form .top-side {
+        flex-direction: column;
+        gap: 0rem;
+        .left-side .entry {
+          margin-bottom: 2rem;
+          input {
+            width: 10rem;
+            height: 2rem;
+          }
+        }
+        .right-side .entry {
+          margin-bottom: 2rem;
+          input {
+            width: 10rem;
+            height: 2rem;
+          }
         }
       }
-      .right-side .entry {
-        margin-bottom: 2rem;
-        input {
-          width: 10rem;
-          height: 2rem;
+      .formSignUp {
+        width: 12rem;
+        margin-top: 1rem;
+        p {
+          font-size: 0.3em;
         }
-      }
-    }
-    .formSignUp {
-      width: 12rem;
-      margin-top: 1rem;
-      p {
-        font-size: 0.3em;
       }
     }
   }

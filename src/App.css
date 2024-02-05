@@ -3136,6 +3136,9 @@ footer .bottom-section p {
   header .nav-bar .right-section .nav-buttons .link-btn .btn-2 {
     display: none;
   }
+  .signUp .signUp-container {
+    width: 16rem;
+  }
   .signUp .signUp-container .form .top-side {
     flex-direction: column;
     gap: 0rem;
@@ -3154,11 +3157,11 @@ footer .bottom-section p {
     width: 10rem;
     height: 2rem;
   }
-  .signUp .formSignUp {
+  .signUp .signUp-container .formSignUp {
     width: 12rem;
     margin-top: 1rem;
   }
-  .signUp .formSignUp p {
+  .signUp .signUp-container .formSignUp p {
     font-size: 0.3em;
   }
 }
