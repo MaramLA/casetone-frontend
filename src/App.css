@@ -3137,7 +3137,7 @@ footer .bottom-section p {
     display: none;
   }
   .signUp .signUp-container {
-    width: 16rem;
+    width: 14rem;
   }
   .signUp .signUp-container .form .top-side {
     flex-direction: column;
@@ -3147,7 +3147,7 @@ footer .bottom-section p {
     margin-bottom: 2rem;
   }
   .signUp .signUp-container .form .top-side .left-side .entry input {
-    width: 10rem;
+    width: 9rem;
     height: 2rem;
     padding-left: 1rem;
   }
@@ -3155,7 +3155,7 @@ footer .bottom-section p {
     margin-bottom: 2rem;
   }
   .signUp .signUp-container .form .top-side .right-side .entry input {
-    width: 10rem;
+    width: 9rem;
     height: 2rem;
     padding-left: 1rem;
   }
