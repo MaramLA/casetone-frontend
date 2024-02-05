@@ -2988,12 +2988,6 @@ footer .bottom-section p {
     margin-bottom: 0.5rem;
   }
 }
-@media screen and (max-device-width: 1000px) {
-  .profile .profile-container .form .top-side {
-    flex-direction: column;
-    gap: 0;
-  }
-}
 @media screen and (max-device-width: 930px) {
   .hero img {
     display: none;
@@ -3025,6 +3019,10 @@ footer .bottom-section p {
   }
   footer .top-sections .top-mid-section {
     text-align: center;
+  }
+  .profile .profile-container .form .top-side {
+    flex-direction: column;
+    gap: 0;
   }
 }
 @media screen and (max-device-width: 915px) {

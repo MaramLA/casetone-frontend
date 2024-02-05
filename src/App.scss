@@ -2374,13 +2374,6 @@ footer {
   }
 }
 
-@media screen and (max-device-width: 1000px) {
-  .profile .profile-container .form .top-side {
-    flex-direction: column;
-    gap: 0;
-  }
-}
-
 @media screen and (max-device-width: 930px) {
   .hero img {
     display: none;
@@ -2416,6 +2409,10 @@ footer {
   }
   footer .top-sections .top-mid-section {
     text-align: center;
+  }
+  .profile .profile-container .form .top-side {
+    flex-direction: column;
+    gap: 0;
   }
 }
 
