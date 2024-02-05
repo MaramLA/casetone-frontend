@@ -3146,7 +3146,8 @@ footer .bottom-section p {
   .signUp .signUp-container .form .top-side .left-side .entry {
     margin-bottom: 2rem;
   }
-  .signUp .signUp-container .form .top-side .left-side .entry input {
+  .signUp .signUp-container .form .top-side .left-side .entry .lower-case-input,
+  .signUp .signUp-container .form .top-side .left-side .entry .regular-case-input {
     width: 7rem;
     height: 1.5rem;
     padding-left: 1rem;
@@ -3154,7 +3155,8 @@ footer .bottom-section p {
   .signUp .signUp-container .form .top-side .right-side .entry {
     margin-bottom: 2rem;
   }
-  .signUp .signUp-container .form .top-side .right-side .entry input {
+  .signUp .signUp-container .form .top-side .right-side .entry .lower-case-input,
+  .signUp .signUp-container .form .top-side .right-side .entry .regular-case-input {
     width: 7rem;
     height: 1.5rem;
     padding-left: 1rem;

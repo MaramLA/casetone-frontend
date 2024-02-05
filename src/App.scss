@@ -2546,7 +2546,8 @@ footer {
         gap: 0rem;
         .left-side .entry {
           margin-bottom: 2rem;
-          input {
+          .lower-case-input,
+          .regular-case-input {
             width: 7rem;
             height: 1.5rem;
             padding-left: 1rem;
@@ -2554,7 +2555,8 @@ footer {
         }
         .right-side .entry {
           margin-bottom: 2rem;
-          input {
+          .lower-case-input,
+          .regular-case-input {
             width: 7rem;
             height: 1.5rem;
             padding-left: 1rem;
