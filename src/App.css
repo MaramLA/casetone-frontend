@@ -3164,11 +3164,11 @@ footer .bottom-section p {
     font-size: 0.9em;
   }
   .signUp .signUp-container .formSignUp {
-    width: 12rem;
+    width: 15rem;
     margin-top: 1rem;
   }
   .signUp .signUp-container .formSignUp p {
-    font-size: 0.3em;
+    font-size: 0.9em;
   }
 }
 @media screen and (max-device-width: 510px) {
