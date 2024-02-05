@@ -2607,17 +2607,42 @@ footer {
       }
     }
   }
-  // .profile .profile-container .form {
-  //   .top-side {
-  //     .left-side .entry .lower-case-input,
-  //     .left-side .entry .upper-case-input,
-  //     .left-side .entry .regular-case-input {
-  //       padding-left: 1rem;
-  //       padding-right: 1rem;
-  //       font-size: 0.7em;
-  //     }
-  //   }
-  // }
+  .profile .profile-container {
+    width: 16rem;
+    .form {
+      .top-side {
+        .left-side .entry .lower-case-input,
+        .left-side .entry .upper-case-input,
+        .left-side .entry .regular-case-input {
+          width: 10rem;
+          height: 2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          font-size: 0.7em;
+        }
+        .right-side .entry .lower-case-input,
+        .right-side .entry .upper-case-input,
+        .right-side .entry .regular-case-input {
+          width: 10rem;
+          height: 2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          font-size: 0.7em;
+        }
+      }
+      .bottom-side .entry {
+        .lower-case-input,
+        .upper-case-input,
+        .regular-case-input {
+          width: 10rem;
+          height: 2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
 }
 // -----------------
 // // Media queries for responsive design

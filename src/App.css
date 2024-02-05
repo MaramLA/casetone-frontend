@@ -3199,4 +3199,34 @@ footer .bottom-section p {
   .signIn .signIn-container .form .formSignUp p {
     font-size: 0.3em;
   }
+  .profile .profile-container {
+    width: 16rem;
+  }
+  .profile .profile-container .form .top-side .left-side .entry .lower-case-input,
+  .profile .profile-container .form .top-side .left-side .entry .upper-case-input,
+  .profile .profile-container .form .top-side .left-side .entry .regular-case-input {
+    width: 10rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.7em;
+  }
+  .profile .profile-container .form .top-side .right-side .entry .lower-case-input,
+  .profile .profile-container .form .top-side .right-side .entry .upper-case-input,
+  .profile .profile-container .form .top-side .right-side .entry .regular-case-input {
+    width: 10rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.7em;
+  }
+  .profile .profile-container .form .bottom-side .entry .lower-case-input,
+  .profile .profile-container .form .bottom-side .entry .upper-case-input,
+  .profile .profile-container .form .bottom-side .entry .regular-case-input {
+    width: 10rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.7em;
+  }
 }/*# sourceMappingURL=App.css.map */
