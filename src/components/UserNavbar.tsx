@@ -132,6 +132,34 @@ const UserNavbar = () => {
                   About Us
                 </InnerLink>
               </li>
+              {isSignedIn ? (
+                <li>
+                  <a className="mini-navLinks" onClick={handleLogout}>
+                    Sign Out
+                  </a>
+                </li>
+              ) : (
+                <>
+                  <li>
+                    <InnerLink
+                      className="mini-navLinks"
+                      smooth
+                      onClick={() => setIsMenueClicked(!isMenueClicked)}
+                      to={signInPath}>
+                      Sign In
+                    </InnerLink>
+                  </li>
+                  <li>
+                    <InnerLink
+                      className="mini-navLinks"
+                      smooth
+                      onClick={() => setIsMenueClicked(!isMenueClicked)}
+                      to={signUpPath}>
+                      Sign Up
+                    </InnerLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <div className="bottom-section">
