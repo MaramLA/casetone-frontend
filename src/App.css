@@ -2991,6 +2991,7 @@ footer .bottom-section p {
 @media screen and (max-device-width: 1000px) {
   .profile .profile-container .form .top-side {
     flex-direction: column;
+    gap: 0;
   }
 }
 @media screen and (max-device-width: 930px) {
