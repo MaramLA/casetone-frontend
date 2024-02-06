@@ -3047,6 +3047,10 @@ footer .bottom-section p {
     text-align: center;
     align-items: center;
     justify-content: center;
+    background: lightcoral;
+  }
+  .orders .orders-container .order .meta-info .order-id {
+    text-align: center;
   }
   .orders .orders-container .order .meta-info p {
     text-align: center;

@@ -2428,6 +2428,10 @@ footer {
       .meta-info {
         text-align: center;
         @include center();
+        background: lightcoral;
+        .order-id {
+          text-align: center;
+        }
         p {
           text-align: center;
         }
