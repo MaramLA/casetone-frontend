@@ -2811,6 +2811,7 @@ footer {
       flex-direction: column;
       background: lightblue;
       height: fit-content;
+      gap: 3vw;
 
       @include center();
       text-align: center;
@@ -2820,8 +2821,8 @@ footer {
       }
       .controllers {
         right: 0;
-        margin-bottom: 2rem;
-        height: 1.5rem;
+        margin-bottom: 3rem;
+        // height: 1.5rem;
       }
     }
   }

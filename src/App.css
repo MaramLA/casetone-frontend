@@ -3374,6 +3374,7 @@ footer .bottom-section p {
     background: lightblue;
     height: -moz-fit-content;
     height: fit-content;
+    gap: 3vw;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -3384,7 +3385,6 @@ footer .bottom-section p {
   }
   .category .category-container .single-category .controllers {
     right: 0;
-    margin-bottom: 2rem;
-    height: 1.5rem;
+    margin-bottom: 3rem;
   }
 }/*# sourceMappingURL=App.css.map */
