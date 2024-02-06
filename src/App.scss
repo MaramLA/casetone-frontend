@@ -2809,7 +2809,6 @@ footer {
     }
     .category-container .single-category {
       flex-direction: column;
-      background: lightblue;
       height: fit-content;
       gap: 3vw;
 
@@ -2821,8 +2820,7 @@ footer {
       }
       .controllers {
         right: 0;
-        margin-bottom: 3rem;
-        // height: 1.5rem;
+        margin-bottom: 4rem;
       }
     }
   }

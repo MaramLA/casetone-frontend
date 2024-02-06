@@ -3371,7 +3371,6 @@ footer .bottom-section p {
   }
   .category .category-container .single-category {
     flex-direction: column;
-    background: lightblue;
     height: -moz-fit-content;
     height: fit-content;
     gap: 3vw;
@@ -3385,6 +3384,6 @@ footer .bottom-section p {
   }
   .category .category-container .single-category .controllers {
     right: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 }/*# sourceMappingURL=App.css.map */
