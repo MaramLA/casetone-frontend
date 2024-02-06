@@ -3041,6 +3041,9 @@ footer .bottom-section p {
     font-size: 0.9em;
     text-align: center;
   }
+  .orders .orders-container .order .meta-info {
+    text-align: center;
+  }
   .orders .orders-container .order .deleteIcon {
     display: none;
   }
