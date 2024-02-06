@@ -2808,32 +2808,38 @@ footer {
   }
   .add-edit-product {
     .form {
-      margin-left: 2rem;
+      background: lightblue;
       .entry {
+        background: lightcoral;
         .input-btn {
           input {
             height: 2rem;
             padding-left: 1rem;
             padding-right: 1rem;
             font-size: 0.7em;
+            background: lightblue;
           }
           .currency {
             right: 1.5rem;
             top: 0.65rem;
+            background: lightcoral;
           }
           .selectCategory {
             height: 2rem;
             font-size: 0.7em;
+            background: lightblue;
           }
         }
         textarea {
           font-size: 0.7;
+          background: lightblue;
         }
       }
 
       .image-preview {
         height: 20vh;
         width: 20vh;
+        background: lightblue;
       }
     }
   }
