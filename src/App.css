@@ -3319,7 +3319,7 @@ footer .bottom-section p {
     font-size: 0.7;
   }
   .add-edit-product .form .image-preview {
-    height: 25vh;
-    width: 25vh;
+    height: 25vw;
+    width: 25vw;
   }
 }/*# sourceMappingURL=App.css.map */
