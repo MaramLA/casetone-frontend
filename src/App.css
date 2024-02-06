@@ -3423,4 +3423,8 @@ footer .bottom-section p {
     right: 0;
     margin-bottom: 2rem;
   }
+  .users .search-product {
+    height: 2rem;
+    font-size: 0.7em;
+  }
 }/*# sourceMappingURL=App.css.map */

@@ -2411,6 +2411,7 @@ footer {
       }
     }
   }
+
   .orders .orders-container {
     .order {
       flex-direction: column;
@@ -2860,6 +2861,10 @@ footer {
         margin-bottom: 2rem;
       }
     }
+  }
+  .users .search-product {
+    height: 2rem;
+    font-size: 0.7em;
   }
 }
 // // Media queries for responsive design
