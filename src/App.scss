@@ -2702,44 +2702,6 @@ footer {
   }
 }
 
-// @media screen and (max-device-width: 530px) {
-//   .productDetails .container {
-//     flex-direction: column;
-//     gap: 3.5rem;
-//     margin-top: 4rem;
-//     .left-side {
-//       @include center();
-//       width: 100%;
-//       text-align: center;
-//       img {
-//         max-height: 60vw;
-//         max-width: 60vw;
-//       }
-//     }
-//     .right-side {
-//       @include center();
-//       width: 100%;
-//       text-align: center;
-//       .product-category {
-//         text-align: center;
-//       }
-// h2 {
-//   font-size: 6.25lvw;
-// }
-// h3 {
-//   font-size: 2.05lvw;
-// }
-// p {
-//   font-size: 4.1lvw;
-// }
-//       .buttons {
-//         @include center();
-//         text-align: center;
-//       }
-//     }
-//   }
-// }
-
 @media screen and (max-device-width: 510px) {
   .signIn .signIn-container {
     width: 16rem;
@@ -2808,42 +2770,33 @@ footer {
   }
   .add-edit-product {
     .form {
-      background: lightblue;
       .entry {
         width: 15rem;
-        background: lightcoral;
-        // label {
-        //   width: 30rem;
-        // }
+
         .input-btn {
           input {
             height: 2rem;
             padding-left: 1rem;
             padding-right: 1rem;
             font-size: 0.7em;
-            background: lightblue;
           }
           .currency {
             right: 1.5rem;
             top: 0.65rem;
-            background: lightcoral;
           }
           .selectCategory {
             height: 2rem;
             font-size: 0.7em;
-            background: lightblue;
           }
         }
         textarea {
           font-size: 0.7;
-          background: lightblue;
         }
       }
 
       .image-preview {
         height: 20vh;
         width: 20vh;
-        background: lightblue;
       }
     }
   }
