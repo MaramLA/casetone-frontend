@@ -126,6 +126,11 @@ const AdminNavbar = () => {
                   Users
                 </Link>
               </li>
+              <li>
+                <a className="mini-navLinks" onClick={handleLogout}>
+                  Sign Out
+                </a>
+              </li>
             </ul>
           </div>
           <div className="bottom-section">
