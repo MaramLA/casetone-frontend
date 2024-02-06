@@ -2811,6 +2811,7 @@ footer {
       flex-direction: column;
       background: lightblue;
       @include center();
+      text-align: center;
     }
   }
 }
