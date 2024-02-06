@@ -2810,6 +2810,7 @@ footer {
     .category-container .single-category {
       flex-direction: column;
       background: lightblue;
+      @include center();
     }
   }
 }

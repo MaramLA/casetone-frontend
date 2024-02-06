@@ -3372,5 +3372,7 @@ footer .bottom-section p {
   .category .category-container .single-category {
     flex-direction: column;
     background: lightblue;
+    align-items: center;
+    justify-content: center;
   }
 }/*# sourceMappingURL=App.css.map */
