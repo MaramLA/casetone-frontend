@@ -2415,9 +2415,14 @@ footer {
     .order {
       flex-direction: column;
       background: lightblue;
+      gap: 1rem;
       margin-bottom: 2rem;
+      .entry .input-btn .selectStatus {
+        font-size: 0.9em;
+      }
       p {
         font-size: 0.9em;
+        text-align: center;
       }
       .deleteIcon {
         display: none;

@@ -3031,10 +3031,15 @@ footer .bottom-section p {
   .orders .orders-container .order {
     flex-direction: column;
     background: lightblue;
+    gap: 1rem;
     margin-bottom: 2rem;
+  }
+  .orders .orders-container .order .entry .input-btn .selectStatus {
+    font-size: 0.9em;
   }
   .orders .orders-container .order p {
     font-size: 0.9em;
+    text-align: center;
   }
   .orders .orders-container .order .deleteIcon {
     display: none;
