@@ -2816,6 +2816,10 @@ footer {
             padding-right: 1rem;
             font-size: 0.7em;
           }
+          .currency {
+            right: 0;
+            top: 0.8rem;
+          }
           .selectCategory {
             height: 2rem;
             font-size: 0.7em;
@@ -2827,9 +2831,8 @@ footer {
       }
 
       .image-preview {
-        // height: 20vh;
-        // width: 20vh;
-        display: none;
+        height: 20vh;
+        width: 20vh;
       }
     }
   }

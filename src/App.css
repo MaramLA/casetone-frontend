@@ -3347,6 +3347,10 @@ footer .bottom-section p {
     padding-right: 1rem;
     font-size: 0.7em;
   }
+  .add-edit-product .form .entry .input-btn .currency {
+    right: 0;
+    top: 0.8rem;
+  }
   .add-edit-product .form .entry .input-btn .selectCategory {
     height: 2rem;
     font-size: 0.7em;
@@ -3355,6 +3359,7 @@ footer .bottom-section p {
     font-size: 0.7;
   }
   .add-edit-product .form .image-preview {
-    display: none;
+    height: 20vh;
+    width: 20vh;
   }
 }/*# sourceMappingURL=App.css.map */
