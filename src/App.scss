@@ -2419,12 +2419,12 @@ footer {
       p {
         font-size: 0.9em;
       }
-    }
-    .buttons {
-      flex-direction: column;
       .deleteIcon {
         display: none;
       }
+    }
+    .buttons {
+      flex-direction: column;
     }
   }
 }
