@@ -2987,6 +2987,47 @@ footer .bottom-section p {
     width: 12rem;
     margin-bottom: 0.5rem;
   }
+  .productDetails .container {
+    flex-direction: column;
+    gap: 3.5rem;
+    margin-top: 4rem;
+    padding: 0;
+  }
+  .productDetails .container .left-side {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+  .productDetails .container .left-side img {
+    max-height: 60vw;
+    max-width: 60vw;
+  }
+  .productDetails .container .right-side {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+  .productDetails .container .right-side .product-category {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .productDetails .container .right-side h2 {
+    font-size: 2.5em;
+  }
+  .productDetails .container .right-side h3 {
+    font-size: 1em;
+  }
+  .productDetails .container .right-side p {
+    font-size: 1.5em;
+    width: 25rem;
+  }
+  .productDetails .container .right-side .buttons {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 }
 @media screen and (max-device-width: 930px) {
   .hero img {
@@ -3191,6 +3232,20 @@ footer .bottom-section p {
   }
   .forgotPassword .forgotPassword-container .formSignUp p {
     font-size: 0.3em;
+  }
+  .productDetails .container .right-side .product-category {
+    text-align: center;
+    font-size: 4.1lvw;
+  }
+  .productDetails .container .right-side h2 {
+    font-size: 6.5lvw;
+  }
+  .productDetails .container .right-side h3 {
+    font-size: 3lvw;
+  }
+  .productDetails .container .right-side p {
+    font-size: 4.1lvw;
+    width: 70vw;
   }
 }
 @media screen and (max-device-width: 510px) {
