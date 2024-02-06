@@ -3270,6 +3270,10 @@ footer .bottom-section p {
   .signIn .signIn-container .form .formSignUp p {
     font-size: 0.3em;
   }
+  .products .search-product {
+    height: 2rem;
+    font-size: 0.7em;
+  }
   .profile .profile-container {
     width: 16rem;
     padding: 3rem 1.5rem;
