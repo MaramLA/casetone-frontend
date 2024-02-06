@@ -3318,8 +3318,8 @@ footer .bottom-section p {
   .add-edit-product .form .entry textarea {
     font-size: 0.7;
   }
-  .add-edit-product .form .entry .image-preview {
-    height: 30vh;
-    width: 30vh;
+  .add-edit-product .form .image-preview {
+    height: 10vh;
+    width: 10vh;
   }
 }/*# sourceMappingURL=App.css.map */

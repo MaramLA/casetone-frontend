@@ -2761,23 +2761,28 @@ footer {
       }
     }
   }
-  .add-edit-product .form .entry {
-    input {
-      height: 2rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      font-size: 0.7em;
-    }
-    .selectCategory {
-      height: 2rem;
-      font-size: 0.7em;
-    }
-    textarea {
-      font-size: 0.7;
-    }
-    .image-preview {
-      height: 30vh;
-      width: 30vh;
+  .add-edit-product {
+    .form {
+      .entry {
+        input {
+          height: 2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          font-size: 0.7em;
+        }
+        .selectCategory {
+          height: 2rem;
+          font-size: 0.7em;
+        }
+        textarea {
+          font-size: 0.7;
+        }
+      }
+
+      .image-preview {
+        height: 10vh;
+        width: 10vh;
+      }
     }
   }
 }
