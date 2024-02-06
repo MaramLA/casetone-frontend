@@ -3348,8 +3348,8 @@ footer .bottom-section p {
     font-size: 0.7em;
   }
   .add-edit-product .form .entry .input-btn .currency {
-    right: 0;
-    top: 0.8rem;
+    right: 1.5rem;
+    top: 0.85rem;
   }
   .add-edit-product .form .entry .input-btn .selectCategory {
     height: 2rem;
