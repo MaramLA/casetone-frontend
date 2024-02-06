@@ -3197,9 +3197,15 @@ footer .bottom-section p {
   }
   .cart .items .purchase-summary .total-items {
     font-size: 0.9em;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: lightblue;
   }
   .cart .items .purchase-summary .total-price {
     font-size: 0.9em;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: lightblue;
   }
 }
 @media screen and (max-device-width: 736px) {

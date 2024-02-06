@@ -2597,9 +2597,13 @@ footer {
       width: 60vw;
       .total-items {
         font-size: 0.9em;
+        width: fit-content;
+        background: lightblue;
       }
       .total-price {
         font-size: 0.9em;
+        width: fit-content;
+        background: lightblue;
       }
     }
   }
