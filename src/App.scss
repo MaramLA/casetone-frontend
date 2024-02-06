@@ -2414,7 +2414,6 @@ footer {
   .orders .orders-container {
     .order {
       flex-direction: column;
-      background: lightblue;
       gap: 1rem;
       justify-content: center;
       height: fit-content;
@@ -2428,7 +2427,6 @@ footer {
       .meta-info {
         text-align: center;
         @include center();
-        background: lightcoral;
         .order-id {
           text-align: center;
         }
