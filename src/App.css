@@ -3040,7 +3040,7 @@ footer .bottom-section p {
     flex-direction: column;
   }
   .orders .orders-container .buttons .deleteIcon {
-    position: relative;
+    display: none;
   }
 }
 @media screen and (max-device-width: 930px) {
