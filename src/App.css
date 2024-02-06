@@ -3168,6 +3168,29 @@ footer .bottom-section p {
   .products .products-div .product .product__details .product__price {
     font-size: 0.5em;
   }
+  .cart .items .item {
+    flex-direction: column;
+    justify-content: center;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .cart .items .item p {
+    font-size: 0.9em;
+  }
+  .cart .items .item .deleteIcon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .cart .items .purchase-summary .total-items {
+    font-size: 0.9em;
+  }
+  .cart .items .purchase-summary .total-price {
+    font-size: 0.9em;
+  }
 }
 @media screen and (max-device-width: 736px) {
   .hero .hero__content p {

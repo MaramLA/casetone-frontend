@@ -2568,6 +2568,33 @@ footer {
   .products .products-div .product .product__details .product__price {
     font-size: 0.5em;
   }
+
+  .cart .items {
+    .item {
+      flex-direction: column;
+      justify-content: center;
+      height: fit-content;
+      p {
+        font-size: 0.9em;
+      }
+      .deleteIcon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 1rem;
+      }
+    }
+    .purchase-summary {
+      .total-items {
+        font-size: 0.9em;
+      }
+      .total-price {
+        font-size: 0.9em;
+      }
+    }
+  }
 }
 
 @media screen and (max-device-width: 736px) {
