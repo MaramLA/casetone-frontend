@@ -3028,12 +3028,13 @@ footer .bottom-section p {
     justify-content: center;
     text-align: center;
   }
-  .orders .orders-container {
-    background: lightblue;
-  }
   .orders .orders-container .order {
     flex-direction: column;
-    background: lightcoral;
+    background: lightblue;
+    margin-bottom: 2rem;
+  }
+  .orders .orders-container .order p {
+    font-size: 0.9em;
   }
 }
 @media screen and (max-device-width: 930px) {
