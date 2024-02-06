@@ -2810,6 +2810,8 @@ footer {
     .category-container .single-category {
       flex-direction: column;
       background: lightblue;
+      height: fit-content;
+
       @include center();
       text-align: center;
       p {
@@ -2818,6 +2820,7 @@ footer {
       }
       .controllers {
         right: 0;
+        margin-bottom: 2rem;
       }
     }
   }
