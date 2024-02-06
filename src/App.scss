@@ -2419,8 +2419,11 @@ footer {
       p {
         font-size: 0.9em;
       }
-      .deleteIcon {
-        position: relative;
+      .buttons {
+        flex-direction: column;
+        .deleteIcon {
+          position: relative;
+        }
       }
     }
   }
