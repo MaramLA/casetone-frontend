@@ -3193,6 +3193,7 @@ footer .bottom-section p {
   }
   .cart .items .purchase-summary {
     background: lightcoral;
+    width: 60vw;
   }
   .cart .items .purchase-summary .total-items {
     font-size: 0.9em;
