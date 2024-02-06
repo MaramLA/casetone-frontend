@@ -3355,7 +3355,6 @@ footer .bottom-section p {
     font-size: 0.7;
   }
   .add-edit-product .form .image-preview {
-    height: 20vh;
-    width: 20vh;
+    display: none;
   }
 }/*# sourceMappingURL=App.css.map */

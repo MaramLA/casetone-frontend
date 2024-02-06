@@ -2827,8 +2827,9 @@ footer {
       }
 
       .image-preview {
-        height: 20vh;
-        width: 20vh;
+        // height: 20vh;
+        // width: 20vh;
+        display: none;
       }
     }
   }
