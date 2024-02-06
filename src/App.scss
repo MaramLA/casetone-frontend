@@ -2810,10 +2810,11 @@ footer {
     .form {
       background: lightblue;
       .entry {
+        width: 30rem;
         background: lightcoral;
-        label {
-          width: 30rem;
-        }
+        // label {
+        //   width: 30rem;
+        // }
         .input-btn {
           input {
             height: 2rem;
