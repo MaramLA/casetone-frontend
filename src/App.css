@@ -3053,6 +3053,14 @@ footer .bottom-section p {
   .orders .orders-container .order .meta-info p {
     text-align: center;
   }
+  .orders .orders-container .order .deleteIcon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+  }
   .orders .orders-container .buttons {
     flex-direction: column;
   }
