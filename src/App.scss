@@ -199,18 +199,18 @@ header {
         @include center();
         li {
           margin: 0.75rem;
-          width: 6.5rem;
+          width: fit-content;
           text-align: center;
           .mini-navLinks {
             text-decoration: none;
             font-weight: bolder;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: capitalize;
             color: $primary-color1;
             @include navTransBackgournd();
             transition: all 0.2s ease-in;
             &:hover {
-              font-size: 1.1rem;
+              font-size: 1rem;
             }
           }
         }

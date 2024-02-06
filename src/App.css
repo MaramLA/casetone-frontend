@@ -286,13 +286,14 @@ header .mini-nav .top-section .mini-nav-links {
 }
 header .mini-nav .top-section .mini-nav-links li {
   margin: 0.75rem;
-  width: 6.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
   text-align: center;
 }
 header .mini-nav .top-section .mini-nav-links li .mini-navLinks {
   text-decoration: none;
   font-weight: bolder;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: capitalize;
   color: #696262;
   background: transparent;
@@ -301,7 +302,7 @@ header .mini-nav .top-section .mini-nav-links li .mini-navLinks {
   transition: all 0.2s ease-in;
 }
 header .mini-nav .top-section .mini-nav-links li .mini-navLinks:hover {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 header .mini-nav .bottom-section {
   position: relative;
