@@ -1108,7 +1108,7 @@ footer .bottom-section p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 80%;
+  width: 75vw;
   gap: 2rem;
   border-radius: 30px;
   padding: 3rem 2rem;
