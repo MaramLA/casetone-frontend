@@ -3305,13 +3305,13 @@ footer .bottom-section p {
     padding-right: 1rem;
     font-size: 0.7em;
   }
-  .add-edit-product .form .entry input {
+  .add-edit-product .form .entry .input-btn input {
     height: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 0.7em;
   }
-  .add-edit-product .form .entry .selectCategory {
+  .add-edit-product .form .entry .input-btn .selectCategory {
     height: 2rem;
     font-size: 0.7em;
   }
@@ -3319,7 +3319,7 @@ footer .bottom-section p {
     font-size: 0.7;
   }
   .add-edit-product .form .image-preview {
-    height: 20vh;
-    width: 20vh;
+    height: 25vh;
+    width: 25vh;
   }
 }/*# sourceMappingURL=App.css.map */

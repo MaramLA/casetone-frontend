@@ -2764,15 +2764,17 @@ footer {
   .add-edit-product {
     .form {
       .entry {
-        input {
-          height: 2rem;
-          padding-left: 1rem;
-          padding-right: 1rem;
-          font-size: 0.7em;
-        }
-        .selectCategory {
-          height: 2rem;
-          font-size: 0.7em;
+        .input-btn {
+          input {
+            height: 2rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 0.7em;
+          }
+          .selectCategory {
+            height: 2rem;
+            font-size: 0.7em;
+          }
         }
         textarea {
           font-size: 0.7;
@@ -2780,8 +2782,8 @@ footer {
       }
 
       .image-preview {
-        height: 20vh;
-        width: 20vh;
+        height: 25vh;
+        width: 25vh;
       }
     }
   }
