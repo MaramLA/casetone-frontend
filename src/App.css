@@ -3173,9 +3173,11 @@ footer .bottom-section p {
     justify-content: center;
     height: -moz-fit-content;
     height: fit-content;
+    background: lightblue;
   }
   .cart .items .item p {
     font-size: 0.9em;
+    background: lightcoral;
   }
   .cart .items .item .deleteIcon {
     position: relative;
@@ -3184,6 +3186,13 @@ footer .bottom-section p {
     align-items: center;
     text-align: center;
     margin-top: 1rem;
+    background: lightcoral;
+  }
+  .cart .items .item .quantity-div {
+    background: lightgoldenrodyellow;
+  }
+  .cart .items .purchase-summary {
+    background: lightcoral;
   }
   .cart .items .purchase-summary .total-items {
     font-size: 0.9em;
