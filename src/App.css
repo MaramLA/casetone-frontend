@@ -3378,5 +3378,9 @@ footer .bottom-section p {
   }
   .category .category-container .single-category p {
     text-align: center;
+    margin-right: 0;
+  }
+  .category .category-container .single-category .controllers {
+    right: 0;
   }
 }/*# sourceMappingURL=App.css.map */
