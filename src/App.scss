@@ -2800,6 +2800,18 @@ footer {
       }
     }
   }
+  .category {
+    .form {
+      .entry input {
+        height: 2rem;
+        font-size: 0.7em;
+      }
+    }
+    .category-container .single-category {
+      flex-direction: column;
+      background: lightblue;
+    }
+  }
 }
 // // Media queries for responsive design
 

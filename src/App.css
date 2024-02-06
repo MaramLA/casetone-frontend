@@ -3365,4 +3365,12 @@ footer .bottom-section p {
     height: 20vh;
     width: 20vh;
   }
+  .category .form .entry input {
+    height: 2rem;
+    font-size: 0.7em;
+  }
+  .category .category-container .single-category {
+    flex-direction: column;
+    background: lightblue;
+  }
 }/*# sourceMappingURL=App.css.map */
