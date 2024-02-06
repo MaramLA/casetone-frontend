@@ -3173,11 +3173,10 @@ footer .bottom-section p {
     justify-content: center;
     height: -moz-fit-content;
     height: fit-content;
-    background: lightblue;
+    gap: 1rem;
   }
   .cart .items .item p {
     font-size: 0.9em;
-    background: lightcoral;
   }
   .cart .items .item .deleteIcon {
     position: relative;
@@ -3186,26 +3185,19 @@ footer .bottom-section p {
     align-items: center;
     text-align: center;
     margin-top: 1rem;
-    background: lightcoral;
-  }
-  .cart .items .item .quantity-div {
-    background: lightgoldenrodyellow;
   }
   .cart .items .purchase-summary {
-    background: lightcoral;
     width: 60vw;
   }
   .cart .items .purchase-summary .total-items {
     font-size: 0.9em;
     width: -moz-fit-content;
     width: fit-content;
-    background: lightblue;
   }
   .cart .items .purchase-summary .total-price {
     font-size: 0.9em;
     width: -moz-fit-content;
     width: fit-content;
-    background: lightblue;
   }
 }
 @media screen and (max-device-width: 736px) {

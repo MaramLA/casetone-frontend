@@ -2574,10 +2574,9 @@ footer {
       flex-direction: column;
       justify-content: center;
       height: fit-content;
-      background: lightblue;
+      gap: 1rem;
       p {
         font-size: 0.9em;
-        background: lightcoral;
       }
       .deleteIcon {
         position: relative;
@@ -2586,24 +2585,17 @@ footer {
         align-items: center;
         text-align: center;
         margin-top: 1rem;
-        background: lightcoral;
-      }
-      .quantity-div {
-        background: lightgoldenrodyellow;
       }
     }
     .purchase-summary {
-      background: lightcoral;
       width: 60vw;
       .total-items {
         font-size: 0.9em;
         width: fit-content;
-        background: lightblue;
       }
       .total-price {
         font-size: 0.9em;
         width: fit-content;
-        background: lightblue;
       }
     }
   }
