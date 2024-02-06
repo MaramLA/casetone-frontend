@@ -3381,6 +3381,7 @@ footer .bottom-section p {
   .category .category-container .single-category p {
     text-align: center;
     margin-right: 0;
+    font-size: 0.9em;
   }
   .category .category-container .single-category .controllers {
     right: 0;
