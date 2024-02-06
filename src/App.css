@@ -3028,6 +3028,13 @@ footer .bottom-section p {
     justify-content: center;
     text-align: center;
   }
+  .orders .orders-container {
+    background: lightblue;
+  }
+  .orders .orders-container .order {
+    flex-direction: column;
+    background: lightcoral;
+  }
 }
 @media screen and (max-device-width: 930px) {
   .hero img {
