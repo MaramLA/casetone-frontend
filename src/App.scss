@@ -2812,6 +2812,9 @@ footer {
       background: lightblue;
       @include center();
       text-align: center;
+      p {
+        text-align: center;
+      }
     }
   }
 }

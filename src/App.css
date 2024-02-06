@@ -3376,4 +3376,7 @@ footer .bottom-section p {
     justify-content: center;
     text-align: center;
   }
+  .category .category-container .single-category p {
+    text-align: center;
+  }
 }/*# sourceMappingURL=App.css.map */
