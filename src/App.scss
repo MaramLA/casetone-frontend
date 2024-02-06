@@ -2811,6 +2811,9 @@ footer {
       background: lightblue;
       .entry {
         background: lightcoral;
+        label {
+          width: 30rem;
+        }
         .input-btn {
           input {
             height: 2rem;

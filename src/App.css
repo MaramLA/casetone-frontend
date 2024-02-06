@@ -3347,6 +3347,9 @@ footer .bottom-section p {
   .add-edit-product .form .entry {
     background: lightcoral;
   }
+  .add-edit-product .form .entry label {
+    width: 30rem;
+  }
   .add-edit-product .form .entry .input-btn input {
     height: 2rem;
     padding-left: 1rem;
