@@ -3036,10 +3036,10 @@ footer .bottom-section p {
   .orders .orders-container .order p {
     font-size: 0.9em;
   }
-  .orders .orders-container .order .buttons {
+  .orders .orders-container .buttons {
     flex-direction: column;
   }
-  .orders .orders-container .order .buttons .deleteIcon {
+  .orders .orders-container .buttons .deleteIcon {
     position: relative;
   }
 }
