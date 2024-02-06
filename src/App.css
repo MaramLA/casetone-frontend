@@ -3032,7 +3032,6 @@ footer .bottom-section p {
     flex-direction: column;
     background: lightblue;
     gap: 1rem;
-    margin-bottom: 2rem;
     justify-content: center;
     height: -moz-fit-content;
     height: fit-content;
