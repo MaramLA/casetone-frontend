@@ -2214,10 +2214,10 @@ footer {
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          width: 45vw;
+          width: 40vw;
           height: 2.5rem;
           border-radius: 30px;
-          padding: 0 3rem;
+          padding: 0 2rem;
           font-size: 1.05em;
           color: $primary-color1;
           background: $primary-color3;
@@ -2759,6 +2759,25 @@ footer {
           font-size: 0.7em;
         }
       }
+    }
+  }
+  .add-edit-product .form .entry {
+    input {
+      height: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 0.7em;
+    }
+    .selectCategory {
+      height: 2rem;
+      font-size: 0.7em;
+    }
+    textarea {
+      font-size: 0.7;
+    }
+    .image-preview {
+      height: 30vh;
+      width: 30vh;
     }
   }
 }
