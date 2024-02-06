@@ -3043,6 +3043,11 @@ footer .bottom-section p {
   }
   .orders .orders-container .order .meta-info {
     text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .orders .orders-container .order .meta-info p {
+    text-align: center;
   }
   .orders .orders-container .order .deleteIcon {
     display: none;

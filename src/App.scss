@@ -2426,6 +2426,10 @@ footer {
       }
       .meta-info {
         text-align: center;
+        @include center();
+        p {
+          text-align: center;
+        }
       }
       .deleteIcon {
         display: none;
