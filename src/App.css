@@ -3341,6 +3341,9 @@ footer .bottom-section p {
     padding-right: 1rem;
     font-size: 0.7em;
   }
+  .add-edit-product .form {
+    margin-left: 2rem;
+  }
   .add-edit-product .form .entry .input-btn input {
     height: 2rem;
     padding-left: 1rem;
@@ -3349,7 +3352,7 @@ footer .bottom-section p {
   }
   .add-edit-product .form .entry .input-btn .currency {
     right: 1.5rem;
-    top: 0.85rem;
+    top: 0.65rem;
   }
   .add-edit-product .form .entry .input-btn .selectCategory {
     height: 2rem;
